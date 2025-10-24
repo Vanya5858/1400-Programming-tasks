@@ -1,0 +1,221 @@
+Задание №1
+﻿#include <iostream>
+using namespace std;
+
+int main() {
+	cout << 31 << " " << 18 << " " << 79;
+	return 0;
+}
+Задание №2
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << 47 << "  " << 52 << "  " << 150;
+}
+Задание №3
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << 50 << endl << 10;
+}
+Задание №4
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << 5 << "\n" << 10 << "\n" << 21;
+}
+Задание №5
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << 1 << endl << 2;
+}
+Задание №6
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	double pi = 3.1415926;
+	double rounded_pi = round(pi * 1000) / 1000;
+	cout << rounded_pi;
+	return 0;
+}
+Задание №7
+﻿#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+	double e = 2.71828;
+	cout << fixed << setprecision(1) << e;
+	return 0;
+}
+Задание №8
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int a;
+	cout << "Введите ваше число: ";
+	cin >> a;
+	cout << "Вы ввели число: " << a;
+	return 0;
+}
+Задание №9
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int a;
+	cout << "Введите число: ";
+	cin >> a;
+	cout << a << " – вот какое число Вы ввели.";
+	return 0;
+}
+Задание №10
+﻿#include <iostream>
+#include <string>
+#include <locale>
+using namespace std;
+
+int main()
+{
+	cout << "\t\t\t\t\t";
+	system("chcp 1251");
+
+	string name;
+	cout << "Введите своё имя: ";
+	getline(cin, name);
+	cout << "Ваше имя: " << name;
+	return 0;
+}
+Задание №11
+﻿#include <iostream>
+#include <string>
+#include <locale>
+using namespace std;
+
+int main()
+{
+	cout << "\t\t\t\t\t";
+	system("chcp 1251");
+
+	string FootballName;
+	cout << "Введите название футбольной команды: ";
+	getline(cin, FootballName);
+	cout << FootballName << " – это чемпион!";
+	return 0;
+}
+Задание №12
+#include <iostream>
+#include <string>
+#include <locale>
+using namespace std;
+
+int main()
+{
+	cout << "\t\t\t\t\t";
+	system("chcp 1251");
+
+	string name;
+	cout << "Введите своё имя: ";
+	getline(cin, name);
+	cout << "Привет, " << name << "!";
+	return 0;
+}
+Задание №13
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int a;
+	cout << "Вы ввели число: ";
+	cin >> a;
+	cout << "Следующее за числом " << a << " число - " << a + 1 << "." << endl;
+	cout << "Для числа " << a << " предыдущее число – " << a - 1 << "." << endl;
+	return 0;
+}
+Задание №14
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a, b, c;
+	setlocale(LC_ALL, "RU");
+	cout << "Введите 3 различных числа через пробел: ";
+	cin >> a >> b >> c;
+	cout << "\nВы ввели: " << a << "  " << b << "  " << c;
+
+}
+Задание №15
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a, b, c, d;
+	setlocale(LC_ALL, "RU");
+	cout << "Введите 4 различных числа через пробел: ";
+	cin >> a >> b >> c >> d;
+	cout << "\nВы ввели: " << a << " " << b << " " << c << " " << d;
+}
+Задание №16
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int t, v, x, y;
+	cout << "Наш ряд изначально:\n\n";
+	cout << "a) 5 10\t\t" << "б) 100  t\t\t" << "в) x 25\n" << "   7 см\t\t" << "   1949 v\t\t" << "   x y\n\n";
+	cout << "Введите значение для t: ";
+	cin >> t;
+	cout << "Введите значение для v: ";
+	cin >> v;
+	cout << "Введите значение для x: ";
+	cin >> x;
+	cout << "Введите значение для y: ";
+	cin >> y;
+	cout << "\nРяд после внесение изменений: \n\n";
+	cout << "a) 5 10\t\t" << "б) 100  " << t << "\t\t" << "в) " << x << " 25\n";
+	cout << "   7 см\t\t" << "   1949 " << v << "\t\t" << "   " << x << " " << y << "\n\n";
+}
+Задание №17
+﻿#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int a, b, x, y;
+	cout << "Наш ряд изначально:\n\n";
+	cout << "a) 2 кг\t\t" << "б) a  1\t\t" << "в) x y\n" << "   13 17\t" << "   19 b\t\t" << "   5 y\n\n";
+	cout << "Введите значение для a: ";
+	cin >> a;
+	cout << "Введите значение для b: ";
+	cin >> b;
+	cout << "Введите значение для x: ";
+	cin >> x;
+	cout << "Введите значение для y: ";
+	cin >> y;
+	cout << "\nРяд после внесение изменений: \n\n";
+	cout << "a) 2 кг\t\t" << "б) " << a << " 1\t\t" << "в) " << x << " " << y << "\n";
+	cout << "   13 17\t" << "   19 " << b << "\t\t" << "   5 " << y << "\n\n";
+}
