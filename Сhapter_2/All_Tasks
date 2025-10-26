@@ -1,0 +1,1286 @@
+Задача 1
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    int x, a, res_1, res_2;
+    cout << "Программа для вычисления функций\n\n" << "a) y = 17x^2 - 6x + 13\n" << "Введите значени х: ";
+    cin >> x;
+    res_1 = 17 * x * x - 6 * x + 13;
+    cout << "Ответ: " << res_1;
+    cout << "\n\nб) y = 3a^2 + 5a - 21\n" << "Введите значени a: ";
+    cin >> a;
+    res_2 = 3 * a * a + 5 * a - 21;
+    cout << "Ответ: " << res_2;
+    return 0;
+}
+Задача 2
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    int a;
+    double res;
+    cout << "Программа для вычисления функции\n\n" << "a) y = a^2 + 10/(sqrt(a^2 + 1))\n" << "Введите значени a: ";
+    cin >> a;
+    if (sqrt(a * a + 1) < 0) {
+        cout << "Ошибка. Корень и знаменатель не могут быть отрицательными числами.";
+    }
+    else {
+        res = (a * a + 10) / (sqrt(a * a + 1));
+        cout << "Ответ: " << res;
+    }
+    return 0;
+}
+Задача 3
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, "RU");
+	double a, result_1, x, result_2;
+	//Решение для функции 1(а)
+	cout << "Введите ваше значени a для решения первой функции (а) : ";
+	cin >> a;
+	if (((2 * a) + (sin(fabs(3 * a))) / 3.56) <= 0) {
+		cout << "Ответ для (а): Нет решения. Корень не может быть отрицательным, либо нулевыым.\n";
+	}
+	else {
+		result_1 = sqrt(((2 * a) + (sin(fabs(3 * a)))) / 3.56);
+		cout << "Ответ для (а): " << result_1 << "\n";
+	}
+
+	//Решение для функции 2(б)
+	cout << "\n\nВведите ваше значени x для решения второй функции (б) : ";
+	cin >> x;
+	if ((1 + x) <= 0) {
+		cout << "Ответ для (б): Нет решения. Корень не может быть отрицательным, либо нулевым.\n\n";
+	}
+	else if (fabs(5 * x) == 0) {
+		cout << "Ответ для (б): Нет решения. Делить на 0 нельзя.\n\n";
+	}
+	else {
+		result_2 = sin((3.2 + sqrt(1 + x)) / fabs(5 * x));
+		cout << "Ответ для (б): " << result_2 << "\n\n";
+	}
+}
+Задача 4
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите вашу сторону квадрата для нахождения периметра: ";
+    cin >> x;
+    cout << "Ответ: P = " << 4 * x << "\n\n";
+    return 0;
+}
+Задача 5
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите радиус вашей окружности для нахождения диаметра : ";
+    cin >> x;
+    cout << "Ответ: D = " << x * 2 << "\n\n";
+    return 0;
+}
+Задача 6
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    const double EARTH_RADIUS = 6350.0; // радиус Земли в км
+    double height;
+
+    cout << "\t\t\tРасчет расстояния до линии горизонта\n";
+    cout << "Радиус Земли: " << EARTH_RADIUS << " км\n\n";
+
+    // Ввод высоты
+    cout << "Введите высоту над Землей (в км): ";
+    cin >> height;
+
+    // Проверка корректности ввода
+    if (height < 0) {
+        cout << "Ошибка: высота не может быть отрицательной!\n";
+        return 1;
+    }
+
+    // Вычисление расстояния до горизонта
+    double distance = sqrt((2 * EARTH_RADIUS * height) + (height * height));
+
+    // Вывод результатов
+    cout << fixed << setprecision(3) << "\n";
+    cout << "РЕЗУЛЬТАТЫ:\n";
+    cout << "Высота над Землей: " << height << " км\n";
+    cout << "Расстояние до горизонта: " << distance << " км\n";
+    return 0;
+}
+Задача 7
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "\t\t\tПрограмма для вычисления объёма куба и его площади боковой поверхности\n\n";
+    cout << "Введите длину ребра куда: ";
+    cin >> x;
+    cout << "Ответ: V = " << x * x * x << "; S(бок.поверх) = " << 4 * x * x << "\n";
+    return 0;
+}
+Задача 8
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double R;
+    const double PI = 3.14159265;
+    cout << "\t\tВычисление длины окружности и площади круга, через радиус окружности\n\n";
+    cout << "Введите значение радиуса окружности: ";
+    cin >> R;
+    cout << "Ответ: C(Длина окр.) = " << 2 * PI * R << "; S(Площадь круга) = " << PI * R * R << "\n";
+    return 0;
+}
+Задача 9
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double x, y, result_1, a, b, result_2;
+    //Решение первой функции
+    cout << "а) Вычислить значения функции z = 2x^3 - 3.44xy + 2.3x^2 - 7.1y + 2\n";
+    cout << "Введите значения для х и у через пробел: ";
+    cin >> x >> y;
+    result_1 = (2 * x * x * x) - (3.44 * x * y) + (2.3 * x * x) - (7.1 * y) + 2;
+    cout << "Ответ: " << result_1 << "\n\n";
+
+    //Решение второй функции
+    cout << "б) Вычислить значение функции x = 3.14(a + b)^3 + 2.75b^2 - 12.7a - 4.1\n";
+    cout << "Введите значения для a и b через пробел: ";
+    cin >> a >> b;
+    result_2 = (3.14 * pow((a + b), 3) + (2.75 * pow(b, 2)) - 12.7 * a - 4.1);
+    cout << "Ответ: " << result_2 << "\n\n";
+    return 0;
+}
+Задача 10
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Ru");
+    double a, b, result_1, result_2;
+    cout << "\tНахождение среднего арифметического и среднего геометрического 2 целыми числами\n";
+    cout << "Введите 2 целых числа через пробел: ";
+    cin >> a >> b;
+    result_1 = (a + b) / 2;
+    cout << "\na) Среднее арефметическое: " << result_1;
+    if (((a > 0) and (b < 0)) or ((a < 0) and (b > 0))) {
+        cout << "\nб) Среднее геометрическое: Невозможно найти. Под корнем не должно быть отрицания.\n";
+    }
+    else {
+        result_2 = sqrt(a * b);
+        cout << "\nб) Среднее геометрическое: " << result_2 << "\n";
+    }
+    return 0;
+}
+Задача 11
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double v, m, p;
+    cout << "\t\tОпределение плотности(P) материала тела\n";
+    cout << "Введите Объём тела(V): ";
+    cin >> v;
+    cout << "Введите массу тела(m): ";
+    cin >> m;
+    p = m / v;
+    cout << "\nОтвет: P = " << p << "\n\n";
+    return 0;
+}
+Задача 12
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    int D, N, S;
+    cout << "\t\t\tПрограмма для вычисления плотности населения(D)\n";
+    cout << "Введите количество жителей района(N чел): ";
+    cin >> N;
+    cout << "Введите площать данного района(S Км^2): ";
+    cin >> S;
+    D = N / S;
+    cout << "\nОтвет: D = N / S = " << D << " чел./км^2\n\n";
+    return 0;
+}
+Задача 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "\t\t\tРешение линейного уравнения ax + b = 0" << endl;
+    cout << "Введите коэффициент a (a != 0): ";
+    cin >> a;
+
+    // Проверка, что a не равно 0
+    if (a == 0) {
+        cout << "Ошибка: коэффициент (a) не может быть равен 0!" << endl;
+        cout << "Это не линейное уравнение." << endl;
+        return 1;
+    }
+
+    cout << "Введите коэффициент b: ";
+    cin >> b;
+
+    double x = -b / a;
+
+    cout << "Решение уравнения:" << endl;
+    cout << a << "x + " << b << " = 0" << endl;
+    cout << "x = " << x << endl;
+
+    return 0;
+}
+Задача 14
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "\t\t\tНахождение Гипотенузы через катеты треугольника\n";
+    cout << "Введите 1 катет(a): ";
+    cin >> a;
+    cout << "Введите 2 катет(b): ";
+    cin >> b;
+
+    // Проверка катетов на отрицание
+    if ((a < 0) or (b < 0)) {
+        cout << "\nВы ввели отрицательное значение.\n";
+        return 1;
+    }
+    else {
+        c = sqrt(pow(a, 2) + pow(b, 2));
+        cout << "\nОтвет: " << c << "\n";
+    }
+}
+Задача 15
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double R, r;
+    const double PI = 3.141592;
+
+    cout << "\t\tВычисление площади кольца" << "\n";
+    cout << "Введите внешний радиус R: ";
+    cin >> R;
+    cout << "Введите внутренний радиус r: ";
+    cin >> r;
+
+    // Проверка корректности данных
+    if (R <= 0 || r <= 0) {
+        cout << "Ошибка: радиусы должны быть положительными!" << "\n";
+        return 1;
+    }
+
+    if (r >= R) {
+        cout << "Ошибка: внешний радиус должен быть больше внутреннего!" << "\n";
+        return 1;
+    }
+
+    double S = PI * (R * R - r * r);
+
+    cout << "\nРезультат:" << "\n";
+    cout << "Внешний радиус R = " << R << "\n";
+    cout << "Внутренний радиус r = " << r << "\n";
+    cout << "Площадь кольца S = Pi * (R^2 - r^2) = " << S << "\n";
+    return 0;
+}
+Задача 16
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double a, b, c, P;
+    cout << "\t\t\tНахождение Периметра прямоугольного треугольника через катеты\n";
+    cout << "Введите 1 катет(a): ";
+    cin >> a;
+    cout << "Введите 2 катет(b): ";
+    cin >> b;
+
+    // Проверка катетов на отрицание
+    if ((a < 0) or (b < 0)) {
+        cout << "\nВы ввели отрицательное значение.\n";
+        return 1;
+    }
+    else {
+        c = sqrt(pow(a, 2) + pow(b, 2));
+    }
+    P = a + b + c;
+    cout << "\nОтвет: Периметр P = " << P << "\n";
+    return 0;
+}
+Задача 17
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "\t\tПрограмма для определения периметр равнобедренной трапеции(через основания и высоту)\n";
+
+    double h, a, l, b, c, P;
+    //Запрос данных у пользователя
+    cout << "Введите 1 основание вашей трапеции(a): ";
+    cin >> a;
+    cout << "Введите 2 основание вашей трапеции(b): ";
+    cin >> b;
+    cout << "Введите высоту вашей трапеции(h): ";
+    cin >> h;
+
+    //Проверка введённых данных пользователя
+    if (a <= 0 || b <= 0 || h <= 0) {
+        cout << "\nОшибка введённых данных. Они не могут быть отрицательными, либо равными 0.\n\n";
+        return 1;
+    }
+
+    //Нахождение 1 промежутка на основании для вычисления гипотенузы
+    l = fabs(a - b) / 2;
+
+    //Вычисление гипотенузы, образовавшегося прямоугольного треугольника
+    c = sqrt(pow(h, 2) + pow(l, 2));
+
+    //Вычисление Периметра Равнобедренной трапеции
+    P = (c * 2) + a + b;
+    cout << "\nОтвет: Периметр равнобедренной трапеции P = " << P << "\n\n";
+    return 0;
+}
+Задача 18
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double z, x, y, q;
+
+    cout << "\t\tПрограмма для вычисления функций\n";
+
+    //Первая функция Z
+    cout << "Решение 1 функции z\n";
+    cout << "Введите значение x и y через пробел: ";
+    cin >> x >> y;
+
+    //Условия
+    if (pow(x, 2) == 0) {
+        cout << "Ошибка. Делить на ноль нельзя.\n\n";
+    }
+    else {
+        z = (x + (2 + y) / pow(x, 2)) / (y + (1 / (sqrt(pow(x, 2) + 10))));
+        cout << "Ответ: z = " << z << "\n\n";
+    }
+
+    //Вторая функция q
+    cout << "Решение 2 функции q\n";
+    cout << "Введите значение x и y через пробел: ";
+    cin >> x >> y;
+
+    //Решение функции
+    q = 7.25 * sin(x) - fabs(y);
+    cout << "Ответ: q = " << q << "\n\n";
+    return 0;
+}
+Задача 19
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double a, x, b, y;
+
+    cout << "\t\tПрограмма для вычисления функций\n";
+
+    //Первая функция x
+    cout << "Решение 1 функции x\n";
+    cout << "Введите значение a и b через пробел: ";
+    cin >> a >> b;
+
+    //Условия
+    if (b <= 0) {
+        cout << "Ошибка. Под корнем должно быть не отрицательлное число.\n\n";
+    }
+    else {
+        x = ((2 / (pow(a, 2) + 25)) + b) / (sqrt(b) + ((a + b) / 2));
+        cout << "Ответ: x = " << x << "\n\n";
+    }
+
+    //Вторая функция y
+    cout << "Решение 2 функции y\n";
+    cout << "Введите значение a и b через пробел: ";
+    cin >> a >> b;
+
+    //Решение функции
+    if (a == 0) {
+        cout << "Ошибка. Нельзя делить на 0.\n\n";
+    }
+    else {
+        y = (fabs(a) + 2 * sin(b)) / (5.5 * a);
+        cout << "Ответ: y = " << y << "\n\n";
+    }
+    return 0;
+}
+Задача 20
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double e, f, g, h, a, b, c;
+
+    cout << "\t\tПрограмма для вычисления функций\n";
+
+    //Ввод данных пользователя
+    cout << "Введите значения для вычисления функций:\ne = ";
+    cin >> e;
+    cout << "f = ";
+    cin >> f;
+    cout << "g = ";
+    cin >> g;
+    cout << "h = ";
+    cin >> h;
+
+    //Первая функция a
+    cout << "\nРешение 1 функции a\n";
+
+    //Условия
+    if ((pow(e - (3 / f), 3) + g) <= 0) {
+        cout << "Ошибка. Под корнем должно быть неотрицательное число.\n\n";
+    }
+    else if (f == 0) {
+        cout << "Ошибка. Делить на ноль нельзя.\n\n";
+    }
+    else {
+        a = sqrt((pow(e - (3 / f), 3) + g));
+        cout << "Ответ: a = " << a << "\n\n";
+    }
+
+    //Вторая функция b
+    cout << "Решение 2 функции b\n";
+
+    //Решение функции
+    b = sin(e) + pow(cos(h), 2);
+    cout << "Ответ: b = " << b << "\n\n";
+
+    //Третья функция c
+    cout << "Решение 3 функции с\n";
+
+    //Условия
+    if (((e * f) - 3) == 0) {
+        cout << "Ошибка. Делить на ноль нельзя.\n\n";
+    }
+    else {
+        c = (33 * g) / ((e * f) - 3);
+        cout << "Ответ: c = " << c << "\n\n";
+    }
+    return 0;
+}
+Задача 21
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "RU");
+    double e, f, g, h, a, b, c;
+
+    cout << "\t\tПрограмма для вычисления функций\n";
+
+    //Ввод данных пользователя
+    cout << "Введите значения для вычисления функций:\ne = ";
+    cin >> e;
+    cout << "f = ";
+    cin >> f;
+    cout << "g = ";
+    cin >> g;
+    cout << "h = ";
+    cin >> h;
+
+    //Первая функция a
+    cout << "\nРешение 1 функции a\n";
+
+    //Решение функции
+    a = (e + (f / 2)) / 3;
+    cout << "Ответ: a = " << a << "\n\n";
+
+    //Вторая функция b
+    cout << "Решение 2 функции b\n";
+
+    //Решение функции
+    b = fabs(pow(h, 2) - g);
+    cout << "Ответ: b = " << b << "\n\n";
+
+    //Третья функция c
+    cout << "Решение 3 функции с\n";
+
+    //Условия
+    if (pow((g - h), 2) - (3 * sin(e)) <= 0) {
+        cout << "Ошибка. Под корнем должно быть неотрицательное число.\n\n";
+    }
+    else {
+        c = sqrt(pow((g - h), 2) - (3 * sin(e)));
+        cout << "Ответ: c = " << c << "\n\n";
+    }
+    return 0;
+}
+Задача 22
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+
+    // Ввод чисел
+    cout << "\t\tНахождение среднего арифметического и среднего геометрического модулей" << "\n";
+    cout << "Введите первое число: ";
+    cin >> a;
+    cout << "Введите второе число: ";
+    cin >> b;
+
+    // Вычисление модулей
+    double abs_a = fabs(a);
+    double abs_b = fabs(b);
+
+    // Вычисление среднего арифметического модулей
+    double arithmetic_mean = (abs_a + abs_b) / 2;
+
+    // Вычисление среднего геометрического модулей
+    double geometric_mean = sqrt(abs_a * abs_b);
+
+    // Вывод результата
+    cout << "\nРезультат:" << "\n";
+    cout << "Модули чисел: |a| = " << abs_a << ", |b| = " << abs_b << "\n";
+    cout << "Среднее арифметическое модулей = (|a| + |b|) / 2 = " << arithmetic_mean << "\n";
+    cout << "Среднее геометрическое модулей = sqrt(|a| * |b|) = " << geometric_mean << "\n\n";
+
+    return 0;
+}
+Задача 23
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+
+    // Ввод сторон прямоугольника
+    cout << "\t\t\tВычисление периметра и диагонали прямоугольника" << "\n";
+    cout << "Введите длину стороны a: ";
+    cin >> a;
+    cout << "Введите длину стороны b: ";
+    cin >> b;
+
+    // Проверка корректности данных
+    if (a <= 0 || b <= 0) {
+        cout << "Ошибка: Стороны должны быть положительными!" << "\n";
+        return 1;
+    }
+
+    // Вычисление периметра
+    double P = 2 * (a + b);
+
+    // Вычисление диагонали
+    double d = sqrt(a * a + b * b);
+
+    // Вывод результата
+    cout << "\nРезультат:" << "\n";
+    cout << "Периметр P = 2 * (a + b) = 2 * (" << a << " + " << b << ") = " << P << "\n";
+    cout << "Диагональ d = sqrt(a^2 + b^2) = sqrt(" << pow(a, 2) << " + " << pow(b, 2) << ") = " << d << "\n";
+
+    return 0;
+}
+Задача 24
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+
+    // Ввод чисел
+    cout << "\t\t\tВыполнение арифметических операций над двумя числами" << "\n";
+    cout << "Введите первое число: ";
+    cin >> a;
+    cout << "Введите второе число: ";
+    cin >> b;
+
+    // Вычисление операций
+    double sum = a + b;
+    double difference = a - b;
+    double product = a * b;
+
+    // Вывод результатов для суммы, разности и произведения
+    cout << "\nРезультаты:" << "\n";
+    cout << a << " + " << b << " = " << sum << "\n";
+    cout << a << " - " << b << " = " << difference << "\n";
+    cout << a << " * " << b << " = " << product << "\n";
+
+    // Проверка деления на ноль
+    if (b != 0) {
+        double quotient = a / b;
+        cout << a << " / " << b << " = " << quotient << "\n";
+    }
+    else {
+        cout << a << " / " << b << " = Ошибка: деление на ноль!" << "\n";
+    }
+
+    return 0;
+}
+Задача 25
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+
+    // Ввод сторон параллелепипеда
+    cout << "\t\t\tВычисление объема и площади прямоугольного параллелепипеда" << "\n";
+    cout << "Введите длину (a): ";
+    cin >> a;
+    cout << "Введите ширину (b): ";
+    cin >> b;
+    cout << "Введите высоту (c): ";
+    cin >> c;
+
+    // Проверка корректности данных
+    if (a <= 0 || b <= 0 || c <= 0) {
+        cout << "Ошибка: все стороны должны быть положительными!" << "\n";
+        return 1;
+    }
+
+    // Вычисление объема
+    double V = a * b * c;
+
+    // Вычисление площади боковой поверхности
+    double S_side = 2 * c * (a + b);
+
+    // Вывод результата
+    cout << "\nРезультат:" << "\n";
+    cout << "Объем V = a * b * c = " << a << " * " << b << " * " << c << " = " << V << "\n";
+    cout << "Площадь боковой поверхности S_бок = 2 * c * (a + b) = " << S_side << endl;
+
+    return 0;
+}
+Задача 26
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x_1, x_2, y_1, y_2, distance;
+
+    // Ввод координат 2 точек
+    cout << "\t\t\tНахождение расстояния между 2 точками на координатной плоскости\n";
+    cout << "Введите координаты 1 точки: \n";
+    cout << "x = ";
+    cin >> x_1;
+    cout << "y = ";
+    cin >> y_1;
+    cout << "Введите координаты 2 точки: \n";
+    cout << "x = ";
+    cin >> x_2;
+    cout << "y = ";
+    cin >> y_2;
+
+    // Вычисления Расстояния между 2 точками
+    distance = sqrt(pow(fabs(x_1 - x_2), 2) + pow(fabs(y_1 - y_2), 2));
+
+    // Вывод результата
+    cout << "\nРезультат:" << "\n";
+    cout << "Точка A: (" << x_1 << ", " << y_1 << ")" << "\n";
+    cout << "Точка B: (" << x_2 << ", " << y_2 << ")" << "\n";
+    cout << "Ответ: " << distance << "\n";
+
+    return 0;
+}
+Задача 27
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "\t\tПрограмма для определения периметр равнобедренной трапеции(через основания и высоту)\n";
+
+    double h, a, l, b, c, P;
+    //Запрос данных у пользователя
+    cout << "Введите 1 основание вашей трапеции(a): ";
+    cin >> a;
+    cout << "Введите 2 основание вашей трапеции(b): ";
+    cin >> b;
+    cout << "Введите высоту вашей трапеции(h): ";
+    cin >> h;
+
+    //Проверка введённых данных пользователя
+    if (a <= 0 || b <= 0 || h <= 0) {
+        cout << "\nОшибка введённых данных. Они не могут быть отрицательными, либо равными 0.\n\n";
+        return 1;
+    }
+
+    //Нахождение 1 промежутка на основании для вычисления гипотенузы
+    l = fabs(a - b) / 2;
+
+    //Вычисление гипотенузы, образовавшегося прямоугольного треугольника
+    c = sqrt(pow(h, 2) + pow(l, 2));
+
+    //Вычисление Периметра Равнобедренной трапеции
+    P = (c * 2) + a + b;
+    cout << "\nОтвет: Периметр равнобедренной трапеции P = " << P << "\n\n";
+    return 0;
+}
+Задача 28
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.1415926;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, angle_degrees;
+
+    // Ввод данных
+    cout << "\t\t\tВычисление площади равнобедренной трапеции\n";
+    cout << "Введите длину большего основания a: ";
+    cin >> a;
+    cout << "Введите длину меньшего основания b: ";
+    cin >> b;
+    cout << "Введите угол при большем основании (в градусах): ";
+    cin >> angle_degrees;
+
+    // Проверка корректности данных
+    if (a <= 0 || b <= 0 || angle_degrees <= 0 || angle_degrees >= 90) {
+        cout << "Ошибка: некорректные данные!\n";
+        cout << "- Основания должны быть положительными\n";
+        cout << "- Большее основание должно быть больше меньшего\n";
+        cout << "- Угол должен быть между 0 и 90\n";
+        return 1;
+    }
+
+    if (b >= a) {
+        cout << "Ошибка: основание a должно быть больше основания b!\n";
+        return 1;
+    }
+
+    // Перевод угла из градусов в радианы
+    double angle_radians = angle_degrees * PI / 180.0;
+
+    // Вычисление проекции боковой стороны
+    double projection = (a - b) / 2;
+
+    // Вычисление высоты трапеции
+    double h = projection * tan(angle_radians);
+
+    // Вычисление площади
+    double S = (a + b) * h / 2;
+
+    // Вычисление боковой стороны (дополнительно)
+    double side = projection / cos(angle_radians);
+
+    // Вывод результата
+    cout << "\nРезультат:\n";
+    cout << "Большее основание a = " << a << "\n";
+    cout << "Меньшее основание b = " << b << "\n";
+    cout << "Угол при основании A = " << angle_degrees << "\n";
+    cout << "Площадь S = (a + b) * h / 2 = " << S << "\n";
+
+    return 0;
+}
+Задача 29
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x_1, x_2, y_1, y_2, x_3, y_3, distance_1, distance_2, distance_3, P, S, Semi_P;
+
+    // Ввод координат 3 точек
+    cout << "\t\tНахождение площади и периметра треугольника, изображенного на координатной плоскости\n";
+    cout << "Введите координаты 1 точки: \n";
+    cout << "x = ";
+    cin >> x_1;
+    cout << "y = ";
+    cin >> y_1;
+    cout << "Введите координаты 2 точки: \n";
+    cout << "x = ";
+    cin >> x_2;
+    cout << "y = ";
+    cin >> y_2;
+    cout << "Введите координаты 3 точки: \n";
+    cout << "x = ";
+    cin >> x_3;
+    cout << "y = ";
+    cin >> y_3;
+
+    // Вычисления Расстояния между 2 точками(3 разных вершин)
+    distance_1 = sqrt(pow(fabs(x_1 - x_2), 2) + pow(fabs(y_1 - y_2), 2));
+    distance_2 = sqrt(pow(fabs(x_1 - x_3), 2) + pow(fabs(y_1 - y_3), 2));
+    distance_3 = sqrt(pow(fabs(x_2 - x_3), 2) + pow(fabs(y_2 - y_3), 2));
+
+    // Проверка на существование треугольника
+    if (distance_1 + distance_2 <= distance_3 || distance_1 + distance_3 <= distance_2 || distance_2 + distance_3 <= distance_1) {
+        cout << "Ошибка: точки лежат на одной прямой!" << endl;
+        return 1;
+    }
+
+    // Нахождение периметра треугольника
+    P = distance_1 + distance_2 + distance_3;
+    Semi_P = P / 2;
+
+    // Нахождения площади треугольника(Через полупериметр)
+    S = sqrt(Semi_P * (Semi_P - distance_1) * (Semi_P - distance_2) * (Semi_P - distance_3));
+
+    // Вывод результата
+    cout << "\nРезультат:" << "\n";
+    cout << "Точка A: (" << x_1 << ", " << y_1 << ")" << "\n";
+    cout << "Точка B: (" << x_2 << ", " << y_2 << ")" << "\n";
+    cout << "Точка C: (" << x_3 << ", " << y_3 << ")" << "\n";
+    cout << "Ответ: P = " << P << "; S = " << S << "\n";
+
+    return 0;
+}
+Задача 30
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x_1, x_2, y_1, y_2, x_3, y_3, x_4, y_4, AB, BC, CD, DA, BD, Semi_P1, Semi_P2, S_general, S1, S2;
+
+    // Ввод координат 4 точек
+    cout << "\t\tНахождение площади четырёугольника на координатной плоскости\n";
+    cout << "Введите координаты 1 точки: \n";
+    cout << "x = ";
+    cin >> x_1;
+    cout << "y = ";
+    cin >> y_1;
+    cout << "Введите координаты 2 точки: \n";
+    cout << "x = ";
+    cin >> x_2;
+    cout << "y = ";
+    cin >> y_2;
+    cout << "Введите координаты 3 точки: \n";
+    cout << "x = ";
+    cin >> x_3;
+    cout << "y = ";
+    cin >> y_3;
+    cout << "Введите координаты 4 точки: \n";
+    cout << "x = ";
+    cin >> x_4;
+    cout << "y = ";
+    cin >> y_4;
+
+    // Проверка на вырожденность
+    if ((x_1 == x_2 && y_1 == y_2) || (x_2 == x_3 && y_2 == y_3) ||
+        (x_3 == x_4 && y_3 == y_4) || (x_4 == x_1 && y_4 == y_1)) {
+        cout << "Ошибка: некоторые вершины совпадают!" << endl;
+        return 1;
+    }
+
+    // Вычисления Расстояния между 2 точками(4 разных вершин)
+    AB = sqrt(pow(fabs(x_1 - x_2), 2) + pow(fabs(y_1 - y_2), 2));
+    BC = sqrt(pow(fabs(x_2 - x_3), 2) + pow(fabs(y_2 - y_3), 2));
+    CD = sqrt(pow(fabs(x_3 - x_4), 2) + pow(fabs(y_3 - y_4), 2));
+    DA = sqrt(pow(fabs(x_4 - x_1), 2) + pow(fabs(y_4 - y_1), 2));
+    BD = sqrt(pow(fabs(x_2 - x_4), 2) + pow(fabs(y_2 - y_4), 2));
+
+
+    // Нахождение полу-периметра треугольников
+    Semi_P1 = (AB + BD + DA) / 2;
+    Semi_P2 = (BC + CD + BD) / 2;
+
+    // Нахождения площади треугольников(Через полупериметр)
+    S1 = sqrt(Semi_P1 * (Semi_P1 - AB) * (Semi_P1 - BD) * (Semi_P1 - DA));
+    S2 = sqrt(Semi_P2 * (Semi_P2 - BC) * (Semi_P2 - CD) * (Semi_P2 - BD));
+    S_general = S1 + S2;
+
+    // Вывод результатов
+    cout << "\nРезультаты:" << "\n";
+    cout << "Точка A: (" << x_1 << ", " << y_1 << ")" << "\n";
+    cout << "Точка B: (" << x_2 << ", " << y_2 << ")" << "\n";
+    cout << "Точка C: (" << x_3 << ", " << y_3 << ")" << "\n";
+    cout << "Точка D: (" << x_4 << ", " << y_4 << ")" << "\n\n";
+
+    cout << "Отрезок AB = " << AB << "\n";
+    cout << "Отрезок BC = " << BC << "\n";
+    cout << "Отрезок CD = " << CD << "\n";
+    cout << "Отрезок DA = " << DA << "\n";
+    cout << "Отрезок BD = " << BD << "\n\n";
+
+    cout << "Площадь треугольник ABD(S1) = " << S1 << "\n";
+    cout << "Площадь треугольник BCD(S2) = " << S2 << "\n";
+
+    cout << "Ответ: Общая площадь(S) = S1 + S2 = " << S_general << "\n";
+
+    return 0;
+}
+Задача 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double price_candy, price_cookie, price_apple;
+    double x, y, z;
+
+    cout << "\t\t\tЗадача про магазин\n";
+
+    // Ввод цен за 1 кг
+    cout << "Введите стоимость 1 кг конфет(руб): ";
+    cin >> price_candy;
+    cout << "Введите стоимость 1 кг печенья(руб): ";
+    cin >> price_cookie;
+    cout << "Введите стоимость 1 кг яблок(руб): ";
+    cin >> price_apple;
+
+    // Ввод количества товаров
+    cout << "Введите количество кг конфет: ";
+    cin >> x;
+    cout << "Введите количество кг печенья: ";
+    cin >> y;
+    cout << "Введите количество кг яблок: ";
+    cin >> z;
+
+    // Проверка корректности данных
+    if (price_candy < 0 || price_cookie < 0 || price_apple < 0 ||
+        x < 0 || y < 0 || z < 0) {
+        cout << "Ошибка: цены и количества не могут быть отрицательными!\n";
+        return 1;
+    }
+
+    // Вычисление стоимости покупки
+    double total_candy = price_candy * x;
+    double total_cookie = price_cookie * y;
+    double total_apple = price_apple * z;
+    double total = total_candy + total_cookie + total_apple;
+
+    // Вывод результата
+    cout << "\n--- Чек покупки ---\n";
+    cout << "Конфеты: " << x << " кг * " << price_candy << " руб/кг = " << total_candy << " руб\n";
+    cout << "Печенье: " << y << " кг * " << price_cookie << " руб/кг = " << total_cookie << " руб\n";
+    cout << "Яблоки:  " << z << " кг * " << price_apple << " руб/кг = " << total_apple << " руб\n";
+    cout << "-------------------\n";
+    cout << "ИТОГО: " << total << " руб\n";
+
+    return 0;
+}
+Задача 32
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double monitor, system_unit, keyboard, mouse;
+    int n;
+
+    cout << "\t\t\tРасчёт стоимости персонального компьютера\n";
+
+    // Ввод стоимостей компонентов
+    cout << "Введите стоимость монитора: ";
+    cin >> monitor;
+    cout << "Введите стоимость системного блока: ";
+    cin >> system_unit;
+    cout << "Введите стоимость клавиатуры: ";
+    cin >> keyboard;
+    cout << "Введите стоимость мыши: ";
+    cin >> mouse;
+
+    // Проверка корректности данных
+    if (monitor < 0 || system_unit < 0 || keyboard < 0 || mouse < 0) {
+        cout << "Ошибка: стоимости не могут быть отрицательными!\n";
+        return 1;
+    }
+
+    // Стоимость одного компьютера
+    double one_computer = monitor + system_unit + keyboard + mouse;
+
+    // Стоимость 3 компьютеров
+    double three_computers = one_computer * 3;
+
+    // Ввод количества компьютеров
+    cout << "Введите количество компьютеров N: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "Ошибка: количество компьютеров не может быть отрицательным!\n";
+        return 1;
+    }
+
+    // Стоимость N компьютеров
+    double n_computers = one_computer * n;
+
+    // Вывод результатов
+    cout << "\n\nИтого за один компьютер: " << one_computer << " руб\n";
+    cout << "\n";
+    cout << "a)Стоимость 3 компьютеров: " << three_computers << " руб\n";
+    cout << "б)Стоимость " << n << " компьютеров: " << n_computers << " руб\n";
+
+    return 0;
+}
+Задача 33
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int x, y;
+
+    cout << "\t\t\tОпределение среднего возраста и разницы с ним\n";
+
+    // Ввод возрастов
+    cout << "Введите возраст Тани (X): ";
+    cin >> x;
+    cout << "Введите возраст Мити (Y): ";
+    cin >> y;
+
+    // Проверка корректности данных
+    if (x <= 0 || y <= 0) {
+        cout << "Ошибка: возраст должен быть положительным!" << endl;
+        return 1;
+    }
+
+    // Вычисление среднего возраста
+    double average = (x + y) / 2.0;
+
+    // Вычисление разницы от среднего
+    double diff_tanya = abs(x - average);
+    double diff_mitia = abs(y - average);
+
+    // Вывод результатов
+    cout << "\n\nСредний возраст: " << average << " лет\n\n";
+    cout << "Отклонение от среднего:\n";
+    cout << "Таня: " << diff_tanya << " лет\n";
+    cout << "Митя: " << diff_mitia << " лет\n";
+
+    return 0;
+}
+Задача 34
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double V1, V2, S;
+
+    cout << "\t\t\tЗадача на сближение автомобилей\n";
+
+    // Ввод данных
+    cout << "Введите скорость первого автомобиля V1 (км/ч): ";
+    cin >> V1;
+    cout << "Введите скорость второго автомобиля V2 (км/ч): ";
+    cin >> V2;
+    cout << "Введите расстояние между автомобилями S (км): ";
+    cin >> S;
+
+    // Проверка корректности данных
+    if (V1 <= 0 || V2 <= 0 || S <= 0) {
+        cout << "Ошибка: скорости и расстояние должны быть положительными!\n";
+        return 1;
+    }
+
+    // Вычисление времени до встречи
+    double relative_speed = V1 + V2;  // скорость сближения
+    double time = S / relative_speed; // время до встречи в часах
+
+    // Перевод времени в часы и минуты
+    int hours = static_cast<int>(time);
+    int minutes = static_cast<int>((time - hours) * 60);
+
+    // Вывод результатов
+    cout << "\n\nСкорость сближения: " << relative_speed << " км/ч\n";
+    cout << "Время до встречи: " << time << " часов\n";
+    cout << "Или: " << hours << " часов " << minutes << " минут\n";
+
+    return 0;
+}
+Задача 35
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double V1, V2, S;
+
+    cout << "\t\t\tЗадача с автомобилями\n";
+
+    // Ввод данных
+    cout << "Введите скорость первого автомобиля V1 (км/ч): ";
+    cin >> V1;
+    cout << "Введите скорость второго автомобиля V2 (км/ч): ";
+    cin >> V2;
+    cout << "Введите начальное опережение S (км): ";
+    cin >> S;
+
+    // Проверка корректности данных
+    if (V1 <= V2) {
+        cout << "Ошибка: V1 должен быть больше V2!\n";
+        return 1;
+    }
+    if (S <= 0) {
+        cout << "Ошибка: опережение S должно быть положительным!\n";
+        return 1;
+    }
+
+    // Вычисление
+    double relative_speed = V1 - V2;  // скорость удаления
+    double time_hours = 0.5;          // 30 минут = 0.5 часа
+    double distance_increase = relative_speed * time_hours;  // увеличение расстояния за 30 мин
+    double final_distance = S + distance_increase;  // конечное расстояние
+
+    // Вывод результатов
+    cout << "\nСкорость удаления: " << relative_speed << " км/ч\n";
+    cout << "Время: 30 минут (" << time_hours << " часа)";
+    cout << "Увеличение расстояния за 30 мин: " << distance_increase << " км\n";
+    cout << "Начальное расстояние: " << S << " км\n";
+    cout << "Конечное расстояние: " << final_distance << " км\n";
+
+    return 0;
+}
+Задача 36
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double celsius;
+
+    cout << "\t\t\tПеревод из градусов цельсия в Фаренгейты и Кельвины\n";
+
+    // Ввод температуры в градусах Цельсия
+    cout << "Введите температуру в градусах Цельсия: ";
+    cin >> celsius;
+
+    // Перевод в Фаренгейты
+    double fahrenheit = (celsius * 1.8) + 32;
+
+    // Перевод в Кельвины
+    double kelvin = celsius + 273.15;
+
+    // Вывод результатов
+    cout << "\nТемпература в различных шкалах:\n";
+    cout << "Цельсий: " << celsius << " C\n";
+    cout << "Фаренгейт: " << fahrenheit << " F\n";
+    cout << "Кельвин: " << kelvin << " K\n";
+
+    return 0;
+}
+Задача 37
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double fahrenheit = 450.0;  // Температура из названия романа
+
+    cout << "\t\t\t«450 градусов по Фаренгейту» перевод в градусы Цельсия\n";
+
+    // Перевод Фаренгейт в Цельсий
+    double celsius = (fahrenheit - 32) / 1.8;
+
+    // Перевод Цельсий в Кельвин
+    double kelvin = celsius + 273.15;
+
+    // Вывод результатов
+    cout << "\nРоман Рэя Бредбери: '450 градусов по Фаренгейту'\n";
+    cout << "Перевод температуры:\n";
+    cout << "Фаренгейт: " << fahrenheit << " F\n";
+    cout << "Цельсий: " << celsius << " C\n";
+    cout << "Кельвин: " << kelvin << " K\n";
+
+    return 0;
+}
+Задача 38
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+
+    // Ввод двух целых чисел
+    cout << "Введите два целых числа через пробел: ";
+    cin >> a >> b;
+
+    // Вычисление операций
+    int sum = a + b;
+    int difference = a - b;
+    int product = a * b;
+
+    // Вывод результатов
+    cout << a << "+" << b << "=" << sum << "\n";
+    cout << a << "-" << b << "=" << difference << "\n";
+    cout << a << "*" << b << "=" << product << "\n";
+
+    // Деление с проверкой на ноль
+    if (b != 0) {
+        double quotient = (double)a / b;  // обычное приведение типа
+        cout << a << "/" << b << "=" << quotient << "\n";
+    }
+    else {
+        cout << a << "/" << b << "= невозможно (деление на ноль)" << "\n";
+    }
+
+    // Среднее арифметическое
+    double average = (a + b) / 2.0;  // 2.0 - вещественное число
+    cout << "(" << a << "+" << b << ")/2=" << average << "\n";
+
+    return 0;
+}
