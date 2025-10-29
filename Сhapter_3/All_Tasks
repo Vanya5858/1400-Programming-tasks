@@ -1,0 +1,1619 @@
+Задание №1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int centimeters, meters;
+
+    cout << "\t\t\tПеревод сантиметров в метры\n";
+    cout << "Введите длину в сантиметрах: ";
+    cin >> centimeters;
+
+    // Проверка на отрицательное значение
+    if (centimeters < 0) {
+        cout << "Ошибка: расстояние не может быть отрицательным!\n";
+        return 1;
+    }
+
+    //Перевод сантиметров в метры
+    meters = centimeters / 100;
+
+    cout << "Расстояние: " << centimeters << " см\n";
+    cout << "Полных метров: " << meters << " м\n";
+    return 0;
+}
+Задание №2
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int kilograms;
+
+    cout << "\t\tПеревод из кг в центнеры (100 кг = 1ц)\n";
+    cout << "Введите массу в килограммах: ";
+    cin >> kilograms;
+
+    if (kilograms < 0) {
+        cout << "Ошибка!\n\n";
+        return 1;
+    }
+
+    double centners_exact = kilograms / 100.0;  // точное значение в центнерах
+
+    cout << "Масса: " << kilograms << " кг\n";
+    cout << "Точное значение: " << centners_exact << " ц\n";
+    cout << "Полных центнеров: " << kilograms / 100 << " ц\n\n";
+
+    return 0;
+}
+Задание №3
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int days = 234;  // заданное количество дней
+
+    // Вычисление числа полных недель (1 неделя = 7 дней)
+    int weeks = days / 7;
+
+    // Вычисление оставшихся дней
+    int remaining_days = days % 7;
+
+    // Вывод результатов
+    cout << "Прошло дней: " << days << endl;
+    cout << "Полных недель: " << weeks << endl;
+    cout << "Остаток дней: " << remaining_days << endl;
+
+    return 0;
+}
+Задание №4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int N, k;
+
+    // Ввод данных
+    cout << "Введите количество школьников N: ";
+    cin >> N;
+    cout << "Введите количество яблок k: ";
+    cin >> k;
+
+    // Проверка корректности данных
+    if (N <= 0) {
+        cout << "Ошибка: количество школьников должно быть положительным!\n\n";
+        return 1;
+    }
+    if (k < 0) {
+        cout << "Ошибка: количество яблок не может быть отрицательным!\n\n";
+        return 1;
+    }
+
+    // Вычисление результатов
+    int apples_per_student = k / N;
+    int apples_left = k % N;
+
+    // Вывод результатов
+    cout << "\nРезультат деления:\n";
+    cout << "Каждому школьнику достанется: " << apples_per_student << " яблок\n";
+    cout << "В корзинке останется: " << apples_left << " яблок\n\n";
+
+    return 0;
+}
+Задание №5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int rectangle_width = 543;
+    int rectangle_height = 130;
+    int square_side = 130;
+
+    // Вычисление количества квадратов
+    int squares_per_row = rectangle_width / square_side;  // квадратов в ряду
+    int number_of_rows = rectangle_height / square_side;  // количество рядов
+    int total_squares = squares_per_row * number_of_rows; // общее количество
+
+    // Вычисление остатков
+    int width_remainder = rectangle_width % square_side;  // остаток по ширине
+    int height_remainder = rectangle_height % square_side; // остаток по высоте
+
+    // Вывод результатов
+    cout << "Размер прямоугольника: " << rectangle_width << " * " << rectangle_height << " мм\n";
+    cout << "Сторона квадрата: " << square_side << " мм\n\n";
+    cout << "Квадратов в одном ряду: " << squares_per_row << endl;
+    cout << "Количество рядов: " << number_of_rows << endl;
+    cout << "Всего можно отрезать: " << total_squares << " квадрата\n\n";
+    cout << "Остаток материала:\n";
+    cout << "По ширине: " << width_remainder << " мм\n";
+    cout << "По высоте: " << height_remainder << " мм\n";
+    return 0;
+}
+Задание №6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int seat_number;
+
+    // Ввод номера места
+    cout << "Введите номер места: ";
+    cin >> seat_number;
+
+    // Проверка корректности данных
+    if (seat_number < 1) {
+        cout << "Ошибка: Нет отрицательных мест!\n\n";
+        return 1;
+    }
+
+    int compartment_number = ((seat_number - 1) / 4) + 1;
+
+    // Вывод результата
+    cout << "Место #" << seat_number << " находится в купе #" << compartment_number << endl;
+
+    return 0;
+}
+Задание №7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int apartment_number;
+
+    // Ввод номера квартиры
+    cout << "Введите номер квартиры: ";
+    cin >> apartment_number;
+
+    // Проверка корректности данных
+    if (apartment_number < 1 || apartment_number > 15) {
+        cout << "Ошибка: в подъезде только 15 квартир (номера с 1 по 15)!\n\n";
+        return 1;
+    }
+
+    int floor_number = (apartment_number - 1) / 3 + 1;
+
+    // Вывод результата
+    cout << "Квартира #" << apartment_number << " находится на " << floor_number << " этаже\n\n";
+
+    return 0;
+}
+Задание №8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int ticket_number;
+
+    // Ввод серийного номера билета
+    cout << "Введите серийный номер билета(от 1643): ";
+    cin >> ticket_number;
+
+
+    // Вычисление порядкового номера места (от 1 до 300)
+    int seat_number = ticket_number - 1642;
+
+    // Вычисление номера ряда (в каждом ряду 15 мест)
+    int row_number = (seat_number - 1) / 15 + 1;
+
+    // Вычисление номера кресла в ряду
+    int seat_in_row = (seat_number - 1) % 15 + 1;
+
+    // Вывод результатов
+    cout << "Билет #" << ticket_number << endl;
+    cout << "Порядковый номер места: " << seat_number << endl;
+    cout << "Ряд: " << row_number << endl;
+    cout << "Кресло в ряду: " << seat_in_row << "\n\n";
+
+    return 0;
+}
+Задание №9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, second, hours, minutes, hours_all;
+
+    cout << "Введите сколько прошло секунд с начала суток: ";
+    cin >> n;
+
+    // Проверка корректности данных
+    if (n < 0) {
+        cout << "Ошибка. Вы ввели отрицательное значение времени!";
+        return 1;
+    }
+
+    //Расчёты
+    hours_all = n / 3600; //Прошло всего часов
+    hours = (n / 3600) % 24; //Прошло полных часов с начала суток
+    minutes = (n / 60) % 60; //Прошло полных минут с начала очередного часа
+    second = n % 60; //Прошло полных секунд сначала очередной минуты
+
+    cout << "\nРезультаты: \n";
+    cout << "Прошло времени - " << hours_all << ":" << minutes << ":" << second << ":\n";
+    cout << "Текущее время - " << hours << ":" << minutes << ":" << second << ":\n";
+    cout << "а) Прошло полных часов с начала суток: " << hours << endl;
+    cout << "б) Прошло полных минут с начала очередного часа: " << minutes << endl;
+    cout << "в) Прошло полных секунд сначала очередной минуты: " << second << endl;
+}
+Задание №10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k, d, n;
+
+    // Ввод данных
+    cout << "Введите номер дня года k (1-365): ";
+    cin >> k;
+
+    // Проверка корректности данных
+    if (k < 1 || k > 365) {
+        cout << "Ошибка: k должно быть от 1 до 365!\n";
+        return 1;
+    }
+
+    // а) 1 января - понедельник
+    n = (k - 1) % 7;  // 0-воскр, 1-пн, 2-вт, ..., 6-суб
+    cout << "\nа) Если 1 января - понедельник:\n";
+    cout << "   " << k << "-й день года - ";
+    switch (n) {
+    case 0: cout << "воскресенье (n=0)"; break;
+    case 1: cout << "понедельник (n=1)"; break;
+    case 2: cout << "вторник (n=2)"; break;
+    case 3: cout << "среда (n=3)"; break;
+    case 4: cout << "четверг (n=4)"; break;
+    case 5: cout << "пятница (n=5)"; break;
+    case 6: cout << "суббота (n=6)"; break;
+    }
+    cout << endl;
+
+    // б) 1 января - вторник
+    n = (k - 1 + 1) % 7;  // +1 сдвиг для вторника
+    cout << "\nб) Если 1 января - вторник:\n";
+    cout << "   " << k << "-й день года - ";
+    switch (n) {
+    case 0: cout << "воскресенье (n=0)"; break;
+    case 1: cout << "понедельник (n=1)"; break;
+    case 2: cout << "вторник (n=2)"; break;
+    case 3: cout << "среда (n=3)"; break;
+    case 4: cout << "четверг (n=4)"; break;
+    case 5: cout << "пятница (n=5)"; break;
+    case 6: cout << "суббота (n=6)"; break;
+    }
+    cout << endl;
+
+    // в) 1 января - d-й день недели
+    cout << "\nВведите день недели 1 января d (1-пн, 2-вт, ..., 7-вс): ";
+    cin >> d;
+
+    if (d < 1 || d > 7) {
+        cout << "Ошибка: d должно быть от 1 до 7!\n";
+        return 1;
+    }
+
+    n = (k - 1 + (d - 1)) % 7;  // сдвиг на (d-1) дней
+    cout << "\nв) Если 1 января - " << d << "-й день недели:\n";
+    cout << "   " << k << "-й день года - ";
+    switch (n) {
+    case 0: cout << "воскресенье (n=0)"; break;
+    case 1: cout << "понедельник (n=1)"; break;
+    case 2: cout << "вторник (n=2)"; break;
+    case 3: cout << "среда (n=3)"; break;
+    case 4: cout << "четверг (n=4)"; break;
+    case 5: cout << "пятница (n=5)"; break;
+    case 6: cout << "суббота (n=6)"; break;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание №11
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, x;
+
+    // Ввод количества месяцев
+    cout << "Введите количество месяцев n: ";
+    cin >> n;
+
+    // Проверка корректности данных
+    if (n < 0) {
+        cout << "Ошибка: количество месяцев не может быть отрицательным!\n\n";
+        return 1;
+    }
+
+    // Вычисление номера месяца
+    x = (n + 1) % 12;
+    if (x == 0) x = 12;  // если остаток 0, то это декабрь (12 месяц)
+
+    // Вывод результата
+    cout << "С начала 1990 года по некоторый день прошло " << n << " месяцев и 2 дня\n";
+    cout << "Текущий месяц: ";
+    switch (x) {
+    case 1: cout << "январь"; break;
+    case 2: cout << "февраль"; break;
+    case 3: cout << "март"; break;
+    case 4: cout << "апрель"; break;
+    case 5: cout << "май"; break;
+    case 6: cout << "июнь"; break;
+    case 7: cout << "июль"; break;
+    case 8: cout << "август"; break;
+    case 9: cout << "сентябрь"; break;
+    case 10: cout << "октябрь"; break;
+    case 11: cout << "ноябрь"; break;
+    case 12: cout << "декабрь"; break;
+    }
+    cout << " (x=" << x << ")" << endl;
+
+    return 0;
+}
+Задание №12
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int apartment_number;
+
+    // Ввод номера квартиры
+    cout << "Введите номер квартиры: ";
+    cin >> apartment_number;
+
+    // Вычисление номера этажа (на каждом этаже 4 квартиры)
+    int floor_number = (apartment_number - 1) / 4 + 1;
+
+    // Вычисление порядкового номера квартиры на этаже
+    int apartment_on_floor = (apartment_number - 1) % 4 + 1;
+
+    // Вывод результатов
+    cout << "Квартира #" << apartment_number << " находится:\n";
+    cout << "1) На " << floor_number << " этаже\n";
+    cout << "2) Является " << apartment_on_floor << "-й по счету на этаже\n";
+
+    return 0;
+}
+Задание №13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    // Ввод порядкового номера
+    cout << "Введите порядковый номер n (1-50): ";
+    cin >> n;
+
+    // Вычисление номера строки (нумерация с 1)
+    int row = (n - 1) / 5 + 1;
+
+    // Вычисление номера столбца (нумерация с 1)
+    int column = (n - 1) % 5 + 1;
+
+    // Вывод результатов
+    cout << "Значение с номером " << n << " находится:\n";
+    cout << "1) В строке: " << row << endl;
+    cout << "2) В столбце: " << column << endl;
+
+    return 0;
+}
+Задание №14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int apartment_number;
+
+    // Ввод номера квартиры
+    cout << "Введите номер квартиры: ";
+    cin >> apartment_number;
+
+
+    const int apartments_per_floor = 6;
+    const int floors_per_entrance = 9;
+    const int apartments_per_entrance = apartments_per_floor * floors_per_entrance;
+
+    // Вычисление номера подъезда
+    int entrance = (apartment_number - 1) / apartments_per_entrance + 1;
+
+    // Вычисление номера квартиры в подъезде (от 1 до 54)
+    int apartment_in_entrance = (apartment_number - 1) % apartments_per_entrance + 1;
+
+    // Вычисление номера этажа в подъезде
+    int floor = (apartment_in_entrance - 1) / apartments_per_floor + 1;
+
+    // Вычисление порядкового номера квартиры на этаже
+    int position_on_floor = (apartment_in_entrance - 1) % apartments_per_floor + 1;
+
+    // Вывод результатов
+    cout << "Квартира #" << apartment_number << " находится:\n";
+    cout << "1) В подъезде: " << entrance << endl;
+    cout << "2) На этаже: " << floor << endl;
+    cout << "3) Является " << position_on_floor << "-й по счету на этаже\n\n";
+
+    return 0;
+}
+Задание №15.1
+// Вариант 1 (нумерация как на рис. 3.1 - построчно) :
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int place_number;
+
+    // Ввод номера места
+    cout << "Введите номер места: ";
+    cin >> place_number;
+
+    // Константы стеллажа
+    const int sections = 8;
+    const int tiers = 10;
+    const int places_per_tier = 15;
+
+    // Вычисление секции (столбца)
+    int section = (place_number - 1) % sections + 1;
+
+    // Вычисление яруса (строки)
+    int tier = (place_number - 1) / sections + 1;
+
+    // Вывод результатов
+    cout << "Место #" << place_number << " находится:\n";
+    cout << "В секции: " << section << endl;
+    cout << "На ярусе: " << tier << endl;
+
+    return 0;
+}
+Задание №15.2
+// Вариант 2 (нумерация как на рис. 3.2 - по столбцам):
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int place_number;
+
+    // Ввод номера места
+    cout << "Введите номер места: ";
+    cin >> place_number;
+
+    // Константы стеллажа
+    const int sections = 8;
+    const int tiers = 10;
+    const int total_places = sections * tiers;
+
+    // Вычисление секции (столбца)
+    int section = (place_number - 1) / tiers + 1;
+
+    // Вычисление яруса (строки)
+    int tier = (place_number - 1) % tiers + 1;
+
+    // Вывод результатов
+    cout << "Место №" << place_number << " находится:\n";
+    cout << "В секции: " << section << endl;
+    cout << "На ярусе: " << tier << endl;
+
+    return 0;
+}
+Задание №16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    // Ввод двузначного числа
+    cout << "Введите двузначное число: ";
+    cin >> number;
+
+    // Проверка, что число действительно двузначное
+    if (number < 10 || number > 99) {
+        cout << "Ошибка! Введите двузначное число (10-99)" << endl;
+        return 1;
+    }
+
+    // а) Находим число десятков
+    int tens = number / 10;
+
+    // б) Находим число единиц
+    int units = number % 10;
+
+    // Вывод результатов
+    cout << "а) Число десятков: " << tens << endl;
+    cout << "б) Число единиц: " << units << endl;
+
+    return 0;
+}
+Задание №17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите двузначное число: ";
+    cin >> number;
+
+    // Проверка и расчет в одном блоке
+    if (number >= 10 && number <= 99) {
+        int sum = (number / 10) + (number % 10);
+        cout << "Сумма цифр числа " << number << " равна: " << sum << endl;
+    }
+    else {
+        cout << "Ошибка! Введите двузначное число (10-99)\n";
+    }
+
+    return 0;
+}
+Задание №18
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите двузначное число: ";
+    cin >> number;
+
+    if (number >= 10 && number <= 99) {
+        int reversedNumber = (number % 10) * 10 + (number / 10);
+        cout << "Исходное число: " << number << endl;
+        cout << "Число после перестановки: " << reversedNumber << endl;
+    }
+    else {
+        cout << "Ошибка! Введите двузначное число (10-99)\n";
+    }
+
+    return 0;
+}
+Задание №19
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int digit1 = number / 100;                    // сотни
+        int digit2 = (number % 100) / 10;             // десятки
+        int digit3 = number % 10;                     // единицы
+
+        cout << digit1 << ", " << digit2 << ", " << digit3 << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №20
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    // Ввод трехзначного числа
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    // Проверка, что число действительно трехзначное
+    if (number < 100 || number > 999) {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+        return 1;
+    }
+
+    // Разделяем число на цифры
+    int hundreds = number / 100;           // первая цифра (сотни)
+    int tens = (number / 10) % 10;         // вторая цифра (десятки)
+    int units = number % 10;               // третья цифра (единицы)
+
+    // Вычисляем требуемые значения
+    int sum = hundreds + tens + units;     // сумма цифр
+    int product = hundreds * tens * units; // произведение цифр
+
+    // Вывод результатов
+    cout << "Исходное число: " << number << endl;
+    cout << "а) Число единиц: " << units << endl;
+    cout << "б) Число десятков: " << tens << endl;
+    cout << "в) Сумма цифр: " << sum << endl;
+    cout << "г) Произведение цифр: " << product << endl;
+
+    return 0;
+}
+Задание №21
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int reversed = (number % 10) * 100 + ((number / 10) % 10) * 10 + (number / 100);
+        cout << "Исходное число: " << number << endl;
+        cout << "Число справа налево: " << reversed << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №22
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int newNumber = (number % 100) * 10 + (number / 100);
+        cout << "Исходное число: " << number << endl;
+        cout << "Полученное число: " << newNumber << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №23
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int newNumber = (number % 10) * 100 + (number / 10);
+        cout << "Исходное число: " << number << endl;
+        cout << "Полученное число: " << newNumber << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №24
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int newNumber = ((number / 10) % 10) * 100 + (number / 100) * 10 + (number % 10);
+        cout << "Исходное число: " << number << endl;
+        cout << "После перестановки: " << newNumber << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №25
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите трехзначное число: ";
+    cin >> number;
+
+    if (number >= 100 && number <= 999) {
+        int newNumber = (number / 100) * 100 + (number % 10) * 10 + ((number / 10) % 10);
+        cout << "Исходное число: " << number << endl;
+        cout << "После перестановки: " << newNumber << endl;
+    }
+    else {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+    }
+
+    return 0;
+}
+Задание №26
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    // Ввод трехзначного числа
+    cout << "Введите трехзначное число с различными цифрами: ";
+    cin >> number;
+
+    // Проверка, что число действительно трехзначное
+    if (number < 100 || number > 999) {
+        cout << "Ошибка! Введите трехзначное число (100-999)\n";
+        return 1;
+    }
+
+    // Разделяем число на цифры
+    int a = number / 100;           // первая цифра (сотни)
+    int b = (number / 10) % 10;     // вторая цифра (десятки)
+    int c = number % 10;            // третья цифра (единицы)
+
+    // Формируем все шесть перестановок
+    int num1 = a * 100 + b * 10 + c;
+    int num2 = a * 100 + c * 10 + b;
+    int num3 = b * 100 + a * 10 + c;
+    int num4 = b * 100 + c * 10 + a;
+    int num5 = c * 100 + a * 10 + b;
+    int num6 = c * 100 + b * 10 + a;
+
+    // Вывод результатов
+    cout << "Исходное число: " << number << endl;
+    cout << "Цифры: " << a << ", " << b << ", " << c << endl << endl;
+    cout << "Все перестановки:\n";
+    cout << "1. " << a << b << c << " = " << num1 << endl;
+    cout << "2. " << a << c << b << " = " << num2 << endl;
+    cout << "3. " << b << a << c << " = " << num3 << endl;
+    cout << "4. " << b << c << a << " = " << num4 << endl;
+    cout << "5. " << c << a << b << " = " << num5 << endl;
+    cout << "6. " << c << b << a << " = " << num6 << endl;
+
+    return 0;
+}
+Задание №27
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    // а) Сумма цифр 4-значного числа
+    cout << "а) Введите четырехзначное число: ";
+    cin >> number;
+
+    if (number < 1000 || number > 9999) {
+        cout << "Ошибка! Введите четырехзначное число (1000-9999)\n";
+        return 1;
+    }
+
+    int digit1_4 = number / 1000;           // первая цифра
+    int digit2_4 = (number / 100) % 10;     // вторая цифра
+    int digit3_4 = (number / 10) % 10;      // третья цифра
+    int digit4_4 = number % 10;             // четвертая цифра
+
+    int sum4 = digit1_4 + digit2_4 + digit3_4 + digit4_4;
+
+    cout << "Цифры: " << digit1_4 << ", " << digit2_4 << ", " << digit3_4 << ", " << digit4_4 << endl;
+    cout << "Сумма цифр: " << sum4 << endl << endl;
+
+    // б) Сумма цифр 5-значного числа
+    cout << "б) Введите пятизначное число: ";
+    cin >> number;
+
+    if (number < 10000 || number > 99999) {
+        cout << "Ошибка! Введите пятизначное число (10000-99999)\n";
+        return 1;
+    }
+
+    int digit1_5 = number / 10000;          // первая цифра
+    int digit2_5 = (number / 1000) % 10;    // вторая цифра
+    int digit3_5 = (number / 100) % 10;     // третья цифра
+    int digit4_5 = (number / 10) % 10;      // четвертая цифра
+    int digit5_5 = number % 10;             // пятая цифра
+
+    int sum5 = digit1_5 + digit2_5 + digit3_5 + digit4_5 + digit5_5;
+
+    cout << "Цифры: " << digit1_5 << ", " << digit2_5 << ", " << digit3_5 << ", " << digit4_5 << ", " << digit5_5 << endl;
+    cout << "Сумма цифр: " << sum5 << endl;
+
+    return 0;
+}
+Задание №28
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите четырехзначное число: ";
+    cin >> number;
+
+    if (number < 1000 || number > 9999) {
+        cout << "Ошибка! Введите четырехзначное число (1000-9999)\n";
+        return 1;
+    }
+
+    // Извлекаем цифры
+    int digit1 = number / 1000;          // первая цифра
+    int digit2 = (number / 100) % 10;    // вторая цифра
+    int digit3 = (number / 10) % 10;     // третья цифра
+    int digit4 = number % 10;            // четвертая цифра
+
+    cout << "Исходное число: " << number << endl;
+
+    // а) Число справа налево
+    int result_a = digit4 * 1000 + digit3 * 100 + digit2 * 10 + digit1;
+    cout << "а) Число справа налево: " << result_a << endl;
+
+    // б) Перестановка первой и второй, третьей и четвертой цифр
+    int result_b = digit2 * 1000 + digit1 * 100 + digit4 * 10 + digit3;
+    cout << "б) Перестановка 1<=>2 и 3<=>4: " << result_b << endl;
+
+    // в) Перестановка второй и третьей цифр
+    int result_c = digit1 * 1000 + digit3 * 100 + digit2 * 10 + digit4;
+    cout << "в) Перестановка 2<=>3: " << result_c << endl;
+
+    // г) Способ 1: с выделением отдельных цифр
+    int result_d1 = digit3 * 1000 + digit4 * 100 + digit1 * 10 + digit2;
+    cout << "г) Перестановка 12<=>34 (способ 1): " << result_d1 << endl;
+
+    // г) Способ 2: без выделения отдельных цифр
+    int first_two_digits = number / 100;      // первые две цифры
+    int last_two_digits = number % 100;       // последние две цифры
+    int result_d2 = last_two_digits * 100 + first_two_digits;
+    cout << "г) Перестановка 12<=>34 (способ 2): " << result_d2 << endl;
+
+    return 0;
+}
+Задание №29
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    // Ввод натурального числа
+    cout << "Введите натуральное число (n > 9): ";
+    cin >> n;
+
+    // Проверка, что число действительно натуральное и больше 9
+    if (n <= 9) {
+        cout << "Ошибка! Число должно быть больше 9\n";
+        return 1;
+    }
+
+    // а) Число единиц - последняя цифра числа
+    int units = n % 10;
+
+    // б) Число десятков - предпоследняя цифра числа
+    int tens = (n / 10) % 10;
+
+    // Вывод результатов
+    cout << "Исходное число: " << n << endl;
+    cout << "а) Число единиц: " << units << endl;
+    cout << "б) Число десятков: " << tens << endl;
+
+    return 0;
+}
+Задание №30
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    // Ввод натурального числа
+    cout << "Введите натуральное число (n > 99): ";
+    cin >> n;
+
+    // Проверка, что число действительно натуральное и больше 99
+    if (n <= 99) {
+        cout << "Ошибка! Число должно быть больше 99\n";
+        return 1;
+    }
+
+    // а) Число десятков - предпоследняя цифра числа
+    int tens = (n / 10) % 10;
+
+    // б) Число сотен - третья с конца цифра числа
+    int hundreds = (n / 100) % 10;
+
+    // Вывод результатов
+    cout << "Исходное число: " << n << endl;
+    cout << "а) Число десятков: " << tens << endl;
+    cout << "б) Число сотен: " << hundreds << endl;
+
+    return 0;
+}
+Задание №31
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    // Ввод натурального числа
+    cout << "Введите натуральное число (n > 999): ";
+    cin >> n;
+
+    // Проверка, что число действительно натуральное и больше 999
+    if (n <= 999) {
+        cout << "Ошибка! Число должно быть больше 999\n";
+        return 1;
+    }
+
+    // а) Число сотен - третья с конца цифра числа
+    int hundreds = (n / 100) % 10;
+
+    // б) Число тысяч - четвертая с конца цифра числа
+    int thousands = (n / 1000) % 10;
+
+    // Вывод результатов
+    cout << "Исходное число: " << n << endl;
+    cout << "а) Число сотен: " << hundreds << endl;
+    cout << "б) Число тысяч: " << thousands << endl;
+
+    return 0;
+}
+Задание №32
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int result = 237;
+    int a, bc, x;
+
+    a = result / 100;
+    bc = result % 100;
+
+    x = (bc * 10) + a;
+    cout << "Изначальное число x: " << x << endl;
+
+    // Проверка
+    cout << "Проверка:\n";
+    cout << "1. Вычитаем последнюю цифру: " << x << " - " << a << " = " << (x - a) << endl;
+    cout << "2. Делим на 10: " << (x - a) << " / 10 = " << (x - a) / 10 << endl;
+    cout << "3. Приписываем слева " << a << ": получаем " << result << endl << endl;
+    return 0;
+}
+Задание №33
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x, result, c;
+
+    cout << "Введите трёхзначное число(100 - 999): ";
+    cin >> result;
+    cout << endl;
+
+    if (result <= 99 || result >= 1000) {
+        cout << "Вы ввели некоректные данные! Введите трёхзначное число!\n";
+        return 1;
+    }
+    else {
+        c = result % 10;
+
+        x = ((result - c) / 10) + c * 100;
+        // Проверка
+        cout << "Проверка:\n";
+        cout << "1. Вычитаем последнюю цифру: " << result << " - " << c << " = " << (result - c) << endl;
+        cout << "2. Делим на 10: " << (result - c) << " / 10 = " << (result - c) / 10 << endl;
+        cout << "3. Приписываем слева " << c << ": получаем " << x << endl;
+        cout << "Ответ: Наше число n: " << x << endl;
+        return 0;
+    }
+}
+Задание №34
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    // Мы знаем, что после всех операций получилось 564
+    int result = 564;
+
+    // Разбираем число 564
+    int b = result / 100;           // вторая цифра исходного числа (стала первой)
+    int remainder = result % 100;   // оставшаяся часть
+
+    // Из remainder = 10c + a находим a и c
+    int c = remainder / 10;         // третья цифра исходного числа
+    int a = remainder % 10;         // первая цифра исходного числа
+
+    // Восстанавливаем исходное число x
+    int x = 100 * a + 10 * b + c;
+
+    cout << "Найдено число x: " << x << endl;
+
+    // Проверка
+    cout << "Проверка:\n";
+    cout << "1. Зачеркиваем первую цифру: из " << x << " остается " << (10 * b + c) << endl;
+    cout << "2. Умножаем на 10: " << (10 * b + c) << " * 10 = " << (10 * b + c) * 10 << endl;
+    cout << "3. Складываем с первой цифрой " << a << ": " << (10 * b + c) * 10 << " + " << a << " = " << result << endl;
+
+    return 0;
+}
+Задание №35
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int result;
+    cout << "Введите значение n(1 <= n <= 999): ";
+    cin >> result;
+
+    if (result < 1 || result > 999) {
+        cout << "Ошибка! Число n должно быть в диапазоне 1 ≤ n ≤ 999\n\n";
+        return 1;
+    }
+
+    // Разбираем число 564
+    int b = result / 100;           // вторая цифра исходного числа (стала первой)
+    int remainder = result % 100;   // оставшаяся часть
+
+    // Из remainder = 10c + a находим a и c
+    int c = remainder / 10;         // третья цифра исходного числа
+    int a = remainder % 10;         // первая цифра исходного числа
+
+    // Восстанавливаем исходное число x
+    int x = 100 * a + 10 * b + c;
+
+    cout << "Найдено число x: " << x << endl;
+
+    // Проверка
+    cout << "\nПроверка:\n";
+    cout << "1. Зачеркиваем первую цифру: из " << x << " остается " << (10 * b + c) << endl;
+    cout << "2. Умножаем на 10: " << (10 * b + c) << " * 10 = " << (10 * b + c) * 10 << endl;
+    cout << "3. Складываем с первой цифрой " << a << ": " << (10 * b + c) * 10 << " + " << a << " = " << result << endl;
+
+    return 0;
+}
+Задание №36
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b, c, x, result = 546; //По заданию
+
+    a = (result / 10) % 10;
+    b = result / 100;
+    c = result % 10;
+    x = a * 100 + b * 10 + c;
+
+    cout << "Найдено число x: " << x << endl;
+
+    // Проверка
+    cout << "\nПроверка:\n";
+    cout << "1. Зачеркиваем вторую цифру: из " << x << " остается " << (10 * a + c) << endl;
+    cout << "2. Приписываем слева вторую цифру " << b << ": получаем " << result << endl << endl;
+    return 0;
+}
+Задание №37
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b, c, x, n; //По заданию
+    cout << "Введите число n(10 <= n <= 999), и  при этом число десятков в n не равно нулю): ";
+    cin >> n;
+    if (n < 10 || n > 999) {
+        cout << "Ошибка. Вы ввели не 3-х значное число!\n";
+        return 1;
+    }
+    else if ((n / 10) % 10 == 0) {
+        cout << "Ошибка. В 3-х значном числе десятки не должны быть равны 0!\n";
+        return 1;
+    }
+    a = (n / 10) % 10;
+    b = n / 100;
+    c = n % 10;
+    x = a * 100 + b * 10 + c;
+
+    cout << "\nНайдено число x: " << x << endl;
+
+    // Проверка
+    cout << "\nПроверка:\n";
+    cout << "1. Зачеркиваем вторую цифру: из " << x << " остается " << (10 * a + c) << endl;
+    cout << "2. Приписываем слева вторую цифру " << b << ": получаем " << n << endl << endl;
+    return 0;
+}
+Задание №38
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    // Мы знаем, что после всех операций получилось 456
+    int result = 456;
+
+    // Разбираем число 456
+    int a = result / 100;           // первая цифра исходного числа x
+    int remainder = result % 100;   // оставшаяся часть
+
+    // Из remainder = 10c + b находим b и c
+    int c = remainder / 10;         // третья цифра исходного числа x
+    int b = remainder % 10;         // вторая цифра исходного числа x
+
+    // Восстанавливаем исходное число x
+    int x = 100 * a + 10 * b + c;
+
+    cout << "Найдено число x: " << x << endl;
+
+    // Проверка
+    cout << "\nПроверка:\n";
+    cout << "1. Зачеркиваем вторую цифру: из " << x << " остается " << (10 * a + c) << endl;
+    cout << "2. Приписываем справа вторую цифру " << b << ": получаем " << result << endl;
+
+    return 0;
+}
+Задание №39
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    cout << "Введите число n (100 <= n <= 999): ";
+    cin >> n;
+
+    if (n < 100 || n > 999) {
+        cout << "Ошибка! Число n должно быть в диапазоне 100 ≤ n ≤ 999\n";
+        return 1;
+    }
+
+    // Разбираем число n на составляющие
+    int a = n / 100;           // первая цифра исходного числа x
+    int remainder = n % 100;   // оставшаяся часть (10c + b)
+    int c = remainder / 10;    // третья цифра исходного числа x
+    int b = remainder % 10;    // вторая цифра исходного числа x
+
+    // Восстанавливаем исходное число x
+    int x = 100 * a + 10 * b + c;
+
+    // Вывод результатов
+    cout << "Для n = " << n << " найдено число x = " << x << endl;
+    cout << "Проверка:\n";
+    cout << "  Число x = " << a << b << c << endl;
+    cout << "  Зачеркиваем вторую цифру: остается " << (10 * a + c) << endl;
+    cout << "  Приписываем справа вторую цифру " << b << ": получаем " << n << endl;
+
+    return 0;
+}
+Задание №40
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    // Мы знаем, что после всех операций получилось 654
+    int result = 654;
+
+    // Разбираем число 654
+    int c = result / 100;           // последняя цифра исходного числа (стала первой)
+    int remainder = result % 100;   // оставшаяся часть
+
+    // Из remainder = 10b + a находим a и b
+    int b = remainder / 10;         // вторая цифра исходного числа
+    int a = remainder % 10;         // первая цифра исходного числа
+
+    // Восстанавливаем исходное число x
+    int x = 100 * a + 10 * b + c;
+
+    cout << "Найдено число x: " << x << endl;
+
+    // Проверка
+    cout << "Проверка:\n";
+    cout << "1. Зачеркиваем последнюю цифру: из " << x << " остается " << (10 * a + b) << endl;
+    cout << "2. Переставляем цифры: " << (10 * a + b) << " -> " << (10 * b + a) << endl;
+    cout << "3. Приписываем слева последнюю цифру " << c << ": получаем " << result << endl;
+
+    return 0;
+}
+Задание №41
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+
+    cout << "Введите число n (1 <= n <= 999, единицы != 0): ";
+    cin >> n;
+
+    if (n < 1 || n > 999) {
+        cout << "Ошибка! Число n должно быть в диапазоне 1 ≤ n ≤ 999\n";
+        return 1;
+    }
+
+    // Проверяем, что число единиц в n не равно нулю
+    if (n % 10 == 0) {
+        cout << "Ошибка! Число единиц в n не должно быть равно нулю\n";
+        return 1;
+    }
+
+    // Для разных случаев n
+    if (n < 100) {
+        cout << "Ошибка! При n < 100 невозможно восстановить трехзначное число x\n";
+        return 1;
+    }
+    else {
+        int c = n / 100;           // третья цифра исходного числа x
+        int remainder = n % 100;   // оставшаяся часть (10b + a)
+        int b = remainder / 10;    // вторая цифра исходного числа x
+        int a = remainder % 10;    // первая цифра исходного числа x
+
+        // Восстанавливаем исходное число x
+        int x = 100 * a + 10 * b + c;
+
+        // Вывод результатов
+        cout << "Для n = " << n << " найдено число x = " << x << endl;
+        cout << "\nПроверка:" << endl;
+        cout << "  Число x = " << a << b << c << endl;
+        cout << "  Зачеркиваем последнюю цифру: остается " << (10 * a + b) << endl;
+        cout << "  Переставляем цифры: " << (10 * a + b) << " -> " << (10 * b + a) << endl;
+        cout << "  Приписываем слева последнюю цифру " << c << ": получаем " << n << endl;
+    }
+
+    return 0;
+}
+Задание №42
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a2, a1, b;
+
+    cout << "Введите цифры двузначного числа (десятки a2, единицы a1): ";
+    cin >> a2 >> a1;
+
+    cout << "Введите однозначное число b: ";
+    cin >> b;
+
+    // Вычисляем цифры результата БЕЗ условных операторов
+    int c1 = (a1 + b) % 10;                    // единицы результата
+    int c2 = a2 + (a1 + b) / 10;               // десятки результата
+
+    cout << "\nЦифры результата суммы:\n";
+    cout << "Десятки (c2): " << c2 << endl;
+    cout << "Единицы (c1): " << c1 << endl;
+
+    return 0;
+}
+Задание №43
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Ru");
+    int a2, a1, b2, b1;
+
+    cout << "Введите цифры первого числа (десятки a2, единицы a1): ";
+    cin >> a2 >> a1;
+
+    cout << "Введите цифры второго числа (десятки b2, единицы b1): ";
+    cin >> b2 >> b1;
+
+    // Вычисляем цифры результата БЕЗ условных операторов
+    int sum_units = a1 + b1;                   // сумма единиц
+    int c1 = sum_units % 10;                   // единицы результата
+    int carry = sum_units / 10;                // перенос из единиц в десятки
+
+    int sum_tens = a2 + b2 + carry;            // сумма десятков с переносом
+    int c2 = sum_tens % 10;                    // десятки результата
+
+    cout << "\nЦифры результата суммы:\n";
+    cout << "Десятки (c2): " << c2 << endl;
+    cout << "Единицы (c1): " << c1 << endl;
+
+    return 0;
+}
+Задание №44
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a3, a2, a1, b2, b1;
+
+    cout << "Введите цифры трехзначного числа (сотни a3, десятки a2, единицы a1): ";
+    cin >> a3 >> a2 >> a1;
+
+    cout << "Введите цифры двузначного числа (десятки b2, единицы b1): ";
+    cin >> b2 >> b1;
+
+    // Вычисляем цифры результата в одну строку
+    int c1 = (a1 + b1) % 10;                                          // единицы
+    int c2 = (a2 + b2 + (a1 + b1) / 10) % 10;                        // десятки
+    int c3 = a3 + (a2 + b2 + (a1 + b1) / 10) / 10;                   // сотни
+
+    cout << "\nСотни: " << c3 << ", Десятки: " << c2 << ", Единицы: " << c1 << endl;
+
+    return 0;
+}
+Задание №45
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+
+    cout << "Введите k (1 <= k <= 180): ";
+    cin >> k;
+
+    // Проверка диапазона
+    if (k < 1 || k > 180) {
+        cout << "Ошибка! k должно быть в диапазоне 1 <= k <= 180\n\n";
+        return 1;
+    }
+
+    // а) Номер пары цифр (порядковый номер двузначного числа)
+    int pair_number = (k + 1) / 2;
+
+    // б) Двузначное число
+    int two_digit_number = 9 + ((k + 1) / 2);
+
+    // в) k-я цифра
+    int kth_digit;
+    if (k % 2 == 1) {  // нечетное k
+        kth_digit = two_digit_number / 10;  // первая цифра
+    }
+    else {           // четное k
+        kth_digit = two_digit_number % 10;  // вторая цифра
+    }
+
+    cout << "\nРезультаты:\n";
+    cout << "k = " << k << endl;
+    cout << "а) Номер пары цифр: " << pair_number << endl;
+    cout << "б) Двузначное число: " << two_digit_number << endl;
+    cout << "в) " << k << "-я цифра: " << kth_digit << endl << endl;
+
+    return 0;
+}
+Задание №46
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+
+    cout << "Введите k (1 <= k <= 150): ";
+    cin >> k;
+
+    // Проверка диапазона
+    if (k < 1 || k > 150) {
+        cout << "Ошибка! k должно быть в диапазоне 1 <= k <= 150\n\n";
+        return 1;
+    }
+
+    // Определяем, в каком числе находится k-я цифра
+    int number = 100 + ((k + 2) / 3);
+
+    // Определяем позицию цифры в числе (0 - первая, 1 - вторая, 2 - третья)
+    int position = (k - 1) % 3;
+
+    int kth_digit;
+
+    // Определяем k-ю цифру в зависимости от условия
+    if (k % 3 == 0) {
+        // k кратно трем - третья цифра
+        kth_digit = number % 10;
+    }
+    else if (k % 3 == 1) {
+        // k = 1, 4, 7, ... - первая цифра
+        kth_digit = number / 100;
+    }
+    else {
+        // k = 2, 5, 8, ... - вторая цифра
+        kth_digit = (number / 10) % 10;
+    }
+
+    cout << "\nk-я цифра находится в числе: " << number << endl;
+    cout << "Позиция в числе: " << (position + 1) << "-я цифра\n";
+    cout << k << "-я цифра последовательности: " << kth_digit << endl;
+
+    return 0;
+}
+Задание №47
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int h, m, s;
+
+    cout << "Введите время (часы, минуты, секунды - через пробел): ";
+    cin >> h >> m >> s;
+
+    // Проверка корректности ввода
+    if (h <= 0 || h > 23 || m < 0 || m > 59 || s < 0 || s > 59) {
+        cout << "Ошибка! Часы: 1-23, Минуты: 0-59, Секунды: 0-59\n";
+        return 1;
+    }
+
+    // Вычисляем общее время в часах
+    double total_hours = h + m / 60.0 + s / 3600.0;
+
+    // Вычисляем угол (12 часов = 360°, 1 час = 30°)
+    double angle = total_hours * 30.0;
+
+    // Нормализуем угол в диапазон [0, 360)
+    angle = fmod(angle, 360.0);
+
+    cout << "Время: " << h << ":" << m << ":" << s << endl;
+    cout << "Общее время в часах: " << fixed << setprecision(6) << total_hours << " ч\n";
+    cout << "Угол часовой стрелки: " << fixed << setprecision(2) << angle << " градусов\n";
+
+    return 0;
+}
+Задание №48
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double y;
+    int hours, minutes;
+    cout << "Введите значение градусов(0 <= y < 360): ";
+    cin >> y;
+
+    if (y < 0 || y >= 360) {
+        cout << "Ошибка. Градусы указаны неверно!\n\n";
+        return 1;
+    }
+
+    hours = y / 30;
+    minutes = fmod(y, 30) * 2;
+
+    cout << "\nC начала суток прошло: " << hours << " часов; " << minutes << " минут.\n\n";
+    return 0;
+}
+Задание №49
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    const double PI = 3.14159265358979323846;
+    double y, m, hours_all, gradus_minutes, gradus_second, gradus_all, minutes_all;
+    int hours, minutes, second;
+    cout << "Введите значение (0 < y <= 2п): ";
+    cin >> y;
+
+    if (y <= 0 || y > 2 * PI) {
+        cout << "Ошибка. Не входит в радиус по PI\n\n";
+        return 1;
+    }
+    hours_all = y / (PI / 6);
+    hours = y / (PI / 6);
+
+    minutes_all = (hours_all - hours) * 60;
+    minutes = (hours_all - hours) * 60;
+
+    second = (minutes_all - minutes) * 60;
+
+    gradus_minutes = minutes * 6; // за 1 минуту проходит 6 градусов
+    gradus_second = (second * 3.6) / 200.0;
+    gradus_all = gradus_minutes + fmod(gradus_second, 1.0);
+
+    cout << "Градус минутной стрелки от луча составляет: " << gradus_all << " градусов" << endl;
+    cout << "C начала суток прошло: " << hours << " часов; " << minutes << " минут; " << second << " секунд.\n\n";
+    return 0;
+}
+Задание №50
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int h, m;
+
+    cout << "Введите время (часы, минуты через пробел): ";
+    cin >> h >> m;
+
+    // Проверка корректности ввода
+    if (h <= 0 || h > 12 || m < 0 || m > 59) {
+        cout << "Ошибка! Часы: 1-12, Минуты: 0-59\n\n";
+        return 1;
+    }
+
+    // Начальные углы в градусах
+    double minute_angle = 6 * m;                    // 6° за минуту
+    double hour_angle = 30 * h + 0.5 * m;          // 30° за час + 0.5° за минуту
+
+    // Разность углов (нормализованная)
+    double diff = fabs(hour_angle - minute_angle);
+    diff = min(diff, 360 - diff);
+
+    // а) Время до совпадения стрелок
+    double t_coincide;
+    if (hour_angle >= minute_angle) {
+        t_coincide = (360 - (hour_angle - minute_angle)) / 5.5;
+    }
+    else {
+        t_coincide = (minute_angle - hour_angle) / 5.5;
+    }
+
+    // б) Время до перпендикулярного положения
+    double t_perp1 = (90 - diff) / 5.5;
+    double t_perp2 = (90 + diff) / 5.5;
+
+    // Выбираем наименьшее положительное время
+    double t_perp = min(t_perp1, t_perp2);
+    if (t_perp < 0) t_perp = max(t_perp1, t_perp2);
+
+    cout << "Время: " << h << ":" << (m < 10 ? "0" : "") << m << endl;
+    cout << "а) До совпадения стрелок: " << static_cast<int>(t_coincide + 0.5) << " минут\n";
+    cout << "б) До перпендикулярного положения: " << static_cast<int>(t_perp + 0.5) << " минут\n";
+
+    return 0;
+}
+Задание №51
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+
+    cout << "Введите два целых числа a и b: ";
+    cin >> a >> b;
+
+    // Проверяем делимость без условных операторов
+    int result = 1 - ((a % b) * (b % a));
+
+    cout << "Результат: " << result << endl;
+
+    return 0;
+}
