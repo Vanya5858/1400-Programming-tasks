@@ -1,0 +1,4442 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+
+    cout << "Введите два различных вещественных числа: ";
+    cin >> a >> b;
+
+    // Проверяем, что числа различные
+    if (a == b) {
+        cout << "Ошибка! Числа должны быть различными.\n";
+        return 1;
+    }
+
+    // а) Какое число больше
+    double max_num = a * (a > b) + b * (b > a);
+
+    // б) Какое число меньше  
+    double min_num = a * (a < b) + b * (b < a);
+
+    cout << "а) Большее число: " << max_num << endl;
+    cout << "б) Меньшее число: " << min_num << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (x > 0) {
+        y = sin(x) * sin(x);
+    }
+    else {
+        y = 1 - 2 * sin(x * x);
+    }
+
+    cout << "y = " << y << endl;
+    return 0;
+}
+Задание № 3
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (x > 0) {
+        y = sin(x * x);
+    }
+    else {
+        y = 1 + 2 * sin(x) * sin(x);
+    }
+
+    cout << "y = " << y << endl;
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    if (x < 4) {
+        cout << "Точка находится в области I\n";
+    }
+    else {
+        cout << "Точка находится в области II\n";
+    }
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    if (y > 3) {
+        cout << "Точка находится в области I\n";
+    }
+    else {
+        cout << "Точка находится в области II\n";
+    }
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите x: ";
+    cin >> x;
+
+    // а) для графика а
+    if (x <= 2) {
+        y = x;
+    }
+    else {
+        y = 2;
+    }
+    cout << "а) y = " << y << endl;
+
+    // б) для графика б
+    if (x <= 3) {
+        y = -x;
+    }
+    else {
+        y = -3;
+    }
+    cout << "б) y = " << y << endl;
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, k, f;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (sin(x) < 0) {
+        k = x * x;
+    }
+    else {
+        k = fabs(x);
+    }
+
+    if (k < x) {
+        f = k * x;
+    }
+    else {
+        f = k + x;
+    }
+
+    cout << "f(x) = " << f << endl;
+    return 0;
+}
+Задание № 8
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, k, f;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (sin(x) >= 0) {
+        k = x * x;
+    }
+    else {
+        k = fabs(x);
+    }
+
+    if (x < k) {
+        f = fabs(x);
+    }
+    else {
+        f = k * x;
+    }
+
+    cout << "f(x) = " << f << endl;
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+
+    cout << "Введите два различных вещественных числа: ";
+    cin >> a >> b;
+
+    // Проверяем, что числа различные
+    if (a == b) {
+        cout << "Ошибка! Числа должны быть различными." << endl;
+        return 1;
+    }
+
+    double max_num, min_num;
+
+    // ЕДИНСТВЕННЫЙ условный оператор
+    if (a > b) {
+        max_num = a;
+        min_num = b;
+    }
+    else {
+        max_num = b;
+        min_num = a;
+    }
+
+    cout << "Максимальное значение: " << max_num << endl;
+    cout << "Минимальное значение: " << min_num << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double km, feet;
+    const double FOOT_TO_METER = 0.3048;
+
+    cout << "Введите расстояние в километрах: ";
+    cin >> km;
+    cout << "Введите расстояние в футах: ";
+    cin >> feet;
+
+    if (km < 0 || feet < 0) {
+        cout << "Ошибка! Расстояния не могут быть отрицательными.\n";
+        return 1;
+    }
+
+    // Переводим километры в футы для сравнения
+    double km_to_feet = km * 1000.0 / FOOT_TO_METER;
+
+    cout << km << " км = " << km_to_feet << " футов\n";
+
+    if (km_to_feet < feet) {
+        cout << "Меньше: расстояние в километрах\n";
+    }
+    else if (feet < km_to_feet) {
+        cout << "Меньше: расстояние в футах\n";
+    }
+    else {
+        cout << "Расстояния равны\n";
+    }
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double kmh, ms;
+    const double KMH_TO_MS = 1000.0 / 3600.0;  // 5/18 = 0.27778
+    const double MS_TO_KMH = 3600.0 / 1000.0;  // 3.6
+
+    cout << "Введите скорость в км/ч: ";
+    cin >> kmh;
+    cout << "Введите скорость в м/с: ";
+    cin >> ms;
+
+    // Проверка на неотрицательность
+    if (kmh < 0 || ms < 0) {
+        cout << "Ошибка! Скорости не могут быть отрицательными.\n";
+        return 1;
+    }
+
+    // Переводим обе скорости в м/с
+    double speed_kmh_ms = kmh * KMH_TO_MS;
+    double speed_ms_ms = ms;
+
+    // Сравниваем скорости
+    cout << "\nРезультаты сравнения:\n";
+    cout << kmh << " км/ч = " << speed_kmh_ms << " м/с\n";
+    cout << ms << " м/с = " << ms << " м/с\n\n";
+
+    if (speed_kmh_ms > speed_ms_ms) {
+        cout << "Скорость в км/ч БОЛЬШЕ, чем в м/с\n";
+    }
+    else if (speed_ms_ms > speed_kmh_ms) {
+        cout << "Скорость в м/с БОЛЬШЕ, чем в км/ч\n";
+    }
+    else {
+        cout << "Скорости РАВНЫ\n";
+    }
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double radius, side;
+    const double PI = 3.14159265358979323846;
+
+    cout << "Введите радиус круга: ";
+    cin >> radius;
+    cout << "Введите сторону квадрата: ";
+    cin >> side;
+
+    // Проверка на неотрицательность
+    if (radius < 0 || side < 0) {
+        cout << "Ошибка! Радиус и сторона не могут быть отрицательными.\n";
+        return 1;
+    }
+
+    // Вычисляем площади
+    double circle_area = PI * radius * radius;
+    double square_area = side * side;
+
+    // Сравниваем площади
+    cout << "\nРезультаты:\n";
+    cout << "Площадь круга: " << circle_area << endl;
+    cout << "Площадь квадрата: " << square_area << endl;
+    cout << endl;
+
+    if (circle_area > square_area) {
+        cout << "Площадь круга БОЛЬШЕ площади квадрата\n";
+    }
+    else if (square_area > circle_area) {
+        cout << "Площадь квадрата БОЛЬШЕ площади круга\n";
+    }
+    else {
+        cout << "Площади РАВНЫ\n";
+    }
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double mass1, volume1, mass2, volume2;
+
+    cout << "Введите данные для первого тела:\n";
+    cout << "Масса: ";
+    cin >> mass1;
+    cout << "Объем: ";
+    cin >> volume1;
+
+    cout << "Введите данные для второго тела:\n";
+    cout << "Масса: ";
+    cin >> mass2;
+    cout << "Объем: ";
+    cin >> volume2;
+
+    // Проверка на корректность данных
+    if (mass1 <= 0 || mass2 <= 0 || volume1 <= 0 || volume2 <= 0) {
+        cout << "Ошибка! Массы и объемы должны быть положительными.\n";
+        return 1;
+    }
+
+    // Вычисляем плотности
+    double density1 = mass1 / volume1;
+    double density2 = mass2 / volume2;
+
+    // Сравниваем плотности
+    cout << "\nРезультаты:\n";
+    cout << "Плотность первого материала: " << density1 << " кг/м³\n";
+    cout << "Плотность второго материала: " << density2 << " кг/м³\n\n";
+
+    if (density1 > density2) {
+        cout << "Плотность ПЕРВОГО материала БОЛЬШЕ\n";
+    }
+    else if (density2 > density1) {
+        cout << "Плотность ВТОРОГО материала БОЛЬШЕ\n";
+    }
+    else {
+        cout << "Плотности материалов РАВНЫ\n";
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double R1, R2, U1, U2;
+    cout << "Введите сопротивление первого участка: ";
+    cin >> R1;
+    cout << "Введите сопротивление второго участка: ";
+    cin >> R2;
+    cout << "Введите напряжение на первом участке: ";
+    cin >> U1;
+    cout << "Введите напряжение на втором участке: ";
+    cin >> U2;
+
+    double I1 = U1 / R1;
+    double I2 = U2 / R2;
+
+    if (I1 < I2) {
+        cout << "Меньший ток на первом участке: " << I1 << " А" << endl;
+    }
+    else {
+        cout << "Меньший ток на втором участке: " << I2 << " А" << endl;
+    }
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c: ";
+    cin >> a >> b >> c;
+
+    double D = b * b - 4 * a * c;
+
+    if (D >= 0) {
+        cout << "Уравнение имеет вещественные корни\n";
+    }
+    else {
+        cout << "Уравнение не имеет вещественных корней\n";
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c: ";
+    cin >> a >> b >> c;
+
+    double D = b * b - 4 * a * c;
+
+    if (D >= 0) {
+        double x1 = (-b + sqrt(D)) / (2 * a);
+        double x2 = (-b - sqrt(D)) / (2 * a);
+        cout << "Корни уравнения: x1 = " << x1 << ", x2 = " << x2 << endl;
+    }
+    else {
+        cout << "Уравнение не имеет вещественных корней\n";
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int birth_year, birth_month, current_year, current_month;
+    cout << "Введите год и месяц рождения: ";
+    cin >> birth_year >> birth_month;
+    cout << "Введите текущий год и месяц: ";
+    cin >> current_year >> current_month;
+
+    int age = current_year - birth_year;
+    if (current_month < birth_month) {
+        age--;
+    }
+
+    cout << "Возраст: " << age << " лет\n";
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double S_circle, S_square, M_PI = 3.14159;
+    cout << "Введите площадь круга: ";
+    cin >> S_circle;
+    cout << "Введите площадь квадрата: ";
+    cin >> S_square;
+
+    // а) круг в квадрате
+    double circle_radius = sqrt(S_circle / M_PI);
+    double square_side = sqrt(S_square);
+
+    if (2 * circle_radius <= square_side) {
+        cout << "а) Круг помещается в квадрате\n";
+    }
+    else {
+        cout << "а) Круг не помещается в квадрате\n";
+    }
+
+    // б) квадрат в круге
+    double circle_diameter = 2 * circle_radius;
+    double square_diagonal = square_side * sqrt(2);
+
+    if (square_diagonal <= circle_diameter) {
+        cout << "б) Квадрат помещается в круге\n";
+    }
+    else {
+        cout << "б) Квадрат не помещается в круге\n";
+    }
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double S_circle, S_triangle, M_PI = 3.14159;
+    cout << "Введите площадь круга: ";
+    cin >> S_circle;
+    cout << "Введите площадь равностороннего треугольника: ";
+    cin >> S_triangle;
+
+    // а) круг в треугольнике
+    double circle_radius = sqrt(S_circle / M_PI);
+    double triangle_side = sqrt(4 * S_triangle / sqrt(3));
+    double inscribed_circle_radius = triangle_side * sqrt(3) / 6;
+
+    if (circle_radius <= inscribed_circle_radius) {
+        cout << "а) Круг помещается в треугольнике\n";
+    }
+    else {
+        cout << "а) Круг не помещается в треугольнике\n";
+    }
+
+    // б) треугольник в круге
+    double circumscribed_circle_radius = triangle_side * sqrt(3) / 3;
+
+    if (circumscribed_circle_radius <= circle_radius) {
+        cout << "б) Треугольник помещается в круге\n";
+    }
+    else {
+        cout << "б) Треугольник не помещается в круге\n";
+    }
+
+    return 0;
+Задание № 20
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x1, y1, x2, y2; // первый прямоугольник (левый нижний и правый верхний)
+    double x3, y3, x4, y4; // второй прямоугольник
+
+    cout << "Введите координаты первого прямоугольника (x1 y1 x2 y2): ";
+    cin >> x1 >> y1 >> x2 >> y2;
+    cout << "Введите координаты второго прямоугольника (x3 y3 x4 y4): ";
+    cin >> x3 >> y3 >> x4 >> y4;
+
+    // Находим минимальный охватывающий прямоугольник
+    double min_x = min(x1, x3);
+    double min_y = min(y1, y3);
+    double max_x = max(x2, x4);
+    double max_y = max(y2, y4);
+
+    cout << "Минимальный охватывающий прямоугольник:\n";
+    cout << "Левый нижний угол: (" << min_x << ", " << min_y << ")\n";
+    cout << "Правый верхний угол: (" << max_x << ", " << max_y << ")\n";
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x1, y1, w1, h1; // первый прямоугольник
+    double x2, y2, w2, h2; // второй прямоугольник
+
+    cout << "Введите первый прямоугольник (x1 y1 ширина1 высота1): ";
+    cin >> x1 >> y1 >> w1 >> h1;
+    cout << "Введите второй прямоугольник (x2 y2 ширина2 высота2): ";
+    cin >> x2 >> y2 >> w2 >> h2;
+
+    double min_x = min(x1, x2);
+    double min_y = min(y1, y2);
+    double max_x = max(x1 + w1, x2 + w2);
+    double max_y = max(y1 + h1, y2 + h2);
+
+    cout << "Минимальный охватывающий прямоугольник:\n";
+    cout << "Левый нижний: (" << min_x << ", " << min_y << ")\n";
+    cout << "Правый верхний: (" << max_x << ", " << max_y << ")\n";
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int m, n;
+    cout << "Введите два целых числа: ";
+    cin >> m >> n;
+
+    if (m % n == 0) {
+        cout << "Частное: " << m / n << endl;
+    }
+    else {
+        cout << m << " на " << n << " нацело не делится\n";
+    }
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, n;
+    cout << "Введите числа a и n: ";
+    cin >> a >> n;
+
+    if (n % a == 0) {
+        cout << a << " является делителем " << n << endl;
+    }
+    else {
+        cout << a << " не является делителем " << n << endl;
+    }
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    // а) является ли число четным
+    if (n % 2 == 0) {
+        cout << "а) Число четное\n";
+    }
+    else {
+        cout << "а) Число нечетное\n";
+    }
+
+    // б) оканчивается ли число цифрой 7
+    if (n % 10 == 7) {
+        cout << "б) Число оканчивается на 7\n";
+    }
+    else {
+        cout << "б) Число не оканчивается на 7\n";
+    }
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите целое число: ";
+    cin >> n;
+
+    int next_even = n + 1;
+    if (next_even % 2 != 0) {
+        next_even++;
+    }
+
+    cout << "Следующее четное число: " << next_even << endl;
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+
+    int first = n / 10;
+    int second = n % 10;
+
+    // а) какая цифра больше
+    if (first > second) {
+        cout << "а) Первая цифра больше\n";
+    }
+    else if (second > first) {
+        cout << "а) Вторая цифра больше\n";
+    }
+    else {
+        cout << "а) Цифры равны\n";
+    }
+
+    // б) одинаковы ли цифры
+    if (first == second) {
+        cout << "б) Цифры одинаковы\n";
+    }
+    else {
+        cout << "б) Цифры различны\n";
+    }
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+
+    int first = n / 10;
+    int second = n % 10;
+
+    int sum_cubes = first * first * first + second * second * second;
+
+    if (n * n == 4 * sum_cubes) {
+        cout << "Квадрат числа равен учетверенной сумме кубов цифр\n";
+    }
+    else {
+        cout << "Квадрат числа НЕ равен учетверенной сумме кубов цифр\n";
+    }
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    cout << "Введите число a: ";
+    cin >> a;
+
+    int first = n / 10;
+    int second = n % 10;
+    int sum = first + second;
+
+    // а) является ли сумма цифр двузначным числом
+    if (sum >= 10) {
+        cout << "а) Сумма цифр(" << sum << ") является двузначным числом\n";
+    }
+    else {
+        cout << "а) Сумма цифр(" << sum << ") не является двузначным числом\n";
+    }
+
+    // б) больше ли числа a сумма цифр
+    if (sum > a) {
+        cout << "б) Сумма цифр(" << sum << ") больше " << a << endl;
+    }
+    else {
+        cout << "б) Сумма цифр(" << sum << ") не больше " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 29
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    cout << "Введите число a: ";
+    cin >> a;
+
+    int first = n / 10;
+    int second = n % 10;
+    int sum = first + second;
+
+    // а) кратна ли трем сумма цифр
+    if (sum % 3 == 0) {
+        cout << "а) Сумма цифр(" << sum << ") кратна трем\n";
+    }
+    else {
+        cout << "а) Сумма цифр(" << sum << ") не кратна трем\n";
+    }
+
+    // б) кратна ли сумма цифр числу a
+    if (sum % a == 0) {
+        cout << "б) Сумма цифр(" << sum << ") кратна " << a << endl;
+    }
+    else {
+        cout << "б) Сумма цифр(" << sum << ") не кратна " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 30
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int last = n % 10;
+
+    if (first == last) {
+        cout << "Число является палиндромом\n";
+    }
+    else {
+        cout << "Число не является палиндромом\n";
+    }
+
+    return 0;
+}
+Задание № 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    // а) первая или последняя цифра
+    if (first > third) {
+        cout << "а) Первая цифра больше последней\n";
+    }
+    else if (third > first) {
+        cout << "а) Последняя цифра больше первой\n";
+    }
+    else {
+        cout << "а) Первая и последняя цифры равны\n";
+    }
+
+    // б) первая или вторая цифра
+    if (first > second) {
+        cout << "б) Первая цифра больше второй\n";
+    }
+    else if (second > first) {
+        cout << "б) Вторая цифра больше первой\n";
+    }
+    else {
+        cout << "б) Первая и вторая цифры равны\n";
+    }
+
+    // в) вторая или последняя цифра
+    if (second > third) {
+        cout << "в) Вторая цифра больше последней\n";
+    }
+    else if (third > second) {
+        cout << "в) Последняя цифра больше второй\n";
+    }
+    else {
+        cout << "в) Вторая и последняя цифры равны\n";
+    }
+
+    return 0;
+}
+Задание № 32
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    int sum_cubes = first * first * first + second * second * second + third * third * third;
+
+    if (n * n == sum_cubes) {
+        cout << "Квадрат числа равен сумме кубов его цифр\n";
+    }
+    else {
+        cout << "Квадрат числа НЕ равен сумме кубов его цифр\n";
+    }
+
+    return 0;
+}
+Задание № 33
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    cout << "Введите число a: ";
+    cin >> a;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    int sum = first + second + third;
+    int product = first * second * third;
+
+    // а) является ли сумма цифр двузначным числом
+    if (sum >= 10) {
+        cout << "а) Сумма цифр является двузначным числом\n";
+    }
+    else {
+        cout << "а) Сумма цифр не является двузначным числом\n";
+    }
+
+    // б) является ли произведение цифр трехзначным числом
+    if (product >= 100) {
+        cout << "б) Произведение цифр является трехзначным числом\n";
+    }
+    else {
+        cout << "б) Произведение цифр не является трехзначным числом\n";
+    }
+
+    // в) больше ли числа a произведение цифр
+    if (product > a) {
+        cout << "в) Произведение цифр больше " << a << endl;
+    }
+    else {
+        cout << "в) Произведение цифр не больше " << a << endl;
+    }
+
+    // г) кратна ли пяти сумма цифр
+    if (sum % 5 == 0) {
+        cout << "г) Сумма цифр кратна пяти\n";
+    }
+    else {
+        cout << "г) Сумма цифр не кратна пяти\n";
+    }
+
+    // д) кратна ли сумма цифр числу a
+    if (sum % a == 0) {
+        cout << "д) Сумма цифр кратна " << a << endl;
+    }
+    else {
+        cout << "д) Сумма цифр не кратна " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 34
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    // а) все цифры одинаковые
+    if (first == second && second == third) {
+        cout << "а) Все цифры одинаковые\n";
+    }
+    else {
+        cout << "а) Цифры не все одинаковые\n";
+    }
+
+    // б) есть ли среди цифр одинаковые
+    if (first == second || first == third || second == third) {
+        cout << "б) Есть одинаковые цифры\n";
+    }
+    else {
+        cout << "б) Все цифры различны\n";
+    }
+
+    return 0;
+}
+Задание № 35
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+    cout << "Введите число a: ";
+    cin >> a;
+
+    int first = n / 1000;
+    int second = (n / 100) % 10;
+    int third = (n / 10) % 10;
+    int fourth = n % 10;
+
+    int sum_first_two = first + second;
+    int sum_last_two = third + fourth;
+    int sum_all = first + second + third + fourth;
+    int product_all = first * second * third * fourth;
+
+    // а) равна ли сумма первых двух цифр сумме последних двух
+    if (sum_first_two == sum_last_two) {
+        cout << "а) Сумма первых двух цифр равна сумме последних двух\n";
+    }
+    else {
+        cout << "а) Сумма первых двух цифр не равна сумме последних двух\n";
+    }
+
+    // б) кратна ли трем сумма цифр
+    if (sum_all % 3 == 0) {
+        cout << "б) Сумма цифр кратна трем\n";
+    }
+    else {
+        cout << "б) Сумма цифр не кратна трем\n";
+    }
+
+    // в) кратно ли четырем произведение цифр
+    if (product_all % 4 == 0) {
+        cout << "в) Произведение цифр кратно четырем\n";
+    }
+    else {
+        cout << "в) Произведение цифр не кратно четырем\n";
+    }
+
+    // г) кратно ли произведение цифр числу a
+    if (product_all % a == 0) {
+        cout << "г) Произведение цифр кратно " << a << endl;
+    }
+    else {
+        cout << "г) Произведение цифр не кратно " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 36
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int last_digit = n % 10;
+
+    // а) заканчивается четной цифрой
+    if (last_digit % 2 == 0) {
+        cout << "а) Число заканчивается четной цифрой\n";
+    }
+    else {
+        cout << "а) Число не заканчивается четной цифрой\n";
+    }
+
+    // б) заканчивается нечетной цифрой
+    if (last_digit % 2 != 0) {
+        cout << "б) Число заканчивается нечетной цифрой\n";
+    }
+    else {
+        cout << "б) Число не заканчивается нечетной цифрой\n";
+    }
+
+    return 0;
+}
+Задание № 37
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+    cout << "Введите два числа a и b: ";
+    cin >> a >> b;
+
+    bool a_divides_b = (b % a == 0);
+    bool b_divides_a = (a % b == 0);
+
+    cout << "a является делителем b: " << (a_divides_b ? "да" : "нет") << endl;
+    cout << "b является делителем a: " << (b_divides_a ? "да" : "нет") << endl;
+
+    return 0;
+}
+Задание № 38
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите размеры стола (a b): ";
+    cin >> a >> b;
+    cout << "Введите размеры прямоугольников (c d): ";
+    cin >> c >> d;
+
+    // Размещение длинной стороной вдоль длинной стороны стола
+    int count1 = (a / c) * (b / d);
+
+    // Размещение длинной стороной вдоль короткой стороны стола
+    int count2 = (a / d) * (b / c);
+
+    cout << "При размещении длинной стороной вдоль длинной: " << count1 << " прямоугольников\n";
+    cout << "При размещении длинной стороной вдоль короткой: " << count2 << " прямоугольников\n";
+
+    if (count1 > count2) {
+        cout << "Выгоднее размещать длинной стороной вдоль длинной стороны стола\n";
+    }
+    else if (count2 > count1) {
+        cout << "Выгоднее размещать длинной стороной вдоль короткой стороны стола\n";
+    }
+    else {
+        cout << "Оба способа дают одинаковое количество\n";
+    }
+
+    return 0;
+}
+Задание № 39
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double t;
+    cout << "Введите время в минутах с начала часа: ";
+    cin >> t;
+
+    // Цикл: 3 мин зеленый, 2 мин красный
+    int cycle_time = (int)t % 5;
+
+    if (cycle_time < 3) {
+        cout << "Горит зеленый сигнал\n";
+    }
+    else {
+        cout << "Горит красный сигнал\n";
+    }
+
+    return 0;
+}
+Задание № 40
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите число: ";
+    cin >> x;
+
+    if (x > -5 && x < 3) {
+        cout << "Число принадлежит интервалу (-5, 3)\n";
+    }
+    else {
+        cout << "Число не принадлежит интервалу (-5, 3)\n";
+    }
+
+    return 0;
+}
+Задание № 41
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    if (n >= 10 && n <= 99) {
+        cout << "Число является двузначным\n";
+    }
+    else {
+        cout << "Число не является двузначным\n";
+    }
+
+    return 0;
+}
+Задание № 42
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    // a) Область I
+    if (x > 2 && y > 2) {
+        cout << "a)Точка попадает в область I\n";
+    }
+    else {
+        cout << "a)Точка не попадает в область I\n";
+    }
+
+    // б) Область I
+    if (x < -2 && y < -4) {
+        cout << "б)Точка попадает в область I\n";
+    }
+    else {
+        cout << "б)Точка не попадает в область I\n";
+    }
+
+    return 0;
+}
+Задание № 43
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    // Область I
+    if (x > 3 && y > 2) {
+        cout << "Точка попадает в область I\n";
+    }
+    else {
+        cout << "Точка не попадает в область I\n";
+    }
+
+    return 0;
+}
+Задание № 44
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    // Область I: x > 5(первый квадрант)
+    // Область III: x < -1(третий квадрант)
+    if (x < -1 || x > 5) {
+        cout << "Точка попадает в область I или III\n";
+    }
+    else {
+        cout << "Точка не попадает в область I или III\n";
+    }
+
+    return 0;
+}
+Задание № 45
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+
+    double f;
+    if (x >= -2.4 && x <= 5.7) {
+        f = x * x;
+    }
+    else {
+        f = 4;
+    }
+
+    cout << "f(x) = " << f << endl;
+
+    return 0;
+}
+Задание № 46
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+
+    double f;
+    if (x >= 0.2 && x <= 0.9) {
+        f = sin(x);
+    }
+    else {
+        f = 1;
+    }
+
+    cout << "f(x) = " << f << endl;
+
+    return 0;
+}
+Задание № 47
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три вещественных числа(a, b, c): ";
+    cin >> a >> b >> c;
+
+    // а) выполняется ли a < b < c
+    if (a < b && b < c) {
+        cout << "а) Неравенство a < b < c выполняется\n";
+    }
+    else {
+        cout << "а) Неравенство a < b < c не выполняется\n";
+    }
+
+    // б) выполняется ли b > a > c
+    if (b > a && a > c) {
+        cout << "б) Неравенство b > a > c выполняется\n";
+    }
+    else {
+        cout << "б) Неравенство b > a > c не выполняется\n";
+    }
+
+    return 0;
+}
+Задание № 48
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+    cout << "Введите два целых числа: ";
+    cin >> a >> b;
+
+    if (a % b == 0 || b % a == 0) {
+        cout << "Хотя бы одно число является делителем другого\n";
+    }
+    else {
+        cout << "Ни одно число не является делителем другого\n";
+    }
+
+    return 0;
+}
+Задание № 49
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    cout << "Введите цифру a: ";
+    cin >> a;
+
+    int first = n / 10;
+    int second = n % 10;
+
+    // а) входит ли цифра 3
+    if (first == 3 || second == 3) {
+        cout << "а) Число содержит цифру 3\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 3\n";
+    }
+
+    // б) входит ли цифра a
+    if (first == a || second == a) {
+        cout << "б) Число содержит цифру " << a << endl;
+    }
+    else {
+        cout << "б) Число не содержит цифру " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 50
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+
+    int first = n / 10;
+    int second = n % 10;
+
+    // а) входят ли цифры 4 или 7
+    if (first == 4 || first == 7 || second == 4 || second == 7) {
+        cout << "а) Число содержит цифру 4 или 7\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 4 или 7\n";
+    }
+
+    // б) входят ли цифры 3, 6 или 9
+    if (first == 3 || first == 6 || first == 9 || second == 3 || second == 6 || second == 9) {
+        cout << "б) Число содержит цифру 3, 6 или 9\n";
+    }
+    else {
+        cout << "б) Число не содержит цифру 3, 6 или 9\n";
+    }
+
+    return 0;
+}
+Задание № 51
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    // а) входит ли цифра 6
+    if (first == 6 || second == 6 || third == 6) {
+        cout << "а) Число содержит цифру 6\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 6\n";
+    }
+
+    // б) входит ли цифра n
+    int digit;
+    cout << "Введите цифру для проверки: ";
+    cin >> digit;
+    if (first == digit || second == digit || third == digit) {
+        cout << "б) Число содержит цифру " << digit << endl;
+    }
+    else {
+        cout << "б) Число не содержит цифру " << digit << endl;
+    }
+
+    return 0;
+}
+Задание № 52
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    if (first == 6 || second == 6 || third == 6) {
+        cout << "Число содержит цифру 6\n";
+    }
+    else {
+        cout << "Число не содержит цифру 6\n";
+    }
+
+    return 0;
+}
+Задание № 53
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+
+    // а) входят ли цифры 4 или 7
+    if (first == 4 || first == 7 || second == 4 || second == 7 || third == 4 || third == 7) {
+        cout << "а) Число содержит цифру 4 или 7\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 4 или 7\n";
+    }
+
+    // б) входят ли цифры 3, 6 или 9
+    if (first == 3 || first == 6 || first == 9 || second == 3 || second == 6 || second == 9 || third == 3 || third == 6 || third == 9) {
+        cout << "б) Число содержит цифру 3, 6 или 9\n";
+    }
+    else {
+        cout << "б) Число не содержит цифру 3, 6 или 9\n";
+    }
+
+    return 0;
+}
+Задание № 54
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Ru");
+    int n, b;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+    cout << "Введите цифру b: ";
+    cin >> b;
+
+    int first = n / 1000;
+    int second = (n / 100) % 10;
+    int third = (n / 10) % 10;
+    int fourth = n % 10;
+
+    // а) входит ли цифра 4
+    if (first == 4 || second == 4 || third == 4 || fourth == 4) {
+        cout << "а) Число содержит цифру 4\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 4\n";
+    }
+
+    // б) входит ли цифра b
+    if (first == b || second == b || third == b || fourth == b) {
+        cout << "б) Число содержит цифру " << b << endl;
+    }
+    else {
+        cout << "б) Число не содержит цифру " << b << endl;
+    }
+
+    return 0;
+}
+Задание № 55
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Ru");
+    int n;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+
+    int first = n / 1000;
+    int second = (n / 100) % 10;
+    int third = (n / 10) % 10;
+    int fourth = n % 10;
+
+    // а) входят ли цифры 2 или 7
+    if (first == 2 || first == 7 || second == 2 || second == 7 || third == 2 || third == 7 || fourth == 2 || fourth == 7) {
+        cout << "а) Число содержит цифру 2 или 7\n";
+    }
+    else {
+        cout << "а) Число не содержит цифру 2 или 7\n";
+    }
+
+    // б) входят ли цифры 3, 6 или 9
+    if (first == 3 || first == 6 || first == 9 || second == 3 || second == 6 || second == 9 || third == 3 || third == 6 || third == 9 || fourth == 3 || fourth == 6 || fourth == 9) {
+        cout << "б) Число содержит цифру 3, 6 или 9\n";
+    }
+    else {
+        cout << "б) Число не содержит цифру 3, 6 или 9\n";
+    }
+
+    return 0;
+}
+Задание № 56
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+
+    int first = n / 1000;
+    int second = (n / 100) % 10;
+    int third = (n / 10) % 10;
+    int fourth = n % 10;
+
+    if (first == fourth && second == third) {
+        cout << "Запись числа симметрична\n";
+    }
+    else {
+        cout << "Запись числа не симметрична\n";
+    }
+
+    return 0;
+}
+Задание № 57
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите a, b, c, d: ";
+    cin >> a >> b >> c >> d;
+
+    int remainder = a % b;
+
+    if (remainder == c) {
+        cout << "Остаток равен " << c << endl;
+    }
+    else if (remainder == d) {
+        cout << "Остаток равен " << d << endl;
+    }
+    else {
+        cout << "Остаток не равен " << c << " и " << d << endl;
+    }
+
+    return 0;
+}
+Задание № 58
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три вещественных числа: ";
+    cin >> a >> b >> c;
+
+    if (a == b || a == c || b == c) {
+        cout << "Есть хотя бы одна пара равных чисел\n";
+    }
+    else {
+        cout << "Все числа различны\n";
+    }
+
+    return 0;
+}
+Задание № 59
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+
+    // а) равносторонний
+    if (a == b && b == c) {
+        cout << "а) Треугольник равносторонний\n";
+    }
+    else {
+        cout << "а) Треугольник не равносторонний\n";
+    }
+
+    // б) равнобедренный
+    if (a == b || a == c || b == c) {
+        cout << "б) Треугольник равнобедренный\n";
+    }
+    else {
+        cout << "б) Треугольник не равнобедренный\n";
+    }
+
+    return 0;
+}
+Задание № 60
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double h1, h2, h3;
+    cout << "Введите рост трех человек: ";
+    cin >> h1 >> h2 >> h3;
+
+    if (h1 == h2 && h2 == h3) {
+        cout << "Рост всех трех человек одинаковый\n";
+    }
+    else {
+        cout << "Рост не одинаковый\n";
+    }
+
+    return 0;
+}
+Задание № 61
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c (a != 0): ";
+    cin >> a >> b >> c;
+
+    double D = b * b - 4 * a * c;
+
+    if (D > 0) {
+        double x1 = (-b + sqrt(D)) / (2 * a);
+        double x2 = (-b - sqrt(D)) / (2 * a);
+        cout << "Два различных корня: x1 = " << x1 << ", x2 = " << x2 << endl;
+    }
+    else if (D == 0) {
+        double x = -b / (2 * a);
+        cout << "Один корень (кратности 2): x = " << x << endl;
+    }
+    else {
+        cout << "Действительных корней нет\n";
+    }
+
+    return 0;
+}
+Задание № 62
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, d;
+    cout << "Введите стороны первого прямоугольника (a b): ";
+    cin >> a >> b;
+    cout << "Введите стороны второго прямоугольника (c d): ";
+    cin >> c >> d;
+
+    // Проверяем, можно ли разместить первый прямоугольник внутри второго
+    if ((a <= c && b <= d) || (a <= d && b <= c)) {
+        cout << "Прямоугольник можно разместить внутри\n";
+    }
+    else {
+        cout << "Прямоугольник нельзя разместить внутри\n";
+    }
+
+    return 0;
+}
+Задание № 63
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, d;
+    cout << "Введите размеры конверта (a b) в мм: ";
+    cin >> a >> b;
+    cout << "Введите размеры открытки (c d) в мм: ";
+    cin >> c >> d;
+
+    // Учитываем зазор 1 мм с каждой стороны
+    if ((c + 2 <= a && d + 2 <= b) || (c + 2 <= b && d + 2 <= a)) {
+        cout << "Открытка помещается в конверт\n";
+    }
+    else {
+        cout << "Открытка не помещается в конверт\n";
+    }
+
+    return 0;
+}
+Задание № 64
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, d;
+    cout << "Введите размеры форточки (a b) в см: ";
+    cin >> a >> b;
+    cout << "Введите диаметр головы в см: ";
+    cin >> d;
+
+    // Учитываем зазор 1 см с каждой стороны
+    if (d + 2 <= a && d + 2 <= b) {
+        cout << "Вася сможет высунуть голову\n";
+    }
+    else {
+        cout << "Вася не сможет высунуть голову\n";
+    }
+
+    return 0;
+}
+Задание № 65
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, x, y;
+    cout << "Введите размеры кирпича (a b c): ";
+    cin >> a >> b >> c;
+    cout << "Введите размеры отверстия (x y): ";
+    cin >> x >> y;
+
+    // Проверяем все возможные ориентации кирпича
+    if ((a <= x && b <= y) || (a <= y && b <= x) ||
+        (a <= x && c <= y) || (a <= y && c <= x) ||
+        (b <= x && c <= y) || (b <= y && c <= x)) {
+        cout << "Кирпич пройдет в отверстие\n";
+    }
+    else {
+        cout << "Кирпич не пройдет в отверстие\n";
+    }
+
+    return 0;
+}
+Задание № 66
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a1, a2, a3, b1, b2, b3;
+    cout << "Введите размеры чемодана (a1 a2 a3) в см: ";
+    cin >> a1 >> a2 >> a3;
+    cout << "Введите размеры коробки (b1 b2 b3) в см: ";
+    cin >> b1 >> b2 >> b3;
+
+    // Проверяем, помещается ли коробка в чемодан
+    if ((b1 <= a1 && b2 <= a2 && b3 <= a3) ||
+        (b1 <= a1 && b2 <= a3 && b3 <= a2) ||
+        (b1 <= a2 && b2 <= a1 && b3 <= a3) ||
+        (b1 <= a2 && b2 <= a3 && b3 <= a1) ||
+        (b1 <= a3 && b2 <= a1 && b3 <= a2) ||
+        (b1 <= a3 && b2 <= a2 && b3 <= a1)) {
+        cout << "Коробка помещается в чемодан, можно сэкономить\n";
+    }
+    else {
+        cout << "Коробка не помещается в чемодан\n";
+    }
+
+    return 0;
+}
+Задание № 67
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите шестизначное число: ";
+    cin >> n;
+
+    int first = n / 100000;
+    int second = (n / 10000) % 10;
+    int third = (n / 1000) % 10;
+    int fourth = (n / 100) % 10;
+    int fifth = (n / 10) % 10;
+    int sixth = n % 10;
+
+    int sum_first = first + second + third;
+    int sum_last = fourth + fifth + sixth;
+
+    if (sum_first == sum_last) {
+        cout << "Число счастливое\n";
+    }
+    else {
+        cout << "Число не счастливое\n";
+    }
+
+    return 0;
+}
+Задание № 68
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int year;
+    cout << "Введите год: ";
+    cin >> year;
+
+    bool is_leap = false;
+
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                is_leap = true;
+            }
+        }
+        else {
+            is_leap = true;
+        }
+    }
+
+    if (is_leap) {
+        cout << year << " год високосный\n";
+    }
+    else {
+        cout << year << " год не високосный\n";
+    }
+
+    return 0;
+}
+Задание № 69
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d, e;
+    cout << "Введите размеры стола (a b): ";
+    cin >> a >> b;
+    cout << "Введите размеры кости домино (c d e): ";
+    cin >> c >> d >> e;
+
+    // Рассчитываем количество костей для разных ориентаций
+    int count1 = (a / c) * (b / d);
+    int count2 = (a / d) * (b / c);
+
+    cout << "При ориентации c*d: " << count1 << " костей\n";
+    cout << "При ориентации d*c: " << count2 << " костей\n";
+    cout << "Максимальное количество: " << max(count1, count2) << endl;
+
+    return 0;
+}
+Задание № 70
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Ru");
+    int k;
+    cout << "Введите день года (1-365): ";
+    cin >> k;
+
+    // 1 января - понедельник
+    int day_of_week = (k - 1) % 7;
+
+    if (day_of_week == 5 || day_of_week == 6) {
+        cout << k << "-й день года - выходной\n";
+    }
+    else {
+        cout << k << "-й день года - рабочий\n";
+    }
+
+    return 0;
+}
+Задание № 71
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double alpha, v0, R, H, P;
+    const double g = 9.8;
+
+    cout << "Введите угол A (в радианах): ";
+    cin >> alpha;
+    cout << "Введите начальную скорость v0: ";
+    cin >> v0;
+    cout << "Введите расстояние до цели R: ";
+    cin >> R;
+    cout << "Введите высоту цели H: ";
+    cin >> H;
+    cout << "Введите высоту цели P: ";
+    cin >> P;
+
+    // Время полета до цели
+    double t = R / (v0 * cos(alpha));
+
+    // Высота снаряда в момент времени t
+    double y = v0 * t * sin(alpha) - (g * t * t) / 2;
+
+    if (y >= H && y <= H + P) {
+        cout << "Снаряд поразит цель\n";
+    }
+    else {
+        cout << "Снаряд не поразит цель\n";
+    }
+
+    return 0;
+}
+Задание № 72
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x1, y1, w1, h1, x2, y2, w2, h2;
+
+    cout << "Введите первый прямоугольник (x1 y1 w1 h1): ";
+    cin >> x1 >> y1 >> w1 >> h1;
+    cout << "Введите второй прямоугольник (x2 y2 w2 h2): ";
+    cin >> x2 >> y2 >> w2 >> h2;
+
+    // а) принадлежат ли все точки первого прямоугольника второму
+    bool all_points_inside = (x1 >= x2) && (y1 >= y2) &&
+        (x1 + w1 <= x2 + w2) && (y1 + h1 <= y2 + h2);
+
+    // б) принадлежат ли все точки одного из прямоугольников другому
+    bool one_inside_other = all_points_inside ||
+        (x2 >= x1) && (y2 >= y1) &&
+        (x2 + w2 <= x1 + w1) && (y2 + h2 <= y1 + h1);
+
+    // в) пересекаются ли прямоугольники
+    bool intersect = !(x1 + w1 < x2 || x2 + w2 < x1 ||
+        y1 + h1 < y2 || y2 + h2 < y1);
+
+    cout << "а) Все точки первого во втором: " << (all_points_inside ? "да" : "нет") << endl;
+    cout << "б) Один внутри другого: " << (one_inside_other ? "да" : "нет") << endl;
+    cout << "в) Прямоугольники пересекаются: " << (intersect ? "да" : "нет") << endl;
+
+    return 0;
+}
+Задание № 73
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a2, a1, b;
+    cout << "Введите цифры двузначного числа (десятки единицы): ";
+    cin >> a2 >> a1;
+    cout << "Введите однозначное число: ";
+    cin >> b;
+
+    // Разность цифр без формирования чисел
+    // a2a1 - b, где a2a1 > b и результат двузначный
+
+    int diff_units;
+    int borrow = 0;
+
+    // Вычитаем единицы
+    if (a1 >= b) {
+        diff_units = a1 - b;
+    }
+    else {
+        diff_units = 10 + a1 - b;
+        borrow = 1;
+    }
+
+    // Вычитаем десятки с учетом заема
+    int diff_tens = a2 - borrow;
+
+    cout << "Цифры разности: " << diff_tens << diff_units << endl;
+
+    return 0;
+}
+Задание № 74
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a2, a1, b2, b1;
+    cout << "Введите цифры первого числа (десятки единицы): ";
+    cin >> a2 >> a1;
+    cout << "Введите цифры второго числа (десятки единицы): ";
+    cin >> b2 >> b1;
+
+    // Разность цифр a2a1 - b2b1, где a2a1 > b2b1
+
+    int diff_units, diff_tens;
+    int borrow = 0;
+
+    // Вычитаем единицы
+    if (a1 >= b1) {
+        diff_units = a1 - b1;
+    }
+    else {
+        diff_units = 10 + a1 - b1;
+        borrow = 1;
+    }
+
+    // Вычитаем десятки с учетом заема
+    if (a2 >= b2 + borrow) {
+        diff_tens = a2 - b2 - borrow;
+    }
+    else {
+        diff_tens = 10 + a2 - b2 - borrow;
+    }
+
+    cout << "Цифры разности: " << diff_tens << diff_units << endl;
+
+    return 0;
+}
+Задание № 75
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a3, a2, a1, b2, b1;
+    cout << "Введите цифры трехзначного числа (сотни десятки единицы): ";
+    cin >> a3 >> a2 >> a1;
+    cout << "Введите цифры двузначного числа (десятки единицы): ";
+    cin >> b2 >> b1;
+
+    // Разность цифр a3a2a1 - b2b1, где a3a2a1 > b2b1
+
+    int diff_units, diff_tens, diff_hundreds;
+    int borrow1 = 0, borrow2 = 0;
+
+    // Вычитаем единицы
+    if (a1 >= b1) {
+        diff_units = a1 - b1;
+    }
+    else {
+        diff_units = 10 + a1 - b1;
+        borrow1 = 1;
+    }
+
+    // Вычитаем десятки с учетом первого заема
+    if (a2 >= b2 + borrow1) {
+        diff_tens = a2 - b2 - borrow1;
+    }
+    else {
+        diff_tens = 10 + a2 - b2 - borrow1;
+        borrow2 = 1;
+    }
+
+    // Вычитаем сотни с учетом второго заема
+    diff_hundreds = a3 - borrow2;
+
+    cout << "Цифры разности: " << diff_hundreds << diff_tens << diff_units << endl;
+
+    return 0;
+}
+Задание № 76
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите координаты (a b c d): ";
+    cin >> a >> b >> c >> d;
+
+    // а) ладья
+    if (a == c || b == d) {
+        cout << "а) Ладья угрожает полю\n";
+    }
+    else {
+        cout << "а) Ладья не угрожает полю\n";
+    }
+
+    // б) слон
+    if (abs(a - c) == abs(b - d)) {
+        cout << "б) Слон угрожает полю\n";
+    }
+    else {
+        cout << "б) Слон не угрожает полю\n";
+    }
+
+    // в) король
+    if (abs(a - c) <= 1 && abs(b - d) <= 1) {
+        cout << "в) Король может попасть на поле\n";
+    }
+    else {
+        cout << "в) Король не может попасть на поле\n";
+    }
+
+    // г) ферзь
+    if (a == c || b == d || abs(a - c) == abs(b - d)) {
+        cout << "г) Ферзь угрожает полю\n";
+    }
+    else {
+        cout << "г) Ферзь не угрожает полю\n";
+    }
+
+    // д) белая пешка
+    if ((b + 1 == d && a == c) || (b + 1 == d && abs(a - c) == 1)) {
+        cout << "д) Белая пешка может попасть на поле\n";
+    }
+    else {
+        cout << "д) Белая пешка не может попасть на поле\n";
+    }
+
+    // е) черная пешка
+    if ((b - 1 == d && a == c) || (b - 1 == d && abs(a - c) == 1)) {
+        cout << "е) Черная пешка может попасть на поле\n";
+    }
+    else {
+        cout << "е) Черная пешка не может попасть на поле\n";
+    }
+
+    // ж) конь
+    if ((abs(a - c) == 2 && abs(b - d) == 1) || (abs(a - c) == 1 && abs(b - d) == 2)) {
+        cout << "ж) Конь угрожает полю\n";
+    }
+    else {
+        cout << "ж) Конь не угрожает полю\n";
+    }
+
+    return 0;
+}
+Задание № 77
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Функции для проверки угроз фигур
+bool rook_threat(int a, int b, int c, int d) {
+    return (a == c || b == d);
+}
+
+bool bishop_threat(int a, int b, int c, int d) {
+    return (abs(a - c) == abs(b - d));
+}
+
+bool queen_threat(int a, int b, int c, int d) {
+    return rook_threat(a, b, c, d) || bishop_threat(a, b, c, d);
+}
+
+bool knight_threat(int a, int b, int c, int d) {
+    return (abs(a - c) == 2 && abs(b - d) == 1) || (abs(a - c) == 1 && abs(b - d) == 2);
+}
+
+bool king_threat(int a, int b, int c, int d) {
+    return abs(a - c) <= 1 && abs(b - d) <= 1;
+}
+
+// Функции для проверки ходов белых фигур
+bool rook_move(int a, int b, int e, int f) {
+    return (a == e || b == f);
+}
+
+bool bishop_move(int a, int b, int e, int f) {
+    return (abs(a - e) == abs(b - f));
+}
+
+bool queen_move(int a, int b, int e, int f) {
+    return rook_move(a, b, e, f) || bishop_move(a, b, e, f);
+}
+
+bool knight_move(int a, int b, int e, int f) {
+    return (abs(a - e) == 2 && abs(b - f) == 1) || (abs(a - e) == 1 && abs(b - f) == 2);
+}
+
+bool king_move(int a, int b, int e, int f) {
+    return abs(a - e) <= 1 && abs(b - f) <= 1;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d, e, f;
+    cout << "Введите координаты:\n";
+    cout << "Белая фигура (a b): ";
+    cin >> a >> b;
+    cout << "Черная фигура (c d): ";
+    cin >> c >> d;
+    cout << "Целевое поле (e f): ";
+    cin >> e >> f;
+
+    // Проверяем все варианты сочетаний
+    cout << "\nРезультаты для всех сочетаний фигур:\n";
+    cout << "=====================================\n";
+
+    // а) ладья и ладья
+    if (rook_move(a, b, e, f) && !rook_threat(c, d, e, f))
+        cout << "а) Ладья+ладья: МОЖЕТ\n";
+    else
+        cout << "а) Ладья+ладья: НЕ МОЖЕТ\n";
+
+    // б) ладья и ферзь
+    if (rook_move(a, b, e, f) && !queen_threat(c, d, e, f))
+        cout << "б) Ладья+ферзь: МОЖЕТ\n";
+    else
+        cout << "б) Ладья+ферзь: НЕ МОЖЕТ\n";
+
+    // в) ладья и конь
+    if (rook_move(a, b, e, f) && !knight_threat(c, d, e, f))
+        cout << "в) Ладья+конь: МОЖЕТ\n";
+    else
+        cout << "в) Ладья+конь: НЕ МОЖЕТ\n";
+
+    // г) ладья и слон
+    if (rook_move(a, b, e, f) && !bishop_threat(c, d, e, f))
+        cout << "г) Ладья+слон: МОЖЕТ\n";
+    else
+        cout << "г) Ладья+слон: НЕ МОЖЕТ\n";
+
+    // д) ферзь и ферзь
+    if (queen_move(a, b, e, f) && !queen_threat(c, d, e, f))
+        cout << "д) Ферзь+ферзь: МОЖЕТ\n";
+    else
+        cout << "д) Ферзь+ферзь: НЕ МОЖЕТ\n";
+
+    // е) ферзь и ладья
+    if (queen_move(a, b, e, f) && !rook_threat(c, d, e, f))
+        cout << "е) Ферзь+ладья: МОЖЕТ\n";
+    else
+        cout << "е) Ферзь+ладья: НЕ МОЖЕТ\n";
+
+    // ж) ферзь и конь
+    if (queen_move(a, b, e, f) && !knight_threat(c, d, e, f))
+        cout << "ж) Ферзь+конь: МОЖЕТ\n";
+    else
+        cout << "ж) Ферзь+конь: НЕ МОЖЕТ\n";
+
+    // з) ферзь и слон
+    if (queen_move(a, b, e, f) && !bishop_threat(c, d, e, f))
+        cout << "з) Ферзь+слон: МОЖЕТ\n";
+    else
+        cout << "з) Ферзь+слон: НЕ МОЖЕТ\n";
+
+    // и) конь и конь
+    if (knight_move(a, b, e, f) && !knight_threat(c, d, e, f))
+        cout << "и) Конь+конь: МОЖЕТ\n";
+    else
+        cout << "и) Конь+конь: НЕ МОЖЕТ\n";
+
+    // к) конь и ладья
+    if (knight_move(a, b, e, f) && !rook_threat(c, d, e, f))
+        cout << "к) Конь+ладья: МОЖЕТ\n";
+    else
+        cout << "к) Конь+ладья: НЕ МОЖЕТ\n";
+
+    // л) конь и ферзь
+    if (knight_move(a, b, e, f) && !queen_threat(c, d, e, f))
+        cout << "л) Конь+ферзь: МОЖЕТ\n";
+    else
+        cout << "л) Конь+ферзь: НЕ МОЖЕТ\n";
+
+    // м) конь и слон
+    if (knight_move(a, b, e, f) && !bishop_threat(c, d, e, f))
+        cout << "м) Конь+слон: МОЖЕТ\n";
+    else
+        cout << "м) Конь+слон: НЕ МОЖЕТ\n";
+
+    // н) слон и слон
+    if (bishop_move(a, b, e, f) && !bishop_threat(c, d, e, f))
+        cout << "н) Слон+слон: МОЖЕТ\n";
+    else
+        cout << "н) Слон+слон: НЕ МОЖЕТ\n";
+
+    // о) слон и ферзь
+    if (bishop_move(a, b, e, f) && !queen_threat(c, d, e, f))
+        cout << "о) Слон+ферзь: МОЖЕТ\n";
+    else
+        cout << "о) Слон+ферзь: НЕ МОЖЕТ\n";
+
+    // п) слон и конь
+    if (bishop_move(a, b, e, f) && !knight_threat(c, d, e, f))
+        cout << "п) Слон+конь: МОЖЕТ\n";
+    else
+        cout << "п) Слон+конь: НЕ МОЖЕТ\n";
+
+    // р) слон и ладья
+    if (bishop_move(a, b, e, f) && !rook_threat(c, d, e, f))
+        cout << "р) Слон+ладья: МОЖЕТ\n";
+    else
+        cout << "р) Слон+ладья: НЕ МОЖЕТ\n";
+
+    // с) король и слон
+    if (king_move(a, b, e, f) && !bishop_threat(c, d, e, f))
+        cout << "с) Король+слон: МОЖЕТ\n";
+    else
+        cout << "с) Король+слон: НЕ МОЖЕТ\n";
+
+    // т) король и ферзь
+    if (king_move(a, b, e, f) && !queen_threat(c, d, e, f))
+        cout << "т) Король+ферзь: МОЖЕТ\n";
+    else
+        cout << "т) Король+ферзь: НЕ МОЖЕТ\n";
+
+    // у) король и конь
+    if (king_move(a, b, e, f) && !knight_threat(c, d, e, f))
+        cout << "у) Король+конь: МОЖЕТ\n";
+    else
+        cout << "у) Король+конь: НЕ МОЖЕТ\n";
+
+    // ф) король и ладья
+    if (king_move(a, b, e, f) && !rook_threat(c, d, e, f))
+        cout << "ф) Король+ладья: МОЖЕТ\n";
+    else
+        cout << "ф) Король+ладья: НЕ МОЖЕТ\n";
+
+    return 0;
+}
+Задание № 78
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите координаты двух полей (a b c d): ";
+    cin >> a >> b >> c >> d;
+
+    // Поля одного цвета, если сумма координат одинаковой четности
+    if ((a + b) % 2 == (c + d) % 2) {
+        cout << "Поля одного цвета\n";
+    }
+    else {
+        cout << "Поля разного цвета\n";
+    }
+
+    return 0;
+}
+Задание № 79
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+
+    if (a + b > c && a + c > b && b + c > a) {
+        cout << "Треугольник существует\n";
+    }
+    else {
+        cout << "Треугольник не существует\n";
+    }
+
+    return 0;
+}
+Задание № 80
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+
+    if (a + b > c && a + c > b && b + c > a) {
+        // Проверяем теорему Пифагора
+        if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+            cout << "Треугольник прямоугольный\n";
+        }
+        else {
+            cout << "Треугольник не прямоугольный\n";
+        }
+    }
+    else {
+        cout << "Треугольник не существует\n";
+    }
+
+    return 0;
+}
+Задание № 81
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+
+    if (a + b > c && a + c > b && b + c > a) {
+        // Находим квадраты сторон
+        double a2 = a * a, b2 = b * b, c2 = c * c;
+
+        if (a2 + b2 == c2 || a2 + c2 == b2 || b2 + c2 == a2) {
+            cout << "а) Треугольник прямоугольный\n";
+        }
+        else if (a2 + b2 > c2 && a2 + c2 > b2 && b2 + c2 > a2) {
+            cout << "а) Треугольник остроугольный\n";
+        }
+        else {
+            cout << "а) Треугольник тупоугольный\n";
+        }
+
+        // б) Определяем тип по сторонам
+        if (a == b && b == c) {
+            cout << "б) Равносторонний" << endl;
+        }
+        else if (a == b || a == c || b == c) {
+            cout << "б) Равнобедренный" << endl;
+        }
+        else {
+            cout << "б) Разносторонний" << endl;
+        }
+    }
+    else {
+        cout << "Треугольник не существует" << endl;
+    }
+
+    return 0;
+}
+Задание № 82
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите возраст (1-99): ";
+    cin >> n;
+
+    cout << "мне " << n << " ";
+
+    if (n % 10 == 1 && n != 11) {
+        cout << "год";
+    }
+    else if ((n % 10 >= 2 && n % 10 <= 4) && (n < 10 || n > 20)) {
+        cout << "года";
+    }
+    else {
+        cout << "лет";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 83
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите количество грибов: ";
+    cin >> k;
+
+    cout << "мы нашли " << k << " гриб";
+
+    if (k % 10 == 1 && k != 11) {
+        // ничего не добавляем
+    }
+    else if (k % 10 >= 2 && k % 10 <= 4 && (k < 10 || k > 20)) {
+        cout << "а";
+    }
+    else {
+        cout << "ов";
+    }
+    cout << " в лесу\n";
+
+    return 0;
+}
+Задание № 84
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите стоимость в копейках (1-9999): ";
+    cin >> n;
+
+    int rubles = n / 100;
+    int kopeeks = n % 100;
+
+    cout << rubles << " рубл";
+
+    if (rubles % 10 == 1 && rubles != 11) {
+        cout << "ь";
+    }
+    else if (rubles % 10 >= 2 && rubles % 10 <= 4 && (rubles < 10 || rubles > 20)) {
+        cout << "я";
+    }
+    else {
+        cout << "ей";
+    }
+
+    cout << " " << kopeeks << " копе";
+
+    if (kopeeks % 10 == 1 && kopeeks != 11) {
+        cout << "йка";
+    }
+    else if (kopeeks % 10 >= 2 && kopeeks % 10 <= 4 && (kopeeks < 10 || kopeeks > 20)) {
+        cout << "йки";
+    }
+    else {
+        cout << "ек";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 85
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите возраст в месяцах (1-1188): ";
+    cin >> n;
+
+    int years = n / 12;
+    int months = n % 12;
+
+    cout << years << " год";
+
+    if (years % 10 == 1 && years != 11) {
+        // ничего
+    }
+    else if (years % 10 >= 2 && years % 10 <= 4 && (years < 10 || years > 20)) {
+        cout << "а";
+    }
+    else {
+        cout << "ов";
+    }
+
+    if (months > 0) {
+        cout << " " << months << " месяц";
+
+        if (months % 10 == 1 && months != 11) {
+            // ничего
+        }
+        else if (months % 10 >= 2 && months % 10 <= 4 && (months < 10 || months > 20)) {
+            cout << "а";
+        }
+        else {
+            cout << "ев";
+        }
+    }
+    else {
+        cout << " ровно";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 86
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int birth_year, birth_month, birth_day;
+    int current_year, current_month, current_day;
+
+    cout << "Введите дату рождения (год месяц день): ";
+    cin >> birth_year >> birth_month >> birth_day;
+    cout << "Введите текущую дату (год месяц день): ";
+    cin >> current_year >> current_month >> current_day;
+
+    int age = current_year - birth_year;
+
+    // Если текущий месяц меньше месяца рождения, или месяцы равны но день меньше
+    if (current_month < birth_month || (current_month == birth_month && current_day < birth_day)) {
+        age--;
+    }
+
+    cout << "Возраст: " << age << " лет\n";
+
+    return 0;
+}
+Задание № 87
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int year1, month1, day1; // первый человек
+    int year2, month2, day2; // второй человек
+
+    cout << "Введите дату рождения первого (год месяц день): ";
+    cin >> year1 >> month1 >> day1;
+    cout << "Введите дату рождения второго (год месяц день): ";
+    cin >> year2 >> month2 >> day2;
+
+    // Сравниваем по годам
+    if (year1 < year2) {
+        cout << "Первый человек старше\n";
+    }
+    else if (year1 > year2) {
+        cout << "Второй человек старше\n";
+    }
+    else {
+        // Годы равны, сравниваем месяцы
+        if (month1 < month2) {
+            cout << "Первый человек старше\n";
+        }
+        else if (month1 > month2) {
+            cout << "Второй человек старше\n";
+        }
+        else {
+            // Месяцы равны, сравниваем дни
+            if (day1 < day2) {
+                cout << "Первый человек старше\n";
+            }
+            else if (day1 > day2) {
+                cout << "Второй человек старше\n";
+            }
+            else {
+                cout << "Одного возраста\n";
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 88
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int birth_year, birth_month;
+    int current_year, current_month;
+
+    cout << "Введите год и месяц рождения: ";
+    cin >> birth_year >> birth_month;
+    cout << "Введите текущий год и месяц: ";
+    cin >> current_year >> current_month;
+
+    int full_years = current_year - birth_year;
+    int full_months;
+
+    if (current_month >= birth_month) {
+        full_months = current_month - birth_month;
+    }
+    else {
+        full_years--;
+        full_months = 12 - birth_month + current_month;
+    }
+
+    cout << "Возраст: " << full_years << " лет и " << full_months << " месяцев\n";
+
+    return 0;
+}
+Задание № 89
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d, n, m;
+
+    cout << "Время прибытия поезда (часы минуты): ";
+    cin >> a >> b;
+    cout << "Время отправления поезда (часы минуты): ";
+    cin >> c >> d;
+    cout << "Время прихода пассажира (часы минуты): ";
+    cin >> n >> m;
+
+    // Переводим все в минуты
+    int arrival = a * 60 + b;
+    int departure = c * 60 + d;
+    int passenger = n * 60 + m;
+
+    if (passenger >= arrival && passenger < departure) {
+        cout << "Поезд стоит на платформе\n";
+    }
+    else {
+        cout << "Поезда нет на платформе\n";
+    }
+
+    return 0;
+}
+Задание № 90
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int m, n;
+    cout << "Введите номер месяца и число: ";
+    cin >> m >> n;
+
+    // а) предыдущий день
+    int prev_day = n - 1;
+    int prev_month = m;
+
+    if (prev_day == 0) {
+        prev_month--;
+        // Количество дней в предыдущем месяце
+        if (prev_month == 2) prev_day = 28;
+        else if (prev_month == 4 || prev_month == 6 || prev_month == 9 || prev_month == 11) prev_day = 30;
+        else prev_day = 31;
+    }
+    cout << "а) Предыдущий день: " << prev_day << "." << prev_month << endl;
+
+    // б) следующий день
+    int next_day = n + 1;
+    int next_month = m;
+    int days_in_month;
+
+    // Определяем количество дней в текущем месяце
+    if (m == 2) days_in_month = 28;
+    else if (m == 4 || m == 6 || m == 9 || m == 11) days_in_month = 30;
+    else days_in_month = 31;
+
+    if (next_day > days_in_month) {
+        next_day = 1;
+        next_month++;
+    }
+    cout << "б) Следующий день: " << next_day << "." << next_month << endl;
+
+    return 0;
+}
+Задание № 91
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int g, m, n;
+    cout << "Введите год, месяц и число: ";
+    cin >> g >> m >> n;
+
+    // а) предыдущий день
+    int prev_day = n - 1;
+    int prev_month = m;
+    int prev_year = g;
+
+    if (prev_day == 0) {
+        prev_month--;
+        if (prev_month == 0) {
+            prev_month = 12;
+            prev_year--;
+        }
+
+        // Количество дней в предыдущем месяце
+        int days_in_prev_month;
+        if (prev_month == 2) {
+            // Проверка на високосный год
+            bool is_leap = (prev_year % 4 == 0 && prev_year % 100 != 0) || (prev_year % 400 == 0);
+            days_in_prev_month = is_leap ? 29 : 28;
+        }
+        else if (prev_month == 4 || prev_month == 6 || prev_month == 9 || prev_month == 11) {
+            days_in_prev_month = 30;
+        }
+        else {
+            days_in_prev_month = 31;
+        }
+        prev_day = days_in_prev_month;
+    }
+    cout << "а) Предыдущий день: " << prev_day << "." << prev_month << "." << prev_year << endl;
+
+    // б) следующий день
+    int next_day = n + 1;
+    int next_month = m;
+    int next_year = g;
+
+    // Количество дней в текущем месяце
+    int days_in_month;
+    if (m == 2) {
+        bool is_leap = (g % 4 == 0 && g % 100 != 0) || (g % 400 == 0);
+        days_in_month = is_leap ? 29 : 28;
+    }
+    else if (m == 4 || m == 6 || m == 9 || m == 11) {
+        days_in_month = 30;
+    }
+    else {
+        days_in_month = 31;
+    }
+
+    if (next_day > days_in_month) {
+        next_day = 1;
+        next_month++;
+        if (next_month > 12) {
+            next_month = 1;
+            next_year++;
+        }
+    }
+    cout << "б) Следующий день: " << next_day << "." << next_month << "." << next_year << endl;
+
+    return 0;
+}
+Задание № 92
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double t;
+    cout << "Введите время в минутах с начала часа: ";
+    cin >> t;
+
+    // Цикл: 3 мин зеленый, 1 мин желтый, 2 мин красный
+    int cycle_time = (int)t % 6;
+
+    if (cycle_time < 3) {
+        cout << "Горит зеленый сигнал\n";
+    }
+    else if (cycle_time < 4) {
+        cout << "Горит желтый сигнал\n";
+    }
+    else {
+        cout << "Горит красный сигнал\n";
+    }
+
+    return 0;
+}
+Задание № 93
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите день года (1-365): ";
+    cin >> k;
+
+    // а) 1 января - понедельник
+    int day_of_week_a = (k - 1) % 7;
+
+    cout << "а) 1 января - понедельник:\n";
+    if (day_of_week_a == 5) {
+        cout << k << "-й день года - суббота\n";
+    }
+    else if (day_of_week_a == 6) {
+        cout << k << "-й день года - воскресенье\n";
+    }
+    else {
+        cout << k << "-й день года - рабочий день\n";
+    }
+
+    // б) 1 января - d-й день недели
+    int d;
+    cout << "\nВведите день недели 1 января (1-пн, 2-вт, ..., 7-вс): ";
+    cin >> d;
+
+    int day_of_week_b = (k - 1 + d - 1) % 7;
+
+    cout << "б) 1 января - " << d << "-й день недели:\n";
+    if (day_of_week_b == 5) {
+        cout << k << "-й день года - суббота\n";
+    }
+    else if (day_of_week_b == 6) {
+        cout << k << "-й день года - воскресенье\n";
+    }
+    else {
+        cout << k << "-й день года - рабочий день\n";
+    }
+
+    return 0;
+}
+Задание № 94
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите k (1-180): ";
+    cin >> k;
+
+    int position = k;
+    int number = 10;
+
+    while (position > 2) {
+        position -= 2;
+        number++;
+    }
+
+    if (position == 1) {
+        cout << "k-я цифра: " << number / 10 << endl;
+    }
+    else {
+        cout << "k-я цифра: " << number % 10 << endl;
+    }
+
+    return 0;
+}
+Задание № 95
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите n (1-32): ";
+    cin >> n;
+
+    if (n == 1) {
+        cout << "0\n";
+    }
+    else {
+        n--;
+        int number = 1;
+
+        while (n > 0) {
+            if (number < 10) {
+                // Однозначные числа занимают 1 позицию
+                if (n == 1) {
+                    cout << number << endl;
+                    break;
+                }
+                n--;
+            }
+            else {
+                // Двузначные числа занимают 2 позиции
+                if (n == 1) {
+                    cout << number / 10 << endl;
+                    break;
+                }
+                else if (n == 2) {
+                    cout << number % 10 << endl;
+                    break;
+                }
+                n -= 2;
+            }
+            number++;
+        }
+    }
+
+    return 0;
+}
+Задание № 96
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите k (1-252): ";
+    cin >> k;
+
+    int position = k;
+
+
+    if (position <= 100) {
+        int number_index = (position - 1) / 2;
+        int number = 50 + number_index;
+        int digit_pos = (position - 1) % 2;
+
+        if (digit_pos == 0) {
+            cout << number / 10 << endl;
+        }
+        else {
+            cout << number % 10 << endl;
+        }
+    }
+    else {
+
+        position -= 100;
+
+        int number_index = (position - 1) / 3;
+        int number = 100 + number_index;
+        int digit_pos = (position - 1) % 3;
+
+        if (digit_pos == 0) {
+            cout << number / 100 << endl;
+        }
+        else if (digit_pos == 1) {
+            cout << (number / 10) % 10 << endl;
+        }
+        else {
+            cout << number % 10 << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 97
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите k (1-222): ";
+    cin >> k;
+
+    int position = k;
+    int number = 1;
+
+    while (position > (number < 10 ? 1 : (number < 100 ? 2 : 3))) {
+        if (number < 10) {
+            position -= 1;
+        }
+        else if (number < 100) {
+            position -= 2;
+        }
+        else {
+            position -= 3;
+        }
+        number++;
+    }
+
+    if (number < 10) {
+        cout << number;
+    }
+    else if (number < 100) {
+        if (position == 1) {
+            cout << number / 10;
+        }
+        else {
+            cout << number % 10;
+        }
+    }
+    else {
+        if (position == 1) {
+            cout << number / 100;
+        }
+        else if (position == 2) {
+            cout << (number / 10) % 10;
+        }
+        else {
+            cout << number % 10;
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 98
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n, a;
+    cout << "Введите количество квартир n и номер первой квартиры a: ";
+    cin >> n >> a;
+
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += a + i;
+    }
+
+    if (sum % 2 == 0) {
+        cout << "Сумма номеров четная\n";
+    }
+    else {
+        cout << "Сумма номеров нечетная\n";
+    }
+
+    return 0;
+}
+Задание № 99
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "Введите два различных вещественных числа: ";
+    cin >> a >> b;
+
+    // а) два неполных условных оператора
+    double max1;
+    if (a > b) max1 = a;
+    if (b > a) max1 = b;
+    cout << "а) Максимум: " << max1 << endl;
+
+    // б) один неполный условный оператор
+    double max2 = a;
+    if (b > a) max2 = b;
+    cout << "б) Максимум: " << max2 << endl;
+
+    return 0;
+}
+Задание № 100
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "Введите два различных вещественных числа: ";
+    cin >> a >> b;
+
+    double max_val, min_val;
+
+    // а) два неполных условных оператора
+    max_val = a;
+    min_val = a;
+    if (b > a) max_val = b;
+    if (b < a) min_val = b;
+    cout << "а) Максимум: " << max_val << ", минимум: " << min_val << endl;
+
+    // б) один неполный условный оператор
+    max_val = a;
+    min_val = b;
+    if (b > a) {
+        max_val = b;
+        min_val = a;
+    }
+    cout << "б) Максимум: " << max_val << ", минимум: " << min_val << endl;
+
+    return 0;
+}
+Задание № 101
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+
+    // а) наибольшее
+    double max_val = a;
+    if (b > max_val) max_val = b;
+    if (c > max_val) max_val = c;
+    cout << "а) Наибольшее: " << max_val << endl;
+
+    // б) наименьшее
+    double min_val = a;
+    if (b < min_val) min_val = b;
+    if (c < min_val) min_val = c;
+    cout << "б) Наименьшее: " << min_val << endl;
+
+    return 0;
+}
+Задание № 102
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, d;
+    cout << "Введите четыре различных числа: ";
+    cin >> a >> b >> c >> d;
+
+    // а) наибольшее
+    double max_val = a;
+    if (b > max_val) max_val = b;
+    if (c > max_val) max_val = c;
+    if (d > max_val) max_val = d;
+    cout << "а) Наибольшее: " << max_val << endl;
+
+    // б) наименьшее
+    double min_val = a;
+    if (b < min_val) min_val = b;
+    if (c < min_val) min_val = c;
+    if (d < min_val) min_val = d;
+    cout << "б) Наименьшее: " << min_val << endl;
+
+    return 0;
+}
+Задание № 103
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x;
+    cout << "Введите число: ";
+    cin >> x;
+
+    double abs_val = x;
+    if (x < 0) abs_val = -x;
+
+    cout << "Абсолютная величина: " << abs_val << endl;
+
+    return 0;
+}
+Задание № 104
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "Введите два числа: ";
+    cin >> a >> b;
+
+    // а) полусумма абсолютных величин
+    double abs_a = a, abs_b = b;
+    if (a < 0) abs_a = -a;
+    if (b < 0) abs_b = -b;
+
+    cout << "а) Полусумма: " << (abs_a + abs_b) / 2 << endl;
+
+    // б) квадратный корень из произведения абсолютных величин
+    cout << "б) Корень из произведения: " << sqrt(abs_a * abs_b) << endl;
+
+    return 0;
+}
+Задание № 105
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "Введите два числа: ";
+    cin >> a >> b;
+
+    // Приводим к абсолютным величинам
+    double abs_a = a, abs_b = b;
+    if (a < 0) abs_a = -a;
+    if (b < 0) abs_b = -b;
+
+    if (abs_a > abs_b) {
+        a /= 2;
+        cout << "Первое число уменьшено в 2 раза: " << a << endl;
+    }
+
+    return 0;
+}
+Задание № 106
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b;
+    cout << "Введите два числа: ";
+    cin >> a >> b;
+
+    if (sqrt(b) < a) {
+        b *= 5;
+        cout << "Второе число увеличено в 5 раз: " << b << endl;
+    }
+
+    return 0;
+}
+Задание № 107
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c;
+    cout << "Введите три целых числа: ";
+    cin >> a >> b >> c;
+
+    cout << "Четные числа: ";
+    if (a % 2 == 0) cout << a << " ";
+    if (b % 2 == 0) cout << b << " ";
+    if (c % 2 == 0) cout << c << " ";
+    cout << endl;
+
+    return 0;
+}
+Задание № 108
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три вещественных числа: ";
+    cin >> a >> b >> c;
+
+    if (a >= 0) a = a * a;
+    if (b >= 0) b = b * b;
+    if (c >= 0) c = c * c;
+
+    cout << "После возведения в квадрат: " << a << " " << b << " " << c << endl;
+
+    return 0;
+}
+Задание № 109
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три вещественных числа: ";
+    cin >> a >> b >> c;
+
+    cout << "Числа в интервале [1.6, 3.8]: ";
+    if (a >= 1.6 && a <= 3.8) cout << a << " ";
+    if (b >= 1.6 && b <= 3.8) cout << b << " ";
+    if (c >= 1.6 && c <= 3.8) cout << c << " ";
+    cout << endl;
+
+    return 0;
+}
+Задание № 110
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, d;
+    cout << "Введите четыре вещественных числа: ";
+    cin >> a >> b >> c >> d;
+
+    int count = 0;
+    if (a < 0) count++;
+    if (b < 0) count++;
+    if (c < 0) count++;
+    if (d < 0) count++;
+
+    cout << "Количество отрицательных чисел: " << count << endl;
+
+    return 0;
+}
+Задание № 111
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите четыре целых числа: ";
+    cin >> a >> b >> c >> d;
+
+    int count = 0;
+    if (a % 2 == 0) count++;
+    if (b % 2 == 0) count++;
+    if (c % 2 == 0) count++;
+    if (d % 2 == 0) count++;
+
+    cout << "Количество четных чисел: " << count << endl;
+
+    return 0;
+}
+Задание № 112
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c;
+    cout << "Введите три целых числа: ";
+    cin >> a >> b >> c;
+
+    int sum = 0;
+    if (a > 0) sum += a;
+    if (b > 0) sum += b;
+    if (c > 0) sum += c;
+
+    cout << "Сумма положительных чисел: " << sum << endl;
+
+    return 0;
+}
+Задание № 113
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c, d;
+    cout << "Введите четыре вещественных числа: ";
+    cin >> a >> b >> c >> d;
+
+    double sum = 0;
+    if (a > 5) sum += a;
+    if (b > 5) sum += b;
+    if (c > 5) sum += c;
+    if (d > 5) sum += d;
+
+    cout << "Сумма чисел больше пяти: " << sum << endl;
+
+    return 0;
+}
+Задание № 114
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d;
+    cout << "Введите четыре целых числа: ";
+    cin >> a >> b >> c >> d;
+
+    int sum = 0;
+    if (a % 3 == 0) sum += a;
+    if (b % 3 == 0) sum += b;
+    if (c % 3 == 0) sum += c;
+    if (d % 3 == 0) sum += d;
+
+    cout << "Сумма чисел, кратных трем: " << sum << endl;
+
+    return 0;
+}
+Задание № 115
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c, d, e, f;
+    cout << "Введите шесть целых чисел: ";
+    cin >> a >> b >> c >> d >> e >> f;
+
+    int sum = 0;
+    if (a > 0) sum += a;
+    if (b > 0) sum += b;
+    if (c > 0) sum += c;
+    if (d > 0) sum += d;
+    if (e > 0) sum += e;
+    if (f > 0) sum += f;
+
+    cout << "Сумма положительных чисел: " << sum << endl;
+
+    return 0;
+}
+Задание № 116
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (x < -1) {
+        y = -1;
+    }
+    else if (x > -1) {
+        y = x;
+    }
+    else {
+        y = 1;
+    }
+
+    cout << "y = " << y << endl;
+
+    return 0;
+}
+Задание № 117
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, z;
+    cout << "Введите a: ";
+    cin >> a;
+
+    if (a > 0) {
+        z = 1;
+    }
+    else if (a == 0) {
+        z = 0;
+    }
+    else {
+        z = -1;
+    }
+
+    cout << "z = " << z << endl;
+
+    return 0;
+}
+Задание № 118
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, f;
+    cout << "Введите x: ";
+    cin >> x;
+
+    if (x <= 0) {
+        f = 0;
+    }
+    else if (x <= 1) {
+        f = x;
+    }
+    else {
+        f = x * x;
+    }
+
+    cout << "f(x) = " << f << endl;
+
+    return 0;
+}
+Задание № 119
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double y, f;
+    cout << "Введите y: ";
+    cin >> y;
+
+    if (y > 2) {
+        f = 2;
+    }
+    else if (y > 0) {
+        f = 0;
+    }
+    else {
+        f = -3 * y;
+    }
+
+    cout << "f(y) = " << f << endl;
+
+    return 0;
+}
+Задание № 120
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите x: ";
+    cin >> x;
+
+    // а) для графика а
+    if (x <= -1) {
+        y = 0;
+    }
+    else if (x < 0) {
+        y = 1 + x;
+    }
+    else {
+        y = 1;
+    }
+    cout << "а) y = " << y << endl;
+
+    // б) для графика б
+    if (x <= -1) {
+        y = 1;
+    }
+    else if (x == 0) {
+        y = 0;
+    }
+    else if (x < 1) {
+        y = -x;
+    }
+    else {
+        y = -1;
+    }
+    cout << "б) y = " << y << endl;
+
+    // в) для графика в
+    if (x <= -1) {
+        y = 1;
+    }
+    else if (x <= 0) {
+        y = 0.5 - x / 2;
+    }
+    else if (x < 1) {
+        y = 0.5 + x / 2;
+    }
+    else {
+        y = 1;
+    }
+    cout << "в) y = " << y << endl;
+
+    return 0;
+}
+Задание № 121
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    if (x < 1) {
+        cout << "Точка в области I\n";
+    }
+    else if (x < 5) {
+        cout << "Точка в области II\n";
+    }
+    else {
+        cout << "Точка в области III\n";
+    }
+
+    return 0;
+}
+Задание № 122
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x, y;
+    cout << "Введите координаты точки (x y): ";
+    cin >> x >> y;
+
+    if (y > 5.0) {
+        cout << "Точка в области I\n";
+    }
+    else if (y > 2.5) {
+        cout << "Точка в области II\n";
+    }
+    else {
+        cout << "Точка в области III\n";
+    }
+
+    return 0;
+}
+Задание № 123
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int points;
+    cout << "Введите количество очков (0, 1 или 3): ";
+    cin >> points;
+
+    if (points == 3) {
+        cout << "Выигрыш\n";
+    }
+    else if (points == 1) {
+        cout << "Ничья\n";
+    }
+    else if (points == 0) {
+        cout << "Проигрыш\n";
+    }
+    else {
+        cout << "Некорректное количество очков\n";
+    }
+
+    return 0;
+}
+Задание № 124
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double mitya, vasya;
+    cout << "Введите возраст Мити: ";
+    cin >> mitya;
+    cout << "Введите возраст Васи: ";
+    cin >> vasya;
+
+    if (mitya > vasya) {
+        cout << "Митя старше\n";
+    }
+    else if (vasya > mitya) {
+        cout << "Вася старше\n";
+    }
+    else {
+        cout << "Одного возраста\n";
+    }
+
+    return 0;
+}
+Задание № 125
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double weight;
+    cout << "Введите вес боксера (кг): ";
+    cin >> weight;
+
+    if (weight < 60) {
+        cout << "Легкий вес\n";
+    }
+    else if (weight < 64) {
+        cout << "Первый полусредний вес\n";
+    }
+    else if (weight < 69) {
+        cout << "Полусредний вес\n";
+    }
+    else {
+        cout << "Вес превышает категорию полусреднего\n";
+    }
+
+    return 0;
+}
+Задание № 126
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+    cout << "Введите два различных целых числа: ";
+    cin >> a >> b;
+
+    if (a % b == 0) {
+        cout << a << " делится на " << b << endl;
+    }
+    else if (b % a == 0) {
+        cout << b << " делится на " << a << endl;
+    }
+    else {
+        cout << "Числа не являются делителями друг друга\n";
+    }
+
+    return 0;
+}
+Задание № 127
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b, c;
+    cout << "Введите три различных целых числа: ";
+    cin >> a >> b >> c;
+
+    // а) самое большое
+    if (a > b && a > c) {
+        cout << "а) Самое большое: первое (" << a << ")\n";
+    }
+    else if (b > a && b > c) {
+        cout << "а) Самое большое: второе (" << b << ")\n";
+    }
+    else {
+        cout << "а) Самое большое: третье (" << c << ")\n";
+    }
+
+    // б) самое маленькое
+    if (a < b && a < c) {
+        cout << "б) Самое маленькое: первое (" << a << ")\n";
+    }
+    else if (b < a && b < c) {
+        cout << "б) Самое маленькое: второе (" << b << ")\n";
+    }
+    else {
+        cout << "б) Самое маленькое: третье (" << c << ")\n";
+    }
+
+    // в) среднее
+    if ((a > b && a < c) || (a < b && a > c)) {
+        cout << "в) Среднее: первое (" << a << ")\n";
+    }
+    else if ((b > a && b < c) || (b < a && b > c)) {
+        cout << "в) Среднее: второе (" << b << ")\n";
+    }
+    else {
+        cout << "в) Среднее: третье (" << c << ")\n";
+    }
+
+    return 0;
+}
+Задание № 128
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три различных вещественных числа: ";
+    cin >> a >> b >> c;
+
+    double max_val, min_val;
+
+    if (a > b && a > c) {
+        max_val = a;
+        if (b > c) {
+            min_val = c;
+        }
+        else {
+            min_val = b;
+        }
+    }
+    else if (b > a && b > c) {
+        max_val = b;
+        if (a > c) {
+            min_val = c;
+        }
+        else {
+            min_val = a;
+        }
+    }
+    else {
+        max_val = c;
+        if (a > b) {
+            min_val = b;
+        }
+        else {
+            min_val = a;
+        }
+    }
+
+    cout << "Максимум: " << max_val << endl;
+    cout << "Минимум: " << min_val << endl;
+
+    return 0;
+}
+Задание № 129
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+
+    double sum_two_largest;
+
+    // Один условный оператор
+    if (a > b) {
+        if (a > c) {
+            if (b > c) {
+                sum_two_largest = a + b;
+            }
+            else {
+                sum_two_largest = a + c;
+            }
+        }
+        else {
+            sum_two_largest = a + c;
+        }
+    }
+    else {
+        if (b > c) {
+            if (a > c) {
+                sum_two_largest = b + a;
+            }
+            else {
+                sum_two_largest = b + c;
+            }
+        }
+        else {
+            sum_two_largest = b + c;
+        }
+    }
+
+    cout << "Сумма двух наибольших: " << sum_two_largest << endl;
+
+    return 0;
+}
+Задание № 130
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+
+    double min1 = a, min2 = b;
+    if (b < min1) {
+        min1 = b;
+        min2 = a;
+    }
+    if (c < min1) {
+        min2 = min1;
+        min1 = c;
+    }
+    else if (c < min2) {
+        min2 = c;
+    }
+
+    cout << "Произведение двух наименьших: " << (min1 * min2) << endl;
+
+    return 0;
+}
+Задание № 131
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a1, b1, c1, a2, b2, c2;
+    cout << "Введите первую тройку чисел: ";
+    cin >> a1 >> b1 >> c1;
+    cout << "Введите вторую тройку чисел: ";
+    cin >> a2 >> b2 >> c2;
+
+    // Находим средние числа в каждой тройке
+    double middle1, middle2;
+
+    // Для первой тройки
+    if ((a1 > b1 && a1 < c1) || (a1 < b1 && a1 > c1)) middle1 = a1;
+    else if ((b1 > a1 && b1 < c1) || (b1 < a1 && b1 > c1)) middle1 = b1;
+    else middle1 = c1;
+
+    // Для второй тройки
+    if ((a2 > b2 && a2 < c2) || (a2 < b2 && a2 > c2)) middle2 = a2;
+    else if ((b2 > a2 && b2 < c2) || (b2 < a2 && b2 > c2)) middle2 = b2;
+    else middle2 = c2;
+
+    cout << "Среднее арифметическое средних чисел: " << (middle1 + middle2) / 2 << endl;
+
+    return 0;
+}
+Задание № 132
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, y;
+    cout << "Введите координаты точки (x y, где x!=0 и y!=0): ";
+    cin >> x >> y;
+
+    if (x > 0 && y > 0) {
+        cout << "Точка в I четверти\n";
+    }
+    else if (x < 0 && y > 0) {
+        cout << "Точка во II четверти\n";
+    }
+    else if (x < 0 && y < 0) {
+        cout << "Точка в III четверти\n";
+    }
+    else if (x > 0 && y < 0) {
+        cout << "Точка в IV четверти\n";
+    }
+
+    return 0;
+}
+Задание № 133
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int day;
+    cout << "Введите номер дня недели (1-7): ";
+    cin >> day;
+
+    switch (day) {
+    case 1: cout << "Понедельник"; break;
+    case 2: cout << "Вторник"; break;
+    case 3: cout << "Среда"; break;
+    case 4: cout << "Четверг"; break;
+    case 5: cout << "Пятница"; break;
+    case 6: cout << "Суббота"; break;
+    case 7: cout << "Воскресенье"; break;
+    default: cout << "Ошибка: введите число от 1 до 7";
+    }
+    return 0;
+}
+Задание № 134
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int month;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+
+    switch (month) {
+    case 1: cout << "Январь"; break;
+    case 2: cout << "Февраль"; break;
+    case 3: cout << "Март"; break;
+    case 4: cout << "Апрель"; break;
+    case 5: cout << "Май"; break;
+    case 6: cout << "Июнь"; break;
+    case 7: cout << "Июль"; break;
+    case 8: cout << "Август"; break;
+    case 9: cout << "Сентябрь"; break;
+    case 10: cout << "Октябрь"; break;
+    case 11: cout << "Ноябрь"; break;
+    case 12: cout << "Декабрь"; break;
+    default: cout << "Ошибка: введите число от 1 до 12";
+    }
+    return 0;
+}
+Задание № 135
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int month;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+
+    switch (month) {
+    case 12: case 1: case 2:
+        cout << "Зима"; break;
+    case 3: case 4: case 5:
+        cout << "Весна"; break;
+    case 6: case 7: case 8:
+        cout << "Лето"; break;
+    case 9: case 10: case 11:
+        cout << "Осень"; break;
+    default: cout << "Ошибка: введите число от 1 до 12";
+    }
+    return 0;
+}
+Задание № 136
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int choice, month, year;
+
+    cout << "Выберите вариант решения:\n";
+    cout << "1. Год не является високосным (по умолчанию)\n";
+    cout << "2. Год может быть високосным\n";
+    cout << "Ваш выбор (1 или 2): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        cout << "Введите номер месяца (1-12): ";
+        cin >> month;
+
+        switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            cout << "31 день"; break;
+        case 4: case 6: case 9: case 11:
+            cout << "30 дней"; break;
+        case 2:
+            cout << "28 дней"; break;
+        default:
+            cout << "Ошибка: введите число от 1 до 12";
+        }
+    }
+    else if (choice == 2) {
+        cout << "Введите номер месяца (1-12): ";
+        cin >> month;
+        cout << "Введите год: ";
+        cin >> year;
+
+        bool leap = ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0));
+
+        switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            cout << "31 день"; break;
+        case 4: case 6: case 9: case 11:
+            cout << "30 дней"; break;
+        case 2:
+            if (leap) cout << "29 дней";
+            else cout << "28 дней";
+            break;
+        default:
+            cout << "Ошибка: введите число от 1 до 12";
+        }
+    }
+    else {
+        cout << "Ошибка: выберите 1 или 2";
+    }
+
+    return 0;
+}
+Задание № 137
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int month;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+
+    if (month == 2)
+        cout << "28 дней";
+    else if (month == 4 || month == 6 || month == 9 || month == 11)
+        cout << "30 дней";
+    else if (month >= 1 && month <= 12)
+        cout << "31 день";
+    else
+        cout << "Ошибка: введите число от 1 до 12";
+
+    return 0;
+}
+Задание № 138
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int m;
+    cout << "Введите номер масти (1-4): ";
+    cin >> m;
+
+    switch (m) {
+    case 1: cout << "пики"; break;
+    case 2: cout << "трефы"; break;
+    case 3: cout << "бубны"; break;
+    case 4: cout << "червы"; break;
+    default: cout << "Ошибка: введите число от 1 до 4";
+    }
+    return 0;
+}
+Задание № 139
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k;
+    cout << "Введите номер карты (6-14): ";
+    cin >> k;
+
+    switch (k) {
+    case 6: cout << "шестерка"; break;
+    case 7: cout << "семерка"; break;
+    case 8: cout << "восьмерка"; break;
+    case 9: cout << "девятка"; break;
+    case 10: cout << "десятка"; break;
+    case 11: cout << "валет"; break;
+    case 12: cout << "дама"; break;
+    case 13: cout << "король"; break;
+    case 14: cout << "туз"; break;
+    default: cout << "Ошибка: введите число от 6 до 14";
+    }
+    return 0;
+}
+Задание № 140
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int m, k;
+    cout << "Введите номер масти (1-4): ";
+    cin >> m;
+    cout << "Введите номер достоинства (6-14): ";
+    cin >> k;
+
+    // Определение достоинства
+    string rank;
+    switch (k) {
+    case 6: rank = "Шестерка"; break;
+    case 7: rank = "Семерка"; break;
+    case 8: rank = "Восьмерка"; break;
+    case 9: rank = "Девятка"; break;
+    case 10: rank = "Десятка"; break;
+    case 11: rank = "Валет"; break;
+    case 12: rank = "Дама"; break;
+    case 13: rank = "Король"; break;
+    case 14: rank = "Туз"; break;
+    default: rank = "Неизвестное достоинство";
+    }
+
+    // Определение масти
+    string suit;
+    switch (m) {
+    case 1: suit = "пик"; break;
+    case 2: suit = "треф"; break;
+    case 3: suit = "бубен"; break;
+    case 4: suit = "червей"; break;
+    default: suit = "неизвестной масти";
+    }
+
+    cout << rank << " " << suit;
+    return 0;
+}
+Задание № 141
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int k, d;
+    cout << "Введите день года k (1-365): ";
+    cin >> k;
+    cout << "Введите день недели 1 января d (1-пн..7-вс): ";
+    cin >> d;
+
+    int dayOfWeek = (k + d - 2) % 7 + 1; // 1-пн, 2-вт, ... 7-вс
+
+    switch (dayOfWeek) {
+    case 1: cout << "понедельник"; break;
+    case 2: cout << "вторник"; break;
+    case 3: cout << "среда"; break;
+    case 4: cout << "четверг"; break;
+    case 5: cout << "пятница"; break;
+    case 6: cout << "суббота"; break;
+    case 7: cout << "воскресенье"; break;
+    }
+    return 0;
+}
+Задание № 142
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите количество полных месяцев, прошедших с 2010 года: ";
+    cin >> n;
+
+    int month = (n % 12) + 1; // +1 потому что прошло n месяцев и 2 дня
+
+    switch (month) {
+    case 1: cout << "январь"; break;
+    case 2: cout << "февраль"; break;
+    case 3: cout << "март"; break;
+    case 4: cout << "апрель"; break;
+    case 5: cout << "май"; break;
+    case 6: cout << "июнь"; break;
+    case 7: cout << "июль"; break;
+    case 8: cout << "август"; break;
+    case 9: cout << "сентябрь"; break;
+    case 10: cout << "октябрь"; break;
+    case 11: cout << "ноябрь"; break;
+    case 12: cout << "декабрь"; break;
+    }
+    return 0;
+}
+Задание № 143
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int m, n, choice;
+    cout << "Введите номер месяца m (1-12): ";
+    cin >> m;
+    cout << "Введите число n (1-31): ";
+    cin >> n;
+
+    cout << "\nВыберите действие:\n";
+    cout << "1. Найти предыдущий день\n";
+    cout << "2. Найти следующий день\n";
+    cout << "Ваш выбор (1 или 2): ";
+    cin >> choice;
+
+    // Дни в месяцах для невисокосного года
+    int daysInMonth;
+    switch (m) {
+    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        daysInMonth = 31; break;
+    case 4: case 6: case 9: case 11:
+        daysInMonth = 30; break;
+    case 2:
+        daysInMonth = 28; break;
+    default:
+        cout << "Ошибка в номере месяца!" << endl;
+        return 1;
+    }
+
+    if (choice == 1) { // Предыдущий день
+        if (n > 1) {
+            n--;
+        }
+        else {
+            m--;
+            if (m == 0) m = 12;
+            // Определяем дни в предыдущем месяце
+            switch (m) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                n = 31; break;
+            case 4: case 6: case 9: case 11:
+                n = 30; break;
+            case 2:
+                n = 28; break;
+            }
+        }
+        cout << "Предыдущий день: " << n << "." << m;
+    }
+    else if (choice == 2) { // Следующий день
+        if (n < daysInMonth) {
+            n++;
+        }
+        else {
+            n = 1;
+            m++;
+            if (m > 12) m = 1;
+        }
+        cout << "Следующий день: " << n << "." << m;
+    }
+    else {
+        cout << "Ошибка выбора!";
+    }
+
+    return 0;
+}
+Задание № 144
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int g, m, n;
+    bool leap;
+    cout << "Введите год g: ";
+    cin >> g;
+    cout << "Введите месяц m (1-12): ";
+    cin >> m;
+    cout << "Введите число n (1-31): ";
+    cin >> n;
+
+    leap = ((g % 4 == 0 && g % 100 != 0) || (g % 400 == 0));
+
+    int daysInMonth;
+    switch (m) {
+    case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        daysInMonth = 31; break;
+    case 4: case 6: case 9: case 11:
+        daysInMonth = 30; break;
+    case 2:
+        daysInMonth = leap ? 29 : 28; break;
+    default: daysInMonth = 0;
+    }
+
+    // Следующий день
+    int next_n = n, next_m = m, next_g = g;
+    if (next_n < daysInMonth) {
+        next_n++;
+    }
+    else {
+        next_n = 1;
+        next_m++;
+        if (next_m > 12) {
+            next_m = 1;
+            next_g++;
+        }
+    }
+    cout << "Следующий день: " << next_n << "." << next_m << "." << next_g << endl;
+
+    // Предыдущий день
+    int prev_n = n, prev_m = m, prev_g = g;
+    if (prev_n > 1) {
+        prev_n--;
+    }
+    else {
+        prev_m--;
+        if (prev_m == 0) {
+            prev_m = 12;
+            prev_g--;
+        }
+        // дни в предыдущем месяце
+        switch (prev_m) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            prev_n = 31; break;
+        case 4: case 6: case 9: case 11:
+            prev_n = 30; break;
+        case 2:
+            prev_n = (leap && g == prev_g + 1) ? 29 : 28; break;
+        }
+    }
+    cout << "Предыдущий день: " << prev_n << "." << prev_m << "." << prev_g;
+    return 0;
+}
+Задание № 145
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int year;
+    cout << "Введите год нашей эры: ";
+    cin >> year;
+
+    string animals[] = {
+        "Крыса", "Корова", "Тигр", "Заяц", "Дракон", "Змея",
+        "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"
+    };
+    string colors[] = { "Зеленый", "Красный", "Желтый", "Белый", "Черный" };
+
+    // 1984 год — начало цикла: Зеленая Крыса (индекс 0)
+    int cycleYear = (year - 1984) % 60;
+    if (cycleYear < 0) cycleYear += 60;
+
+    int animalIndex = cycleYear % 12;
+    int colorIndex = (cycleYear / 2) % 5;
+
+    cout << animals[animalIndex] << ", " << colors[colorIndex] << endl;
+    return 0;
+}
