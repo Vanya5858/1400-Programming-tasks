@@ -1,0 +1,390 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "ru");
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    int i = 1;
+    while (i * i <= n) {
+        cout << i * i << " ";
+        i++;
+    }
+    return 0;
+}
+Задание № 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    // Способ 1: цикл while
+    int i = 1;
+    while (i * i <= n) i++;
+    cout << "Первое число > n: " << i * i << endl;
+
+    // Способ 2: for
+    for (int j = 1; ; j++) {
+        if (j * j > n) {
+            cout << "Первое число > n: " << j * j << endl;
+            break;
+        }
+    }
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (0 < a <= 1): ";
+    cin >> a;
+
+    int znam = 1;
+    while (1.0 / znam >= a) {
+        cout << "1/" << znam << " = " << 1.0 / znam << endl;
+        znam++;
+    }
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (0 < a <= 1): ";
+    cin >> a;
+
+    int znam = 1;
+    while (1.0 / znam >= a) {
+        znam++;
+    }
+    cout << "Первая дробь < a: 1/" << znam << " = " << 1.0 / znam << endl;
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (1 < a <= 1.5): ";
+    cin >> a;
+
+    for (int n = 2; 1 + 1.0 / n >= a; n++) {
+        cout << "1 + 1/" << n << " = " << 1 + 1.0 / n << endl;
+    }
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (1 < a <= 1.5): ";
+    cin >> a;
+
+    int n = 2;
+    while (1 + 1.0 / n >= a) {
+        cout << "1 + 1/" << n << " = " << 1 + 1.0 / n << endl;
+        n++;
+    }
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (1 < a <= 1.5): ";
+    cin >> a;
+
+    int n = 2;
+    while (1 + 1.0 / n >= a) {
+        n++;
+    }
+    cout << "Первое число < a: 1 + 1/" << n << " = " << 1 + 1.0 / n << endl;
+    return 0;
+}
+Задание № 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (1 < a <= 1.5): ";
+    cin >> a;
+
+    for (int n = 2; 1 + 1.0 / n >= a; n++) {
+        cout << n << " ";
+    }
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (1 < a <= 1.5): ";
+    cin >> a;
+
+    int n = 2;
+    while (1 + 1.0 / n >= a) {
+        n++;
+    }
+    cout << "Наименьшее n: " << n << endl;
+    return 0;
+}
+Задание № 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a: ";
+    cin >> a;
+
+    int n = 1;
+    while (1 + 1.0 / n < a) {
+        cout << 1 + 1.0 / n << " ";
+        n++;
+    }
+    return 0;
+}
+Задание № 11
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double limit;
+    cout << "Введите число n: ";
+    cin >> limit;
+
+    double sum = 0;
+    int n = 1;
+    while (sum <= limit) {
+        sum += 1.0 / n;
+        n++;
+    }
+    cout << "Первая сумма > n: " << sum << " при n = " << n - 1 << endl;
+    return 0;
+}
+Задание № 12
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a: ";
+    cin >> a;
+
+    double sum = 0;
+    int n = 1;
+
+    while (true) {
+        sum += 1.0 / n;
+        if (sum > a) {
+            cout << n << " ";
+        }
+        n++;
+        if (n > 1000) break; // ограничим для безопасности
+    }
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a: ";
+    cin >> a;
+
+    double sum = 0;
+    int n = 1;
+
+    while (sum <= a) {
+        sum += 1.0 / n;
+        n++;
+    }
+
+    cout << "Наименьшее n: " << n - 1 << endl;
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a;
+    cout << "Введите a (0 < a <= 1): ";
+    cin >> a;
+
+    // Вариант 1: цикл while
+    int n = 1;
+    while (1.0 / n >= a) {
+        n++;
+    }
+    cout << "Первая дробь < a (while): 1/" << n << " = " << 1.0 / n << endl;
+
+    // Вариант 2: цикл for
+    int m;
+    for (m = 1; 1.0 / m >= a; m++) {}
+    cout << "Первая дробь < a (for): 1/" << m << " = " << 1.0 / m << endl;
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double m;
+    cout << "Введите m (0.52 <= m <= 33.7): ";
+    cin >> m;
+
+    for (int x = 1; x <= 100; x++) {
+        double y = (x * x + 100.0) / (x + 200.0);
+        if (y < m) {
+            cout << y << " ";
+        }
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double m;
+    cout << "Введите m (0.5 < m < 1): ";
+    cin >> m;
+
+    // Вариант 1: цикл while
+    int i = 1;
+    while (i / (i + 1.0) < m) {
+        cout << i / (i + 1.0) << " ";
+        i++;
+    }
+    cout << endl;
+
+    // Вариант 2: цикл for
+    for (int j = 1; j / (j + 1.0) < m; j++) {
+        cout << j / (j + 1.0) << " ";
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double num1 = 1.0, den1 = 1.0; // 1/1
+    double num2 = 2.0, den2 = 1.0; // 2/1
+
+    while (true) {
+        double val1 = num1 / den1;
+        double val2 = num2 / den2;
+
+        if (abs(val2 - val1) <= 0.001) {
+            cout << "Первый подходящий член: " << val2 << endl;
+            break;
+        }
+
+        // Генерируем следующий член
+        double new_num = num1 + num2;
+        double new_den = den1 + den2;
+
+        num1 = num2;
+        den1 = den2;
+        num2 = new_num;
+        den2 = new_den;
+    }
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double a, x, eps;
+    cout << "Введите a, x, ε: ";
+    cin >> a >> x >> eps;
+
+    double y_prev = a;
+    double y_curr = 0.5 * (y_prev + x / (y_prev - 1));
+    int n = 2;
+
+    while (abs(y_curr * y_curr - y_prev * y_prev) >= eps) {
+        y_prev = y_curr;
+        y_curr = 0.5 * (y_prev + x / (y_prev - 1));
+        n++;
+    }
+
+    cout << "Первый подходящий член: y_" << n << " = " << y_curr << endl;
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    // а) Сумма чисел Фибоначчи, не превышающих 1000
+    int a = 1, b = 1, sum = 0;
+    while (a <= 1000) {
+        sum += a;
+        int c = a + b;
+        a = b;
+        b = c;
+    }
+    cout << "Сумма чисел Фибоначчи <= 1000: " << sum << endl;
+
+    // б) Первое число Фибоначчи, большее n
+    int n;
+    cout << "Введите n (>1): ";
+    cin >> n;
+
+    a = 1, b = 1;
+    while (a <= n) {
+        int c = a + b;
+        a = b;
+        b = c;
+    }
+    cout << "Первое число Фибоначчи > n: " << a << endl;
+
+    return 0;
+}
