@@ -1,0 +1,1488 @@
+Задание № 1
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    // 10.1 (a)
+    cout << "10.1 (a) 8 случайных вещественных чисел [0,1):" << endl;
+    for (int i = 0; i < 8; i++) {
+        double num = (double)rand() / RAND_MAX;
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (б)
+    cout << "10.1 (б) Введите k: ";
+    int k;
+    cin >> k;
+    cout << k << " случайных вещественных чисел [0,1):" << endl;
+    for (int i = 0; i < k; i++) {
+        double num = (double)rand() / RAND_MAX;
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (в)
+    cout << "10.1 (в) 15 случайных чисел [25,26):" << endl;
+    for (int i = 0; i < 15; i++) {
+        double num = 25 + (double)rand() / RAND_MAX;
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (г)
+    cout << "10.1 (г) 20 случайных чисел [0,15):" << endl;
+    for (int i = 0; i < 20; i++) {
+        double num = 15 * ((double)rand() / RAND_MAX);
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (д)
+    cout << "10.1 (д) Введите a и b: ";
+    int a, b;
+    cin >> a >> b;
+    int k2 = rand() % a + 1;
+    cout << "k = " << k2 << endl;
+    cout << k2 << " случайных чисел [0," << b << "):" << endl;
+    for (int i = 0; i < k2; i++) {
+        double num = b * ((double)rand() / RAND_MAX);
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (е)
+    cout << "10.1 (е) 10 случайных чисел [-40,40):" << endl;
+    for (int i = 0; i < 10; i++) {
+        double num = -40 + 80 * ((double)rand() / RAND_MAX);
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.1 (ж)
+    cout << "10.1 (ж) Введите m, a, b: ";
+    int m, a1, b1;
+    cin >> m >> a1 >> b1;
+    int k3 = rand() % m + 1;
+    cout << "k = " << k3 << endl;
+    cout << k3 << " случайных чисел [" << a1 << "," << b1 << "):" << endl;
+    for (int i = 0; i < k3; i++) {
+        double num = a1 + (b1 - a1) * ((double)rand() / RAND_MAX);
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    // 10.2 (a)
+    cout << "10.2 (а) 10 случайных целых чисел [0,10]:" << endl;
+    for (int i = 0; i < 10; i++) {
+        int num = rand() % 11;
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.2 (б)
+    cout << "10.2 (б) Введите k и a: ";
+    int k, a;
+    cin >> k >> a;
+    cout << k << " случайных целых чисел [0," << a << "]:" << endl;
+    for (int i = 0; i < k; i++) {
+        int num = rand() % (a + 1);
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.2 (в)
+    cout << "10.2 (в) 20 случайных целых чисел [10,20]:" << endl;
+    for (int i = 0; i < 20; i++) {
+        int num = 10 + rand() % 11;
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.2 (г)
+    cout << "10.2 (г) Введите k и a: ";
+    int k2, a2;
+    cin >> k2 >> a2;
+    cout << k2 << " случайных целых чисел [-10," << a2 << "]:" << endl;
+    for (int i = 0; i < k2; i++) {
+        int num = -10 + rand() % (a2 + 11);
+        cout << num << " ";
+    }
+    cout << endl << endl;
+
+    // 10.2 (д)
+    cout << "10.2 (д) Введите a и b: ";
+    int a3, b;
+    cin >> a3 >> b;
+    int k3 = rand() % 15 + 1;
+    cout << "k = " << k3 << endl;
+    cout << k3 << " случайных целых чисел [" << a3 << "," << b << "]:" << endl;
+    for (int i = 0; i < k3; i++) {
+        int num = a3 + rand() % (b - a3 + 1);
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Введите a и b: ";
+    int a, b;
+    cin >> a >> b;
+
+    int m = rand() % 20 + 1;
+    int n = rand() % 20 + 1;
+
+    cout << "m = " << m << ", n = " << n << endl;
+
+    cout << n << " случайных целых чисел в [" << a << "," << b << "]:" << endl;
+    for (int i = 0; i < n; i++) {
+        int num = a + rand() % (b - a + 1);
+        cout << num << " ";
+    }
+    cout << endl;
+
+    cout << m << " случайных вещественных чисел в [0," << n << "]:" << endl;
+    for (int i = 0; i < m; i++) {
+        double num = (double)rand() / RAND_MAX * n;
+        cout << num << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "50 чисел [0,5], выводятся только 0 и 1:" << endl;
+
+    for (int i = 0; i < 50; i++) {
+        int num = rand() % 6;
+        if (num == 0 || num == 1) {
+            cout << num << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "30 чисел [0,5], выводятся только нечётные:" << endl;
+
+    for (int i = 0; i < 30; i++) {
+        int num = rand() % 6;
+        if (num % 2 == 1) {
+            cout << num << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "50 чисел 0 или 1, подсчёт количества:" << endl;
+
+    int zeros = 0, ones = 0;
+    for (int i = 0; i < 50; i++) {
+        int num = rand() % 2;
+        cout << num << " ";
+        if (num == 0) zeros++;
+        else ones++;
+    }
+    cout << endl;
+    cout << "Нулей: " << zeros << ", Единиц: " << ones << endl;
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+
+    // a)
+    cout << "а) Два разных числа: ";
+    int a1, b1;
+    do {
+        a1 = rand() % 2;  // 0-1
+        b1 = rand() % 3;  // 0-2
+    } while (a1 == b1);
+    cout << a1 << " и " << b1 << endl;
+
+    // б)
+    cout << "б) Три разных числа: ";
+    int a2, b2, c2;
+    do {
+        a2 = 1 + rand() % 2;  // 1-2
+        b2 = rand() % 3;      // 0-2
+        c2 = 1 + rand() % 3;  // 1-3
+    } while (a2 == b2 || a2 == c2 || b2 == c2);
+    cout << a2 << ", " << b2 << ", " << c2 << endl;
+
+    // в)
+    cout << "в) 15 чисел: 7 двоек и 8 троек: ";
+    int arr[15];
+    for (int i = 0; i < 7; i++) arr[i] = 2;
+    for (int i = 7; i < 15; i++) arr[i] = 3;
+
+    // Перемешиваем
+    for (int i = 0; i < 15; i++) {
+        int j = rand() % 15;
+        swap(arr[i], arr[j]);
+    }
+
+    for (int i = 0; i < 15; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Подбрасывание монеты: ";
+
+    int coin = rand() % 2;
+    if (coin == 0) {
+        cout << "Решка (0)" << endl;
+    }
+    else {
+        cout << "Орёл (1)" << endl;
+    }
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << fixed << setprecision(2);
+
+    // 100 подбрасываний
+    int count0 = 0, count1 = 0;
+    for (int i = 0; i < 100; i++) {
+        if (rand() % 2 == 0) count0++;
+        else count1++;
+    }
+    cout << "100 подбрасываний:" << endl;
+    cout << "Решка: " << count0 << " (" << (count0 / 100.0) * 100 << "%)" << endl;
+    cout << "Орёл: " << count1 << " (" << (count1 / 100.0) * 100 << "%)" << endl;
+
+    // 1000 подбрасываний
+    count0 = count1 = 0;
+    for (int i = 0; i < 1000; i++) {
+        if (rand() % 2 == 0) count0++;
+        else count1++;
+    }
+    cout << "\n1000 подбрасываний:" << endl;
+    cout << "Решка: " << count0 << " (" << (count0 / 1000.0) * 100 << "%)" << endl;
+    cout << "Орёл: " << count1 << " (" << (count1 / 1000.0) * 100 << "%)" << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Игра: Чёт (2) или Нечёт (1)?" << endl;
+
+    char choice;
+    do {
+        cout << "\nВведите 2 (чёт) или 1 (нечёт): ";
+        int player;
+        cin >> player;
+
+        int computer = rand() % 10 + 1; // число 1-10
+
+        cout << "Компьютер выбрал: " << computer << " (";
+        cout << (computer % 2 == 0 ? "чётное" : "нечётное") << ")" << endl;
+
+        if ((computer % 2 == 0 && player == 2) ||
+            (computer % 2 == 1 && player == 1)) {
+            cout << "Вы угадали!" << endl;
+        }
+        else {
+            cout << "Вы не угадали." << endl;
+        }
+
+        cout << "\nПродолжить? (y/n): ";
+        cin >> choice;
+
+    } while (choice == 'y' || choice == 'Y');
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Бросание игрального кубика: ";
+
+    int dice = rand() % 6 + 1;
+    cout << "Выпало " << dice << endl;
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Два игрока бросают кубик:" << endl;
+
+    int player1 = rand() % 6 + 1;
+    int player2 = rand() % 6 + 1;
+
+    cout << "Игрок 1: " << player1 << endl;
+    cout << "Игрок 2: " << player2 << endl;
+
+    if (player1 > player2) {
+        cout << "Победил Игрок 1!" << endl;
+    }
+    else if (player2 > player1) {
+        cout << "Победил Игрок 2!" << endl;
+    }
+    else {
+        cout << "Ничья!" << endl;
+    }
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    // Вариант 1: Каждый участник бросает кубик 2 раза
+    cout << "\nВариант 1: 2 броска каждым игроком" << endl;
+    int sum1 = 0, sum2 = 0;
+    for (int i = 0; i < 2; i++) {
+        sum1 += rand() % 6 + 1;
+        sum2 += rand() % 6 + 1;
+    }
+    cout << "Игрок 1: " << sum1 << " очков" << endl;
+    cout << "Игрок 2: " << sum2 << " очков" << endl;
+
+    if (sum1 > sum2) {
+        cout << "Победил Игрок 1!" << endl;
+    }
+    else if (sum2 > sum1) {
+        cout << "Победил Игрок 2!" << endl;
+    }
+    else {
+        cout << "Ничья!" << endl;
+    }
+
+    // Вариант 2: Несколько раундов с подсчётом побед
+    cout << "\nВариант 2: Несколько раундов" << endl;
+    cout << "Сколько раундов сыграть? ";
+    int rounds;
+    cin >> rounds;
+
+    int wins1 = 0, wins2 = 0, draws = 0;
+    for (int i = 0; i < rounds; i++) {
+        int roll1 = rand() % 6 + 1;
+        int roll2 = rand() % 6 + 1;
+
+        if (roll1 > roll2) wins1++;
+        else if (roll2 > roll1) wins2++;
+        else draws++;
+    }
+
+    cout << "\nРезультаты за " << rounds << " раундов:" << endl;
+    cout << "Побед Игрока 1: " << wins1 << endl;
+    cout << "Побед Игрока 2: " << wins2 << endl;
+    cout << "Ничьих: " << draws << endl;
+
+    if (wins1 > wins2) {
+        cout << "Общий победитель: Игрок 1!" << endl;
+    }
+    else if (wins2 > wins1) {
+        cout << "Общий победитель: Игрок 2!" << endl;
+    }
+    else {
+        cout << "Общая ничья!" << endl;
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Сколько кубиков бросает каждый игрок? ";
+    int K;
+    cin >> K;
+
+    int sum1 = 0, sum2 = 0, sum3 = 0;
+
+    // Три игрока бросают K кубиков
+    cout << "Игрок 1: ";
+    for (int i = 0; i < K; i++) {
+        int dice = rand() % 6 + 1;
+        sum1 += dice;
+        cout << dice << " ";
+    }
+    cout << "= " << sum1 << " очков" << endl;
+
+    cout << "Игрок 2: ";
+    for (int i = 0; i < K; i++) {
+        int dice = rand() % 6 + 1;
+        sum2 += dice;
+        cout << dice << " ";
+    }
+    cout << "= " << sum2 << " очков" << endl;
+
+    cout << "Игрок 3: ";
+    for (int i = 0; i < K; i++) {
+        int dice = rand() % 6 + 1;
+        sum3 += dice;
+        cout << dice << " ";
+    }
+    cout << "= " << sum3 << " очков" << endl;
+
+    // Определяем победителя
+    int maxScore = sum1;
+    if (sum2 > maxScore) maxScore = sum2;
+    if (sum3 > maxScore) maxScore = sum3;
+
+    cout << "\nМаксимальный результат: " << maxScore << endl;
+    cout << "Победили игроки: ";
+
+    bool first = true;
+    if (sum1 == maxScore) {
+        cout << "1";
+        first = false;
+    }
+    if (sum2 == maxScore) {
+        if (!first) cout << ", ";
+        cout << "2";
+        first = false;
+    }
+    if (sum3 == maxScore) {
+        if (!first) cout << ", ";
+        cout << "3";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << fixed << setprecision(2);
+
+    const int TRIALS = 100;
+    int counts[7] = { 0 }; // индексы 1-6
+
+    cout << TRIALS << " бросаний кубика:" << endl;
+    for (int i = 0; i < TRIALS; i++) {
+        int dice = rand() % 6 + 1;
+        counts[dice]++;
+    }
+
+    cout << "Число\tКоличество\tЧастота (%)" << endl;
+    for (int i = 1; i <= 6; i++) {
+        double freq = (counts[i] * 100.0) / TRIALS;
+        cout << i << "\t" << counts[i] << "\t\t" << freq << endl;
+    }
+
+    // Дополнительно: 1000 бросаний
+    cout << "\n" << (TRIALS * 10) << " бросаний кубика:" << endl;
+    for (int i = 1; i <= 6; i++) counts[i] = 0;
+
+    for (int i = 0; i < TRIALS * 10; i++) {
+        int dice = rand() % 6 + 1;
+        counts[dice]++;
+    }
+
+    cout << "Число\tКоличество\tЧастота (%)" << endl;
+    for (int i = 1; i <= 6; i++) {
+        double freq = (counts[i] * 100.0) / (TRIALS * 10);
+        cout << i << "\t" << counts[i] << "\t\t" << freq << endl;
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+
+    int side1 = rand() % 7; 
+    int side2 = rand() % 7; 
+
+    cout << "Выбрана кость: " << side1 << "-" << side2 << endl;
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    // Выбираем 2 разные кости домино
+    int bones[2][2];
+
+    // Первая кость
+    bones[0][0] = rand() % 7;
+    bones[0][1] = rand() % 7;
+
+    // Вторая кость
+    do {
+        bones[1][0] = rand() % 7;
+        bones[1][1] = rand() % 7;
+    } while (bones[0][0] == bones[1][0] && bones[0][1] == bones[1][1]);
+
+    cout << "Выбраны кости:" << endl;
+    cout << "1) " << bones[0][0] << "-" << bones[0][1] << endl;
+    cout << "2) " << bones[1][0] << "-" << bones[1][1] << endl;
+
+    // Проверяем, можно ли приставить кости
+    bool canConnect = false;
+    if (bones[0][0] == bones[1][0] || bones[0][0] == bones[1][1] ||
+        bones[0][1] == bones[1][0] || bones[0][1] == bones[1][1]) {
+        canConnect = true;
+    }
+
+    if (canConnect) {
+        cout << "Кости можно приставить друг к другу по правилам домино." << endl;
+    }
+    else {
+        cout << "Кости нельзя приставить друг к другу." << endl;
+    }
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    int variant;
+    cout << "Выберите вариант (1-3): ";
+    cin >> variant;
+
+    if (variant == 1) {
+        // Вариант а: один вопрос
+        int a = rand() % 9 + 1; // 1-9
+        int b = rand() % 9 + 1; // 1-9
+
+        cout << "Чему равно произведение " << a << " * " << b << "? ";
+        int answer;
+        cin >> answer;
+
+        if (answer == a * b) {
+            cout << "Правильно!" << endl;
+        }
+        else {
+            cout << "Неправильно! Правильный ответ: " << a * b << endl;
+        }
+
+    }
+    else if (variant == 2) {
+        // Вариант б: 20 вопросов
+        int correct = 0, incorrect = 0;
+
+        for (int i = 1; i <= 20; i++) {
+            int a = rand() % 9 + 1;
+            int b = rand() % 9 + 1;
+
+            cout << i << ") " << a << " * " << b << " = ";
+            int answer;
+            cin >> answer;
+
+            if (answer == a * b) {
+                cout << "Верно!" << endl;
+                correct++;
+            }
+            else {
+                cout << "Неверно! Правильно: " << a * b << endl;
+                incorrect++;
+            }
+        }
+
+        cout << "\nИтог: правильно " << correct << ", неправильно " << incorrect << endl;
+
+    }
+    else if (variant == 3) {
+        // Вариант в: до ввода 0
+        int questionNum = 1;
+        while (true) {
+            int a = rand() % 9 + 1;
+            int b = rand() % 9 + 1;
+
+            cout << questionNum << ") " << a << " * " << b << " = ";
+            int answer;
+            cin >> answer;
+
+            if (answer == 0) {
+                cout << "Игра окончена." << endl;
+                break;
+            }
+
+            if (answer == a * b) {
+                cout << "Верно!" << endl;
+            }
+            else {
+                cout << "Неверно! Правильно: " << a * b << endl;
+            }
+
+            questionNum++;
+        }
+    }
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+
+    string cards[9] = { "Шестёрка", "Семёрка", "Восьмёрка", "Девятка",
+                      "Десятка", "Валет", "Дама", "Король", "Туз" };
+
+
+    int index = rand() % 9;
+
+    cout << "Выбрана карта: " << cards[index] << endl;
+
+    return 0;
+}
+Задание № 20
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    string suits[4] = { "пик", "треф", "бубен", "червей" };
+    string ranks[9] = { "шестёрка", "семёрка", "восьмёрка", "девятка",
+                      "десятка", "валет", "дама", "король", "туз" };
+
+    // Выбираем случайную карту
+    int suitIndex = rand() % 4;
+    int rankIndex = rand() % 9;
+
+    string cardName;
+    if (rankIndex >= 5 && rankIndex <= 7) { // Валет, Дама, Король
+        cardName = ranks[rankIndex] + " " + suits[suitIndex];
+    }
+    else {
+        cardName = ranks[rankIndex] + " " + suits[suitIndex];
+        // Для "бубен" в родительном падеже
+        if (suits[suitIndex] == "бубен") {
+            cardName = ranks[rankIndex] + " бубей";
+        }
+    }
+
+    cout << "Выбрана карта: " << cardName << endl;
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    string suits[4] = { "пик", "треф", "бубен", "червей" };
+    string ranks[9] = { "шестёрка", "семёрка", "восьмёрка", "девятка",
+                      "десятка", "валет", "дама", "король", "туз" };
+
+    int suit1 = rand() % 4;
+    int rank1 = rand() % 9;
+    int suit2, rank2;
+
+    // Убедимся, что карты разные
+    do {
+        suit2 = rand() % 4;
+        rank2 = rand() % 9;
+    } while (suit1 == suit2 && rank1 == rank2);
+
+    cout << "Игрок 1 выбрал: ";
+    if (rank1 >= 5 && rank1 <= 7) {
+        cout << ranks[rank1] << " " << suits[suit1];
+    }
+    else {
+        cout << ranks[rank1] << " " << suits[suit1];
+        if (suits[suit1] == "бубен") cout << "ей";
+    }
+    cout << endl;
+
+    cout << "Игрок 2 выбрал: ";
+    if (rank2 >= 5 && rank2 <= 7) {
+        cout << ranks[rank2] << " " << suits[suit2];
+    }
+    else {
+        cout << ranks[rank2] << " " << suits[suit2];
+        if (suits[suit2] == "бубен") cout << "ей";
+    }
+    cout << endl;
+
+    bool player1Wins = false;
+
+    if (suit1 > suit2) {
+        player1Wins = true;
+    }
+    else if (suit1 == suit2) {
+        if (rank1 > rank2) {
+            player1Wins = true;
+        }
+    }
+
+    if (player1Wins) {
+        cout << "Победил Игрок 1!" << endl;
+    }
+    else {
+        cout << "Победил Игрок 2!" << endl;
+    }
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    string suits[4] = { "пик", "треф", "бубен", "червей" };
+    string ranks[9] = { "шестёрка", "семёрка", "восьмёрка", "девятка",
+                      "десятка", "валет", "дама", "король", "туз" };
+
+    int rounds;
+    cout << "Сколько раундов сыграть? ";
+    cin >> rounds;
+
+    int player1Wins = 0, player2Wins = 0;
+
+    for (int round = 1; round <= rounds; round++) {
+        cout << "\n--- Раунд " << round << " ---" << endl;
+
+        // Выбираем карты
+        int suit1 = rand() % 4;
+        int rank1 = rand() % 9;
+        int suit2 = rand() % 4;
+        int rank2 = rand() % 9;
+
+        cout << "Игрок 1: ";
+        if (rank1 >= 5 && rank1 <= 7) {
+            cout << ranks[rank1] << " " << suits[suit1];
+        }
+        else {
+            cout << ranks[rank1] << " " << suits[suit1];
+            if (suits[suit1] == "бубен") cout << "ей";
+        }
+        cout << endl;
+
+        cout << "Игрок 2: ";
+        if (rank2 >= 5 && rank2 <= 7) {
+            cout << ranks[rank2] << " " << suits[suit2];
+        }
+        else {
+            cout << ranks[rank2] << " " << suits[suit2];
+            if (suits[suit2] == "бубен") cout << "ей";
+        }
+        cout << endl;
+
+        // Определяем победителя раунда
+        bool roundWinnerIsPlayer1 = false;
+
+        if (suit1 > suit2) {
+            roundWinnerIsPlayer1 = true;
+        }
+        else if (suit1 == suit2) {
+            if (rank1 > rank2) {
+                roundWinnerIsPlayer1 = true;
+            }
+        }
+
+        if (roundWinnerIsPlayer1) {
+            cout << "Победил Игрок 1 в этом раунде!" << endl;
+            player1Wins++;
+        }
+        else if (suit2 > suit1 || (suit1 == suit2 && rank2 > rank1)) {
+            cout << "Победил Игрок 2 в этом раунде!" << endl;
+            player2Wins++;
+        }
+        else {
+            cout << "Ничья в этом раунде!" << endl;
+        }
+    }
+
+    // Итог игры
+    cout << "\n=== ИТОГ ИГРЫ ===" << endl;
+    cout << "Побед Игрока 1: " << player1Wins << endl;
+    cout << "Побед Игрока 2: " << player2Wins << endl;
+    cout << "Ничьих: " << (rounds - player1Wins - player2Wins) << endl;
+
+    if (player1Wins > player2Wins) {
+        cout << "ОБЩИЙ ПОБЕДИТЕЛЬ: ИГРОК 1!" << endl;
+    }
+    else if (player2Wins > player1Wins) {
+        cout << "ОБЩИЙ ПОБЕДИТЕЛЬ: ИГРОК 2!" << endl;
+    }
+    else {
+        cout << "ОБЩАЯ НИЧЬЯ!" << endl;
+    }
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    cout << "Игра в карты с козырем" << endl;
+
+    string suits[4] = { "пик", "треф", "бубен", "червей" };
+    string ranks[9] = { "шестёрка", "семёрка", "восьмёрка", "девятка",
+                      "десятка", "валет", "дама", "король", "туз" };
+
+    int trumpSuitIndex = rand() % 4;
+    string trumpSuit = suits[trumpSuitIndex];
+
+    cout << "Козырная масть: " << trumpSuit;
+    if (trumpSuit == "бубен") {
+        cout << "ей";
+    }
+    cout << endl << endl;
+
+    // Выбираем карту для игрока
+    int playerSuit = rand() % 4;
+    int playerRank = rand() % 9;
+
+    cout << "Игрок выбрал: ";
+    // Определяем правильное склонение
+    if (playerRank >= 5 && playerRank <= 7) { // Валет, Дама, Король
+        cout << ranks[playerRank] << " " << suits[playerSuit];
+    }
+    else {
+        cout << ranks[playerRank] << " " << suits[playerSuit];
+        if (suits[playerSuit] == "бубен") {
+            cout << "ей";
+        }
+    }
+    cout << endl;
+
+    // Выбираем карту для компьютера
+    int computerSuit = rand() % 4;
+    int computerRank = rand() % 9;
+
+    cout << "Компьютер выбрал: ";
+    if (computerRank >= 5 && computerRank <= 7) {
+        cout << ranks[computerRank] << " " << suits[computerSuit];
+    }
+    else {
+        cout << ranks[computerRank] << " " << suits[computerSuit];
+        if (suits[computerSuit] == "бубен") {
+            cout << "ей";
+        }
+    }
+    cout << endl << endl;
+
+    // Определяем победителя с учётом козыря
+    cout << "Результат: ";
+
+    // Проверяем козырные карты
+    bool playerIsTrump = (playerSuit == trumpSuitIndex);
+    bool computerIsTrump = (computerSuit == trumpSuitIndex);
+
+    if (playerIsTrump && !computerIsTrump) {
+        cout << "Победил Игрок (козырь!)" << endl;
+    }
+    else if (!playerIsTrump && computerIsTrump) {
+        cout << "Победил Компьютер (козырь!)" << endl;
+    }
+    else if (playerIsTrump && computerIsTrump) {
+        // Обе карты козырные - сравниваем достоинства
+        if (playerRank > computerRank) {
+            cout << "Победил Игрок (старший козырь)" << endl;
+        }
+        else if (computerRank > playerRank) {
+            cout << "Победил Компьютер (старший козырь)" << endl;
+        }
+        else {
+            cout << "Ничья (одинаковые козырные карты)" << endl;
+        }
+    }
+    else {
+        // Ни одна карта не козырная - сравниваем по обычным правилам
+        if (playerSuit > computerSuit) {
+            cout << "Победил Игрок (старшая масть)" << endl;
+        }
+        else if (computerSuit > playerSuit) {
+            cout << "Победил Компьютер (старшая масть)" << endl;
+        }
+        else {
+            // Одинаковая масть - сравниваем достоинства
+            if (playerRank > computerRank) {
+                cout << "Победил Игрок (старшая карта)" << endl;
+            }
+            else if (computerRank > playerRank) {
+                cout << "Победил Компьютер (старшая карта)" << endl;
+            }
+            else {
+                cout << "Ничья (одинаковые карты)" << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    int variant;
+    cout << "Выберите фигуру (1-ладья, 2-слон, 3-король, 4-ферзь): ";
+    cin >> variant;
+
+    int a, b, c, d;
+    bool found = false;
+
+    do {
+        a = rand() % 8 + 1; 
+        b = rand() % 8 + 1;
+        c = rand() % 8 + 1;
+        d = rand() % 8 + 1;
+
+        if (variant == 1) { // Ладья
+            // Ладья не угрожает, если не на одной линии
+            found = (a != c && b != d);
+        }
+        else if (variant == 2) { // Слон
+            // Слон не угрожает, если не на одной диагонали
+            found = (abs(a - c) != abs(b - d));
+        }
+        else if (variant == 3) { // Король
+            // Король может пойти, если расстояние 1 клетка
+            found = (abs(a - c) <= 1 && abs(b - d) <= 1 &&
+                !(a == c && b == d));
+        }
+        else if (variant == 4) { // Ферзь
+            // Ферзь не угрожает, если не на линии и не на диагонали
+            found = (a != c && b != d && abs(a - c) != abs(b - d));
+        }
+
+    } while (!found);
+
+    cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << endl;
+    cout << "Поле (" << a << "," << b << ") и поле (" << c << "," << d << ")" << endl;
+
+    string figure;
+    if (variant == 1) figure = "ладья";
+    else if (variant == 2) figure = "слон";
+    else if (variant == 3) figure = "король";
+    else figure = "ферзь";
+
+    cout << "На поле (" << a << "," << b << ") расположен " << figure << endl;
+    cout << "Условие задачи выполнено!" << endl;
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    int variant;
+    cout << "Выберите вариант (1-белая пешка, 2-чёрная пешка, 3-конь): ";
+    cin >> variant;
+
+    int a, b, c, d;
+    bool found = false;
+
+    if (variant == 1) { // Белая пешка
+        cout << "а) Белая пешка (движется снизу вверх)" << endl;
+        int moveType;
+        cout << "Выберите тип хода (1-обычный, 2-взятие): ";
+        cin >> moveType;
+
+        do {
+            a = rand() % 8 + 1;
+            b = rand() % 8 + 1;
+            c = rand() % 8 + 1;
+            d = rand() % 8 + 1;
+
+            if (moveType == 1) { // Обычный ход
+                // Белая пешка ходит вперёд на 1 клетку
+                found = (c == a && d == b + 1);
+                // Или с начальной позиции на 2 клетки
+                if (!found && b == 2) {
+                    found = (c == a && d == b + 2);
+                }
+            }
+            else { // Взятие
+                // Белая пешка бьёт по диагонали вперёд
+                found = (d == b + 1 && abs(c - a) == 1);
+            }
+
+        } while (!found);
+
+        cout << "Белая пешка с (" << a << "," << b << ") может пойти на (" << c << "," << d << ")" << endl;
+
+    }
+    else if (variant == 2) { // Чёрная пешка
+        cout << "б) Чёрная пешка (движется сверху вниз)" << endl;
+        int moveType;
+        cout << "Выберите тип хода (1-обычный, 2-взятие): ";
+        cin >> moveType;
+
+        do {
+            a = rand() % 8 + 1;
+            b = rand() % 8 + 1;
+            c = rand() % 8 + 1;
+            d = rand() % 8 + 1;
+
+            if (moveType == 1) { // Обычный ход
+                // Чёрная пешка ходит вниз на 1 клетку
+                found = (c == a && d == b - 1);
+                // Или с начальной позиции на 2 клетки
+                if (!found && b == 7) {
+                    found = (c == a && d == b - 2);
+                }
+            }
+            else { // Взятие
+                // Чёрная пешка бьёт по диагонали вниз
+                found = (d == b - 1 && abs(c - a) == 1);
+            }
+
+        } while (!found);
+
+        cout << "Чёрная пешка с (" << a << "," << b << ") может пойти на (" << c << "," << d << ")" << endl;
+
+    }
+    else if (variant == 3) { // Конь
+        cout << "в) Конь" << endl;
+
+        do {
+            a = rand() % 8 + 1;
+            b = rand() % 8 + 1;
+            c = rand() % 8 + 1;
+            d = rand() % 8 + 1;
+
+            // Конь угрожает, если разница 2 и 1 или 1 и 2
+            int dx = abs(a - c);
+            int dy = abs(b - d);
+            found = ((dx == 2 && dy == 1) || (dx == 1 && dy == 2));
+
+        } while (!found);
+
+        cout << "Конь с (" << a << "," << b << ") угрожает полю (" << c << "," << d << ")" << endl;
+    }
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+// Функции для проверки ходов
+bool rookCanMove(int a, int b, int c, int d) {
+    return (a == c || b == d);
+}
+
+bool bishopCanMove(int a, int b, int c, int d) {
+    return (abs(a - c) == abs(b - d));
+}
+
+bool queenCanMove(int a, int b, int c, int d) {
+    return rookCanMove(a, b, c, d) || bishopCanMove(a, b, c, d);
+}
+
+bool knightCanMove(int a, int b, int c, int d) {
+    int dx = abs(a - c);
+    int dy = abs(b - d);
+    return ((dx == 2 && dy == 1) || (dx == 1 && dy == 2));
+}
+
+bool kingCanMove(int a, int b, int c, int d) {
+    return (abs(a - c) <= 1 && abs(b - d) <= 1 && !(a == c && b == d));
+}
+
+bool rookThreatens(int a, int b, int c, int d) {
+    return rookCanMove(a, b, c, d);
+}
+
+bool bishopThreatens(int a, int b, int c, int d) {
+    return bishopCanMove(a, b, c, d);
+}
+
+bool queenThreatens(int a, int b, int c, int d) {
+    return queenCanMove(a, b, c, d);
+}
+
+bool knightThreatens(int a, int b, int c, int d) {
+    return knightCanMove(a, b, c, d);
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    // Все комбинации фигур (белая, чёрная)
+    string combos[20][2] = {
+        {"ладья", "ладья"}, {"ладья", "ферзь"}, {"ладья", "конь"}, {"ладья", "слон"},
+        {"ферзь", "ферзь"}, {"ферзь", "ладья"}, {"ферзь", "конь"}, {"ферзь", "слон"},
+        {"конь", "конь"}, {"конь", "ладья"}, {"конь", "ферзь"}, {"конь", "слон"},
+        {"слон", "слон"}, {"слон", "ферзь"}, {"слон", "конь"}, {"слон", "ладья"},
+        {"король", "слон"}, {"король", "ферзь"}, {"король", "конь"}, {"король", "ладья"}
+    };
+
+    // Буквы для нумерации
+    char letters[] = { 'a','б','в','г','д','е','ж','з','и','к','л','м','н','о','п','р','с','т','у','ф' };
+
+    for (int i = 0; i < 20; i++) {
+        cout << "\n" << letters[i] << ") Белая " << combos[i][0] << " - Чёрная " << combos[i][1] << ":" << endl;
+
+        int a, b, c, d, e, f;
+        bool found = false;
+        int attempts = 0;
+
+        while (!found && attempts < 50000) {
+            a = rand() % 8 + 1;
+            b = rand() % 8 + 1;
+            c = rand() % 8 + 1;
+            d = rand() % 8 + 1;
+            e = rand() % 8 + 1;
+            f = rand() % 8 + 1;
+
+            // Пропускаем одинаковые позиции
+            if ((a == c && b == d) || (a == e && b == f) || (c == e && d == f)) {
+                attempts++;
+                continue;
+            }
+
+            bool whiteCanMove = false;
+            bool blackThreatens = false;
+
+            // Проверяем ход белой фигуры
+            if (combos[i][0] == "ладья") whiteCanMove = rookCanMove(a, b, e, f);
+            else if (combos[i][0] == "ферзь") whiteCanMove = queenCanMove(a, b, e, f);
+            else if (combos[i][0] == "конь") whiteCanMove = knightCanMove(a, b, e, f);
+            else if (combos[i][0] == "слон") whiteCanMove = bishopCanMove(a, b, e, f);
+            else if (combos[i][0] == "король") whiteCanMove = kingCanMove(a, b, e, f);
+
+            // Проверяем угрозу чёрной фигуры
+            if (combos[i][1] == "ладья") blackThreatens = rookThreatens(c, d, e, f);
+            else if (combos[i][1] == "ферзь") blackThreatens = queenThreatens(c, d, e, f);
+            else if (combos[i][1] == "конь") blackThreatens = knightThreatens(c, d, e, f);
+            else if (combos[i][1] == "слон") blackThreatens = bishopThreatens(c, d, e, f);
+
+            found = whiteCanMove && !blackThreatens;
+            attempts++;
+        }
+
+        if (found) {
+            cout << "   Белая на (" << a << "," << b << "), Чёрная на (" << c << "," << d << ")" << endl;
+            cout << "   Цель: (" << e << "," << f << ") - МОЖЕТ пойти, НЕ под ударом" << endl;
+        }
+        else {
+            cout << "   Не найдено за 50000 попыток" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+    double M_PI = 3.141592653589793;
+    cout << fixed << setprecision(4);
+
+    int variant;
+    cout << "Выберите фигуру (1-половина синусоиды, 2-парабола): ";
+    cin >> variant;
+
+    long long N;
+    cout << "Введите количество точек для метода Монте-Карло: ";
+    cin >> N;
+
+    if (variant == 1) {
+        // Половина синусоиды y = sin(x) от 0 до π
+        cout << "\nа) Половина синусоиды y = sin(x), x принадлежит [0, П]" << endl;
+
+        long long pointsInside = 0;
+        double x, y;
+
+        for (long long i = 0; i < N; i++) {
+            x = (double)rand() / RAND_MAX * M_PI; // 0 до π
+            y = (double)rand() / RAND_MAX; // 0 до 1
+
+            if (y <= sin(x)) {
+                pointsInside++;
+            }
+        }
+
+        double area = ((double)pointsInside / N) * M_PI; // Площадь прямоугольника π×1
+        double exactArea = 2.0; // ∫sin(x)dx от 0 до π = 2
+
+        cout << "Точек внутри: " << pointsInside << " из " << N << endl;
+        cout << "Приближённая площадь: " << area << endl;
+        cout << "Точная площадь: " << exactArea << endl;
+        cout << "Относительная ошибка: " << abs(area - exactArea) / exactArea * 100 << "%" << endl;
+
+    }
+    else {
+        // Парабола y = x² от 0 до 3
+        cout << "\nб) Квадратная парабола y = x^2, x принадлежит [0, 3]" << endl;
+
+        long long pointsInside = 0;
+        double x, y;
+
+        for (long long i = 0; i < N; i++) {
+            x = (double)rand() / RAND_MAX * 3; // 0 до 3
+            y = (double)rand() / RAND_MAX * 9; // 0 до 9 (макс y = 3² = 9)
+
+            if (y <= x * x) {
+                pointsInside++;
+            }
+        }
+
+        double area = ((double)pointsInside / N) * (3 * 9); // Площадь прямоугольника 3×9
+        double exactArea = 9.0; // ∫x²dx от 0 до 3 = 9
+
+        cout << "Точек внутри: " << pointsInside << " из " << N << endl;
+        cout << "Приближённая площадь: " << area << endl;
+        cout << "Точная площадь: " << exactArea << endl;
+        cout << "Относительная ошибка: " << abs(area - exactArea) / exactArea * 100 << "%" << endl;
+    }
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+
+    const double M_PI = 3.141592653589793;
+    const double eps = 0.0001;
+    long long in_circle = 0, total = 0;
+    double pi_old = 0, pi_new = 0;
+
+    do {
+        double x = 2.0 * rand() / RAND_MAX - 1.0;
+        double y = 2.0 * rand() / RAND_MAX - 1.0;
+
+        total++;
+        if (x * x + y * y <= 1.0) in_circle++;
+
+        pi_old = pi_new;
+        pi_new = 4.0 * in_circle / total;
+
+    } while (abs(pi_new - pi_old) > eps);
+
+    cout << fixed << setprecision(5);
+    cout << "Вычисление П методом Монте-Карло" << endl;
+    cout << "Точность: " << eps << endl;
+    cout << "Количество точек: " << total << endl;
+    cout << "Вычисленное П: " << pi_new << endl;
+    cout << "Библиотечное П: " << M_PI << endl;
+    cout << "Разность: " << abs(pi_new - M_PI) << endl;
+
+    return 0;
+}
