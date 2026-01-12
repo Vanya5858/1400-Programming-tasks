@@ -1,0 +1,2851 @@
+Задание № 1
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "--- 9.1а: 8 8 8 (5 строк, 3 столбца) ---\n";
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "8 ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1б: 1 1 1 1 1 (7 строк, 5 столбцов) ---\n";
+    for (int i = 1; i <= 7; i++) {
+        for (int j = 0; j < 5; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1в: 10 10 10 10 (8 строк, 4 столбца) ---\n";
+    for (int i = 1; i <= 8; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << i * 10 << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1г: 12 12 12 12 (8 строк, 4 столбца) ---\n";
+    for (int i = 1; i <= 8; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << i * 10 + 2 << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1д: 2..20 (5 строк) ---\n";
+    for (int i = 0; i < 5; i++) {
+        for (int j = 2; j <= 20; j++) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1е: 15..3 (5 строк) ---\n";
+    for (int i = 0; i < 5; i++) {
+        for (int j = 15; j >= 3; j--) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1ж: треугольник из нулей ---\n";
+    for (int i = 6; i >= 1; i--) {
+        for (int j = 0; j < i; j++) {
+            cout << "0 ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1з: убывающие строки 8..1 ---\n";
+    for (int i = 8; i >= 1; i--) {
+        for (int j = 8; j >= 9 - i; j--) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1и: усекаемые строки 2..10 ---\n";
+    for (int i = 2; i <= 9; i++) {
+        for (int j = i; j <= 10; j++) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1й: возрастающие строки 2..n ---\n";
+    for (int i = 2; i <= 10; i++) {
+        for (int j = 2; j <= i; j++) {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1к: треугольник из повторяющихся чисел ---\n";
+    for (int i = 3; i <= 6; i++) {
+        for (int j = 0; j < i; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1л: треугольник из повторяющихся чисел (21..25) ---\n";
+    for (int i = 21; i <= 25; i++) {
+        for (int j = 21; j <= i; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1м: убывающий треугольник 1..5 ---\n";
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 0; j <= 8 - i; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1н: треугольник из повторяющихся чисел (10..50) ---\n";
+    for (int i = 1; i <= 5; i++) {
+        for (int j = 0; j < i; j++) {
+            cout << i * 10 << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1o: Убывающий треугольник чисел 5..9 ---\n";
+    for (int i = 5; i <= 9; i++) {
+        for (int j = 0; j <= 9 - i; j++) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1п: Треугольник из повторяющихся чисел (5, 10, 15, 20, 25) ---\n";
+    int val = 5;
+    for (int i = 5; i >= 1; i--) {
+        for (int j = 0; j < i; j++) {
+            cout << val << " ";
+        }
+        cout << endl;
+        val += 5;
+    }
+    cout << endl;
+
+    cout << "--- 9.1р: Матрица 101..165 с шагом 10 по строкам ---\n";
+    for (int i = 0; i < 7; i++) {
+        for (int j = 1; j <= 5; j++) {
+            cout << (101 + i * 10 + j - 1) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    cout << "--- 9.1с: Матрица с убывающими значениями по строкам (51..21) ---\n";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 1; j <= 8; j++) {
+            cout << (51 - i * 10 + j - 1) << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Вариант а: строки фиксированы (1-9), столбцы меняются (1-9)
+    cout << "\nа) Вариант:" << endl;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            cout << i << "+" << j << "=" << i + j << "\t";
+        }
+        cout << endl;
+    }
+
+    // Вариант б: столбцы фиксированы (1-9), строки меняются (1-9)
+    cout << "\nб) Вариант:" << endl;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            cout << j << "+" << i << "=" << j + i << "\t";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Вариант а: строки фиксированы (1-9), столбцы меняются (1-9)
+    cout << "\nа) Вариант:" << endl;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            cout << i << "*" << j << "=" << i * j << "\t";
+        }
+        cout << endl;
+    }
+
+    // Вариант б: столбцы фиксированы (1-9), строки меняются (1-9)
+    cout << "\nб) Вариант:" << endl;
+    for (int i = 1; i <= 9; i++) {
+        for (int j = 1; j <= 9; j++) {
+            cout << j << "*" << i << "=" << j * i << "\t";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int STUDENTS = 12;
+    const int SUBJECTS = 3;
+    int grades[STUDENTS][SUBJECTS];
+    int totalSum = 0;
+
+    // Вариант 1: ввод по строкам (по ученикам)
+    cout << "\nВариант 1 - ввод по ученикам:" << endl;
+    for (int i = 0; i < STUDENTS; i++) {
+        cout << "Ученик " << (i + 1) << ": ";
+        for (int j = 0; j < SUBJECTS; j++) {
+            cin >> grades[i][j];
+            totalSum += grades[i][j];
+        }
+    }
+    cout << "Общая сумма оценок: " << totalSum << endl;
+
+    // Сброс суммы для второго варианта
+    totalSum = 0;
+
+    // Вариант 2: ввод по столбцам (по предметам)
+    cout << "\nВариант 2 - ввод по предметам:" << endl;
+    for (int j = 0; j < SUBJECTS; j++) {
+        cout << "Предмет " << (j + 1) << ": ";
+        for (int i = 0; i < STUDENTS; i++) {
+            cin >> grades[i][j];
+            totalSum += grades[i][j];
+        }
+    }
+    cout << "Общая сумма оценок: " << totalSum << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int WORKERS = 12;
+    const int MONTHS = 3;
+    int salary[WORKERS][MONTHS];
+
+    // Ввод данных
+    cout << "Введите зарплату для каждого работника:" << endl;
+    for (int i = 0; i < WORKERS; i++) {
+        cout << "Работник " << (i + 1) << " (3 месяца через пробел): ";
+        for (int j = 0; j < MONTHS; j++) {
+            cin >> salary[i][j];
+        }
+    }
+
+    // а) Общая сумма за квартал всем работникам
+    int totalAll = 0;
+    for (int i = 0; i < WORKERS; i++) {
+        for (int j = 0; j < MONTHS; j++) {
+            totalAll += salary[i][j];
+        }
+    }
+    cout << "\nа) Общая сумма за квартал: " << totalAll << endl;
+
+    // б) Зарплата каждого работника за квартал
+    cout << "\nб) Зарплата каждого работника за квартал:" << endl;
+    for (int i = 0; i < WORKERS; i++) {
+        int workerTotal = 0;
+        for (int j = 0; j < MONTHS; j++) {
+            workerTotal += salary[i][j];
+        }
+        cout << "Работник " << (i + 1) << ": " << workerTotal << endl;
+    }
+
+    // в) Общая зарплата всех работников за каждый месяц
+    cout << "\nв) Общая зарплата по месяцам:" << endl;
+    for (int j = 0; j < MONTHS; j++) {
+        int monthTotal = 0;
+        for (int i = 0; i < WORKERS; i++) {
+            monthTotal += salary[i][j];
+        }
+        cout << "Месяц " << (j + 1) << ": " << monthTotal << endl;
+    }
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int ATHLETES = 15;
+    const int PROGRAMS = 3;
+    double scores[ATHLETES][PROGRAMS];
+
+    // Ввод данных
+    cout << "Введите баллы (через пробел для каждой программы):" << endl;
+    for (int i = 0; i < ATHLETES; i++) {
+        cout << "Спортсмен " << (i + 1) << ": ";
+        for (int j = 0; j < PROGRAMS; j++) {
+            cin >> scores[i][j];
+        }
+    }
+
+    cout << fixed << setprecision(2);
+
+    // а) Среднее количество баллов каждого спортсмена
+    cout << "\nа) Средний балл каждого спортсмена:" << endl;
+    for (int i = 0; i < ATHLETES; i++) {
+        double athleteAvg = 0;
+        for (int j = 0; j < PROGRAMS; j++) {
+            athleteAvg += scores[i][j];
+        }
+        athleteAvg /= PROGRAMS;
+        cout << "Спортсмен " << (i + 1) << ": " << athleteAvg << endl;
+    }
+
+    // б) Среднее количество баллов по каждому виду программы
+    cout << "\nб) Средний балл по видам программ:" << endl;
+    string programNames[] = { "Обязательная", "Короткая", "Произвольная" };
+    for (int j = 0; j < PROGRAMS; j++) {
+        double programAvg = 0;
+        for (int i = 0; i < ATHLETES; i++) {
+            programAvg += scores[i][j];
+        }
+        programAvg /= ATHLETES;
+        cout << programNames[j] << ": " << programAvg << endl;
+    }
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int STUDENTS = 15;
+    const int SUBJECTS = 3;
+    int grades[STUDENTS][SUBJECTS];
+
+    // Ввод данных
+    cout << "Введите оценки (от 2 до 5):" << endl;
+    for (int i = 0; i < STUDENTS; i++) {
+        cout << "Ученик " << (i + 1) << ": ";
+        for (int j = 0; j < SUBJECTS; j++) {
+            cin >> grades[i][j];
+        }
+    }
+
+    // а) Общее количество пятерок в таблице
+    int fives = 0;
+    for (int i = 0; i < STUDENTS; i++) {
+        for (int j = 0; j < SUBJECTS; j++) {
+            if (grades[i][j] == 5) fives++;
+        }
+    }
+    cout << "\nа) Всего пятерок: " << fives << endl;
+
+    // б) Количество троек у каждого ученика
+    cout << "\nб) Количество троек у каждого ученика:" << endl;
+    for (int i = 0; i < STUDENTS; i++) {
+        int threes = 0;
+        for (int j = 0; j < SUBJECTS; j++) {
+            if (grades[i][j] == 3) threes++;
+        }
+        cout << "Ученик " << (i + 1) << ": " << threes << endl;
+    }
+
+    // в) Количество двоек по каждому предмету
+    cout << "\nв) Количество двоек по предметам:" << endl;
+    for (int j = 0; j < SUBJECTS; j++) {
+        int twos = 0;
+        for (int i = 0; i < STUDENTS; i++) {
+            if (grades[i][j] == 2) twos++;
+        }
+        cout << "Предмет " << (j + 1) << ": " << twos << endl;
+    }
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int STUDENTS = 14;
+    const int SUBJECTS = 3;
+    int grades[STUDENTS][SUBJECTS];
+
+    // Ввод данных
+    cout << "Введите оценки (от 2 до 5):" << endl;
+    for (int i = 0; i < STUDENTS; i++) {
+        cout << "Студент " << (i + 1) << ": ";
+        for (int j = 0; j < SUBJECTS; j++) {
+            cin >> grades[i][j];
+        }
+    }
+
+    // а) Количество студентов, сдавших сессию без двоек
+    int noTwos = 0;
+    for (int i = 0; i < STUDENTS; i++) {
+        bool hasTwo = false;
+        for (int j = 0; j < SUBJECTS; j++) {
+            if (grades[i][j] == 2) {
+                hasTwo = true;
+                break;
+            }
+        }
+        if (!hasTwo) noTwos++;
+    }
+    cout << "\nа) Сдали без двоек: " << noTwos << " студентов" << endl;
+
+    // б) Количество предметов, по которым были получены только оценки «5» и «4»
+    int goodSubjects = 0;
+    for (int j = 0; j < SUBJECTS; j++) {
+        bool onlyGood = true;
+        for (int i = 0; i < STUDENTS; i++) {
+            if (grades[i][j] != 5 && grades[i][j] != 4) {
+                onlyGood = false;
+                break;
+            }
+        }
+        if (onlyGood) goodSubjects++;
+    }
+    cout << "б) Предметов только с 5 и 4: " << goodSubjects << endl;
+
+    // в) Количество двоек по каждому предмету
+    cout << "\nв) Двоек по предметам:" << endl;
+    for (int j = 0; j < SUBJECTS; j++) {
+        int twos = 0;
+        for (int i = 0; i < STUDENTS; i++) {
+            if (grades[i][j] == 2) twos++;
+        }
+        cout << "Предмет " << (j + 1) << ": " << twos << endl;
+    }
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int ATHLETES = 8;
+    const int SPORTS = 5;
+    int scores[ATHLETES][SPORTS];
+
+    // Ввод данных
+    cout << "Введите баллы:" << endl;
+    for (int i = 0; i < ATHLETES; i++) {
+        cout << "Спортсмен " << (i + 1) << ": ";
+        for (int j = 0; j < SPORTS; j++) {
+            cin >> scores[i][j];
+        }
+    }
+
+    // а) Максимальная из оценок в таблице
+    int maxScore = scores[0][0];
+    for (int i = 0; i < ATHLETES; i++) {
+        for (int j = 0; j < SPORTS; j++) {
+            if (scores[i][j] > maxScore) {
+                maxScore = scores[i][j];
+            }
+        }
+    }
+    cout << "\nа) Максимальная оценка: " << maxScore << endl;
+
+    // б) Сколько баллов набрал победитель соревнований
+    int winner = 0;
+    int maxTotal = 0;
+    for (int i = 0; i < ATHLETES; i++) {
+        int total = 0;
+        for (int j = 0; j < SPORTS; j++) {
+            total += scores[i][j];
+        }
+        if (total > maxTotal) {
+            maxTotal = total;
+            winner = i;
+        }
+    }
+    cout << "б) Победитель: спортсмен " << (winner + 1)
+        << " с суммой " << maxTotal << " баллов" << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int WORKERS = 12;
+    const int MONTHS = 3;
+    int salary[WORKERS][MONTHS];
+
+    // Ввод данных
+    cout << "Введите зарплату:" << endl;
+    for (int i = 0; i < WORKERS; i++) {
+        cout << "Работник " << (i + 1) << ": ";
+        for (int j = 0; j < MONTHS; j++) {
+            cin >> salary[i][j];
+        }
+    }
+
+    // а) Максимальная зарплата из указанных в таблице
+    int maxSalary = salary[0][0];
+    for (int i = 0; i < WORKERS; i++) {
+        for (int j = 0; j < MONTHS; j++) {
+            if (salary[i][j] > maxSalary) {
+                maxSalary = salary[i][j];
+            }
+        }
+    }
+    cout << "\nа) Максимальная зарплата: " << maxSalary << endl;
+
+    // б) Номер работника, получившего за квартал наибольшую сумму
+    int bestWorker = 0;
+    int maxTotal = 0;
+    for (int i = 0; i < WORKERS; i++) {
+        int total = 0;
+        for (int j = 0; j < MONTHS; j++) {
+            total += salary[i][j];
+        }
+        if (total > maxTotal) {
+            maxTotal = total;
+            bestWorker = i;
+        }
+    }
+    cout << "б) Лучший работник: №" << (bestWorker + 1)
+        << " (сумма: " << maxTotal << ")" << endl;
+
+    // в) В каком месяце общая зарплата всех работников была максимальной
+    int bestMonth = 0;
+    int maxMonthTotal = 0;
+    for (int j = 0; j < MONTHS; j++) {
+        int monthTotal = 0;
+        for (int i = 0; i < WORKERS; i++) {
+            monthTotal += salary[i][j];
+        }
+        if (monthTotal > maxMonthTotal) {
+            maxMonthTotal = monthTotal;
+            bestMonth = j;
+        }
+    }
+    cout << "в) Самый прибыльный месяц: " << (bestMonth + 1)
+        << " (сумма: " << maxMonthTotal << ")" << endl;
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int WORKERS = 12;
+    const int MONTHS = 3;
+    int salary[WORKERS][MONTHS];
+
+    // Ввод данных
+    cout << "Введите зарплату:" << endl;
+    for (int i = 0; i < WORKERS; i++) {
+        cout << "Работник " << (i + 1) << ": ";
+        for (int j = 0; j < MONTHS; j++) {
+            cin >> salary[i][j];
+        }
+    }
+
+    // а) Для каждого работника - в какой из месяцев он получил наибольшую зарплату
+    cout << "\nа) Месяц с максимальной зарплатой для каждого работника:" << endl;
+    for (int i = 0; i < WORKERS; i++) {
+        int maxMonth = 0;
+        int maxSal = salary[i][0];
+        for (int j = 1; j < MONTHS; j++) {
+            if (salary[i][j] > maxSal) {
+                maxSal = salary[i][j];
+                maxMonth = j;
+            }
+        }
+        cout << "Работник " << (i + 1) << ": месяц " << (maxMonth + 1)
+            << " (" << maxSal << " руб.)" << endl;
+    }
+
+    // б) Для каждого месяца - кто из работников получил наибольшую зарплату за этот месяц
+    cout << "\nб) Лучший работник каждого месяца:" << endl;
+    for (int j = 0; j < MONTHS; j++) {
+        int bestWorker = 0;
+        int maxSal = salary[0][j];
+        for (int i = 1; i < WORKERS; i++) {
+            if (salary[i][j] > maxSal) {
+                maxSal = salary[i][j];
+                bestWorker = i;
+            }
+        }
+        cout << "Месяц " << (j + 1) << ": работник " << (bestWorker + 1)
+            << " (" << maxSal << " руб.)" << endl;
+    }
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int PARALLELS = 11;
+    const int CLASSES = 4;
+    int students[PARALLELS][CLASSES];
+
+    // Ввод данных
+    cout << "Введите количество учеников:" << endl;
+    for (int i = 0; i < PARALLELS; i++) {
+        cout << "Параллель " << (i + 1) << " (А Б В Г): ";
+        for (int j = 0; j < CLASSES; j++) {
+            cin >> students[i][j];
+        }
+    }
+
+    // а) Сколько учеников учится в самом малочисленном классе школы
+    int minClass = students[0][0];
+    for (int i = 0; i < PARALLELS; i++) {
+        for (int j = 0; j < CLASSES; j++) {
+            if (students[i][j] < minClass) {
+                minClass = students[i][j];
+            }
+        }
+    }
+    cout << "\nа) В самом малочисленном классе: " << minClass << " учеников" << endl;
+
+    // б) Минимальное значение общего количества учеников, учащихся в классах одной параллели
+    int minParallel = 1000; // большое число
+    for (int i = 0; i < PARALLELS; i++) {
+        int parallelTotal = 0;
+        for (int j = 0; j < CLASSES; j++) {
+            parallelTotal += students[i][j];
+        }
+        if (parallelTotal < minParallel) {
+            minParallel = parallelTotal;
+        }
+    }
+    cout << "б) Самая маленькая параллель: " << minParallel << " учеников" << endl;
+
+    // в) Минимальное значение общего количества учеников, учащихся в классах А, Б, В и Г
+    int minLetterClass = 1000;
+    for (int j = 0; j < CLASSES; j++) {
+        int letterTotal = 0;
+        for (int i = 0; i < PARALLELS; i++) {
+            letterTotal += students[i][j];
+        }
+        if (letterTotal < minLetterClass) {
+            minLetterClass = letterTotal;
+        }
+    }
+    cout << "в) Меньше всего учеников в классах одной буквы: " << minLetterClass << endl;
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int PARALLELS = 11;
+    const int CLASSES = 4;
+    int students[PARALLELS][CLASSES];
+    char classLetters[] = { 'А', 'Б', 'В', 'Г' };
+
+    // Ввод данных
+    cout << "Введите количество учеников:" << endl;
+    for (int i = 0; i < PARALLELS; i++) {
+        cout << "Параллель " << (i + 1) << " (А Б В Г): ";
+        for (int j = 0; j < CLASSES; j++) {
+            cin >> students[i][j];
+        }
+    }
+
+    // а) Численность самого малочисленного класса в каждой параллели
+    cout << "\nа) Самый малочисленный класс в каждой параллели:" << endl;
+    for (int i = 0; i < PARALLELS; i++) {
+        int minInParallel = students[i][0];
+        int minIndex = 0;
+        for (int j = 1; j < CLASSES; j++) {
+            if (students[i][j] < minInParallel) {
+                minInParallel = students[i][j];
+                minIndex = j;
+            }
+        }
+        cout << "Параллель " << (i + 1) << ": класс " << classLetters[minIndex]
+            << " (" << minInParallel << " учеников)" << endl;
+    }
+
+    // б) Численность самого малочисленного класса среди классов с каждой буквой
+    cout << "\nб) Самый малочисленный класс для каждой буквы:" << endl;
+    for (int j = 0; j < CLASSES; j++) {
+        int minForLetter = students[0][j];
+        int parallelIndex = 0;
+        for (int i = 1; i < PARALLELS; i++) {
+            if (students[i][j] < minForLetter) {
+                minForLetter = students[i][j];
+                parallelIndex = i;
+            }
+        }
+        cout << "Классы " << classLetters[j] << ": параллель " << (parallelIndex + 1)
+            << " (" << minForLetter << " учеников)" << endl;
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int SHOPS = 3;
+    const int DAYS = 10;
+    int income[SHOPS][DAYS];
+
+    // Ввод данных
+    cout << "Введите доход (в тыс. руб.):" << endl;
+    for (int i = 0; i < SHOPS; i++) {
+        cout << "Магазин " << (i + 1) << " (10 дней): ";
+        for (int j = 0; j < DAYS; j++) {
+            cin >> income[i][j];
+        }
+    }
+
+    // а) Какой из магазинов получил максимальный общий доход за 10 дней
+    int bestShop = 0;
+    int maxShopTotal = 0;
+    for (int i = 0; i < SHOPS; i++) {
+        int shopTotal = 0;
+        for (int j = 0; j < DAYS; j++) {
+            shopTotal += income[i][j];
+        }
+        if (shopTotal > maxShopTotal) {
+            maxShopTotal = shopTotal;
+            bestShop = i;
+        }
+    }
+    cout << "\nа) Лучший магазин: №" << (bestShop + 1)
+        << " (общий доход: " << maxShopTotal << ")" << endl;
+
+    // б) Какого числа фирма получила максимальный общий доход
+    int bestDay = 0;
+    int maxDayTotal = 0;
+    for (int j = 0; j < DAYS; j++) {
+        int dayTotal = 0;
+        for (int i = 0; i < SHOPS; i++) {
+            dayTotal += income[i][j];
+        }
+        if (dayTotal > maxDayTotal) {
+            maxDayTotal = dayTotal;
+            bestDay = j;
+        }
+    }
+    cout << "б) Лучший день: " << (bestDay + 1)
+        << " (общий доход: " << maxDayTotal << ")" << endl;
+
+    // в) Какой магазин и какого числа получил максимальный доход за день
+    int maxIncome = income[0][0];
+    int maxShopDay = 0, maxDayShop = 0;
+    for (int i = 0; i < SHOPS; i++) {
+        for (int j = 0; j < DAYS; j++) {
+            if (income[i][j] > maxIncome) {
+                maxIncome = income[i][j];
+                maxShopDay = i;
+                maxDayShop = j;
+            }
+        }
+    }
+    cout << "в) Максимальный дневной доход: магазин " << (maxShopDay + 1)
+        << ", день " << (maxDayShop + 1)
+        << " (" << maxIncome << ")" << endl;
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int SHOPS = 3;
+    const int DAYS = 10;
+    int income[SHOPS][DAYS];
+
+    // Ввод данных
+    cout << "Введите доход (в тыс. руб.):" << endl;
+    for (int i = 0; i < SHOPS; i++) {
+        cout << "Магазин " << (i + 1) << " (10 дней): ";
+        for (int j = 0; j < DAYS; j++) {
+            cin >> income[i][j];
+        }
+    }
+
+    // а) Для каждого магазина - какого числа этот магазин получил максимальный доход
+    cout << "\nа) День с максимальным доходом для каждого магазина:" << endl;
+    for (int i = 0; i < SHOPS; i++) {
+        int maxDay = 0;
+        int maxValue = income[i][0];
+        for (int j = 1; j < DAYS; j++) {
+            if (income[i][j] > maxValue) {
+                maxValue = income[i][j];
+                maxDay = j;
+            }
+        }
+        cout << "Магазин " << (i + 1) << ": день " << (maxDay + 1)
+            << " (" << maxValue << ")" << endl;
+    }
+
+    // б) Для каждого из 10 дней - какой магазин получил в этот день максимальный доход
+    cout << "\nб) Лучший магазин каждого дня:" << endl;
+    for (int j = 0; j < DAYS; j++) {
+        int bestShop = 0;
+        int maxValue = income[0][j];
+        for (int i = 1; i < SHOPS; i++) {
+            if (income[i][j] > maxValue) {
+                maxValue = income[i][j];
+                bestShop = i;
+            }
+        }
+        cout << "День " << (j + 1) << ": магазин " << (bestShop + 1)
+            << " (" << maxValue << ")" << endl;
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int COURSES = 5;
+    const int GROUPS = 6;
+    int students[COURSES][GROUPS];
+
+    // Ввод данных
+    cout << "Введите количество студентов:" << endl;
+    for (int i = 0; i < COURSES; i++) {
+        cout << "Курс " << (i + 1) << " (6 групп): ";
+        for (int j = 0; j < GROUPS; j++) {
+            cin >> students[i][j];
+        }
+    }
+
+    // а) На каком курсе обучается меньше всего студентов
+    int minCourse = 0;
+    int minCourseTotal = 1000;
+    for (int i = 0; i < COURSES; i++) {
+        int courseTotal = 0;
+        for (int j = 0; j < GROUPS; j++) {
+            courseTotal += students[i][j];
+        }
+        if (courseTotal < minCourseTotal) {
+            minCourseTotal = courseTotal;
+            minCourse = i;
+        }
+    }
+    cout << "\nа) Меньше всего студентов на курсе: " << (minCourse + 1)
+        << " (" << minCourseTotal << " студентов)" << endl;
+
+    // б) Какая из групп (указать ее номер и номер курса) самая малочисленная
+    int minGroupCourse = 0, minGroupNum = 0;
+    int minGroupSize = students[0][0];
+    for (int i = 0; i < COURSES; i++) {
+        for (int j = 0; j < GROUPS; j++) {
+            if (students[i][j] < minGroupSize) {
+                minGroupSize = students[i][j];
+                minGroupCourse = i;
+                minGroupNum = j;
+            }
+        }
+    }
+    cout << "б) Самая малочисленная группа: курс " << (minGroupCourse + 1)
+        << ", группа " << (minGroupNum + 1)
+        << " (" << minGroupSize << " студентов)" << endl;
+
+    // в) Номер самой малочисленной группы (для каждого курса)
+    cout << "\nв) Самая малочисленная группа на каждом курсе:" << endl;
+    for (int i = 0; i < COURSES; i++) {
+        int minOnCourse = students[i][0];
+        int minGroupIndex = 0;
+        for (int j = 1; j < GROUPS; j++) {
+            if (students[i][j] < minOnCourse) {
+                minOnCourse = students[i][j];
+                minGroupIndex = j;
+            }
+        }
+        cout << "Курс " << (i + 1) << ": группа " << (minGroupIndex + 1)
+            << " (" << minOnCourse << " студентов)" << endl;
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int PRODUCTS = 5;
+    const int DAYS = 6;
+    int price[PRODUCTS];          
+    int quantity[PRODUCTS][DAYS]; 
+
+    // Ввод стоимости товаров
+    cout << "Введите стоимость одной штуки для каждого товара:" << endl;
+    for (int i = 0; i < PRODUCTS; i++) {
+        cout << "Товар " << (i + 1) << ": ";
+        cin >> price[i];
+    }
+
+    // Ввод количества проданных
+    cout << "\nВведите количество проданных товаров за 6 дней:" << endl;
+    for (int i = 0; i < PRODUCTS; i++) {
+        cout << "Товар " << (i + 1) << " (6 дней): ";
+        for (int j = 0; j < DAYS; j++) {
+            cin >> quantity[i][j];
+        }
+    }
+
+    // а) Общий доход, полученный от продажи каждого вида товара
+    cout << "\nа) Общий доход по товарам:" << endl;
+    int productIncome[PRODUCTS] = { 0 };
+    for (int i = 0; i < PRODUCTS; i++) {
+        for (int j = 0; j < DAYS; j++) {
+            productIncome[i] += price[i] * quantity[i][j];
+        }
+        cout << "Товар " << (i + 1) << ": " << productIncome[i] << " руб." << endl;
+    }
+
+    // б) Общий доход, полученный за каждый день
+    cout << "\nб) Общий доход по дням:" << endl;
+    for (int j = 0; j < DAYS; j++) {
+        int dayIncome = 0;
+        for (int i = 0; i < PRODUCTS; i++) {
+            dayIncome += price[i] * quantity[i][j];
+        }
+        cout << "День " << (j + 1) << ": " << dayIncome << " руб." << endl;
+    }
+
+    // в) Общий доход магазина за 6 дней
+    int totalIncome = 0;
+    for (int i = 0; i < PRODUCTS; i++) {
+        totalIncome += productIncome[i];
+    }
+    cout << "\nв) Общий доход за 6 дней: " << totalIncome << " руб." << endl;
+
+    // г) По какому виду товара был получен максимальный общий доход за 6 дней
+    int maxProduct = 0;
+    int maxProductIncome = productIncome[0];
+    for (int i = 1; i < PRODUCTS; i++) {
+        if (productIncome[i] > maxProductIncome) {
+            maxProductIncome = productIncome[i];
+            maxProduct = i;
+        }
+    }
+    cout << "г) Самый доходный товар: №" << (maxProduct + 1)
+        << " (" << maxProductIncome << " руб.)" << endl;
+
+    // д) В какой день был получен максимальный общий доход от продажи всех видов товара
+    int maxDay = 0;
+    int maxDayIncome = 0;
+    for (int j = 0; j < DAYS; j++) {
+        int dayIncome = 0;
+        for (int i = 0; i < PRODUCTS; i++) {
+            dayIncome += price[i] * quantity[i][j];
+        }
+        if (dayIncome > maxDayIncome) {
+            maxDayIncome = dayIncome;
+            maxDay = j;
+        }
+    }
+    cout << "д) Самый доходный день: " << (maxDay + 1)
+        << " (" << maxDayIncome << " руб.)" << endl;
+
+    // е) Количество дней, в которые общий доход от продажи всех видов товара превысил a рублей
+    int a;
+    cout << "\nВведите значение a: ";
+    cin >> a;
+
+    int goodDays = 0;
+    for (int j = 0; j < DAYS; j++) {
+        int dayIncome = 0;
+        for (int i = 0; i < PRODUCTS; i++) {
+            dayIncome += price[i] * quantity[i][j];
+        }
+        if (dayIncome > a) {
+            goodDays++;
+        }
+    }
+    cout << "е) Дней с доходом > " << a << " руб.: " << goodDays << endl;
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int GROUPS = 3;
+    const int STUDENTS = 20;
+    const int EXAMS = 3;
+
+    // Ввод данных
+    cout << "Введите оценки студентов (от 2 до 5):" << endl;
+
+    double groupAverages[GROUPS] = { 0 };
+
+    for (int g = 0; g < GROUPS; g++) {
+        cout << "\nГруппа " << (g + 1) << ":" << endl;
+        double groupSum = 0;
+
+        for (int s = 0; s < STUDENTS; s++) {
+            cout << "Студент " << (s + 1) << " (3 оценки): ";
+            int studentSum = 0;
+
+            for (int e = 0; e < EXAMS; e++) {
+                int grade;
+                cin >> grade;
+                studentSum += grade;
+            }
+
+            groupSum += studentSum / (double)EXAMS;
+        }
+
+        groupAverages[g] = groupSum / STUDENTS;
+        cout << "Средний балл группы: " << fixed << setprecision(2)
+            << groupAverages[g] << endl;
+    }
+
+    // Определение лучшей группы
+    int bestGroup = 0;
+    double bestAverage = groupAverages[0];
+    for (int g = 1; g < GROUPS; g++) {
+        if (groupAverages[g] > bestAverage) {
+            bestAverage = groupAverages[g];
+            bestGroup = g;
+        }
+    }
+
+    cout << "\nЛучшая по среднему баллу: группа " << (bestGroup + 1)
+        << " (" << fixed << setprecision(2) << bestAverage << ")" << endl;
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Число\tДелителей" << endl;
+    cout << "----------------" << endl;
+
+    for (int n = 120; n <= 140; n++) {
+        int divisors = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                divisors++;
+            }
+        }
+
+        cout << n << "\t" << divisors << endl;
+    }
+
+    return 0;
+}
+Задание № 20
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    cout << "\nЧисло и его делители (+):" << endl;
+    cout << "-----------------------" << endl;
+
+    for (int i = 1; i <= n; i++) {
+        int divisors = 0;
+
+        // Считаем делители
+        for (int d = 1; d <= i; d++) {
+            if (i % d == 0) {
+                divisors++;
+            }
+        }
+
+        // Выводим число и символы +
+        cout << i << " ";
+        for (int j = 0; j < divisors; j++) {
+            cout << "+";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Числа с 5 делителями:" << endl;
+    cout << "-------------------" << endl;
+
+    int count = 0;
+
+    for (int n = 1; n <= 300; n++) {
+        int divisors = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                divisors++;
+                if (divisors > 5) break; // Оптимизация
+            }
+        }
+
+        if (divisors == 5) {
+            cout << n << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Числа с 6 делителями:" << endl;
+    cout << "-------------------" << endl;
+
+    int count = 0;
+
+    for (int n = 200; n <= 500; n++) {
+        int divisors = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                divisors++;
+                if (divisors > 6) break;
+            }
+        }
+
+        if (divisors == 6) {
+            cout << n << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b, k;
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+    cout << "Введите k: ";
+    cin >> k;
+
+    cout << "\nЧисла с " << k << " делителями:" << endl;
+    cout << "-----------------------" << endl;
+
+    int count = 0;
+
+    for (int n = a; n <= b; n++) {
+        int divisors = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                divisors++;
+                if (divisors > k) break;
+            }
+        }
+
+        if (divisors == k) {
+            cout << n << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+
+    int maxDivisors = 0;
+    int numberWithMax = a;
+
+    // Находим максимальное количество делителей
+    for (int n = a; n <= b; n++) {
+        int divisors = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                divisors++;
+            }
+        }
+
+        if (divisors > maxDivisors) {
+            maxDivisors = divisors;
+            numberWithMax = n;
+        }
+    }
+
+    cout << "\nМаксимальное количество делителей: " << maxDivisors << endl;
+
+    // а) Максимальное из чисел с максимальным количеством делителей
+    int maxNumber = numberWithMax;
+    for (int n = numberWithMax + 1; n <= b; n++) {
+        int divisors = 0;
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) divisors++;
+        }
+        if (divisors == maxDivisors && n > maxNumber) {
+            maxNumber = n;
+        }
+    }
+    cout << "а) Максимальное число: " << maxNumber << endl;
+
+    // б) Минимальное из чисел с максимальным количеством делителей
+    int minNumber = a;
+    for (int n = a; n <= b; n++) {
+        int divisors = 0;
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) divisors++;
+        }
+        if (divisors == maxDivisors) {
+            minNumber = n;
+            break;
+        }
+    }
+    cout << "б) Минимальное число: " << minNumber << endl;
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Трехзначные простые числа:" << endl;
+    cout << "------------------------" << endl;
+
+    int count = 0;
+
+    for (int n = 100; n <= 999; n++) {
+        bool isPrime = true;
+
+        if (n < 2) isPrime = false;
+        else {
+            for (int d = 2; d * d <= n; d++) {
+                if (n % d == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            cout << n << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " простых чисел" << endl;
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Первые 100 простых чисел:" << endl;
+    cout << "------------------------" << endl;
+
+    int count = 0;
+    int number = 2;
+
+    while (count < 100) {
+        bool isPrime = true;
+
+        for (int d = 2; d * d <= number; d++) {
+            if (number % d == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            cout << number << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+
+        number++;
+    }
+
+    cout << "\nВыведено " << count << " простых чисел" << endl;
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Число\tСумма делителей" << endl;
+    cout << "---------------------" << endl;
+
+    for (int n = 50; n <= 70; n++) {
+        int sum = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                sum += d;
+            }
+        }
+
+        cout << n << "\t" << sum << endl;
+    }
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Числа, сумма делителей которых равна 50:" << endl;
+    cout << "--------------------------------------" << endl;
+
+    int count = 0;
+
+    for (int n = 100; n <= 300; n++) {
+        int sum = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                sum += d;
+            }
+        }
+
+        if (sum == 50) {
+            cout << n << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    if (count == 0) {
+        cout << "Таких чисел нет" << endl;
+    }
+    else {
+        cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+    }
+
+    return 0;
+}
+Задание № 29
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Числа, сумма делителей которых кратна 10:" << endl;
+    cout << "----------------------------------------" << endl;
+
+    int count = 0;
+
+    for (int n = 300; n <= 600; n++) {
+        int sum = 0;
+
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                sum += d;
+            }
+        }
+
+        if (sum % 10 == 0) {
+            cout << n << " (сумма: " << sum << ") ";
+            count++;
+
+            if (count % 5 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 30
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "(число равно сумме своих делителей, кроме самого числа)" << endl;
+
+    cout << "\nПоиск трехзначных совершенных чисел:" << endl;
+    cout << "----------------------------------" << endl;
+
+    bool found = false;
+
+    for (int n = 100; n <= 999; n++) {
+        int sum = 0;
+
+        // Суммируем все делители, кроме самого числа
+        for (int d = 1; d <= n / 2; d++) {
+            if (n % d == 0) {
+                sum += d;
+            }
+        }
+
+        if (sum == n) {
+            cout << "Найдено совершенное число: " << n << endl;
+            cout << "Его делители (кроме самого числа): ";
+
+            // Выводим делители
+            bool first = true;
+            for (int d = 1; d <= n / 2; d++) {
+                if (n % d == 0) {
+                    if (!first) cout << " + ";
+                    cout << d;
+                    first = false;
+                }
+            }
+            cout << " = " << n << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Трехзначных совершенных чисел не найдено" << endl;
+    }
+
+    return 0;
+}
+Задание № 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все совершенные числа меньше 100000" << endl;
+
+    cout << "\nСовершенные числа:" << endl;
+    cout << "-----------------" << endl;
+
+    int n = 1;
+
+    while (n < 100000) {
+        int sum = 0;
+        int d = 1;
+
+        // Суммируем делители с помощью while
+        while (d <= n / 2) {
+            if (n % d == 0) {
+                sum += d;
+            }
+            d++;
+        }
+
+        if (sum == n) {
+            cout << n << " ";
+
+            // Выводим разложение
+            cout << "= ";
+            d = 1;
+            bool first = true;
+            while (d <= n / 2) {
+                if (n % d == 0) {
+                    if (!first) cout << " + ";
+                    cout << d;
+                    first = false;
+                }
+                d++;
+            }
+            cout << endl;
+        }
+
+        n++;
+    }
+
+    return 0;
+}
+Задание № 32
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+
+    int maxSum = 0;
+    int numberWithMaxSum = a;
+
+    for (int n = a; n <= b; n++) {
+        int sum = 0;
+
+        // Суммируем все делители
+        for (int d = 1; d <= n; d++) {
+            if (n % d == 0) {
+                sum += d;
+            }
+        }
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            numberWithMaxSum = n;
+        }
+    }
+
+    cout << "\nЧисло с максимальной суммой делителей: " << numberWithMaxSum << endl;
+    cout << "Сумма его делителей: " << maxSum << endl;
+
+    // Выводим делители для наглядности
+    cout << "Делители числа " << numberWithMaxSum << ": ";
+    bool first = true;
+    for (int d = 1; d <= numberWithMaxSum; d++) {
+        if (numberWithMaxSum % d == 0) {
+            if (!first) cout << " + ";
+            cout << d;
+            first = false;
+        }
+    }
+    cout << " = " << maxSum << endl;
+
+    return 0;
+}
+Задание № 33
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "(дружественные - каждое равно сумме делителей другого)" << endl;
+
+    cout << "\nПоиск дружественных пар:" << endl;
+    cout << "-----------------------" << endl;
+
+    int foundPairs = 0;
+
+    for (int a = 2; a < 50000; a++) {
+        // Сумма делителей для числа a
+        int sumA = 0;
+        for (int d = 1; d <= a / 2; d++) {
+            if (a % d == 0) {
+                sumA += d;
+            }
+        }
+
+        // Если сумма делителей a больше a и меньше 50000
+        if (sumA > a && sumA < 50000) {
+            // Сумма делителей для числа sumA
+            int sumB = 0;
+            for (int d = 1; d <= sumA / 2; d++) {
+                if (sumA % d == 0) {
+                    sumB += d;
+                }
+            }
+
+            // Проверяем, являются ли числа дружественными
+            if (sumB == a && a != sumA) {
+                cout << "Найдена пара: " << a << " и " << sumA << endl;
+                cout << a << ": ";
+                for (int d = 1; d <= a / 2; d++) {
+                    if (a % d == 0) cout << d << " ";
+                }
+                cout << "= " << sumA << endl;
+
+                cout << sumA << ": ";
+                for (int d = 1; d <= sumA / 2; d++) {
+                    if (sumA % d == 0) cout << d << " ";
+                }
+                cout << "= " << a << endl << endl;
+
+                foundPairs++;
+            }
+        }
+    }
+
+    if (foundPairs == 0) {
+        cout << "Дружественных пар не найдено" << endl;
+    }
+    else {
+        cout << "Всего найдено пар: " << foundPairs << endl;
+    }
+
+    return 0;
+}
+Задание № 34
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите сумму n (n < 100): ";
+    cin >> n;
+
+    // а) Число способов выплаты
+    int ways = 0;
+    cout << "\nа) Подсчет числа способов:" << endl;
+
+    for (int ten = 0; ten <= n / 10; ten++) {
+        for (int five = 0; five <= (n - ten * 10) / 5; five++) {
+            for (int two = 0; two <= (n - ten * 10 - five * 5) / 2; two++) {
+                int one = n - ten * 10 - five * 5 - two * 2;
+                if (one >= 0) {
+                    ways++;
+                }
+            }
+        }
+    }
+
+    cout << "Число способов выплаты: " << ways << endl;
+
+    // б) Все способы выплаты
+    cout << "\nб) Все способы выплаты:" << endl;
+    cout << "10р\t5р\t2р\t1р" << endl;
+    cout << "----------------------" << endl;
+
+    int count = 0;
+    for (int ten = 0; ten <= n / 10; ten++) {
+        for (int five = 0; five <= (n - ten * 10) / 5; five++) {
+            for (int two = 0; two <= (n - ten * 10 - five * 5) / 2; two++) {
+                int one = n - ten * 10 - five * 5 - two * 2;
+                if (one >= 0) {
+                    cout << ten << "\t" << five << "\t" << two << "\t" << one << endl;
+                    count++;
+                }
+            }
+        }
+    }
+
+    cout << "\nВсего способов: " << count << endl;
+
+    return 0;
+}
+Задание № 35
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    int denominations[] = { 64, 32, 16, 8, 4, 2, 1 };
+    int count = sizeof(denominations) / sizeof(denominations[0]);
+
+    cout << "\nВыплата сумм от " << n << " до " << n + 10 << ":" << endl;
+    cout << "Сумма\t64\t32\t16\t8\t4\t2\t1" << endl;
+    cout << "----------------------------------------------" << endl;
+
+    for (int sum = n; sum <= n + 10; sum++) {
+        cout << sum << "\t";
+        int temp = sum;
+
+        for (int i = 0; i < count; i++) {
+            int num = temp / denominations[i];
+            cout << num << "\t";
+            temp = temp % denominations[i];
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+Задание № 36
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int s;
+    cout << "Введите площадь s: ";
+    cin >> s;
+
+    cout << "\nа) Все прямоугольники (считаем перестановки разными):" << endl;
+    cout << "Ширина * Высота = Площадь" << endl;
+    cout << "-------------------------" << endl;
+
+    int countAll = 0;
+    for (int a = 1; a <= s; a++) {
+        if (s % a == 0) {
+            int b = s / a;
+            cout << a << " * " << b << " = " << s << endl;
+            countAll++;
+        }
+    }
+    cout << "Всего: " << countAll << " прямоугольников" << endl;
+
+    cout << "\nб) Прямоугольники (перестановки считаем совпадающими):" << endl;
+    cout << "Ширина * Высота = Площадь" << endl;
+    cout << "-------------------------" << endl;
+
+    int countUnique = 0;
+    for (int a = 1; a * a <= s; a++) {
+        if (s % a == 0) {
+            int b = s / a;
+            cout << a << " * " << b << " = " << s << endl;
+            countUnique++;
+        }
+    }
+    cout << "Всего: " << countUnique << " различных прямоугольников" << endl;
+
+    return 0;
+}
+Задание № 37
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int v;
+    cout << "Введите объем v: ";
+    cin >> v;
+
+    cout << "\nа) Все параллелепипеды (перестановки разные):" << endl;
+    cout << "Длина * Ширина * Высота = Объем" << endl;
+    cout << "-----------------------------" << endl;
+
+    int countAll = 0;
+    for (int a = 1; a <= v; a++) {
+        if (v % a == 0) {
+            int v_ab = v / a;
+            for (int b = 1; b <= v_ab; b++) {
+                if (v_ab % b == 0) {
+                    int c = v_ab / b;
+                    if (a * b * c == v) {
+                        cout << a << " x " << b << " x " << c << " = " << v << endl;
+                        countAll++;
+                    }
+                }
+            }
+        }
+    }
+    cout << "Всего: " << countAll << " параллелепипедов" << endl;
+
+    cout << "\nб) Параллелепипеды (перестановки совпадающие):" << endl;
+    cout << "Длина * Ширина * Высота = Объем" << endl;
+    cout << "-----------------------------" << endl;
+
+    int countUnique = 0;
+    for (int a = 1; a * a * a <= v; a++) {
+        if (v % a == 0) {
+            int v_ab = v / a;
+            for (int b = a; b * b <= v_ab; b++) {
+                if (v_ab % b == 0) {
+                    int c = v_ab / b;
+                    if (c >= b && a * b * c == v) {
+                        cout << a << " x " << b << " x " << c << " = " << v << endl;
+                        countUnique++;
+                    }
+                }
+            }
+        }
+    }
+    cout << "Всего: " << countUnique << " различных параллелепипедов" << endl;
+
+    return 0;
+}
+Задание № 38
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int solutions = 0;
+
+    for (int x = 1; x <= 30; x++) {
+        for (int y = x; y <= 30; y++) {  // y >= x чтобы избежать перестановок
+            int sum = x * x + y * y;
+
+            // Проверяем, является ли сумма полным квадратом
+            for (int k = 1; k <= 30; k++) {
+                if (k * k == sum) {
+                    cout << x << "\t" << y << "\t" << k << endl;
+                    cout << "  " << x << "^2 + " << y << "^2 = " << k << "^2" << endl;
+                    cout << "  " << x * x << " + " << y * y << " = " << k * k << endl << endl;
+                    solutions++;
+                    break;
+                }
+            }
+        }
+    }
+
+    cout << "Всего решений: " << solutions << endl;
+
+    // Известные пифагоровы тройки
+    cout << "\nИзвестные пифагоровы тройки в этом диапазоне:" << endl;
+    cout << "3-4-5, 5-12-13, 6-8-10, 7-24-25, 8-15-17, 9-12-15," << endl;
+    cout << "10-24-26, 12-16-20, 15-20-25, 18-24-30, 20-21-29" << endl;
+
+    return 0;
+}
+Задание № 39
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int m, n;
+    cout << "Введите m: ";
+    cin >> m;
+    cout << "Введите n: ";
+    cin >> n;
+
+    long long sum = 0;
+
+    cout << "\nВычисление суммы:" << endl;
+    cout << "S = ";
+
+    for (int i = 1; i <= m; i++) {
+        // Вычисляем i в степени n
+        long long power = 1;
+        for (int p = 0; p < n; p++) {
+            power *= i;
+        }
+
+        sum += power;
+
+        // Вывод члена суммы
+        cout << i << "^" << n;
+        if (i < m) cout << " + ";
+    }
+
+    cout << " = " << sum << endl;
+
+    // Выводим промежуточные вычисления
+    cout << "\nПодробно:" << endl;
+    for (int i = 1; i <= m; i++) {
+        long long power = 1;
+        for (int p = 0; p < n; p++) {
+            power *= i;
+        }
+        cout << i << "^" << n << " = " << power << endl;
+    }
+
+    cout << "\nИтоговая сумма: " << sum << endl;
+
+    return 0;
+}
+Задание № 40
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    long long sum = 0;
+
+    cout << "\nВычисление суммы:" << endl;
+    cout << "S = ";
+
+    for (int i = 1; i <= n; i++) {
+        // Вычисляем i в степени i
+        long long power = 1;
+        for (int p = 0; p < i; p++) {
+            power *= i;
+        }
+
+        sum += power;
+
+        // Вывод члена суммы
+        cout << i << "^" << i;
+        if (i < n) cout << " + ";
+    }
+
+    cout << " = " << sum << endl;
+
+    // Выводим промежуточные вычисления
+    cout << "\nПодробно:" << endl;
+    for (int i = 1; i <= n; i++) {
+        long long power = 1;
+        for (int p = 0; p < i; p++) {
+            power *= i;
+        }
+        cout << i << "^" << i << " = " << power << endl;
+    }
+
+    cout << "\nИтоговая сумма: " << sum << endl;
+    return 0;
+}
+Задание № 41
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Без операций деления и остатка от деления" << endl;
+
+    int n;
+    cout << "Введите n (0 <= n <= 27): ";
+    cin >> n;
+
+    cout << "\nТрехзначные числа с суммой цифр " << n << ":" << endl;
+    cout << "--------------------------------------" << endl;
+
+    int count = 0;
+
+    // Перебираем все трехзначные числа
+    for (int num = 100; num <= 999; num++) {
+        // Извлекаем цифры без операций деления
+        int a = num / 100;        // первая цифра
+        int b = (num / 10) % 10;  // вторая цифра
+        int c = num % 10;         // третья цифра
+
+        // Проверяем сумму цифр
+        if (a + b + c == n) {
+            cout << num << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    // Альтернативный способ без операций деления и остатка
+    cout << "\nАльтернативный способ (без / и %):" << endl;
+    count = 0;
+
+    for (int a = 1; a <= 9; a++) {           // первая цифра (сотни)
+        for (int b = 0; b <= 9; b++) {       // вторая цифра (десятки)
+            for (int c = 0; c <= 9; c++) {   // третья цифра (единицы)
+                if (a + b + c == n) {
+                    int num = a * 100 + b * 10 + c;
+                    if (num >= 100) {  // действительно трехзначное
+                        cout << num << " ";
+                        count++;
+
+                        if (count % 10 == 0) {
+                            cout << endl;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "\n\nВсего: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 42
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Без операций деления, целочисленного деления и определения остатка" << endl;
+
+    cout << "\nТрехзначные числа без повторяющихся цифр:" << endl;
+    cout << "----------------------------------------" << endl;
+
+    int count = 0;
+
+    // Альтернативный способ без операций деления
+    for (int a = 1; a <= 9; a++) {           // первая цифра (сотни)
+        for (int b = 0; b <= 9; b++) {       // вторая цифра (десятки)
+            for (int c = 0; c <= 9; c++) {   // третья цифра (единицы)
+                // Проверяем, что все цифры разные
+                if (a != b && a != c && b != c) {
+                    int num = a * 100 + b * 10 + c;
+                    cout << num << " ";
+                    count++;
+
+                    if (count % 10 == 0) {
+                        cout << endl;
+                    }
+                }
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 43
+#include <iostream>
+using namespace std;
+
+// Функция для нахождения НОД двух чисел (алгоритм Евклида)
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите количество чисел n: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Некорректное количество чисел" << endl;
+        return 0;
+    }
+
+    int numbers[100]; // Максимум 100 чисел
+
+    cout << "Введите " << n << " натуральных чисел: ";
+    for (int i = 0; i < n; i++) {
+        cin >> numbers[i];
+    }
+
+    // Находим НОД всех чисел
+    int result = numbers[0];
+    for (int i = 1; i < n; i++) {
+        result = gcd(result, numbers[i]);
+    }
+
+    cout << "\nНаибольший общий делитель: " << result << endl;
+
+    // Выводим процесс вычисления
+    cout << "\nПроцесс вычисления:" << endl;
+    if (n >= 2) {
+        int current = gcd(numbers[0], numbers[1]);
+        cout << "НОД(" << numbers[0] << ", " << numbers[1] << ") = " << current << endl;
+
+        for (int i = 2; i < n; i++) {
+            int next = gcd(current, numbers[i]);
+            cout << "НОД(" << current << ", " << numbers[i] << ") = " << next << endl;
+            current = next;
+        }
+    }
+
+    return 0;
+}
+Задание № 44
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int weights[] = { 100, 200, 300, 500, 1000, 1200, 1400, 1500, 2000, 3000 };
+    int count = sizeof(weights) / sizeof(weights[0]);
+
+    int v;
+    cout << "Введите вес v (в граммах): ";
+    cin >> v;
+
+    cout << "\nГири: ";
+    for (int i = 0; i < count; i++) {
+        cout << weights[i] << "г ";
+    }
+    cout << endl;
+
+    // Подсчет способов с помощью полного перебора
+    // Каждую гирю можно либо взять (1), либо не взять (0)
+    int totalWays = 0;
+
+    cout << "\nСпособы составления веса " << v << "г:" << endl;
+    cout << "--------------------------------" << endl;
+
+    // 2^10 = 1024 комбинаций
+    for (int mask = 1; mask < (1 << count); mask++) {
+        int sum = 0;
+
+        // Вычисляем сумму для текущей комбинации
+        for (int i = 0; i < count; i++) {
+            if (mask & (1 << i)) {
+                sum += weights[i];
+            }
+        }
+
+        // Если сумма равна целевому весу
+        if (sum == v) {
+            totalWays++;
+            cout << "Способ " << totalWays << ": ";
+
+            bool first = true;
+            for (int i = 0; i < count; i++) {
+                if (mask & (1 << i)) {
+                    if (!first) cout << " + ";
+                    cout << weights[i] << "г";
+                    first = false;
+                }
+            }
+            cout << " = " << v << "г" << endl;
+        }
+    }
+
+    if (totalWays == 0) {
+        cout << "Невозможно составить вес " << v << "г из данных гирь" << endl;
+    }
+    else {
+        cout << "\nВсего способов: " << totalWays << endl;
+    }
+
+    return 0;
+}
+Задание № 45
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int m, n;
+    cout << "Введите m: ";
+    cin >> m;
+    cout << "Введите n: ";
+    cin >> n;
+
+    cout << "\nЧисла меньше " << n << ", у которых квадрат суммы цифр равен " << m << ":" << endl;
+    cout << "-------------------------------------------------------------" << endl;
+
+    int count = 0;
+
+    for (int num = 1; num < n; num++) {
+        // Находим сумму цифр числа
+        int sumDigits = 0;
+        int temp = num;
+
+        while (temp > 0) {
+            sumDigits += temp % 10;
+            temp /= 10;
+        }
+
+        // Проверяем условие
+        if (sumDigits * sumDigits == m) {
+            cout << num << " (сумма цифр: " << sumDigits << ", квадрат: " << m << ")" << endl;
+            count++;
+        }
+    }
+
+    if (count == 0) {
+        cout << "Таких чисел нет" << endl;
+    }
+    else {
+        cout << "\nВсего найдено: " << count << " чисел" << endl;
+    }
+
+    // Дополнительно: возможные значения суммы цифр
+    cout << "\nВозможные суммы цифр (квадрат которых <= " << m << "):" << endl;
+    for (int s = 1; s * s <= m; s++) {
+        if (s * s == m) {
+            cout << "Сумма цифр должна быть: " << s << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 46
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    long long number;
+    cout << "Введите натуральное число: ";
+    cin >> number;
+
+    long long original = number;
+
+    cout << "\nВычисление цифрового корня для числа " << number << ":" << endl;
+    cout << "-------------------------------------------" << endl;
+
+    while (number >= 10) {
+        // Вычисляем сумму цифр текущего числа
+        long long sum = 0;
+        long long temp = number;
+
+        cout << number << " -> ";
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += digit;
+            temp /= 10;
+        }
+
+        cout << "сумма цифр: " << sum << endl;
+        number = sum;
+    }
+
+    cout << "Цифровой корень: " << number << endl;
+
+    // Быстрый способ: цифровой корень = остаток от деления на 9 (кроме 0)
+    cout << "\nБыстрый способ (остаток от деления на 9):" << endl;
+    if (original == 0) {
+        cout << "Цифровой корень 0 = 0" << endl;
+    }
+    else {
+        int fastRoot = original % 9;
+        if (fastRoot == 0) fastRoot = 9;
+        cout << original << " mod 9 = " << fastRoot << endl;
+    }
+
+    return 0;
+}
+Задание № 47
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int TOTAL_MONEY = 100;    // 100 рублей
+    const int TOTAL_ANIMALS = 100;  // 100 голов
+    const int BULL_PRICE = 10;      // бык - 10 руб
+    const int COW_PRICE = 5;        // корова - 5 руб
+    const int CALF_PRICE = 0.5;     // теленок - 0.5 руб (полтинник)
+
+    cout << "Цены: бык - " << BULL_PRICE << " руб, корова - " << COW_PRICE
+        << " руб, теленок - " << CALF_PRICE << " руб" << endl;
+    cout << "Надо купить 100 голов скота на 100 рублей" << endl;
+
+    cout << "\nВозможные решения:" << endl;
+    cout << "Быков\tКоров\tТелят\tСтоимость\tГолов" << endl;
+    cout << "------------------------------------------------" << endl;
+
+    int solutions = 0;
+
+    // Перебираем количество быков
+    for (int bulls = 0; bulls <= TOTAL_MONEY / BULL_PRICE; bulls++) {
+        // Перебираем количество коров
+        for (int cows = 0; cows <= (TOTAL_MONEY - bulls * BULL_PRICE) / COW_PRICE; cows++) {
+            // Количество телят вычисляем из условий
+            int calves = TOTAL_ANIMALS - bulls - cows;
+
+            if (calves >= 0) {
+                // Проверяем стоимость
+                double cost = bulls * BULL_PRICE + cows * COW_PRICE + calves * CALF_PRICE;
+
+                // Сравниваем с точностью до 0.01 (копейки)
+                if (abs(cost - TOTAL_MONEY) < 0.01) {
+                    solutions++;
+                    cout << bulls << "\t" << cows << "\t" << calves << "\t"
+                        << cost << " руб.\t" << (bulls + cows + calves) << endl;
+
+                    // Проверка
+                    cout << "  Проверка: " << bulls << "*10 + " << cows << "*5 + "
+                        << calves << "*0.5 = " << cost << endl;
+                }
+            }
+        }
+    }
+
+    cout << "\nВсего решений: " << solutions << endl;
+    return 0;
+}
+Задание № 48
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int original = n;
+
+    cout << "\nРазложение числа " << n << " на простые множители:" << endl;
+
+    // Вариант 1: каждый простой множитель выводится один раз
+    cout << "\n1) Каждый множитель один раз:" << endl;
+    cout << n << " = ";
+
+    bool first = true;
+    for (int p = 2; p * p <= n; p++) {
+        if (n % p == 0) {
+            // Проверяем, простое ли p
+            bool isPrime = true;
+            for (int d = 2; d * d <= p; d++) {
+                if (p % d == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                if (!first) cout << " * ";
+                cout << p;
+                first = false;
+                while (n % p == 0) {
+                    n /= p;
+                }
+            }
+        }
+    }
+
+    if (n > 1) {
+        if (!first) cout << " * ";
+        cout << n;
+    }
+
+    // Сбрасываем n для второго варианта
+    n = original;
+
+    // Вариант 2: множители выводятся столько раз, сколько входят в разложение
+    cout << "\n\n2) Множители с кратностями:" << endl;
+    cout << n << " = ";
+
+    first = true;
+    int current = 2;
+
+    while (n > 1) {
+        if (n % current == 0) {
+            if (!first) cout << " * ";
+            cout << current;
+            first = false;
+            n /= current;
+        }
+        else {
+            current++;
+        }
+    }
+
+    // Восстанавливаем n для подробного вывода
+    n = original;
+
+    cout << "\n\nПодробное разложение:" << endl;
+    cout << "--------------------" << endl;
+
+    current = 2;
+    while (n > 1) {
+        int count = 0;
+
+        while (n % current == 0) {
+            count++;
+            n /= current;
+        }
+
+        if (count > 0) {
+            cout << current;
+            if (count > 1) {
+                cout << "^" << count;
+            }
+            if (n > 1) cout << " * ";
+        }
+
+        current++;
+    }
+
+    cout << endl;
+
+    return 0;
+}
+Задание № 49
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    cout << "\nПростые делители числа " << n << ":" << endl;
+    cout << "----------------------------" << endl;
+
+    vector<int> divisors;
+    int original = n;
+
+    // Находим все простые делители
+    for (int d = 2; d * d <= n; d++) {
+        if (n % d == 0) {
+            // Проверяем, простое ли d
+            bool isPrime = true;
+            for (int i = 2; i * i <= d; i++) {
+                if (d % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                divisors.push_back(d);
+            }
+
+            // Проверяем парный делитель
+            int pair = n / d;
+            if (pair != d && n % pair == 0) {
+                isPrime = true;
+                for (int i = 2; i * i <= pair; i++) {
+                    if (pair % i == 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (isPrime) {
+                    divisors.push_back(pair);
+                }
+            }
+        }
+    }
+
+    // Если само число простое
+    if (divisors.empty()) {
+        bool isPrime = true;
+        if (n > 1) {
+            for (int i = 2; i * i <= n; i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                divisors.push_back(n);
+            }
+        }
+    }
+
+    // Сортируем делители
+    sort(divisors.begin(), divisors.end());
+
+    // Удаляем дубликаты
+    divisors.erase(unique(divisors.begin(), divisors.end()), divisors.end());
+
+    // Выводим результат
+    if (divisors.empty()) {
+        cout << "Число " << n << " не имеет простых делителей (1 или 0)" << endl;
+    }
+    else {
+        cout << "Простые делители: ";
+        for (size_t i = 0; i < divisors.size(); i++) {
+            cout << divisors[i];
+            if (i < divisors.size() - 1) cout << ", ";
+        }
+        cout << endl;
+
+        cout << "\nПроверка:" << endl;
+        for (int d : divisors) {
+            cout << n << " / " << d << " = " << (n / d)
+                << " (остаток " << (n % d) << ")" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 50
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    cout << "\nЧисла, взаимно простые с " << n << " (НОД = 1):" << endl;
+
+    int found = 0;
+
+    for (int i = 1; i < n; i++) {
+        // Проверяем НОД(i, n)
+        int a = i, b = n;
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        if (a == 1) {  // НОД = 1
+            cout << i << " ";
+            found++;
+
+            if (found % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nНайдено: " << found << " чисел" << endl;
+
+    return 0;
+}
+Задание № 51
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n, p;
+    cout << "Введите n: ";
+    cin >> n;
+    cout << "Введите p: ";
+    cin >> p;
+
+    cout << "\nЧисла меньше " << n << ", взаимно простые с " << p << ":" << endl;
+
+    int count = 0;
+
+    for (int i = 1; i < n; i++) {
+        // Находим НОД(i, p)
+        int a = i, b = p;
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        // Если НОД = 1, числа взаимно просты
+        if (a == 1) {
+            cout << i << " ";
+            count++;
+
+            if (count % 10 == 0) {
+                cout << endl;
+            }
+        }
+    }
+
+    cout << "\n\nВсего найдено: " << count << " чисел" << endl;
+
+    return 0;
+}
+Задание № 52
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int p, q;
+    cout << "Введите p: ";
+    cin >> p;
+    cout << "Введите q: ";
+    cin >> q;
+
+    cout << "\nДелители числа " << q << ", взаимно простые с " << p << ":" << endl;
+
+    int count = 0;
+
+    for (int d = 1; d <= q; d++) {
+        if (q % d == 0) {
+            // Проверяем НОД(d, p)
+            int a = d, b = p;
+            while (b != 0) {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            if (a == 1) {
+                cout << d << " ";
+                count++;
+
+                if (count % 10 == 0) {
+                    cout << endl;
+                }
+            }
+        }
+    }
+
+    cout << "\n\nВсего: " << count << " делителей" << endl;
+
+    // Выводим все делители для сравнения
+    cout << "\nВсе делители " << q << ": ";
+    for (int d = 1; d <= q; d++) {
+        if (q % d == 0) {
+            cout << d << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 53
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int limit = 10000; // Достаточно большой предел для поиска
+    bool found = false;
+
+    for (int n = 1; n <= limit && !found; n++) {
+        int ways = 0;
+
+        // Храним найденные пары
+        int a1 = 0, b1 = 0, a2 = 0, b2 = 0;
+
+        for (int a = 1; a * a * a <= n && ways < 2; a++) {
+            int a3 = a * a * a;
+
+            for (int b = a; a3 + b * b * b <= n && ways < 2; b++) {
+                int b3 = b * b * b;
+
+                if (a3 + b3 == n) {
+                    ways++;
+                    if (ways == 1) {
+                        a1 = a;
+                        b1 = b;
+                    }
+                    else if (ways == 2) {
+                        a2 = a;
+                        b2 = b;
+                    }
+                }
+            }
+        }
+
+        if (ways >= 2) {
+            found = true;
+            cout << "Найдено число: " << n << endl;
+            cout << "Первый способ: " << a1 << "^3 + " << b1 << "^3 = "
+                << a1 * a1 * a1 << " + " << b1 * b1 * b1 << " = " << n << endl;
+            cout << "Второй способ: " << a2 << "^3 + " << b2 << "^3 = "
+                << a2 * a2 * a2 << " + " << b2 * b2 * b2 << " = " << n << endl;
+        }
+    }
+
+    if (!found) {
+        cout << "В пределах " << limit << " такое число не найдено" << endl;
+        cout << "Известное такое число: 1729 = 1^3 + 12^3 = 9^3 + 10^3" << endl;
+        cout << "1729 = " << 1 * 1 * 1 << " + " << 12 * 12 * 12 << " = " << 1 + 1728 << endl;
+        cout << "1729 = " << 9 * 9 * 9 << " + " << 10 * 10 * 10 << " = " << 729 + 1000 << endl;
+    }
+
+    return 0;
+}
+Задание № 54
+#include <iostream>
+using namespace std;
+
+// Функция для нахождения НОД
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Знаменатели не превышают 7" << endl;
+
+    cout << "\nПростые несократимые дроби:" << endl;
+    cout << "(числитель/знаменатель)" << endl;
+    cout << "--------------------------" << endl;
+
+    int count = 0;
+
+    // Перебираем все возможные дроби
+    for (int denominator = 2; denominator <= 7; denominator++) {
+        for (int numerator = 1; numerator < denominator; numerator++) {
+            // Дробь должна быть между 0 и 1 (числитель < знаменатель)
+            // Проверяем несократимость (НОД = 1)
+            if (gcd(numerator, denominator) == 1) {
+                cout << numerator << "/" << denominator << " ";
+                count++;
+
+                if (count % 8 == 0) {
+                    cout << endl;
+                }
+            }
+        }
+    }
+
+    cout << "\n\nВсего дробей: " << count << endl;
+
+    // Выводим в виде десятичных дробей для наглядности
+    cout << "\nВ десятичном виде:" << endl;
+    cout << "----------------" << endl;
+
+    count = 0;
+    for (int denominator = 2; denominator <= 7; denominator++) {
+        for (int numerator = 1; numerator < denominator; numerator++) {
+            if (gcd(numerator, denominator) == 1) {
+                double decimal = (double)numerator / denominator;
+                cout << numerator << "/" << denominator << " = " << decimal;
+
+                if (decimal < 0.5) cout << " < 1/2";
+                else if (decimal > 0.5) cout << " > 1/2";
+                else cout << " = 1/2";
+
+                cout << endl;
+                count++;
+            }
+        }
+    }
+
+    return 0;
+}
