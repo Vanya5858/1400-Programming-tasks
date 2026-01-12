@@ -1,0 +1,1624 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+void drawLine60() {
+    for (int i = 0; i < 60; i++) {
+        cout << '*';
+    }
+    cout << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "Линия из 60 звёздочек:" << endl;
+    drawLine60();
+    return 0;
+}
+Задание № 2
+#include <iostream>
+using namespace std;
+
+void drawLine(int n, char symbol) {
+    for (int i = 0; i < n; i++) {
+        cout << symbol;
+    }
+    cout << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    char symbol;
+    
+    cout << "Введите количество символов: ";
+    cin >> n;
+    cout << "Введите символ: ";
+    cin >> symbol;
+    
+    drawLine(n, symbol);
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+void drawLine(int n, char symbol) {
+    for (int i = 0; i < n; i++) {
+        cout << symbol << " ";
+    }
+    cout << endl;
+}
+
+void drawTriangle() {
+    for (int i = 1; i <= 10; i++) {
+        drawLine(i, '*');
+    }
+}
+
+void drawDiamond() {
+    // Верхняя часть
+    for (int i = 1; i <= 6; i++) {
+        drawLine(i, '*');
+    }
+    // Нижняя часть
+    for (int i = 5; i >= 1; i--) {
+        drawLine(i, '*');
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Треугольник:" << endl;
+    drawTriangle();
+    
+    cout << "\nРомб:" << endl;
+    drawDiamond();
+    
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+void drawLine60() {
+    for (int i = 0; i < 60; i++) {
+        cout << '*';
+    }
+    cout << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Прямоугольник 60x20 (способ 1):" << endl;
+    // Способ 1: без использования drawLine60
+    for (int i = 0; i < 20; i++) {
+        for (int j = 0; j < 60; j++) {
+            cout << '*';
+        }
+        cout << endl;
+    }
+    
+    cout << "\nПрямоугольник 60x20 (способ 2):" << endl;
+    // Способ 2: с использованием drawLine60
+    for (int i = 0; i < 20; i++) {
+        drawLine60();
+    }
+    
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+void drawRectangleFrame(int width, int height) {
+    // Верхняя рамка
+    for (int i = 0; i < width; i++) {
+        cout << '*';
+    }
+    cout << endl;
+    
+    // Боковые рамки
+    for (int i = 0; i < height - 2; i++) {
+        cout << '*';
+        for (int j = 0; j < width - 2; j++) {
+            cout << ' ';
+        }
+        cout << '*' << endl;
+    }
+    
+    // Нижняя рамка
+    for (int i = 0; i < width; i++) {
+        cout << '*';
+    }
+    cout << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Рамка 60x20:" << endl;
+    drawRectangleFrame(60, 20);
+    
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+void drawLine(int n, char symbol) {
+    for (int i = 0; i < n; i++) {
+        cout << symbol;
+    }
+    cout << endl;
+}
+
+void drawRectangle1(int width, int height) {
+    // Способ 1: без использования drawLine
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            cout << '*';
+        }
+        cout << endl;
+    }
+}
+
+void drawRectangle2(int width, int height) {
+    // Способ 2: с использованием drawLine
+    for (int i = 0; i < height; i++) {
+        drawLine(width, '*');
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int width, height;
+    cout << "Введите ширину прямоугольника: ";
+    cin >> width;
+    cout << "Введите высоту прямоугольника: ";
+    cin >> height;
+    
+    cout << "\nСпособ 1 (без функции drawLine):" << endl;
+    drawRectangle1(width, height);
+    
+    cout << "\nСпособ 2 (с функцией drawLine):" << endl;
+    drawRectangle2(width, height);
+    
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b, c, d;
+    
+    cout << "Введите a: ";
+    cin >> a;
+    cout << "Введите b: ";
+    cin >> b;
+    cout << "Введите c: ";
+    cin >> c;
+    cout << "Введите d: ";
+    cin >> d;
+    
+    cout << "\nДо обмена:" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+    cout << "c = " << c << ", d = " << d << endl;
+    
+    // Обмен значений
+    swap(a, b);
+    swap(c, d);
+    
+    cout << "\nПосле обмена:" << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+    cout << "c = " << c << ", d = " << d << endl;
+    
+    return 0;
+}
+Задание № 8
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double trianglePerimeter(double a, double b, double c) {
+    return a + b + c;
+}
+
+double triangleArea(double a, double b, double c) {
+    double p = (a + b + c) / 2;
+    return sqrt(p * (p - a) * (p - b) * (p - c));
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double a1, b1, c1, a2, b2, c2;
+
+    cout << "Введите стороны первого треугольника:" << endl;
+    cout << "a1 = ";
+    cin >> a1;
+    cout << "b1 = ";
+    cin >> b1;
+    cout << "c1 = ";
+    cin >> c1;
+
+    cout << "\nВведите стороны второго треугольника:" << endl;
+    cout << "a2 = ";
+    cin >> a2;
+    cout << "b2 = ";
+    cin >> b2;
+    cout << "c2 = ";
+    cin >> c2;
+
+    double perimeter1 = trianglePerimeter(a1, b1, c1);
+    double area1 = triangleArea(a1, b1, c1);
+
+    double perimeter2 = trianglePerimeter(a2, b2, c2);
+    double area2 = triangleArea(a2, b2, c2);
+
+    cout << "\nРезультаты:" << endl;
+    cout << "Периметр первого треугольника: " << perimeter1 << endl;
+    cout << "Площадь первого треугольника: " << area1 << endl;
+    cout << "Периметр второго треугольника: " << perimeter2 << endl;
+    cout << "Площадь второго треугольника: " << area2 << endl;
+    cout << "Сумма периметров: " << perimeter1 + perimeter2 << endl;
+    cout << "Сумма площадей: " << area1 + area2 << endl;
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double trapezoidPerimeter(double base1, double base2, double height) {
+    // Находим боковую сторону равнобедренной трапеции
+    double side = sqrt(height * height + ((base2 - base1) / 2) * ((base2 - base1) / 2));
+    return base1 + base2 + 2 * side;
+}
+
+double trapezoidArea(double base1, double base2, double height) {
+    return (base1 + base2) * height / 2;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double base1_1, base2_1, height1, base1_2, base2_2, height2;
+    
+    cout << "Введите данные первой трапеции:" << endl;
+    cout << "Основание 1: ";
+    cin >> base1_1;
+    cout << "Основание 2: ";
+    cin >> base2_1;
+    cout << "Высота: ";
+    cin >> height1;
+    
+    cout << "\nВведите данные второй трапеции:" << endl;
+    cout << "Основание 1: ";
+    cin >> base1_2;
+    cout << "Основание 2: ";
+    cin >> base2_2;
+    cout << "Высота: ";
+    cin >> height2;
+    
+    double perimeter1 = trapezoidPerimeter(base1_1, base2_1, height1);
+    double area1 = trapezoidArea(base1_1, base2_1, height1);
+    
+    double perimeter2 = trapezoidPerimeter(base1_2, base2_2, height2);
+    double area2 = trapezoidArea(base1_2, base2_2, height2);
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультаты:" << endl;
+    cout << "Периметр первой трапеции: " << perimeter1 << endl;
+    cout << "Площадь первой трапеции: " << area1 << endl;
+    cout << "Периметр второй трапеции: " << perimeter2 << endl;
+    cout << "Площадь второй трапеции: " << area2 << endl;
+    cout << "Сумма периметров: " << perimeter1 + perimeter2 << endl;
+    cout << "Сумма площадей: " << area1 + area2 << endl;
+    
+    return 0;
+}
+Задание № 10
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double calculateExpression(double num) {
+    return (sqrt(num) + num) / 2;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double x = calculateExpression(6) + calculateExpression(13) + calculateExpression(21);
+
+    cout << fixed << setprecision(4);
+    cout << "x = " << x << endl;
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double f_a(double num) {
+    return (num + sqrt(num)) / (sqrt(num + 5) + (num + 5));
+}
+
+double f_b(double num1, double num2) {
+    return (num1 + sqrt(num2)) / (sqrt(num1) + num2);
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    double x_a = f_a(5) + f_a(12) + f_a(31);
+    cout << fixed << setprecision(4);
+    cout << "a) x = " << x_a << endl;
+
+    double x_b = f_b(13, 7) + f_b(15, 12) + f_b(32, 21);
+    cout << "б) x = " << x_b << endl;
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double g_a(double num) {
+    return (num + sin(num)) / (sin(num + 3) + (num + 3));
+}
+
+double g_b(double num1, double num2) {
+    return (num1 + sin(num2)) / (num2 + sin(num1));
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double y_a = g_a(2) + g_a(6) + g_a(1);
+    cout << fixed << setprecision(4);
+    cout << "a) y = " << y_a << endl;
+
+    double y_b = g_b(1, 4) + g_b(7, 5) + g_b(3, 2);
+    cout << "б) y = " << y_b << endl;
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int sign(double a) {
+    if (a > 0) return 1;
+    else if (a == 0) return 0;
+    else return -1;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double x, y;
+    
+    cout << "Введите x: ";
+    cin >> x;
+    cout << "Введите y: ";
+    cin >> y;
+    
+    int z = sign(x) + sign(y);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "sign(x) = " << sign(x) << endl;
+    cout << "sign(y) = " << sign(y) << endl;
+    cout << "z = sign(x) + sign(y) = " << z << endl;
+    
+    return 0;
+}
+Задание № 14
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double hypotenuse(double a, double b) {
+    return sqrt(a * a + b * b);
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double AB, AD, CD;
+    
+    cout << "Введите стороны фигуры ABCD:" << endl;
+    cout << "AB = ";
+    cin >> AB;
+    cout << "AD = ";
+    cin >> AD;
+    cout << "CD = ";
+    cin >> CD;
+    
+    // Предполагаем, что BC - гипотенуза прямоугольного треугольника с катетами (AD - CD) и AB
+    double BC = hypotenuse(AB, (AD - CD));
+    
+    double perimeter = AB + AD + CD + BC;
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультат:" << endl;
+    cout << "BC = " << BC << endl;
+    cout << "Периметр фигуры ABCD = " << perimeter << endl;
+    
+    return 0;
+}
+Задание № 15
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double trapezoidPerimeter(double base1, double base2, double height) {
+    double side = sqrt(height * height + ((base2 - base1) / 2) * ((base2 - base1) / 2));
+    return base1 + base2 + 2 * side;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double base1_1, base2_1, height1, base1_2, base2_2, height2;
+    
+    cout << "Введите данные первой трапеции:" << endl;
+    cout << "Основание 1: ";
+    cin >> base1_1;
+    cout << "Основание 2: ";
+    cin >> base2_1;
+    cout << "Высота: ";
+    cin >> height1;
+    
+    cout << "\nВведите данные второй трапеции:" << endl;
+    cout << "Основание 1: ";
+    cin >> base1_2;
+    cout << "Основание 2: ";
+    cin >> base2_2;
+    cout << "Высота: ";
+    cin >> height2;
+    
+    double perimeter1 = trapezoidPerimeter(base1_1, base2_1, height1);
+    double perimeter2 = trapezoidPerimeter(base1_2, base2_2, height2);
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультаты:" << endl;
+    cout << "Периметр первой трапеции: " << perimeter1 << endl;
+    cout << "Периметр второй трапеции: " << perimeter2 << endl;
+    cout << "Сумма периметров: " << perimeter1 + perimeter2 << endl;
+    
+    return 0;
+}
+Задание № 16
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double distance(double x1, double y1, double x2, double y2) {
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double x1, y1, x2, y2, x3, y3;
+    
+    cout << "Введите координаты вершин треугольника:" << endl;
+    cout << "Вершина A (x1 y1): ";
+    cin >> x1 >> y1;
+    cout << "Вершина B (x2 y2): ";
+    cin >> x2 >> y2;
+    cout << "Вершина C (x3 y3): ";
+    cin >> x3 >> y3;
+    
+    double AB = distance(x1, y1, x2, y2);
+    double BC = distance(x2, y2, x3, y3);
+    double CA = distance(x3, y3, x1, y1);
+    
+    double perimeter = AB + BC + CA;
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультат:" << endl;
+    cout << "AB = " << AB << endl;
+    cout << "BC = " << BC << endl;
+    cout << "CA = " << CA << endl;
+    cout << "Периметр треугольника = " << perimeter << endl;
+    
+    return 0;
+}
+Задание № 17
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double triangleArea(double a, double b, double c) {
+    double p = (a + b + c) / 2;
+    return sqrt(p * (p - a) * (p - b) * (p - c));
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double a, b, c, d, e;
+    
+    cout << "Введите стороны пятиугольника (a, b, c, d, e):" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    cout << "c = ";
+    cin >> c;
+    cout << "d = ";
+    cin >> d;
+    cout << "e = ";
+    cin >> e;
+    
+    // Разбиваем пятиугольник на 3 треугольника
+    // Предположим, что это правильный пятиугольник или близкий к нему
+    // Для примера разделим диагоналями из одной вершины
+    
+    double area1 = triangleArea(a, b, e);  // Треугольник 1
+    double area2 = triangleArea(b, c, d);  // Треугольник 2  
+    double area3 = triangleArea(d, e, c);  // Треугольник 3
+    
+    double totalArea = area1 + area2 + area3;
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультат:" << endl;
+    cout << "Площадь пятиугольника = " << totalArea << endl;
+    
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double triangleAreaByCoords(double x1, double y1, double x2, double y2, double x3, double y3) {
+    return 0.5 * abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1));
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double x[5], y[5];
+    
+    cout << "Введите координаты вершин пятиугольника:" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << "Вершина " << i+1 << " (x" << i+1 << " y" << i+1 << "): ";
+        cin >> x[i] >> y[i];
+    }
+    
+    // Разбиваем пятиугольник на треугольники от вершины (x1,y1)
+    double totalArea = 0;
+    for (int i = 1; i < 4; i++) {
+        totalArea += triangleAreaByCoords(x[0], y[0], x[i], y[i], x[i+1], y[i+1]);
+    }
+    
+    cout << fixed << setprecision(2);
+    cout << "\nПлощадь пятиугольника = " << totalArea << endl;
+    
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+bool isEven(int num) {
+    return num % 2 == 0;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a[8], b[8];
+    
+    cout << "Введите первую последовательность из 8 чисел:" << endl;
+    for (int i = 0; i < 8; i++) {
+        cout << "a[" << i+1 << "] = ";
+        cin >> a[i];
+    }
+    
+    cout << "\nВведите вторую последовательность из 8 чисел:" << endl;
+    for (int i = 0; i < 8; i++) {
+        cout << "b[" << i+1 << "] = ";
+        cin >> b[i];
+    }
+    
+    int evenCount = 0, oddCount = 0;
+    
+    for (int i = 0; i < 8; i++) {
+        if (isEven(a[i])) evenCount++;
+        if (!isEven(b[i])) oddCount++;
+    }
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Количество четных чисел в первой последовательности: " << evenCount << endl;
+    cout << "Количество нечетных чисел во второй последовательности: " << oddCount << endl;
+    
+    return 0;
+}
+Задание № 20
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool hasRealRoots(double a, double b, double c) {
+    double discriminant = b * b - 4 * a * c;
+    return discriminant >= 0;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    double a, b, c;
+    
+    cout << "Введите коэффициенты a, b, c: ";
+    cin >> a >> b >> c;
+    
+    int count = 0;
+    
+    // Уравнение 1: ax² + bx + c
+    if (hasRealRoots(a, b, c)) count++;
+    
+    // Уравнение 2: bx² + ax + c  
+    if (hasRealRoots(b, a, c)) count++;
+    
+    // Уравнение 3: cx² + ax + b
+    if (hasRealRoots(c, a, b)) count++;
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Количество уравнений с вещественными корнями: " << count << endl;
+    
+    return 0;
+}
+Задание № 21
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPerfectSquare(int num) {
+    if (num < 0) return false;
+    int root = sqrt(num);
+    return root * root == num;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int n;
+    cout << "Введите количество чисел: ";
+    cin >> n;
+    
+    int count = 0;
+    cout << "Введите " << n << " целых чисел:" << endl;
+    
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        if (isPerfectSquare(num)) {
+            count++;
+        }
+    }
+    
+    cout << "\nКоличество полных квадратов: " << count << endl;
+    
+    return 0;
+}
+Задание № 22
+#include <iostream>
+using namespace std;
+
+bool isPowerOfFive(int num) {
+    if (num <= 0) return false;
+    
+    while (num % 5 == 0) {
+        num /= 5;
+    }
+    
+    return num == 1;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int n;
+    cout << "Введите количество чисел: ";
+    cin >> n;
+    
+    int count = 0;
+    cout << "Введите " << n << " целых чисел:" << endl;
+    
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        if (isPowerOfFive(num)) {
+            count++;
+        }
+    }
+    
+    cout << "\nКоличество степеней пятерки: " << count << endl;
+    
+    return 0;
+}
+Задание № 23
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num < 2) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+    
+    for (int i = 3; i <= sqrt(num); i += 2) {
+        if (num % i == 0) return false;
+    }
+    
+    return true;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Трехзначные простые числа:" << endl;
+    int count = 0;
+    
+    for (int i = 100; i <= 999; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+            count++;
+            if (count % 10 == 0) cout << endl;
+        }
+    }
+    
+    cout << "\n\nВсего трехзначных простых чисел: " << count << endl;
+    
+    return 0;
+}
+Задание № 24
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num < 2) return false;
+    if (num == 2) return true;
+    if (num % 2 == 0) return false;
+    
+    for (int i = 3; i <= sqrt(num); i += 2) {
+        if (num % i == 0) return false;
+    }
+    
+    return true;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Пары чисел-близнецов до 200:" << endl;
+    
+    for (int i = 2; i <= 198; i++) {
+        if (isPrime(i) && isPrime(i + 2)) {
+            cout << "(" << i << ", " << i + 2 << ")" << endl;
+        }
+    }
+    
+    return 0;
+}
+Задание № 25
+#include <iostream>
+using namespace std;
+
+long long factorial(int n) {
+    long long result = 1;
+    for (int i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    long long numerator = 2 * factorial(5) + 3 * factorial(8);
+    long long denominator = factorial(6) + factorial(4);
+    double result = (double)numerator / denominator;
+    
+    cout << "Вычисление выражения (2*5! + 3*8!) / (6! + 4!)" << endl;
+    cout << "5! = " << factorial(5) << endl;
+    cout << "8! = " << factorial(8) << endl;
+    cout << "6! = " << factorial(6) << endl;
+    cout << "4! = " << factorial(4) << endl;
+    cout << "Числитель: " << numerator << endl;
+    cout << "Знаменатель: " << denominator << endl;
+    cout << "Результат: " << result << endl;
+    
+    return 0;
+}
+Задание № 26
+#include <iostream>
+using namespace std;
+
+int sumOfDigits(int num) {
+    num = abs(num);  // Работаем с положительными числами
+    int sum = 0;
+    
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    
+    return sum;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b;
+    
+    cout << "Введите два натуральных числа:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    
+    int sumA = sumOfDigits(a);
+    int sumB = sumOfDigits(b);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Сумма цифр числа " << a << " = " << sumA << endl;
+    cout << "Сумма цифр числа " << b << " = " << sumB << endl;
+    
+    if (sumA > sumB) {
+        cout << "Сумма цифр больше в числе " << a << endl;
+    } else if (sumB > sumA) {
+        cout << "Сумма цифр больше в числе " << b << endl;
+    } else {
+        cout << "Суммы цифр равны" << endl;
+    }
+    
+    return 0;
+}
+Задание № 27
+#include <iostream>
+using namespace std;
+
+int countDigits(int num) {
+    if (num == 0) return 1;
+    
+    num = abs(num);  // Работаем с положительными числами
+    int count = 0;
+    
+    while (num > 0) {
+        count++;
+        num /= 10;
+    }
+    
+    return count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b;
+    
+    cout << "Введите два натуральных числа:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    
+    int countA = countDigits(a);
+    int countB = countDigits(b);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Количество цифр в числе " << a << " = " << countA << endl;
+    cout << "Количество цифр в числе " << b << " = " << countB << endl;
+    
+    if (countA > countB) {
+        cout << "Больше цифр в числе " << a << endl;
+    } else if (countB > countA) {
+        cout << "Больше цифр в числе " << b << endl;
+    } else {
+        cout << "Количество цифр одинаково" << endl;
+    }
+    
+    return 0;
+}
+Задание № 28
+#include <iostream>
+using namespace std;
+
+// Функция для расчета суммы цифр трехзначного числа (вариант 1)
+int sumOfThreeDigits(int num) {
+    return (num / 100) + ((num / 10) % 10) + (num % 10);
+}
+
+// Функция для проверки, является ли число счастливым (вариант 2)
+bool isLuckyNumber(int num) {
+    int firstPart = num / 1000;        // Первые три цифры
+    int secondPart = num % 1000;       // Последние три цифры
+    
+    return sumOfThreeDigits(firstPart) == sumOfThreeDigits(secondPart);
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    cout << "Вариант 1: с одной функцией" << endl;
+    int count1 = 0;
+    
+    for (int i = 100000; i <= 999999; i++) {
+        int firstPart = i / 1000;
+        int secondPart = i % 1000;
+        
+        if (sumOfThreeDigits(firstPart) == sumOfThreeDigits(secondPart)) {
+            count1++;
+        }
+    }
+    
+    cout << "Количество шестизначных счастливых чисел: " << count1 << endl;
+    
+    cout << "\nВариант 2: с двумя функциями" << endl;
+    int count2 = 0;
+    
+    for (int i = 100000; i <= 999999; i++) {
+        if (isLuckyNumber(i)) {
+            count2++;
+        }
+    }
+    
+    cout << "Количество шестизначных счастливых чисел: " << count2 << endl;
+    
+    return 0;
+}
+Задание № 29
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+const int SIZE = 10;
+
+// Функция проверки наличия числа в массиве
+bool isNumberInArray(int arr[], int size, int num) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == num) return true;
+    }
+    return false;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    srand(time(0));
+    
+    int m1[SIZE], m2[SIZE], m3[SIZE];
+    
+    // Заполняем массивы случайными числами
+    cout << "Массив m1: ";
+    for (int i = 0; i < SIZE; i++) {
+        m1[i] = rand() % 20;
+        cout << m1[i] << " ";
+    }
+    
+    cout << "\nМассив m2: ";
+    for (int i = 0; i < SIZE; i++) {
+        m2[i] = rand() % 20;
+        cout << m2[i] << " ";
+    }
+    
+    cout << "\nМассив m3: ";
+    for (int i = 0; i < SIZE; i++) {
+        m3[i] = rand() % 20;
+        cout << m3[i] << " ";
+    }
+    
+    // Считаем совпадения
+    int count1 = 0, count2 = 0;
+    
+    for (int i = 0; i < SIZE; i++) {
+        if (isNumberInArray(m3, SIZE, m1[i])) {
+            count1++;
+        }
+        if (isNumberInArray(m3, SIZE, m2[i])) {
+            count2++;
+        }
+    }
+    
+    cout << "\n\nРезультат:" << endl;
+    cout << "Чисел из m1, имеющихся в m3: " << count1 << endl;
+    cout << "Чисел из m2, имеющихся в m3: " << count2 << endl;
+    
+    if (count1 > count2) {
+        cout << "В массиве m1 больше чисел, имеющихся в m3" << endl;
+    } else if (count2 > count1) {
+        cout << "В массиве m2 больше чисел, имеющихся в m3" << endl;
+    } else {
+        cout << "Количество одинаково" << endl;
+    }
+    
+    return 0;
+}
+Задание № 30
+#include <iostream>
+using namespace std;
+
+// Функция проверки, является ли число палиндромом
+bool isPalindrome(int num) {
+    if (num < 0) return false;
+    
+    int original = num;
+    int reversed = 0;
+    
+    while (num > 0) {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    
+    return original == reversed;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b;
+    
+    cout << "Введите два натуральных числа:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    
+    bool isAPalindrome = isPalindrome(a);
+    bool isBPalindrome = isPalindrome(b);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Число " << a << (isAPalindrome ? " является" : " не является") << " палиндромом" << endl;
+    cout << "Число " << b << (isBPalindrome ? " является" : " не является") << " палиндромом" << endl;
+    
+    if (isAPalindrome || isBPalindrome) {
+        cout << "Хотя бы одно из чисел является палиндромом" << endl;
+    } else {
+        cout << "Ни одно из чисел не является палиндромом" << endl;
+    }
+    
+    return 0;
+}
+Задание № 31
+#include <iostream>
+using namespace std;
+
+// Функция для расчета НОД (алгоритм Евклида)
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Функция для расчета НОК
+int lcm(int a, int b) {
+    return (a / gcd(a, b)) * b;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b;
+    
+    cout << "Введите два натуральных числа:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    
+    int result = lcm(a, b);
+    
+    cout << "\nНОК(" << a << ", " << b << ") = " << result << endl;
+    cout << "НОД(" << a << ", " << b << ") = " << gcd(a, b) << endl;
+    
+    return 0;
+}
+Задание № 32
+#include <iostream>
+using namespace std;
+
+// Функция для расчета НОД (алгоритм Евклида)
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b; // числитель и знаменатель
+    
+    cout << "Введите числитель и знаменатель дроби:" << endl;
+    cout << "Числитель (a) = ";
+    cin >> a;
+    cout << "Знаменатель (b) = ";
+    cin >> b;
+    
+    if (b == 0) {
+        cout << "Ошибка: знаменатель не может быть равен 0!" << endl;
+        return 1;
+    }
+    
+    int divisor = gcd(a, b);
+    int p = a / divisor; // сокращенный числитель
+    int q = b / divisor; // сокращенный знаменатель
+    
+    cout << "\nИсходная дробь: " << a << "/" << b << endl;
+    cout << "НОД(" << a << ", " << b << ") = " << divisor << endl;
+    cout << "Сокращенная дробь: " << p << "/" << q << endl;
+    
+    return 0;
+}
+Задание № 33
+#include <iostream>
+using namespace std;
+
+// Функция для расчета НОД (алгоритм Евклида)
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Функция для расчета НОД трех чисел
+int gcdThree(int a, int b, int c) {
+    return gcd(gcd(a, b), c);
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int a, b, c;
+    
+    cout << "Введите три натуральных числа:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    cout << "c = ";
+    cin >> c;
+    
+    int result = gcdThree(a, b, c);
+    
+    cout << "\nНОД(" << a << ", " << b << ", " << c << ") = " << result << endl;
+    cout << "НОД(" << a << ", " << b << ") = " << gcd(a, b) << endl;
+    cout << "НОД(НОД(" << a << ", " << b << "), " << c << ") = " << gcd(gcd(a, b), c) << endl;
+    
+    return 0;
+}
+Задание № 34
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Функция для расчета НОД (алгоритм Евклида)
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+// Функция для расчета НОД нескольких чисел
+int gcdMultiple(const vector<int>& numbers) {
+    if (numbers.empty()) return 0;
+    
+    int result = numbers[0];
+    for (size_t i = 1; i < numbers.size(); i++) {
+        result = gcd(result, numbers[i]);
+    }
+    return result;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int n;
+    cout << "Введите количество чисел: ";
+    cin >> n;
+    
+    vector<int> numbers(n);
+    cout << "Введите " << n << " натуральных чисел:" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << "Число " << i+1 << ": ";
+        cin >> numbers[i];
+    }
+    
+    int result = gcdMultiple(numbers);
+    
+    cout << "\nНОД всех чисел = " << result << endl;
+    
+    return 0;
+}
+Задание № 35
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+// Функция для подсчета букв 'n' или 'н' в предложении
+int countLetterN(const string& sentence) {
+    int count = 0;
+    for (char ch : sentence) {
+        // Проверяем как латинскую 'n', так и русскую 'н'
+        if (tolower(ch) == 'n' || tolower(ch) == 'н') {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    string sentence1, sentence2;
+    
+    cout << "Введите первое предложение: ";
+    getline(cin, sentence1);
+    
+    cout << "Введите второе предложение: ";
+    getline(cin, sentence2);
+    
+    int count1 = countLetterN(sentence1);
+    int count2 = countLetterN(sentence2);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Букв 'n'/'н' в первом предложении: " << count1 << endl;
+    cout << "Букв 'n'/'н' во втором предложении: " << count2 << endl;
+    cout << "Общее количество: " << count1 + count2 << endl;
+    
+    return 0;
+}
+Задание № 36
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+// Функция для подсчета заданной буквы в предложении
+int countLetterInSentence(const string& sentence, char letter) {
+    int count = 0;
+    char lowerLetter = tolower(letter);
+    
+    for (char ch : sentence) {
+        if (tolower(ch) == lowerLetter) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    string sentence1, sentence2, sentence3;
+    char letter;
+    
+    cout << "Введите букву для подсчета: ";
+    cin >> letter;
+    cin.ignore(); // Игнорируем оставшийся символ новой строки
+    
+    cout << "Введите первое предложение: ";
+    getline(cin, sentence1);
+    
+    cout << "Введите второе предложение: ";
+    getline(cin, sentence2);
+    
+    cout << "Введите третье предложение: ";
+    getline(cin, sentence3);
+    
+    int count1 = countLetterInSentence(sentence1, letter);
+    int count2 = countLetterInSentence(sentence2, letter);
+    int count3 = countLetterInSentence(sentence3, letter);
+    int total = count1 + count2 + count3;
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Букв '" << letter << "' в первом предложении: " << count1 << endl;
+    cout << "Букв '" << letter << "' во втором предложении: " << count2 << endl;
+    cout << "Букв '" << letter << "' в третьем предложении: " << count3 << endl;
+    cout << "Общее количество: " << total << endl;
+    
+    return 0;
+}
+Задание № 37
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <iomanip>
+using namespace std;
+
+// Функция для расчета доли буквы в предложении (в %)
+double letterPercentage(const string& sentence, char letter) {
+    if (sentence.empty()) return 0.0;
+    
+    int letterCount = 0;
+    int totalLetters = 0;
+    char lowerLetter = tolower(letter);
+    
+    for (char ch : sentence) {
+        if (isalpha(ch)) { // Считаем только буквы
+            totalLetters++;
+            if (tolower(ch) == lowerLetter) {
+                letterCount++;
+            }
+        }
+    }
+    
+    if (totalLetters == 0) return 0.0;
+    return (letterCount * 100.0) / totalLetters;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    string sentence1, sentence2;
+    char letter = 'o'; // Буква 'o' по условию
+    
+    cout << "Введите первое предложение: ";
+    getline(cin, sentence1);
+    
+    cout << "Введите второе предложение: ";
+    getline(cin, sentence2);
+    
+    double percentage1 = letterPercentage(sentence1, letter);
+    double percentage2 = letterPercentage(sentence2, letter);
+    
+    cout << fixed << setprecision(2);
+    cout << "\nРезультат:" << endl;
+    cout << "Доля буквы '" << letter << "' в первом предложении: " << percentage1 << "%" << endl;
+    cout << "Доля буквы '" << letter << "' во втором предложении: " << percentage2 << "%" << endl;
+    
+    if (percentage1 > percentage2) {
+        cout << "Доля буквы '" << letter << "' больше в первом предложении" << endl;
+    } else if (percentage2 > percentage1) {
+        cout << "Доля буквы '" << letter << "' больше во втором предложении" << endl;
+    } else {
+        cout << "Доли буквы '" << letter << "' равны" << endl;
+    }
+    
+    return 0;
+}
+Задание № 38
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+// Функция для нахождения порядкового номера последнего вхождения буквы
+int lastOccurrenceIndex(const string& sentence, char letter) {
+    char lowerLetter = tolower(letter);
+    
+    for (int i = sentence.length() - 1; i >= 0; i--) {
+        if (tolower(sentence[i]) == lowerLetter) {
+            return i + 1; // Порядковый номер (с 1)
+        }
+    }
+    return 0; // Буква не найдена
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    string sentence1, sentence2;
+    char letter = 'i'; // Буква 'i' по условию
+    
+    cout << "Введите первое предложение: ";
+    getline(cin, sentence1);
+    
+    cout << "Введите второе предложение: ";
+    getline(cin, sentence2);
+    
+    int index1 = lastOccurrenceIndex(sentence1, letter);
+    int index2 = lastOccurrenceIndex(sentence2, letter);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Порядковый номер последней буквы '" << letter << "' в первом предложении: ";
+    if (index1 > 0) {
+        cout << index1 << endl;
+    } else {
+        cout << "не найдена" << endl;
+    }
+    
+    cout << "Порядковый номер последней буквы '" << letter << "' во втором предложении: ";
+    if (index2 > 0) {
+        cout << index2 << endl;
+    } else {
+        cout << "не найдена" << endl;
+    }
+    
+    if (index1 > 0 && index2 > 0) {
+        if (index1 > index2) {
+            cout << "Буква '" << letter << "' имеет больший порядковый номер в первом предложении" << endl;
+        } else if (index2 > index1) {
+            cout << "Буква '" << letter << "' имеет больший порядковый номер во втором предложении" << endl;
+        } else {
+            cout << "Порядковые номера последних букв '" << letter << "' равны" << endl;
+        }
+    } else if (index1 > 0) {
+        cout << "Буква '" << letter << "' есть только в первом предложении" << endl;
+    } else if (index2 > 0) {
+        cout << "Буква '" << letter << "' есть только во втором предложении" << endl;
+    } else {
+        cout << "Буква '" << letter << "' не найдена ни в одном предложении" << endl;
+    }
+    
+    return 0;
+}
+Задание № 39
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+using namespace std;
+
+// Функция проверки, является ли слово палиндромом
+bool isPalindromeWord(const string& word) {
+    string cleanedWord;
+    
+    // Убираем не-буквы и приводим к нижнему регистру
+    for (char ch : word) {
+        if (isalpha(ch)) {
+            cleanedWord += tolower(ch);
+        }
+    }
+    
+    string reversedWord = cleanedWord;
+    reverse(reversedWord.begin(), reversedWord.end());
+    
+    return cleanedWord == reversedWord;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    string word1, word2, word3;
+    
+    cout << "Введите три слова:" << endl;
+    cout << "Слово 1: ";
+    cin >> word1;
+    cout << "Слово 2: ";
+    cin >> word2;
+    cout << "Слово 3: ";
+    cin >> word3;
+    
+    bool isWord1Palindrome = isPalindromeWord(word1);
+    bool isWord2Palindrome = isPalindromeWord(word2);
+    bool isWord3Palindrome = isPalindromeWord(word3);
+    
+    cout << "\nРезультат:" << endl;
+    cout << "Слово \"" << word1 << "\" " << (isWord1Palindrome ? "является" : "не является") << " палиндромом" << endl;
+    cout << "Слово \"" << word2 << "\" " << (isWord2Palindrome ? "является" : "не является") << " палиндромом" << endl;
+    cout << "Слово \"" << word3 << "\" " << (isWord3Palindrome ? "является" : "не является") << " палиндромом" << endl;
+    
+    if (isWord1Palindrome || isWord2Palindrome || isWord3Palindrome) {
+        cout << "Хотя бы одно из слов является палиндромом" << endl;
+    } else {
+        cout << "Ни одно из слов не является палиндромом" << endl;
+    }
+    
+    return 0;
+}
+Задание № 40
+#include <iostream>
+using namespace std;
+
+// Функция для определения високосного года
+bool isLeapYear(int year) {
+    return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
+}
+
+// Функция для определения количества дней в месяце
+int daysInMonth(int month, int year, bool leapYear = false) {
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            return leapYear ? 29 : 28;
+        default:
+            return 0; // Некорректный месяц
+    }
+}
+
+// Функция для определения даты предыдущего дня
+void previousDay(int &day, int &month, int &year, bool leapYear = false) {
+    day--;
+    
+    if (day < 1) {
+        month--;
+        
+        if (month < 1) {
+            month = 12;
+            year--;
+        }
+        
+        day = daysInMonth(month, year, leapYear);
+    }
+}
+
+// Функция для определения даты следующего дня
+void nextDay(int &day, int &month, int &year, bool leapYear = false) {
+    day++;
+    
+    int daysInCurrentMonth = daysInMonth(month, year, leapYear);
+    
+    if (day > daysInCurrentMonth) {
+        day = 1;
+        month++;
+        
+        if (month > 12) {
+            month = 1;
+            year++;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    int day, month, year;
+    
+    cout << "Введите дату (день месяц год): ";
+    cin >> day >> month >> year;
+    
+    // Проверка високосного года
+    bool leap = isLeapYear(year);
+    
+    cout << "\nВведенная дата: " << day << "." << month << "." << year;
+    cout << " (" << (leap ? "високосный" : "не високосный") << " год)" << endl;
+    
+    // а) Предыдущий день
+    int prevDay = day, prevMonth = month, prevYear = year;
+    previousDay(prevDay, prevMonth, prevYear, leap);
+    cout << "а) Предыдущий день: " << prevDay << "." << prevMonth << "." << prevYear << endl;
+    
+    // б) Следующий день
+    int nextDayVal = day, nextMonth = month, nextYear = year;
+    nextDay(nextDayVal, nextMonth, nextYear, leap);
+    cout << "б) Следующий день: " << nextDayVal << "." << nextMonth << "." << nextYear << endl;
+    
+    return 0;
+}
