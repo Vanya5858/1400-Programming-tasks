@@ -1,0 +1,106 @@
+Задание № 1
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double x, n, y, a, b, alpha, beta;
+    cout << "Введите значения переменных (x, n, y, a, b, alpha, beta): ";
+    cin >> x >> n >> y >> a >> b >> alpha >> beta;
+
+    cout << "a) 2x = " << 2 * x << endl;
+    cout << "б) sin(x) = " << sin(x) << endl;
+    cout << "в) a^2 = " << pow(a, 2) << endl;
+    cout << "г) sqrt(x) = " << sqrt(x) << endl;
+    cout << "д) |n| = " << fabs(n) << endl;
+    cout << "е) 5cos(y) = " << 5 * cos(y) << endl;
+    cout << "ж) 9.5a^2 = " << 9.5 * pow(a, 2) << endl;
+    cout << "з) 3sqrt(x) = " << 3 * sqrt(x) << endl;
+    cout << "и) sinAcosB + cosAsinB = " << sin(alpha) * cos(beta) + cos(alpha) * sin(beta) << endl;
+    cout << "к) a(sqrt(2b)) = " << a * sqrt(2 * b) << endl;
+    cout << "л) 4sin(2A)cosB = " << 4 * sin(2 * alpha) * cos(beta) << endl;
+    cout << "м) -5sqrt((x + sqrt(y))) = " << -5 * sqrt(x + sqrt(y)) << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double x, a, b, c, m, n;
+    cout << "Введите значения переменных (x, a, b, c, m, n): ";
+    cin >> x >> a >> b >> c >> m >> n;
+
+    cout << "a) -1 / x^2 = " << -1 / pow(x, 2) << endl;
+    cout << "б) a / (b * c) = " << a / (b * c) << endl;
+    cout << "в) (a / b) * c = " << (a / b) * c << endl;
+    cout << "г) (a + b) / 2 = " << (a + b) / 2 << endl;
+    cout << "д) 5.45 * (a + 2*b) / (2 - b) = " << 5.45 * (a + 2 * b) / (2 - b) << endl;
+    cout << "е) (-b + sqrt(b^2 - 4ac)) / (2a) = " << (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a) << endl;
+    cout << "ж) (-b + 1/a) / c = " << (-b + 1 / a) / c << endl;
+    cout << "з) 1 / (1 + (a + b) / 2) = " << 1 / (1 + (a + b) / 2) << endl;
+    cout << "и) 1 / (1 + 1 / (2 + 1 / (2 + 3/5))) = " << 1 / (1 + 1 / (2 + 1 / (2 + 3.0 / 5))) << endl;
+    cout << "й) 2^(m^n) = " << pow(2, pow(m, n)) << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double a, b, c, d;
+    cout << "Введите значения a, b, c, d: ";
+    cin >> a >> b >> c >> d;
+
+    cout << "a) a / b / c = " << a / b / c << endl;
+    cout << "б) a + b / c = " << a + b / c << endl;
+    cout << "в) (a + b) / c = " << (a + b) / c << endl;
+    cout << "г) a * b / (c + 2) = " << a * b / (c + 2) << endl;
+    cout << "д) a / b * (c - 3) / d = " << a / b * (c - 3) / d << endl;
+    cout << "е) (a/3 + b/2) / (b + c/(2 + b)) = " << (a / 3 + b / 2) / (b + c / (2 + b)) << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const double M_PI = 3.14159265358979323846;
+    double x1, x2, x3, v0, t, a, R, b, c, m1, m2, r, gamma, m, v, g, h, I, R_res, sinx, cosc, alpha;
+    cout << "Введите значения переменных (x1, x2, x3, v0, t, a, R, b, c, m1, m2, r, gamma, m, v, g, h, I, R_res, sinx, cosc, alpha): ";
+    cin >> x1 >> x2 >> x3 >> v0 >> t >> a >> R >> b >> c >> m1 >> m2 >> r >> gamma >> m >> v >> g >> h >> I >> R_res >> sinx >> cosc >> alpha;
+
+    cout << "a) sqrt(x1^2 + x2^2) = " << sqrt(pow(x1, 2) + pow(x2, 2)) << endl;
+    cout << "б) x1*x2 + x1*x3 + x2*x3 = " << x1 * x2 + x1 * x3 + x2 * x3 << endl;
+    cout << "в) v0*t + a*t^2/2 = " << v0 * t + a * pow(t, 2) / 2 << endl;
+    cout << "г) m*v^2/2 + m*g*h = " << m * pow(v, 2) / 2 + m * g * h << endl;
+    cout << "д) 1/R1 + 1/R2 (здесь R1 = R, R2 = R_res) = " << 1 / R + 1 / R_res << endl;
+    cout << "е) m*g*cos(alpha) = " << m * g * cos(alpha) << endl;
+    cout << "ж) 2*pi*R = " << 2 * M_PI * R << endl;
+    cout << "з) b^2 - 4*a*c = " << pow(b, 2) - 4 * a * c << endl;
+    cout << "и) gamma * m1*m2 / r^2 = " << gamma * m1 * m2 / pow(r, 2) << endl;
+    cout << "к) I^2 * R = " << pow(I, 2) * R << endl;
+    cout << "л) a*b*sin(c) = " << a * b * sin(cosc) << endl;
+    cout << "м) sqrt(a^2 + b^2 - 2*a*b*cos(c)) = " << sqrt(pow(a, 2) + pow(b, 2) - 2 * a * b * cos(cosc)) << endl;
+    cout << "н) (a*d + b*c)/(a*d) (d = x1) = " << (a * x1 + b * c) / (a * x1) << endl;
+    cout << "о) sqrt(1 - sin^2(x)) = " << sqrt(1 - pow(sinx, 2)) << endl;
+    cout << "п) 1 / sqrt(a*x^2 + b*x + c) = " << 1 / sqrt(a * pow(x1, 2) + b * x1 + c) << endl;
+    cout << "р) (sqrt(x+1) + sqrt(x-1)) / (2*sqrt(x)) (x = x1) = " << (sqrt(x1 + 1) + sqrt(x1 - 1)) / (2 * sqrt(x1)) << endl;
+    cout << "с) |x| + |x+1| (x = x1) = " << fabs(x1) + fabs(x1 + 1) << endl;
+    cout << "т) |1 - |x|| (x = x1) = " << fabs(1 - fabs(x1)) << endl;
+
+    return 0;
+}
