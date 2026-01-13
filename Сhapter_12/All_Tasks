@@ -1,0 +1,3802 @@
+Задание № 1
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string name, surname;
+    cout << "Введите имя: ";
+    getline(cin, name);
+    cout << "Введите фамилию: ";
+    getline(cin, surname);
+    cout << "Полное имя: " << name << " " << surname << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string country, capital;
+    cout << "Введите название государства: ";
+    getline(cin, country);
+    cout << "Введите столицу: ";
+    getline(cin, capital);
+    cout << "Столица государства " << country << " – город " << capital << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string novel, author;
+    cout << "Введите название романа: ";
+    getline(cin, novel);
+    cout << "Введите фамилию автора: ";
+    getline(cin, author);
+    cout << "Писатель " << author << " – автор романа " << novel << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string s1 = "Россия", s2 = "Франция";
+    string t1 = s2, t2 = s1;
+    cout << "s1: " << s1 << ", s2: " << s2 << endl;
+    cout << "t1: " << t1 << ", t2: " << t2 << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string club;
+    cout << "Введите название футбольного клуба: ";
+    getline(cin, club);
+    cout << "Количество символов: " << club.length() << endl;
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string city;
+    cout << "Введите название города: ";
+    getline(cin, city);
+    int len = city.length();
+    if (len % 2 == 0) {
+        cout << "Количество символов четное (" << len << ")" << endl;
+    }
+    else {
+        cout << "Количество символов нечетное (" << len << ")" << endl;
+    }
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string surname1, surname2;
+    cout << "Введите первую фамилию: ";
+    getline(cin, surname1);
+    cout << "Введите вторую фамилию: ";
+    getline(cin, surname2);
+
+    if (surname1.length() > surname2.length()) {
+        cout << "Первая фамилия длиннее" << endl;
+    }
+    else if (surname2.length() > surname1.length()) {
+        cout << "Вторая фамилия длиннее" << endl;
+    }
+    else {
+        cout << "Фамилии одинаковой длины" << endl;
+    }
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string city1, city2, city3;
+    cout << "Введите первый город: ";
+    getline(cin, city1);
+    cout << "Введите второй город: ";
+    getline(cin, city2);
+    cout << "Введите третий город: ";
+    getline(cin, city3);
+
+    string longest = city1, shortest = city1;
+
+    if (city2.length() > longest.length()) longest = city2;
+    if (city3.length() > longest.length()) longest = city3;
+
+    if (city2.length() < shortest.length()) shortest = city2;
+    if (city3.length() < shortest.length()) shortest = city3;
+
+    cout << "Самое длинное название: " << longest << endl;
+    cout << "Самое короткое название: " << shortest << endl;
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string s1 = "Германия", s2 = "Италия";
+    cout << "До обмена: s1 = " << s1 << ", s2 = " << s2 << endl;
+
+    swap(s1, s2);
+
+    cout << "После обмена: s1 = " << s1 << ", s2 = " << s2 << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string a = "a", b = "b", c = "c";
+    cout << "Исходные значения: a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    // а) b=c, a=b, c=a
+    string temp = a;
+    a = b;
+    b = c;
+    c = temp;
+    cout << "После схемы (а): a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    // Возвращаем исходные значения
+    a = "a"; b = "b"; c = "c";
+
+    // б) b=a, c=b, a=c
+    temp = a;
+    a = c;
+    c = b;
+    b = temp;
+    cout << "После схемы (б): a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+    if (word.length() >= 3) {
+        cout << "Третий символ: " << word[2] << endl;
+    }
+    else {
+        cout << "Слово слишком короткое" << endl;
+    }
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+    if (!word.empty()) {
+        cout << "Последний символ: " << word.back() << endl;
+    }
+    else {
+        cout << "Слово пустое" << endl;
+    }
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int k;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите номер символа k: ";
+    cin >> k;
+
+    if (k >= 1 && k <= word.length()) {
+        cout << k << "-й символ: " << word[k - 1] << endl;
+    }
+    else {
+        cout << "Неверный номер символа" << endl;
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 4) {
+        if (word[1] == word[3]) {
+            cout << "Второй и четвертый символы одинаковы: " << word[1] << endl;
+        }
+        else {
+            cout << "Второй и четвертый символы различны" << endl;
+        }
+    }
+    else {
+        cout << "Слово слишком короткое" << endl;
+    }
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (!word.empty()) {
+        if (word.front() == word.back()) {
+            cout << "Слово начинается и заканчивается на одну букву: " << word.front() << endl;
+        }
+        else {
+            cout << "Слово начинается и заканчивается на разные буквы" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word1, word2;
+    cout << "Введите первое слово: ";
+    cin >> word1;
+    cout << "Введите второе слово: ";
+    cin >> word2;
+
+    if (!word1.empty() && !word2.empty()) {
+        if (word1.front() == word2.back()) {
+            cout << "Да, первое слово начинается на ту же букву, на которую заканчивается второе: " << word1.front() << endl;
+        }
+        else {
+            cout << "Нет" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 4) {
+        string combination;
+        combination += word[1];
+        combination += word[3];
+        cout << "Буквосочетание из второго и четвертого символов: " << combination << endl;
+    }
+    else {
+        cout << "Слово слишком короткое" << endl;
+    }
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 3) {
+        string combination;
+        combination += word[2];
+        combination += word.back();
+        cout << "Буквосочетание из третьего и последнего символов: " << combination << endl;
+    }
+    else {
+        cout << "Слово слишком короткое" << endl;
+    }
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 4) {
+        string part = word.substr(1, 3); // с индекса 1, длина 3
+        cout << "Часть слова (2-4 буквы): " << part << endl;
+    }
+    else {
+        cout << "Слово слишком короткое" << endl;
+    }
+
+    return 0;
+}
+Задание № 20
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из четного числа букв: ";
+    cin >> word;
+
+    if (word.length() % 2 == 0) {
+        string firstHalf = word.substr(0, word.length() / 2);
+        cout << "Первая половина слова: " << firstHalf << endl;
+    }
+    else {
+        cout << "Слово содержит нечетное количество букв" << endl;
+    }
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int m, n;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите m и n (номера позиций, начиная с 1): ";
+    cin >> m >> n;
+
+    if (m >= 1 && n >= m && n <= word.length()) {
+        string part = word.substr(m - 1, n - m + 1);
+        cout << "Часть слова с " << m << "-й по " << n << "-ю букву: " << part << endl;
+    }
+    else {
+        cout << "Неверные номера позиций" << endl;
+    }
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "яблоко";
+    string block = word.substr(1, 4); 
+    string oko = word.substr(3, 3); 
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'блок': " << block << endl;
+    cout << "Получено 'око': " << oko << endl;
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "информатика";
+    string forma = word.substr(2, 5); 
+    string pik = word.substr(6, 3);  
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'форма': " << forma << endl;
+    cout << "Получено 'пик': " << pik << endl;
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "вертикаль";
+    string tir = word.substr(5, 3); 
+    string vetka = word.substr(0, 3) + word.substr(6, 3); 
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'тир': " << tir << endl;
+    cout << "Получено 'ветка': " << vetka << endl;
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "программа";
+    string rom = word.substr(2, 3);   
+    string rampa = word.substr(3, 5); 
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'ром': " << rom << endl;
+    cout << "Получено 'рампа': " << rampa << endl;
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "прос";
+    string sorta = word.substr(1, 4) + "а";  
+    string rost = word.substr(2, 3) + "т";  
+    string tors = word.substr(3, 1) + word.substr(2, 1) + word.substr(1, 1) + word.substr(0, 1);
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'сорта': " << sorta << endl;
+    cout << "Получено 'рост': " << rost << endl;
+    cout << "Получено 'торс': " << tors << endl;
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "клоун";
+    string uklon = word.substr(2, 4) + word.substr(1, 1);
+    string kulon = word.substr(1, 1) + word.substr(2, 4); 
+    string kolun = word.substr(0, 2) + word.substr(3, 2);
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'уклон': " << uklon << endl;
+    cout << "Получено 'кулон': " << kulon << endl;
+    cout << "Получено 'колун': " << kolun << endl;
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "апельсин";
+    // "спаниель" получается перестановкой букв
+    string spaniel = word.substr(4, 1) + word.substr(2, 1) + word.substr(0, 1) +
+        word.substr(5, 1) + word.substr(1, 1) + word.substr(3, 1) +
+        word.substr(6, 1) + word.substr(7, 1);
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "Получено 'спаниель': " << spaniel << endl;
+
+    return 0;
+}
+Задание № 29
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string virus = "вирус";
+    string fokus = "фокус";
+
+    cout << "Исходное слово: " << virus << endl;
+    cout << "После замены букв: " << fokus << endl;
+
+    // Показываем замены:
+    cout << "Замены: в->ф, и->о, р->к, у->у, с->с" << endl;
+
+    return 0;
+}
+Задание № 30
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string kurs = "курсор";
+    string tantsor = "танцор";
+
+    cout << "Исходное слово: " << kurs << endl;
+    cout << "После замены букв: " << tantsor << endl;
+
+    // Показываем замены:
+    cout << "Замены: к->т, у->а, р->н, с->ц, о->о, р->р" << endl;
+
+    return 0;
+}
+Задание № 31
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "пробел";
+    string result = word;
+
+    // Заменяем 'б' на 'д' чтобы получить "продел"
+    for (size_t i = 0; i < result.length(); i++) {
+        if (result[i] == 'б') {
+            result[i] = 'д';
+        }
+    }
+
+    cout << "Исходное слово: " << word << endl;
+    cout << "После замены букв: " << result << endl;
+
+    return 0;
+}
+Задание № 32
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string stroka = "строка";
+    string strofa = stroka;
+
+    // Заменяем 'к' на 'ф'
+    for (size_t i = 0; i < strofa.length(); i++) {
+        if (strofa[i] == 'к') {
+            strofa[i] = 'ф';
+        }
+    }
+
+    cout << "Исходное слово: " << stroka << endl;
+    cout << "После замены букв: " << strofa << endl;
+
+    return 0;
+}
+Задание № 33
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string muha = "муха";
+    string slon = muha;
+
+    // Заменяем буквы
+    for (size_t i = 0; i < slon.length(); i++) {
+        if (slon[i] == 'м') slon[i] = 'с';
+        else if (slon[i] == 'у') slon[i] = 'л';
+        else if (slon[i] == 'х') slon[i] = 'о';
+        else if (slon[i] == 'а') slon[i] = 'н';
+    }
+
+    cout << "Исходное слово: " << muha << endl;
+    cout << "После замены букв: " << slon << endl;
+
+    return 0;
+}
+Задание № 34
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string tetrad = "тетрадь";
+    string dnevnik = tetrad;
+
+    // Заменяем буквы
+    for (size_t i = 0; i < dnevnik.length(); i++) {
+        if (dnevnik[i] == 'т') dnevnik[i] = 'д';
+        else if (dnevnik[i] == 'е') dnevnik[i] = 'н';
+        else if (dnevnik[i] == 'р') dnevnik[i] = 'е';
+        else if (dnevnik[i] == 'а') dnevnik[i] = 'в';
+        else if (dnevnik[i] == 'д') dnevnik[i] = 'и';
+        else if (dnevnik[i] == 'ь') dnevnik[i] = 'к';
+    }
+
+    cout << "Исходное слово: " << tetrad << endl;
+    cout << "После замены букв: " << dnevnik << endl;
+
+    return 0;
+}
+Задание № 35
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из четного числа букв: ";
+    cin >> word;
+
+    if (word.length() % 2 == 0) {
+        // Способ 1: без цикла
+        string result1 = word.substr(word.length() / 2) + word.substr(0, word.length() / 2);
+        cout << "Способ 1 (без цикла): " << result1 << endl;
+
+        // Способ 2: с циклом
+        string result2;
+        for (size_t i = word.length() / 2; i < word.length(); i++) {
+            result2 += word[i];
+        }
+        for (size_t i = 0; i < word.length() / 2; i++) {
+            result2 += word[i];
+        }
+        cout << "Способ 2 (с циклом): " << result2 << endl;
+    }
+    else {
+        cout << "Слово содержит нечетное количество букв\n";
+    }
+
+    return 0;
+}
+Задание № 36
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из 12 букв: ";
+    cin >> word;
+
+    if (word.length() == 12) {
+
+        string part1 = word.substr(0, 4);      
+        string part2 = word.substr(4, 4);     
+        string part3 = word.substr(8, 4);   
+
+        string result_a = part2 + part3 + part1;
+        cout << "а) " << result_a << endl;
+
+
+        string result_b = part3 + part1 + part2;
+        cout << "б) " << result_b << endl;
+    }
+    else {
+        cout << "Слово должно содержать 12 букв\n";
+    }
+
+    return 0;
+}
+Задание № 37
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 6) {
+        // Способ 1: без цикла
+        string first3 = word.substr(0, 3);
+        string middle = word.substr(3, word.length() - 6);
+        string last3 = word.substr(word.length() - 3);
+
+        string result1 = last3 + middle + first3;
+        cout << "Способ 1 (без цикла): " << result1 << endl;
+
+        // Способ 2: с циклом
+        string result2;
+        for (int i = word.length() - 3; i < (int)word.length(); i++) {
+            result2 += word[i];
+        }
+        for (size_t i = 3; i < word.length() - 3; i++) {
+            result2 += word[i];
+        }
+        for (int i = 0; i < 3; i++) {
+            result2 += word[i];
+        }
+        cout << "Способ 2 (с циклом): " << result2 << endl;
+    }
+    else {
+        cout << "Слово слишком короткое\n";
+    }
+
+    return 0;
+}
+Задание № 38
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int k;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите k: ";
+    cin >> k;
+
+    if (k > 0 && k <= (int)word.length()) {
+        // Способ 1: без цикла
+        string part1 = word.substr(0, k);
+        string part2 = word.substr(k);
+        string result1 = part2 + part1;
+        cout << "Способ 1 (без цикла): " << result1 << endl;
+
+        // Способ 2: с циклом
+        string result2;
+        for (size_t i = k; i < word.length(); i++) {
+            result2 += word[i];
+        }
+        for (int i = 0; i < k; i++) {
+            result2 += word[i];
+        }
+        cout << "Способ 2 (с циклом): " << result2 << endl;
+    }
+    else {
+        cout << "Неверное значение k\n";
+    }
+
+    return 0;
+}
+Задание № 39
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string club;
+    cout << "Введите название футбольного клуба: ";
+    getline(cin, club);
+
+    cout << "Название столбиком:\n";
+    for (size_t i = 0; i < club.length(); i++) {
+        cout << club[i] << "\n";
+    }
+
+    return 0;
+}
+Задание № 40
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    cout << "Слово, начиная с последней буквы: ";
+    for (int i = word.length() - 1; i >= 0; i--) {
+        cout << word[i];
+    }
+    cout << "\n";
+
+    return 0;
+}
+Задание № 41
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string s1, s2 = "";
+    cout << "Введите слово s1: ";
+    cin >> s1;
+
+    for (size_t i = 0; i < s1.length(); i++) {
+        if ((i + 1) % 2 != 0) {  // нечетные позиции (индексы 0, 2, 4...)
+            s2 += s1[i];
+        }
+    }
+
+    cout << "Слово s2 из нечетных букв: " << s2 << "\n";
+
+    return 0;
+}
+Задание № 42
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string s, t = "";
+    cout << "Введите слово s: ";
+    cin >> s;
+
+    for (int i = s.length() - 1; i >= 0; i--) {
+        t += s[i];
+    }
+
+    cout << "Слово t (обратное s): " << t << "\n";
+
+    return 0;
+}
+Задание № 43
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string stars(5, '*');
+    cout << "Строка из 5 звездочек: " << stars << "\n";
+
+    return 0;
+}
+Задание № 44
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string underscores(8, '_');
+    cout << "Строка из 8 символов '_': " << underscores << "\n";
+
+    return 0;
+}
+Задание № 45
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int count;
+    char symbol;
+    cout << "Введите количество символов: ";
+    cin >> count;
+    cout << "Введите символ: ";
+    cin >> symbol;
+
+    string result(count, symbol);
+    cout << "Результат: " << result << "\n";
+
+    return 0;
+}
+Задание № 46
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    string result = "++++" + word + "-----";
+    cout << "Результат: " << result << "\n";
+
+    return 0;
+}
+Задание № 47
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    string stars(word.length(), '*');
+    string result = stars + word + stars;
+    cout << "Результат: " << result << "\n";
+
+    return 0;
+}
+Задание № 48
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word1, word2;
+    cout << "Введите первое слово (длиннее): ";
+    cin >> word1;
+    cout << "Введите второе слово: ";
+    cin >> word2;
+
+    if (word1.length() > word2.length()) {
+        // Заменяем первые символы второго слова на первое слово
+        word2 = word1;
+        cout << "Результат: " << word2 << "\n";
+    }
+    else {
+        cout << "Первое слово должно быть длиннее второго\n";
+    }
+
+    return 0;
+}
+Задание № 49
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    cin.ignore();
+    getline(cin, sentence);
+
+    cout << "Буквы 'у' в предложении: ";
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'у' || sentence[i] == 'У') {
+            cout << sentence[i] << " ";
+        }
+    }
+    cout << "\n";
+
+    return 0;
+}
+Задание № 50
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    char symbol;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+    cout << "Введите символ для поиска: ";
+    cin >> symbol;
+
+    cout << "Вхождения символа '" << symbol << "' столбиком:\n";
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == symbol) {
+            cout << symbol << "\n";
+        }
+    }
+
+    return 0;
+}
+Задание № 51
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    cout << "Каждый третий символ столбиком:\n";
+    for (size_t i = 2; i < sentence.length(); i += 3) {
+        cout << sentence[i] << "\n";
+    }
+
+    return 0;
+}
+Задание № 52
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    cout << "Буквы 'м' и 'н' в предложении: ";
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'м' || sentence[i] == 'М' ||
+            sentence[i] == 'н' || sentence[i] == 'Н') {
+            cout << sentence[i] << " ";
+        }
+    }
+    cout << "\n";
+
+    return 0;
+}
+Задание № 53
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    char ch1, ch2;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+    cout << "Введите первый символ: ";
+    cin >> ch1;
+    cout << "Введите второй символ: ";
+    cin >> ch2;
+
+    cout << "Вхождения символов '" << ch1 << "' и '" << ch2 << "':\n";
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == ch1 || sentence[i] == ch2) {
+            cout << sentence[i] << "\n";
+        }
+    }
+
+    return 0;
+}
+Задание № 54
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    cout << "Буквосочетания 'нн':\n";
+    for (size_t i = 0; i < sentence.length() - 1; i++) {
+        if (sentence[i] == 'н' && sentence[i + 1] == 'н') {
+            cout << "нн (позиции " << i + 1 << "-" << i + 2 << ")\n";
+        }
+    }
+
+    return 0;
+}
+Задание № 55
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    cout << "Буквы 'у' на четных местах:\n";
+    for (size_t i = 1; i < sentence.length(); i += 2) {
+        if (sentence[i] == 'у' || sentence[i] == 'У') {
+            cout << sentence[i] << "\n";
+        }
+    }
+
+    return 0;
+}
+Задание № 56
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    cout << "1,2,5,6,9,10... символы столбиком:\n";
+    int counter = 0;
+    for (size_t i = 0; i < sentence.length(); i++) {
+        counter++;
+        if (counter <= 2 || (counter >= 5 && counter <= 6) ||
+            (counter >= 9 && counter <= 10)) {
+            cout << sentence[i] << "\n";
+        }
+        if (counter == 10) counter = 0;
+    }
+
+    return 0;
+}
+Задание № 57
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int count = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'о' || sentence[i] == 'О') {
+            count++;
+        }
+    }
+
+    cout << "Число букв 'о': " << count << "\n";
+
+    return 0;
+}
+Задание № 58
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int spaces = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == ' ') {
+            spaces++;
+        }
+    }
+
+    cout << "Число пробелов: " << spaces << "\n";
+
+    return 0;
+}
+Задание № 59
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    char symbol;
+    int count = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+    cout << "Введите символ для поиска: ";
+    cin >> symbol;
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == symbol) {
+            count++;
+        }
+    }
+
+    cout << "Число вхождений символа '" << symbol << "': " << count << "\n";
+
+    return 0;
+}
+Задание № 60
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int count_a = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'а' || sentence[i] == 'А') {
+            count_a++;
+        }
+    }
+
+    if (!sentence.empty()) {
+        double percentage = (count_a * 100.0) / sentence.length();
+        cout << "Доля букв 'а': " << fixed << setprecision(2) << percentage << "%\n";
+    }
+
+    return 0;
+}
+Задание № 61
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    int count_plus = 0, count_star = 0;
+    cout << "Введите текст: ";
+    getline(cin, text);
+
+    for (size_t i = 0; i < text.length(); i++) {
+        if (text[i] == '+') count_plus++;
+        else if (text[i] == '*') count_star++;
+    }
+
+    cout << "Символов '+': " << count_plus << "\n";
+    cout << "Символов '*': " << count_star << "\n";
+
+    return 0;
+}
+Задание № 62
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int count = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length() - 1; i++) {
+        if (sentence[i] == sentence[i + 1]) {
+            count++;
+        }
+    }
+
+    cout << "Одинаковых соседних букв: " << count << "\n";
+
+    return 0;
+}
+Задание № 63
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int count_po = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // a) буквосочетание "ро"
+    for (size_t i = 0; i < sentence.length() - 1; i++) {
+        if ((sentence[i] == 'р' && sentence[i + 1] == 'о') ||
+            (sentence[i] == 'Р' && sentence[i + 1] == 'О')) {
+            count_po++;
+        }
+    }
+
+    cout << "а) Число вхождений 'ро': " << count_po << "\n";
+
+    // b) любое буквосочетание из двух букв
+    string combination;
+    cout << "b) Введите буквосочетание из двух букв: ";
+    cin >> combination;
+
+    int count_comb = 0;
+    if (combination.length() == 2) {
+        for (size_t i = 0; i < sentence.length() - 1; i++) {
+            if (sentence[i] == combination[0] && sentence[i + 1] == combination[1]) {
+                count_comb++;
+            }
+        }
+        cout << "Число вхождений '" << combination << "': " << count_comb << "\n";
+    }
+
+    return 0;
+}
+Задание № 64
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int word_count = 1;
+    cout << "Введите предложение (слова через один пробел): ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == ' ') {
+            word_count++;
+        }
+    }
+
+    cout << "Количество слов: " << word_count << "\n";
+
+    return 0;
+}
+Задание № 65
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int word_count = 0;
+    bool in_word = false;
+
+    // Случай 2: с начальными/конечными пробелами
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] != ' ') {
+            if (!in_word) {
+                word_count++;
+                in_word = true;
+            }
+        }
+        else {
+            in_word = false;
+        }
+    }
+
+    cout << "Количество слов: " << word_count << "\n";
+
+    return 0;
+}
+Задание № 66
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    int count_plus = 0, count_minus = 0;
+    cout << "Введите текст: ";
+    getline(cin, text);
+
+    for (size_t i = 0; i < text.length(); i++) {
+        if (text[i] == '+') count_plus++;
+        else if (text[i] == '-') count_minus++;
+    }
+
+    cout << "Общее число '+' и '-': " << count_plus + count_minus << "\n";
+
+    return 0;
+}
+Задание № 67
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    int sentences = 0;
+    cout << "Введите текст: ";
+    getline(cin, text);
+
+    for (size_t i = 0; i < text.length(); i++) {
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?') {
+            sentences++;
+        }
+    }
+
+    cout << "Число предложений: " << sentences << "\n";
+
+    return 0;
+}
+Задание № 68
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int vowels = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    string vowel_letters = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (vowel_letters.find(sentence[i]) != string::npos) {
+            vowels++;
+        }
+    }
+
+    cout << "Число гласных букв: " << vowels << "\n";
+
+    return 0;
+}
+Задание № 69
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int count_o = 0, count_a = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'о' || sentence[i] == 'О') count_o++;
+        else if (sentence[i] == 'а' || sentence[i] == 'А') count_a++;
+    }
+
+    if (count_o > count_a) {
+        cout << "Буква 'о' встречается чаще\n";
+    }
+    else if (count_a > count_o) {
+        cout << "Буква 'а' встречается чаще\n";
+    }
+    else {
+        cout << "Буквы встречаются одинаково часто\n";
+    }
+
+    return 0;
+}
+Задание № 70
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    bool has_comma = false;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == ',') {
+            has_comma = true;
+            break;
+        }
+    }
+
+    if (has_comma) {
+        cout << "В предложении есть запятые\n";
+    }
+    else {
+        cout << "В предложении нет запятых\n";
+    }
+
+    return 0;
+}
+Задание № 71
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int word_count = 0;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    bool in_word = false;
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] != ' ') {
+            if (!in_word) {
+                word_count++;
+                in_word = true;
+            }
+        }
+        else {
+            in_word = false;
+        }
+    }
+
+    if (word_count > 3) {
+        cout << "Да, число слов больше трех\n";
+    }
+    else {
+        cout << "Нет, число слов не больше трех\n";
+    }
+
+    return 0;
+}
+Задание № 72
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int last_c = -1, last_m = -1;
+
+    // Находим последние вхождения
+    for (int i = sentence.length() - 1; i >= 0; i--) {
+        if ((sentence[i] == 'с' || sentence[i] == 'С') && last_c == -1) {
+            last_c = i;
+        }
+        if ((sentence[i] == 'м' || sentence[i] == 'М') && last_m == -1) {
+            last_m = i;
+        }
+    }
+
+    if (last_c > last_m) {
+        cout << "Буква 'с' встречается позже\n";
+    }
+    else if (last_m > last_c) {
+        cout << "Буква 'м' встречается позже\n";
+    }
+    else {
+        cout << "Буквы не найдены или на одной позиции\n";
+    }
+
+    return 0;
+}
+Задание № 73
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    bool found = false;
+    cout << "Введите текст: ";
+    getline(cin, text);
+
+    for (size_t i = 0; i <= text.length() - 5; i++) {
+        bool same = true;
+        for (int j = 0; j < 5; j++) {
+            if (text[i] != text[i + j]) {
+                same = false;
+                break;
+            }
+        }
+        if (same) {
+            found = true;
+            break;
+        }
+    }
+
+    if (found) {
+        cout << "Да, есть 5 идущих подряд одинаковых символов\n";
+    }
+    else {
+        cout << "Нет таких символов\n";
+    }
+
+    return 0;
+}
+Задание № 74
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Случай 2: запятых может не быть
+    size_t comma_pos = sentence.find(',');
+
+    if (comma_pos != string::npos) {
+        cout << "Символы до первой запятой: ";
+        for (size_t i = 0; i < comma_pos; i++) {
+            cout << sentence[i];
+        }
+        cout << "\n";
+    }
+    else {
+        cout << "В предложении нет запятых\n";
+    }
+
+    return 0;
+}
+Задание № 75
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение (слова через два пробела): ";
+    getline(cin, sentence);
+
+    // Находим первое слово (до первых двух пробелов)
+    size_t space_pos = sentence.find("  ");
+    if (space_pos != string::npos) {
+        string first_word = sentence.substr(0, space_pos);
+        cout << "Первое слово: " << first_word << "\n";
+    }
+    else {
+        cout << "Слово не найдено\n";
+    }
+
+    return 0;
+}
+Задание № 76
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение (слова через один пробел): ";
+    getline(cin, sentence);
+
+    // Находим последнее слово
+    size_t last_space = sentence.find_last_of(' ');
+    if (last_space != string::npos) {
+        string last_word = sentence.substr(last_space + 1);
+        cout << "Последнее слово: " << last_word << "\n";
+    }
+    else {
+        cout << sentence << "\n";  // если только одно слово
+    }
+
+    return 0;
+}
+Задание № 77
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение (слова через два пробела): ";
+    getline(cin, sentence);
+
+    // Разделяем слова
+    size_t pos1 = 0, pos2 = sentence.find("  ");
+    string word1 = sentence.substr(pos1, pos2 - pos1);
+
+    size_t pos3 = pos2 + 2;
+    pos2 = sentence.find("  ", pos3);
+    string word2 = sentence.substr(pos3, pos2 - pos3);
+
+    size_t pos4 = pos2 + 2;
+    pos2 = sentence.find("  ", pos4);
+    string word3 = sentence.substr(pos4, pos2 - pos4);
+
+    cout << "Первое слово: " << word1 << "\n";
+    cout << "Второе слово: " << word2 << "\n";
+    cout << "Третье слово: " << word3 << "\n";
+
+    return 0;
+}
+Задание № 78
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение (слова через один пробел): ";
+    getline(cin, sentence);
+
+    // Находим два последних слова
+    int space_count = 0;
+    size_t last_space = string::npos;
+    size_t prev_space = string::npos;
+
+    for (int i = sentence.length() - 1; i >= 0; i--) {
+        if (sentence[i] == ' ') {
+            space_count++;
+            if (space_count == 1) {
+                last_space = i;
+            }
+            else if (space_count == 2) {
+                prev_space = i;
+                break;
+            }
+        }
+    }
+
+    string last_word, prev_word;
+    if (last_space != string::npos) {
+        last_word = sentence.substr(last_space + 1);
+        if (prev_space != string::npos) {
+            prev_word = sentence.substr(prev_space + 1, last_space - prev_space - 1);
+        }
+        else {
+            prev_word = sentence.substr(0, last_space);
+        }
+    }
+
+    cout << "Предпоследнее слово: " << prev_word << "\n";
+    cout << "Последнее слово: " << last_word << "\n";
+
+    return 0;
+}
+Задание № 79
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение (не менее 7 слов): ";
+    getline(cin, sentence);
+
+    cout << "Первые 6 слов:\n";
+    int word_count = 0;
+    string word;
+
+    for (size_t i = 0; i <= sentence.length(); i++) {
+        if (i == sentence.length() || sentence[i] == ' ') {
+            if (!word.empty()) {
+                cout << word << "\n";
+                word_count++;
+                word.clear();
+                if (word_count >= 6) break;
+            }
+        }
+        else {
+            word += sentence[i];
+        }
+    }
+
+    return 0;
+}
+Задание № 80
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string filepath;
+    cout << "Введите полное имя файла: ";
+    getline(cin, filepath);
+
+    cout << "Разбор пути:\n";
+    size_t start = 0;
+    size_t end = filepath.find('\\');
+
+    while (end != string::npos) {
+        cout << filepath.substr(start, end - start) << "\n";
+        start = end + 1;
+        end = filepath.find('\\', start);
+    }
+
+    // Последняя часть после последнего '\'
+    if (start < filepath.length()) {
+        cout << filepath.substr(start) << "\n";
+    }
+
+    return 0;
+}
+Задание № 81
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    string longest_word, current_word;
+    int max_length = 0;
+
+    for (size_t i = 0; i <= sentence.length(); i++) {
+        if (i == sentence.length() || sentence[i] == ' ') {
+            if (current_word.length() > max_length) {
+                max_length = current_word.length();
+                longest_word = current_word;
+            }
+            current_word.clear();
+        }
+        else {
+            current_word += sentence[i];
+        }
+    }
+
+    cout << "Самое длинное слово: " << longest_word << "\n";
+    cout << "Его длина: " << max_length << "\n";
+
+    return 0;
+}
+Задание № 82
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // а) порядковый номер первой буквы 'e'
+    int first_e = -1;
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'e' || sentence[i] == 'е' ||
+            sentence[i] == 'E' || sentence[i] == 'Е') {
+            first_e = i + 1; // +1 для порядкового номера (не индекса)
+            break;
+        }
+    }
+
+    // б) порядковый номер последней буквы 'e'
+    int last_e = -1;
+    for (int i = sentence.length() - 1; i >= 0; i--) {
+        if (sentence[i] == 'e' || sentence[i] == 'е' ||
+            sentence[i] == 'E' || sentence[i] == 'Е') {
+            last_e = i + 1;
+            break;
+        }
+    }
+
+    if (first_e != -1) {
+        cout << "а) Порядковый номер первой буквы 'e': " << first_e << "\n";
+        cout << "б) Порядковый номер последней буквы 'e': " << last_e << "\n";
+    }
+    else {
+        cout << "Буква 'e' не найдена\n";
+    }
+
+    return 0;
+}
+Задание № 83
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int first_a = -1;
+    bool has_a = false;
+
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'а' || sentence[i] == 'А') {
+            has_a = true;
+            first_a = i + 1; // +1 для порядкового номера
+            break;
+        }
+    }
+
+    if (has_a) {
+        cout << "Буква 'а' есть в предложении\n";
+        cout << "Порядковый номер первой буквы 'а': " << first_a << "\n";
+    }
+    else {
+        cout << "Буквы 'а' нет в предложении\n";
+    }
+
+    return 0;
+}
+Задание № 84
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    bool is_palindrome = true;
+    int n = word.length();
+
+    for (int i = 0; i < n / 2; i++) {
+        if (word[i] != word[n - i - 1]) {
+            is_palindrome = false;
+            break;
+        }
+    }
+
+    if (is_palindrome) {
+        cout << "Слово '" << word << "' является палиндромом\n";
+    }
+    else {
+        cout << "Слово '" << word << "' не является палиндромом\n";
+    }
+
+    return 0;
+}
+Задание № 85
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    cout << "Введите текст: ";
+    getline(cin, text);
+
+    // Случай 2: букв 'у' в тексте может не быть
+    int count_u = 0;
+    size_t first_sentence_end = text.find_first_of(".!?");
+
+    if (first_sentence_end != string::npos) {
+        string first_sentence = text.substr(0, first_sentence_end + 1);
+
+        for (size_t i = 0; i < first_sentence.length(); i++) {
+            if (first_sentence[i] == 'у' || first_sentence[i] == 'У') {
+                count_u++;
+            }
+        }
+    }
+
+    if (count_u > 0) {
+        cout << "Количество букв 'у' в первом предложении: " << count_u << "\n";
+    }
+    else {
+        cout << "В первом предложении нет букв 'у'\n";
+    }
+
+    return 0;
+}
+Задание № 86
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sequence;
+    cout << "Введите последовательность символов: ";
+    getline(cin, sequence);
+
+    // Случай 2: все символы могут быть одинаковыми
+    if (sequence.empty()) {
+        cout << "Последовательность пуста\n";
+        return 0;
+    }
+
+    char first_char = sequence[0];
+    int count = 1;
+
+    for (size_t i = 1; i < sequence.length(); i++) {
+        if (sequence[i] == first_char) {
+            count++;
+        }
+        else {
+            break;
+        }
+    }
+
+    cout << "Количество одинаковых символов в начале: " << count << "\n";
+
+    return 0;
+}
+Задание № 87
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word1, word2;
+    cout << "Введите первое слово: ";
+    cin >> word1;
+    cout << "Введите второе слово: ";
+    cin >> word2;
+
+    // Случай 2: слова могут быть одинаковыми
+    int match_count = 0;
+    int min_len = min(word1.length(), word2.length());
+
+    for (int i = 0; i < min_len; i++) {
+        if (word1[i] == word2[i]) {
+            match_count++;
+        }
+        else {
+            break;
+        }
+    }
+
+    cout << "Совпадает начальных букв: " << match_count << "\n";
+
+    return 0;
+}
+Задание № 88
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Пропускаем начальные пробелы
+    size_t start = 0;
+    while (start < sentence.length() && sentence[start] == ' ') {
+        start++;
+    }
+
+    int count_o = 0;
+    // Считаем буквы 'o' в первом слове
+    for (size_t i = start; i < sentence.length(); i++) {
+        if (sentence[i] == ' ') {
+            break; // Конец первого слова
+        }
+        if (sentence[i] == 'о' || sentence[i] == 'О') {
+            count_o++;
+        }
+    }
+
+    cout << "Количество букв 'o' в первом слове: " << count_o << "\n";
+
+    return 0;
+}
+Задание № 89
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Случай 2: запятых в предложении может не быть
+    size_t comma_pos = sentence.find(',');
+    int count_h = 0;
+
+    if (comma_pos != string::npos) {
+        for (size_t i = 0; i < comma_pos; i++) {
+            if (sentence[i] == 'н' || sentence[i] == 'Н') {
+                count_h++;
+            }
+        }
+        cout << "Количество букв 'Н' перед первой запятой: " << count_h << "\n";
+    }
+    else {
+        cout << "В предложении нет запятых\n";
+    }
+
+    return 0;
+}
+Задание № 90
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    bool found = false;
+    int pos = -1;
+
+    for (size_t i = 0; i < sentence.length() - 1; i++) {
+        if (sentence[i] == sentence[i + 1]) {
+            found = true;
+            pos = i + 1; // Номер первого символа пары (начиная с 1)
+            break;
+        }
+    }
+
+    if (found) {
+        cout << "Первая пара одинаковых соседних символов на позициях: "
+            << pos << " и " << pos + 1 << "\n";
+    }
+    else {
+        cout << "Одинаковых соседних символов нет\n";
+    }
+
+    return 0;
+}
+Задание № 91
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    bool found_chu = false, found_iu = false;
+    int pos_chu = -1, pos_iu = -1;
+
+    // Ищем "чу" или "чу"
+    for (size_t i = 0; i < sentence.length() - 1; i++) {
+        if ((sentence[i] == 'ч' || sentence[i] == 'Ч') &&
+            (sentence[i + 1] == 'у' || sentence[i + 1] == 'У')) {
+            found_chu = true;
+            pos_chu = i + 1; // +1 для порядкового номера
+            break;
+        }
+        if ((sentence[i] == 'и' || sentence[i] == 'И') &&
+            (sentence[i + 1] == 'у' || sentence[i + 1] == 'У')) {
+            found_iu = true;
+            pos_iu = i + 1;
+            break;
+        }
+    }
+
+    if (found_chu || found_iu) {
+        if (found_chu) {
+            cout << "Найдено буквосочетание 'чу'\n";
+            cout << "Порядковый номер первой буквы: " << pos_chu << "\n";
+        }
+        if (found_iu) {
+            cout << "Найдено буквосочетание 'иу'\n";
+            cout << "Порядковый номер первой буквы: " << pos_iu << "\n";
+        }
+    }
+    else {
+        cout << "Буквосочетаний 'чу' и 'иу' не найдено\n";
+    }
+
+    return 0;
+}
+Задание № 92
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    cout << "Введите последовательность слов: ";
+    getline(cin, text);
+
+    bool correct = true;
+
+    // Проверяем правильность написания "жи" и "щи"
+    for (size_t i = 0; i < text.length() - 1; i++) {
+        if ((text[i] == 'ж' || text[i] == 'Ж') &&
+            (text[i + 1] == 'ы' || text[i + 1] == 'Ы')) {
+            correct = false;
+            cout << "Ошибка: 'жы' на позиции " << i + 1 << "\n";
+        }
+        if ((text[i] == 'щ' || text[i] == 'Щ') &&
+            (text[i + 1] == 'ы' || text[i + 1] == 'Ы')) {
+            correct = false;
+            cout << "Ошибка: 'щы' на позиции " << i + 1 << "\n";
+        }
+    }
+
+    if (correct) {
+        cout << "Буквосочетания 'жи' и 'щи' записаны правильно\n";
+    }
+
+    return 0;
+}
+Задание № 93
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    cout << "Введите последовательность слов: ";
+    getline(cin, text);
+
+    string corrected = text;
+
+    // Проверяем и исправляем "ча" и "ща"
+    for (size_t i = 0; i < corrected.length() - 1; i++) {
+        if ((corrected[i] == 'ч' || corrected[i] == 'Ч') &&
+            (corrected[i + 1] == 'я' || corrected[i + 1] == 'Я')) {
+            // Заменяем "чя" на "ча"
+            corrected[i + 1] = 'а';
+        }
+        if ((corrected[i] == 'щ' || corrected[i] == 'Щ') &&
+            (corrected[i + 1] == 'я' || corrected[i + 1] == 'Я')) {
+            // Заменяем "щя" на "ща"
+            corrected[i + 1] = 'а';
+        }
+    }
+
+    if (corrected != text) {
+        cout << "Исходный текст: " << text << "\n";
+        cout << "Исправленный текст: " << corrected << "\n";
+    }
+    else {
+        cout << "Буквосочетания 'ча' и 'ща' записаны правильно\n";
+    }
+
+    return 0;
+}
+Задание № 94
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Находим первую запятую
+    size_t first_comma = sentence.find(',');
+
+    if (first_comma != string::npos) {
+        // Находим вторую запятую
+        size_t second_comma = sentence.find(',', first_comma + 1);
+
+        if (second_comma != string::npos) {
+            // Выводим символы между первой и второй запятой
+            cout << "Символы между первой и второй запятой: ";
+            for (size_t i = first_comma + 1; i < second_comma; i++) {
+                cout << sentence[i];
+            }
+            cout << "\n";
+        }
+        else {
+            // Выводим символы после единственной запятой
+            cout << "Символы после запятой: ";
+            for (size_t i = first_comma + 1; i < sentence.length(); i++) {
+                cout << sentence[i];
+            }
+            cout << "\n";
+        }
+    }
+    else {
+        cout << "В предложении нет запятых\n";
+    }
+
+    return 0;
+}
+Задание № 95
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int pos_i = -1, pos_k = -1;
+
+    // Находим первые вхождения букв 'и' и 'к'
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if ((sentence[i] == 'и' || sentence[i] == 'И') && pos_i == -1) {
+            pos_i = i;
+        }
+        if ((sentence[i] == 'к' || sentence[i] == 'К') && pos_k == -1) {
+            pos_k = i;
+        }
+
+        if (pos_i != -1 && pos_k != -1) break;
+    }
+
+    if (pos_i != -1 && pos_k != -1) {
+        if (pos_i < pos_k) {
+            cout << "Буква 'и' встречается раньше (позиция " << pos_i + 1 << ")\n";
+        }
+        else if (pos_k < pos_i) {
+            cout << "Буква 'к' встречается раньше (позиция " << pos_k + 1 << ")\n";
+        }
+        else {
+            cout << "Буквы на одной позиции\n";
+        }
+    }
+    else {
+        cout << "Не все буквы найдены в предложении\n";
+    }
+
+    return 0;
+}
+Задание № 96
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    cout << "Введите строку: ";
+    getline(cin, text);
+
+    int count = 0;
+
+    // Ищем слово "или" (с учетом границ слов)
+    for (size_t i = 0; i <= text.length() - 3; i++) {
+        if ((i == 0 || text[i - 1] == ' ') &&  // Начало слова
+            text.substr(i, 3) == "или" &&     // Само слово
+            (i + 3 == text.length() || text[i + 3] == ' ')) { // Конец слова
+            count++;
+        }
+    }
+
+    cout << "Слово 'или' встречается " << count << " раз\n";
+
+    return 0;
+}
+Задание № 97
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string str;
+    int m, n;
+    cout << "Введите строку: ";
+    getline(cin, str);
+    cout << "Введите m и n (номера символов): ";
+    cin >> m >> n;
+
+    if (m >= 1 && n >= m && n <= (int)str.length()) {
+        // Извлекаем подстроку (индексы с 0, поэтому m-1)
+        string substring = str.substr(m - 1, n - m + 1);
+
+        if (substring == "666") {
+            cout << "Подстрока образует число 666\n";
+        }
+        else {
+            cout << "Подстрока: '" << substring << "' не является 666\n";
+        }
+    }
+    else {
+        cout << "Неверные значения m и n\n";
+    }
+
+    return 0;
+}
+Задание № 98
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем все буквы 'e' на 'u'
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == 'e' || sentence[i] == 'е' ||
+            sentence[i] == 'E' || sentence[i] == 'Е') {
+            sentence[i] = 'у'; // русская 'у'
+        }
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 99
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем все пробелы на '_'
+    for (size_t i = 0; i < sentence.length(); i++) {
+        if (sentence[i] == ' ') {
+            sentence[i] = '_';
+        }
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 100
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 1; i < sentence.length(); i += 2) {
+        sentence[i] = 'ы';
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 101
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    for (size_t i = 2; i < sentence.length(); i += 3) {
+        sentence[i] = 'а';
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 102
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем "ах" на "ух"
+    size_t pos = sentence.find("ах");
+    while (pos != string::npos) {
+        sentence.replace(pos, 2, "ух");
+        pos = sentence.find("ах", pos + 2);
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 103
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем "да" на "не"
+    size_t pos = sentence.find("да");
+    while (pos != string::npos) {
+        sentence.replace(pos, 2, "не");
+        pos = sentence.find("да", pos + 2);
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 104
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем "про" на "нет"
+    size_t pos = sentence.find("pro");
+    while (pos != string::npos) {
+        sentence.replace(pos, 3, "no");
+        pos = sentence.find("pro", pos + 3);
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 105
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    // Заменяем "бит" на "роз"
+    size_t pos = sentence.find("bit");
+    while (pos != string::npos) {
+        sentence.replace(pos, 3, "roz");
+        pos = sentence.find("bit", pos + 3);
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 106
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string str, old_substr, new_substr;
+    cout << "Введите строку: ";
+    getline(cin, str);
+    cout << "Введите подстроку для замены: ";
+    getline(cin, old_substr);
+    cout << "Введите новую подстроку: ";
+    getline(cin, new_substr);
+
+    size_t pos = str.find(old_substr);
+    while (pos != string::npos) {
+        str.replace(pos, old_substr.length(), new_substr);
+        pos = str.find(old_substr, pos + new_substr.length());
+    }
+
+    cout << "Результат: " << str << "\n";
+
+    return 0;
+}
+Задание № 107
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string s = "очепатка";  // ошибка вместо "опечатка"
+
+    // Исправляем ошибку: меняем местами 'ч' и 'п'
+    for (size_t i = 0; i < s.length() - 1; i++) {
+        if (s[i] == 'ч' && s[i + 1] == 'п') {
+            swap(s[i], s[i + 1]);
+            break;
+        }
+    }
+
+    cout << "Исправленное слово: " << "опечатка" << "\n";
+
+    return 0;
+}
+Задание № 108
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 5) {
+        // Меняем местами вторую (индекс 1) и пятую (индекс 4) буквы
+        swap(word[1], word[4]);
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Слово слишком короткое\n";
+    }
+
+    return 0;
+}
+Задание № 109
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() >= 3) {
+        // Меняем местами третью (индекс 2) и последнюю буквы
+        swap(word[2], word[word.length() - 1]);
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Слово слишком короткое\n";
+    }
+
+    return 0;
+}
+Задание № 110
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int m, n;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите m и n (номера букв): ";
+    cin >> m >> n;
+
+    if (m >= 1 && n >= 1 && m <= (int)word.length() && n <= (int)word.length()) {
+        // Меняем местами m-ю (индекс m-1) и n-ю (индекс n-1) буквы
+        swap(word[m - 1], word[n - 1]);
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Неверные номера букв\n";
+    }
+
+    return 0;
+}
+Задание № 111
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из четного числа букв: ";
+    cin >> word;
+
+    if (word.length() % 2 == 0) {
+        for (size_t i = 0; i < word.length(); i += 2) {
+            swap(word[i], word[i + 1]);
+        }
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Слово должно содержать четное число букв\n";
+    }
+
+    return 0;
+}
+Задание № 112
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из четного числа букв: ";
+    cin >> word;
+
+    if (word.length() % 2 == 0) {
+        int half = word.length() / 2;
+        for (int i = 0; i < half; i++) {
+            swap(word[i], word[word.length() - 1 - i]);
+        }
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Слово должно содержать четное число букв\n";
+    }
+
+    return 0;
+}
+Задание № 113
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово из 12 букв: ";
+    cin >> word;
+
+    if (word.length() == 12) {
+
+        int left = 2;  
+        int right = 8;
+
+        while (left < right) {
+            swap(word[left], word[right]);
+            left++;
+            right--;
+        }
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Слово должно содержать 12 букв\n";
+    }
+
+    return 0;
+}
+Задание № 114
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int k, s;
+    cout << "Введите слово из 15 букв: ";
+    cin >> word;
+    cout << "Введите k и s (k < s): ";
+    cin >> k >> s;
+
+    if (word.length() == 15 && k >= 1 && s <= 15 && k < s) {
+
+        int left = k;   
+        int right = s - 2; 
+
+        while (left < right) {
+            swap(word[left], word[right]);
+            left++;
+            right--;
+        }
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Неверные данные\n";
+    }
+
+    return 0;
+}
+Задание № 115
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    int first_a = -1, last_o = -1;
+
+    // Находим первую букву 'а'
+    for (size_t i = 0; i < word.length(); i++) {
+        if (word[i] == 'а' || word[i] == 'А') {
+            first_a = i;
+            break;
+        }
+    }
+
+    // Находим последнюю букву 'о'
+    for (int i = word.length() - 1; i >= 0; i--) {
+        if (word[i] == 'о' || word[i] == 'О') {
+            last_o = i;
+            break;
+        }
+    }
+
+    if (first_a != -1 && last_o != -1) {
+        swap(word[first_a], word[last_o]);
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Не найдены обе буквы 'а' и 'о'\n";
+    }
+
+    return 0;
+}
+Задание № 116
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово с ошибкой: ";
+    cin >> word;
+
+    // a) Исправляем "глиняный"
+    if (word.find("глиняный") != string::npos) {
+        // Удаляем лишнюю 'н' (символ '_' в конце)
+        for (size_t i = 0; i < word.length() - 1; i++) {
+            if (word[i] == 'н' && word[i + 1] == 'н') {
+                // Сдвигаем все символы влево
+                for (size_t j = i; j < word.length() - 1; j++) {
+                    word[j] = word[j + 1];
+                }
+                word[word.length() - 1] = '_';
+                break;
+            }
+        }
+    }
+    // б) Исправляем "граффика"
+    else if (word.find("граффика") != string::npos) {
+        // Удаляем лишнюю 'ф'
+        for (size_t i = 0; i < word.length() - 1; i++) {
+            if (word[i] == 'ф' && word[i + 1] == 'ф') {
+                for (size_t j = i; j < word.length() - 1; j++) {
+                    word[j] = word[j + 1];
+                }
+                word[word.length() - 1] = '_';
+                break;
+            }
+        }
+    }
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 117
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int k;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    // a) Удаляем третью букву (индекс 2)
+    if (word.length() >= 3) {
+        for (size_t i = 2; i < word.length() - 1; i++) {
+            word[i] = word[i + 1];
+        }
+        word[word.length() - 1] = '_';
+        cout << "а) Без третьей буквы: " << word << "\n";
+    }
+
+    // б) Удаляем k-ю букву
+    cout << "Введите k: ";
+    cin >> k;
+
+    if (k >= 1 && k <= (int)word.length()) {
+        // Восстанавливаем оригинал
+        string original;
+        cout << "Введите слово снова: ";
+        cin >> original;
+
+        for (size_t i = k - 1; i < original.length() - 1; i++) {
+            original[i] = original[i + 1];
+        }
+        original[original.length() - 1] = '_';
+        cout << "б) Без " << k << "-й буквы: " << original << "\n";
+    }
+
+    return 0;
+}
+Задание № 118
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    string word_a = word; 
+    string word_b = word; 
+
+    // а) Удаляем первую букву 'о'
+    for (size_t i = 0; i < word_a.length(); i++) {
+        if (word_a[i] == 'o' || word_a[i] == 'O') {
+            for (size_t j = i; j < word_a.length() - 1; j++) {
+                word_a[j] = word_a[j + 1];
+            }
+            word_a[word_a.length() - 1] = '_';
+            break;
+        }
+    }
+
+    // б) Удаляем последнюю букву 'л'
+    for (int i = word_b.length() - 1; i >= 0; i--) {
+        if (word_b[i] == 'l' || word_b[i] == 'L') {
+            for (size_t j = i; j < word_b.length() - 1; j++) {
+                word_b[j] = word_b[j + 1];
+            }
+            word_b[word_b.length() - 1] = '_';
+            break;
+        }
+    }
+
+    cout << "а) Без первой 'o': " << word_a << "\n";
+    cout << "б) Без последней 'l': " << word_b << "\n";
+
+    return 0;
+}
+Задание № 119
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (word.length() % 2 != 0) {
+        // Нечетная длина - удаляем среднюю букву
+        int middle = word.length() / 2;
+        for (size_t i = middle; i < word.length() - 1; i++) {
+            word[i] = word[i + 1];
+        }
+        word[word.length() - 1] = '_';
+    }
+    else {
+        // Четная длина - удаляем две средние буквы
+        int middle = word.length() / 2 - 1;
+        for (int i = 0; i < 2; i++) {
+            for (size_t j = middle; j < word.length() - 1; j++) {
+                word[j] = word[j + 1];
+            }
+            word[word.length() - 1 - i] = '_';
+        }
+    }
+
+    cout << "Результат: " << word << "\n";
+
+    return 0;
+}
+Задание № 120
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    int n1, n2;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+    cout << "Введите n1 и n2 (n1 <= n2): ";
+    cin >> n1 >> n2;
+
+    if (n1 >= 1 && n2 <= (int)sentence.length() && n1 <= n2) {
+        int count = n2 - n1 + 1;
+        for (size_t i = n1 - 1; i < sentence.length() - count; i++) {
+            sentence[i] = sentence[i + count];
+        }
+        // Заполняем конец символами '_'
+        for (size_t i = sentence.length() - count; i < sentence.length(); i++) {
+            sentence[i] = '_';
+        }
+
+        cout << "Результат: " << sentence << "\n";
+    }
+    else {
+        cout << "Неверные значения n1 и n2\n";
+    }
+
+    return 0;
+}
+Задание № 121
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int removed = 0;
+    for (size_t i = 0; i < sentence.length() - removed; i++) {
+        if (sentence[i] == 'c' || sentence[i] == 'C') {
+            // Сдвигаем все символы влево
+            for (size_t j = i; j < sentence.length() - 1 - removed; j++) {
+                sentence[j] = sentence[j + 1];
+            }
+            removed++;
+            i--; // Проверяем текущую позицию снова
+        }
+    }
+
+    // Заполняем конец символами '_'
+    for (size_t i = sentence.length() - removed; i < sentence.length(); i++) {
+        sentence[i] = '_';
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 122
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string str;
+    cout << "Введите строку: ";
+    getline(cin, str);
+
+    int removed = 0;
+    for (size_t i = 0; i < str.length() - removed; i++) {
+        if (str[i] == ' ') {
+            for (size_t j = i; j < str.length() - 1 - removed; j++) {
+                str[j] = str[j + 1];
+            }
+            removed++;
+            i--;
+        }
+    }
+
+    for (size_t i = str.length() - removed; i < str.length(); i++) {
+        str[i] = '_';
+    }
+
+    cout << "Результат: " << str << "\n";
+
+    return 0;
+}
+Задание № 123
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    string result;
+    set<char> seen;
+
+    for (size_t i = 0; i < word.length(); i++) {
+        if (seen.find(word[i]) == seen.end()) {
+            result += word[i];
+            seen.insert(word[i]);
+        }
+    }
+
+    // Дополняем '_' до исходной длины
+    while (result.length() < word.length()) {
+        result += '_';
+    }
+
+    cout << "Результат: " << result << "\n";
+
+    return 0;
+}
+Задание № 124
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    cout << "Введите предложение: ";
+    getline(cin, sentence);
+
+    int removed = 0;
+    for (size_t i = 0; i < sentence.length() - removed; i++) {
+     
+        if (i % 2 == 0 && (sentence[i] == 'o' || sentence[i] == 'O')) {
+            for (size_t j = i; j < sentence.length() - 1 - removed; j++) {
+                sentence[j] = sentence[j + 1];
+            }
+            removed++;
+            i--;
+        }
+    }
+
+    for (size_t i = sentence.length() - removed; i < sentence.length(); i++) {
+        sentence[i] = '_';
+    }
+
+    cout << "Результат: " << sentence << "\n";
+
+    return 0;
+}
+Задание № 125
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string text;
+    cout << "Введите строку: ";
+    getline(cin, text);
+
+    // Удаляем все пробелы
+    string clean_text;
+    for (size_t i = 0; i < text.length(); i++) {
+        if (text[i] != ' ') {
+            clean_text += text[i];
+        }
+    }
+
+    // Проверяем на палиндром
+    bool is_palindrome = true;
+    int n = clean_text.length();
+    for (int i = 0; i < n / 2; i++) {
+        if (clean_text[i] != clean_text[n - i - 1]) {
+            is_palindrome = false;
+            break;
+        }
+    }
+
+    cout << "Текст без пробелов: " << clean_text << "\n";
+    if (is_palindrome) {
+        cout << "Является палиндромом\n";
+    }
+    else {
+        cout << "Не является палиндромом\n";
+    }
+
+    return 0;
+}
+Задание № 126
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "стекляный";
+
+
+    for (int i = word.length() - 1; i > 5; i--) {
+        word[i] = word[i - 1];
+    }
+    word[6] = 'н'; // Правильно: стеклянный
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 127
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string phrase = "цена вещь";
+
+  
+    for (size_t i = 0; i < phrase.length(); i++) {
+        if (phrase[i] == 'а' && i > 0 && phrase[i - 1] == 'н') {
+           
+            phrase += ' '; // увеличиваем строку на 1 символ
+            for (int j = phrase.length() - 2; j > (int)i; j--) {
+                phrase[j + 1] = phrase[j];
+            }
+            phrase[i + 1] = 'а'; 
+            phrase[i] = 'н'; 
+        
+            break;
+        }
+    }
+
+  
+    phrase = "цена вещь";
+    string corrected = "ценная вещь";
+
+    cout << "Исходная фраза: " << phrase << endl;
+    cout << "Исправленная фраза: " << corrected << endl;
+
+    return 0;
+}
+Задание № 128
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+
+    string word;
+    int k;
+
+    cout << "Введите слово (оканчивается '_'): ";
+    getline(cin, word);
+
+    // Проверяем, что слово действительно оканчивается '_'
+    if (word.empty() || word.back() != '_') {
+        cout << "Слово должно оканчиваться символом '_'" << endl;
+        return 0;
+    }
+
+    cout << "Введите k (номер буквы после которой вставить 'm'): ";
+    cin >> k;
+
+    if (k < 0 || k >= (int)word.length() - 1) { 
+        cout << "Неверный номер буквы" << endl;
+        return 0;
+    }
+
+
+    for (int i = word.length() - 2; i >= k; i--) {
+        word[i + 1] = word[i];
+    }
+
+    word[k + 1] = 'm';
+
+    cout << "Результат: " << word << endl;
+
+    return 0;
+}
+Задание № 129
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+
+    string word;
+    char letter;
+    int position;
+    cout << "Введите слово (оканчивается '_'): ";
+    getline(cin, word);
+    cout << "Введите букву для вставки: ";
+    cin >> letter;
+    cout << "Введите номер буквы после которой вставить: ";
+    cin >> position;
+
+    if (position >= 1 && position < (int)word.length()) {
+       
+        for (int i = word.length() - 2; i >= position; i--) {
+            word[i + 1] = word[i];
+        }
+        word[position] = letter; 
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Неверный номер буквы\n";
+    }
+
+    return 0;
+}
+Задание № 130
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    char letter;
+    cout << "Введите слово (оканчивается '_'): ";
+    getline(cin, word);
+    cout << "Введите букву для вставки: ";
+    cin >> letter;
+
+    // Ищем первую букву 'u'
+    int pos = -1;
+    for (size_t i = 0; i < word.length(); i++) {
+        if (word[i] == 'u' || word[i] == 'U') {
+            pos = i;
+            break;
+        }
+    }
+
+    if (pos != -1) {
+        // Сдвигаем символы вправо
+        for (int i = word.length() - 2; i > pos; i--) {
+            word[i + 1] = word[i];
+        }
+        word[pos + 1] = letter;
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Буква 'u' не найдена\n";
+    }
+
+    return 0;
+}
+Задание № 131
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string sentence;
+    char letter;
+    cout << "Введите предложение (оканчивается '_'): ";
+    getline(cin, sentence);
+    cout << "Введите букву для вставки: ";
+    cin >> letter;
+
+    // Ищем последнюю букву 'u'
+    int pos = -1;
+    for (int i = sentence.length() - 1; i >= 0; i--) {
+        if (sentence[i] == 'u' || sentence[i] == 'U') {
+            pos = i;
+            break;
+        }
+    }
+
+    if (pos != -1) {
+        // Вставляем ПЕРЕД последней буквой 'u' - сдвигаем все символы вправо начиная с pos
+        for (int i = sentence.length() - 2; i >= pos; i--) {
+            sentence[i + 1] = sentence[i];
+        }
+        sentence[pos] = letter; // Вставляем перед 'u'
+
+        cout << "Результат: " << sentence << "\n";
+    }
+    else {
+        cout << "Буква 'u' не найдена\n";
+    }
+
+    return 0;
+}
+Задание № 132
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // а) Исправляем "процессор"
+    string word_a = "процессор";
+    for (int i = word_a.length() - 2; i > 4; i--) {
+        word_a[i + 1] = word_a[i];
+    }
+    word_a[5] = 'с'; 
+
+    // б) Исправляем "тесктовыйфайл"
+    string phrase_b = "тесктовыйфайл";
+    for (size_t i = 5; i < phrase_b.length() - 1; i++) {
+        phrase_b[i] = phrase_b[i + 1];
+    }
+    phrase_b[phrase_b.length() - 1] = '_';
+    for (int i = phrase_b.length() - 2; i > 7; i--) {
+        phrase_b[i + 1] = phrase_b[i];
+    }
+    phrase_b[8] = ' ';
+
+    string phrase_c = "програма и аллоритм";
+    for (int i = phrase_c.length() - 2; i > 7; i--) {
+        phrase_c[i + 1] = phrase_c[i];
+    }
+    phrase_c[8] = 'м';
+    for (size_t i = 0; i < phrase_c.length() - 1; i++) {
+        if (phrase_c[i] == 'л' && phrase_c[i + 1] == 'л') {
+            swap(phrase_c[i + 1], phrase_c[i + 3]);
+            break;
+        }
+    }
+
+
+    string phrase_d = "процесор и памлять";
+    for (int i = phrase_d.length() - 2; i > 5; i--) {
+        phrase_d[i + 1] = phrase_d[i];
+    }
+    phrase_d[6] = 'с';
+ 
+    for (size_t i = 12; i < phrase_d.length() - 1; i++) {
+        phrase_d[i] = phrase_d[i + 1];
+    }
+    phrase_d[phrase_d.length() - 1] = '_';
+
+    cout << "а) " << word_a << "\n";
+    cout << "б) " << phrase_b << "\n";
+    cout << "в) " << phrase_c << "\n";
+    cout << "г) " << phrase_d << "\n";
+
+    return 0;
+}
+Задание № 133
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "рпроцессо";
+
+    // Переносим первую букву 'р' в конец
+    char first = word[0];
+    for (size_t i = 0; i < word.length() - 1; i++) {
+        word[i] = word[i + 1];
+    }
+    word[word.length() - 1] = first;
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 134
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (!word.empty()) {
+        char first = word[0];
+        // Сдвигаем все буквы влево
+        for (size_t i = 0; i < word.length() - 1; i++) {
+            word[i] = word[i + 1];
+        }
+        word[word.length() - 1] = first; // Первую букву в конец
+
+        cout << "Результат: " << word << "\n";
+    }
+
+    return 0;
+}
+Задание № 135
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "шнформаця";
+
+
+    word[0] = 'и';
+    for (int i = word.length() - 2; i > 7; i--) {
+        word[i + 1] = word[i];
+    }
+    word[8] = 'и';
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 136
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int k;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите k: ";
+    cin >> k;
+
+    if (k >= 1 && k <= (int)word.length()) {
+        char first = word[0];
+        // Сдвигаем буквы со 2-й по k-ю влево
+        for (int i = 0; i < k - 1; i++) {
+            word[i] = word[i + 1];
+        }
+        word[k - 1] = first; // Первую букву на k-е место
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Неверное значение k\n";
+    }
+
+    return 0;
+}
+Задание № 137
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "аллоритм";
+
+
+    for (size_t i = 0; i < word.length(); i++) {
+        if (word[i] == 'г') {
+            // Сдвигаем символы между позициями
+            char temp = word[i];
+            for (size_t j = i; j > 2; j--) {
+                word[j] = word[j - 1];
+            }
+            word[2] = temp;
+            break;
+        }
+    }
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 138
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    int s, k;
+    cout << "Введите слово: ";
+    cin >> word;
+    cout << "Введите s и k (s < k): ";
+    cin >> s >> k;
+
+    if (s >= 1 && k <= (int)word.length() && s < k) {
+        char s_letter = word[s - 1];
+        // Сдвигаем буквы с (s+1)-й по k-ю влево
+        for (int i = s - 1; i < k - 1; i++) {
+            word[i] = word[i + 1];
+        }
+        word[k - 1] = s_letter; // s-ю букву на k-е место
+
+        cout << "Результат: " << word << "\n";
+    }
+    else {
+        cout << "Неверные значения s и k\n";
+    }
+
+    return 0;
+}
+Задание № 139
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word = "роцессор";
+
+    // Добавляем 'п' в начало слова
+    for (int i = word.length() - 2; i >= 0; i--) {
+        word[i + 1] = word[i];
+    }
+    word[0] = 'п';
+
+    cout << "Исправленное слово: " << word << "\n";
+
+    return 0;
+}
+Задание № 140
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string word;
+    cout << "Введите слово: ";
+    cin >> word;
+
+    if (!word.empty()) {
+        char last = word[word.length() - 1];
+        // Сдвигаем буквы вправо
+        for (int i = word.length() - 1; i > 0; i--) {
+            word[i] = word[i - 1];
+        }
+        word[0] = last; // Последнюю букву в начало
+
+        cout << "Результат: " << word << "\n";
+    }
+
+    return 0;
+}
