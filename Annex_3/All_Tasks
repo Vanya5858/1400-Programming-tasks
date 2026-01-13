@@ -1,0 +1,885 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool A = true;
+    bool B = false;
+    bool C = false;
+
+    cout << "a) A или B = " << (A || B) << endl;
+    cout << "б) A и B = " << (A && B) << endl;
+    cout << "в) B или C = " << (B || C) << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool X = false;
+    bool Y = true;
+    bool Z = false;
+
+    cout << "a) X или Z = " << (X || Z) << endl;
+    cout << "б) X и Y = " << (X && Y) << endl;
+    cout << "в) X и Z = " << (X && Z) << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool A = true;
+    bool B = false;
+    bool C = false;
+
+    cout << "a) A и B = " << (A && B) << endl;
+    cout << "б) A или B = " << (A || B) << endl;
+    cout << "в) A и B или C = " << ((A && B) || C) << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool X = true;
+    bool Y = true;
+    bool Z = false;
+
+    cout << "a) X и Y = " << (X && Y) << endl;
+    cout << "б) X или Y = " << (X || Y) << endl;
+    cout << "в) X или Y и Z = " << (X || (Y && Z)) << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool A = true;
+    bool B = false;
+    bool C = false;
+
+    cout << "a) A или B и C = " << (A || (B && C)) << endl;
+    cout << "б) A и B или C = " << ((A && B) || C) << endl;
+    cout << "в) A и C или B = " << ((A && C) || B) << endl;
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool X = false;
+    bool Y = false;
+    bool Z = true;
+
+    cout << "a) X или Y и Z = " << (X || (Y && Z)) << endl;
+    cout << "б) X и Y или Z = " << ((X && Y) || Z) << endl;
+    cout << "в) X и Y или Z (повтор) = " << ((X && Y) || Z) << endl;
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool A = true;
+    bool B = false;
+    bool C = false;
+
+    cout << "a) A или B или C = " << (A || B || C) << endl;
+    cout << "б) A и B и C = " << (A && B && C) << endl;
+    cout << "в) A или B и C = " << (A || (B && C)) << endl;
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool X = false;
+    bool Y = true;
+    bool Z = false;
+
+    cout << "a) X и Y или Z = " << ((X && Y) || Z) << endl;
+    cout << "б) X или Y и Z = " << (X || (Y && Z)) << endl;
+    cout << "в) X и (Y или Z) = " << (X && (Y || Z)) << endl;
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool X = true;
+    bool Y = false;
+    bool Z = false;
+
+    cout << "a) не X или не Y или не Z = " << (!X || !Y || !Z) << endl;
+    cout << "б) (не X или не Y) и (X или Y) = " << ((!X || !Y) && (X || Y)) << endl;
+    cout << "в) X и Y или X и Z или не Z = " << ((X && Y) || (X && Z) || !Z) << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    bool A = false;
+    bool B = false;
+    bool C = true;
+
+    cout << "a) (не A или не B) и не C = " << ((!A || !B) && !C) << endl;
+    cout << "б) (не A или не B) и (A или B) = " << ((!A || !B) && (A || B)) << endl;
+    cout << "в) A и B или A и C или не C = " << ((A && B) || (A && C) || !C) << endl;
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x, y;
+
+    // a)
+    x = 1; y = -1;
+    cout << "a) x^2 + y^2 <= 4 при x=1, y=-1: " << (pow(x, 2) + pow(y, 2) <= 4) << endl;
+
+    // б)
+    x = 1; y = 2;
+    cout << "б) (x > 0) или (y^2 != 4): " << ((x > 0) || (pow(y, 2) != 4)) << endl;
+
+    // в)
+    cout << "в) (x > 0) и (y^2 != 4): " << ((x > 0) && (pow(y, 2) != 4)) << endl;
+
+    // г)
+    x = 2; y = 1;
+    cout << "г) (x*y != 0) и (y > x): " << ((x * y != 0) && (y > x)) << endl;
+
+    // д)
+    cout << "д) (x*y != 0) или (y < x): " << ((x * y != 0) || (y < x)) << endl;
+
+    // е)
+    cout << "е) не(x*y < 0) и (y > x): " << (!(x * y < 0) && (y > x)) << endl;
+
+    // ж)
+    x = 1; y = 2;
+    cout << "ж) не(x*y < 0) или (y > x): " << (!(x * y < 0) || (y > x)) << endl;
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x, y;
+
+    // a)
+    x = 1; y = -1;
+    cout << "a) x^2 - y^2 <= 0: " << (pow(x, 2) - pow(y, 2) <= 0) << endl;
+
+    // б)
+    x = 2; y = -2;
+    cout << "б) (x > 2) или (y^2 != 4): " << ((x > 2) || (pow(y, 2) != 4)) << endl;
+
+    // в)
+    x = 2; y = 2;
+    cout << "в) (x > 0) и (y^2 > 4): " << ((x > 0) && (pow(y, 2) > 4)) << endl;
+
+    // г)
+    x = 1; y = 2;
+    cout << "г) (x*y != 4) и (y > x): " << ((x * y != 4) && (y > x)) << endl;
+
+    // д)
+    x = 2; y = 1;
+    cout << "д) (x*y != 0) или (y < x): " << ((x * y != 0) || (y < x)) << endl;
+
+    // е)
+    x = 1; y = 2;
+    cout << "е) не(x*y < 1) и (y > x): " << (!(x * y < 1) && (y > x)) << endl;
+
+    // ж)
+    x = 2; y = 1;
+    cout << "ж) не(x*y < 0) или (y > x): " << (!(x * y < 0) || (y > x)) << endl;
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A и B:" << endl;
+
+    bool A, B;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            A = values[i];
+            B = values[j];
+
+            cout << "A=" << A << ", B=" << B << ":" << endl;
+            cout << "  a) не(A и B) = " << !(A && B) << endl;
+            cout << "  б) не A или B = " << (!A || B) << endl;
+            cout << "  в) A или не B = " << (A || !B) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X и Y:" << endl;
+
+    bool X, Y;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            X = values[i];
+            Y = values[j];
+
+            cout << "X=" << X << ", Y=" << Y << ":" << endl;
+            cout << "  a) не(X или Y) = " << !(X || Y) << endl;
+            cout << "  б) не X и Y = " << (!X && Y) << endl;
+            cout << "  в) X и не Y = " << (X && !Y) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A и B:" << endl;
+
+    bool A, B;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            A = values[i];
+            B = values[j];
+
+            cout << "A=" << A << ", B=" << B << ":" << endl;
+            cout << "  a) не A или не B = " << (!A || !B) << endl;
+            cout << "  б) A и (A или не B) = " << (A && (A || !B)) << endl;
+            cout << "  в) (не A или B) и B = " << ((!A || B) && B) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X и Y:" << endl;
+
+    bool X, Y;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            X = values[i];
+            Y = values[j];
+
+            cout << "X=" << X << ", Y=" << Y << ":" << endl;
+            cout << "  a) не X и не Y = " << (!X && !Y) << endl;
+            cout << "  б) X или (не X и Y) = " << (X || (!X && Y)) << endl;
+            cout << "  в) (не X и Y) или Y = " << ((!X && Y) || Y) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A и B:" << endl;
+
+    bool A, B;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            A = values[i];
+            B = values[j];
+
+            cout << "A=" << A << ", B=" << B << ":" << endl;
+            cout << "  a) не A и не B или A = " << ((!A && !B) || A) << endl;
+            cout << "  б) B или не A и не B = " << (B || (!A && !B)) << endl;
+            cout << "  в) B и не(A и не B) = " << (B && !(A && !B)) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X и Y:" << endl;
+
+    bool X, Y;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            X = values[i];
+            Y = values[j];
+
+            cout << "X=" << X << ", Y=" << Y << ":" << endl;
+            cout << "  a) не(X и не Y) или X = " << (!(X && !Y) || X) << endl;
+            cout << "  б) Y и не X или не Y = " << ((Y && !X) || !Y) << endl;
+            cout << "  в) не Y и не X или Y = " << ((!Y && !X) || Y) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A и B:" << endl;
+
+    bool A, B;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            A = values[i];
+            B = values[j];
+
+            cout << "A=" << A << ", B=" << B << ":" << endl;
+            cout << "  a) не(не A и не B) и A = " << (!(!A && !B) && A) << endl;
+            cout << "  б) не(не A или не B) или A = " << (!(!A || !B) || A) << endl;
+            cout << "  в) не(не A или не B) и B = " << (!(!A || !B) && B) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 20
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X и Y:" << endl;
+
+    bool X, Y;
+    bool values[2] = { false, true };
+
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            X = values[i];
+            Y = values[j];
+
+            cout << "X=" << X << ", Y=" << Y << ":" << endl;
+            cout << "  a) не(не X или Y) или не X = " << (!(!X || Y) || !X) << endl;
+            cout << "  б) не(не X и не Y) и X = " << (!(!X && !Y) && X) << endl;
+            cout << "  в) не(X или не Y) или не Y = " << (!(X || !Y) || !Y) << endl << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A, B и C:" << endl;
+
+    bool A, B, C;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                A = values[i];
+                B = values[j];
+                C = values[k];
+
+                cout << ++count << ") A=" << A << ", B=" << B << ", C=" << C << ":" << endl;
+                cout << "   a) не(A или не B и C) = " << !(A || (!B && C)) << endl;
+                cout << "   б) A и не(B или не C) = " << (A && !(B || !C)) << endl;
+                cout << "   в) не(не A или B и C) = " << !(!A || (B && C)) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X, Y и Z:" << endl;
+
+    bool X, Y, Z;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                X = values[i];
+                Y = values[j];
+                Z = values[k];
+
+                cout << ++count << ") X=" << X << ", Y=" << Y << ", Z=" << Z << ":" << endl;
+                cout << "   a) не(X или не Y и Z) = " << !(X || (!Y && Z)) << endl;
+                cout << "   б) Y или (X и не Y или Z) = " << (Y || ((X && !Y) || Z)) << endl;
+                cout << "   в) не(не X и Y или Z) = " << !((!X && Y) || Z) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A, B и C:" << endl;
+
+    bool A, B, C;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                A = values[i];
+                B = values[j];
+                C = values[k];
+
+                cout << ++count << ") A=" << A << ", B=" << B << ", C=" << C << ":" << endl;
+                cout << "   a) не(A или не B и C) или C = " << (!(A || (!B && C)) || C) << endl;
+                cout << "   б) не(A и не B или C) и B = " << (!((A && !B) || C) && B) << endl;
+                cout << "   в) не(не A или B и C) или A = " << (!(!A || (B && C)) || A) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X, Y и Z:" << endl;
+
+    bool X, Y, Z;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                X = values[i];
+                Y = values[j];
+                Z = values[k];
+
+                cout << ++count << ") X=" << X << ", Y=" << Y << ", Z=" << Z << ":" << endl;
+                cout << "   a) не(Y или не X и Z) или Z = " << (!(Y || (!X && Z)) || Z) << endl;
+                cout << "   б) X и Y или Z или Y = " << (((X && Y) || Z) || Y) << endl;
+                cout << "   в) не(X или Y и Z) или не X = " << (!(X || (Y && Z)) || !X) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения A, B и C:" << endl;
+
+    bool A, B, C;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                A = values[i];
+                B = values[j];
+                C = values[k];
+
+                cout << ++count << ") A=" << A << ", B=" << B << ", C=" << C << ":" << endl;
+                cout << "   a) не(A и B) и (не A или не C) = " << (!(A && B) && (!A || !C)) << endl;
+                cout << "   б) не(A и не B) или (A или не C) = " << (!(A && !B) || (A || !C)) << endl;
+                cout << "   в) A и B или A или C = " << (((A && B) || A) || C) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    cout << "Все возможные значения X, Y и Z:" << endl;
+
+    bool X, Y, Z;
+    bool values[2] = { false, true };
+
+    int count = 0;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                X = values[i];
+                Y = values[j];
+                Z = values[k];
+
+                cout << ++count << ") X=" << X << ", Y=" << Y << ", Z=" << Z << ":" << endl;
+                cout << "   a) не(X или Y) и (не X или не Z) = " << (!(X || Y) && (!X || !Z)) << endl;
+                cout << "   б) не(не X и Y) или (X и не Z) = " << (!(!X && Y) || (X && !Z)) << endl;
+                cout << "   в) X или Y и Z или X или Z = " << ((X || (Y && Z) || X) || Z) << endl << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x, y;
+
+    cout << "Примеры логических выражений:" << endl;
+
+    // Пример для a)
+    x = 3; y = 4;
+    cout << "a) x > 2 и y > 3 при x=" << x << ", y=" << y << ": " << (x > 2 && y > 3) << endl;
+
+    // Пример для б)
+    x = 0; y = -1;
+    cout << "б) x > 1 или y > -2 при x=" << x << ", y=" << y << ": " << (x > 1 || y > -2) << endl;
+
+    // Пример для в)
+    x = 1; y = 3;
+    cout << "в) x > 0 и y < 5 при x=" << x << ", y=" << y << ": " << (x > 0 && y < 5) << endl;
+
+    // Пример для г)
+    x = 4;
+    cout << "г) x > 3 или x < -1 при x=" << x << ": " << (x > 3 || x < -1) << endl;
+
+    // Пример для д)
+    x = 5;
+    cout << "д) x > 3 и x < 10 при x=" << x << ": " << (x > 3 && x < 10) << endl;
+
+    // Пример для е)
+    x = 1;
+    cout << "е) неверно, что x > 2 при x=" << x << ": " << !(x > 2) << endl;
+
+    // Пример для ж)
+    x = 2;
+    cout << "ж) неверно, что x > 0 и x < 5 при x=" << x << ": " << !(x > 0 && x < 5) << endl;
+
+    // Пример для з)
+    x = 15;
+    cout << "з) 10 < x < 20 при x=" << x << ": " << (x > 10 && x < 20) << endl;
+
+    // Пример для и)
+    x = 3; y = 2;
+    cout << "и) 0 < y < 4 и x < 5 при x=" << x << ", y=" << y << ": " << (y > 0 && y < 4 && x < 5) << endl;
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int A, B, C;
+
+    cout << "Примеры условий:" << endl;
+
+    // a)
+    A = 120; B = 150;
+    cout << "a) Каждое из чисел A и B больше 100: " << (A > 100 && B > 100)
+        << " (A=" << A << ", B=" << B << ")" << endl;
+
+    // б)
+    A = 4; B = 7;
+    bool только_одно_четное = (A % 2 == 0 && B % 2 != 0) || (A % 2 != 0 && B % 2 == 0);
+    cout << "б) Только одно из чисел A и B четное: " << только_одно_четное
+        << " (A=" << A << ", B=" << B << ")" << endl;
+
+    // в)
+    A = -5; B = 10;
+    cout << "в) Хотя бы одно из чисел A и B положительно: " << (A > 0 || B > 0)
+        << " (A=" << A << ", B=" << B << ")" << endl;
+
+    // г)
+    A = 9; B = 12; C = 15;
+    cout << "г) Каждое из чисел A, B, C кратно трем: " << (A % 3 == 0 && B % 3 == 0 && C % 3 == 0)
+        << " (A=" << A << ", B=" << B << ", C=" << C << ")" << endl;
+
+    // д)
+    A = 40; B = 60; C = 70;
+    bool только_одно_меньше_50 = (A < 50 && B >= 50 && C >= 50) ||
+        (A >= 50 && B < 50 && C >= 50) ||
+        (A >= 50 && B >= 50 && C < 50);
+    cout << "д) Только одно из чисел A, B, C меньше 50: " << только_одно_меньше_50
+        << " (A=" << A << ", B=" << B << ", C=" << C << ")" << endl;
+
+    // е)
+    A = 5; B = -3; C = 10;
+    cout << "е) Хотя бы одно из чисел A, B, C отрицательно: " << (A < 0 || B < 0 || C < 0)
+        << " (A=" << A << ", B=" << B << ", C=" << C << ")" << endl;
+
+    return 0;
+}
+Задание № 29
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int X, Y, Z;
+
+    cout << "Примеры условий:" << endl;
+
+    // a)
+    X = 3; Y = 7;
+    cout << "a) Каждое из чисел X и Y нечетное: " << (X % 2 != 0 && Y % 2 != 0)
+        << " (X=" << X << ", Y=" << Y << ")" << endl;
+
+    // б)
+    X = 15; Y = 25;
+    bool только_одно_меньше_20 = (X < 20 && Y >= 20) || (X >= 20 && Y < 20);
+    cout << "б) Только одно из чисел X и Y меньше 20: " << только_одно_меньше_20
+        << " (X=" << X << ", Y=" << Y << ")" << endl;
+
+    // в)
+    X = 0; Y = 5;
+    cout << "в) Хотя бы одно из чисел X и Y равно нулю: " << (X == 0 || Y == 0)
+        << " (X=" << X << ", Y=" << Y << ")" << endl;
+
+    // г)
+    X = -2; Y = -5; Z = -8;
+    cout << "г) Каждое из чисел X, Y, Z отрицательное: " << (X < 0 && Y < 0 && Z < 0)
+        << " (X=" << X << ", Y=" << Y << ", Z=" << Z << ")" << endl;
+
+    // д)
+    X = 10; Y = 15; Z = 21;
+    bool только_одно_кратно_5 = (X % 5 == 0 && Y % 5 != 0 && Z % 5 != 0) ||
+        (X % 5 != 0 && Y % 5 == 0 && Z % 5 != 0) ||
+        (X % 5 != 0 && Y % 5 != 0 && Z % 5 == 0);
+    cout << "д) Только одно из чисел X, Y, Z кратно пяти: " << только_одно_кратно_5
+        << " (X=" << X << ", Y=" << Y << ", Z=" << Z << ")" << endl;
+
+    // е)
+    X = 50; Y = 120; Z = 80;
+    cout << "е) Хотя бы одно из чисел X, Y, Z больше 100: " << (X > 100 || Y > 100 || Z > 100)
+        << " (X=" << X << ", Y=" << Y << ", Z=" << Z << ")" << endl;
+
+    return 0;
+}
+Задание № 30
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int A;
+
+    cout << "Примеры условий:" << endl;
+
+    // a)
+    A = 6;
+    cout << "a) Целое A кратно двум или трем: " << (A % 2 == 0 || A % 3 == 0)
+        << " (A=" << A << ")" << endl;
+
+    // б)
+    A = 30;
+    cout << "б) Целое A не кратно трем и оканчивается нулем: " << (A % 3 != 0 && A % 10 == 0)
+        << " (A=" << A << ")" << endl;
+
+    // Дополнительные примеры
+    cout << "\nДополнительные примеры:" << endl;
+
+    A = 4;
+    cout << "A=" << A << ": кратно 2 или 3? " << (A % 2 == 0 || A % 3 == 0) << endl;
+
+    A = 9;
+    cout << "A=" << A << ": кратно 2 или 3? " << (A % 2 == 0 || A % 3 == 0) << endl;
+
+    A = 20;
+    cout << "A=" << A << ": не кратно 3 и оканчивается 0? " << (A % 3 != 0 && A % 10 == 0) << endl;
+
+    A = 15;
+    cout << "A=" << A << ": не кратно 3 и оканчивается 0? " << (A % 3 != 0 && A % 10 == 0) << endl;
+
+    return 0;
+}
+Задание № 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int N;
+
+    cout << "Задание П3.31: Проверка условий для целого N" << endl;
+    cout << "=============================================" << endl;
+
+    // a) Проверка: целое N кратно пяти или семи
+    cout << "\na) N кратно пяти или семи:" << endl;
+
+    N = 10;
+    cout << "N = " << N << ": " << (N % 5 == 0 || N % 7 == 0)
+        << " (10 кратно 5, но не 7)" << endl;
+
+    N = 14;
+    cout << "N = " << N << ": " << (N % 5 == 0 || N % 7 == 0)
+        << " (14 кратно 7, но не 5)" << endl;
+
+    N = 35;
+    cout << "N = " << N << ": " << (N % 5 == 0 || N % 7 == 0)
+        << " (35 кратно и 5, и 7)" << endl;
+
+    N = 11;
+    cout << "N = " << N << ": " << (N % 5 == 0 || N % 7 == 0)
+        << " (11 не кратно ни 5, ни 7)" << endl;
+
+    // б) Проверка: целое N кратно четырем и не оканчивается нулем
+    cout << "\nб) N кратно четырем и не оканчивается нулем:" << endl;
+
+    N = 12;
+    cout << "N = " << N << ": " << (N % 4 == 0 && N % 10 != 0)
+        << " (12 кратно 4, оканчивается на 2)" << endl;
+
+    N = 20;
+    cout << "N = " << N << ": " << (N % 4 == 0 && N % 10 != 0)
+        << " (20 кратно 4, но оканчивается на 0)" << endl;
+
+    N = 8;
+    cout << "N = " << N << ": " << (N % 4 == 0 && N % 10 != 0)
+        << " (8 кратно 4, оканчивается на 8)" << endl;
+
+    N = 40;
+    cout << "N = " << N << ": " << (N % 4 == 0 && N % 10 != 0)
+        << " (40 кратно 4, но оканчивается на 0)" << endl;
+
+    N = 9;
+    cout << "N = " << N << ": " << (N % 4 == 0 && N % 10 != 0)
+        << " (9 не кратно 4, оканчивается на 9)" << endl;
+
+    // Демонстрация логического выражения
+    cout << "\nЛогические выражения:" << endl;
+    cout << "а) (N % 5 == 0) || (N % 7 == 0)" << endl;
+    cout << "б) (N % 4 == 0) && (N % 10 != 0)" << endl;
+
+    // Интерактивная проверка
+    cout << "\nВведите число N для проверки: ";
+    cin >> N;
+
+    cout << "\nРезультаты для N = " << N << ":" << endl;
+    cout << "а) Кратно 5 или 7: " << (N % 5 == 0 || N % 7 == 0) << endl;
+    cout << "б) Кратно 4 и не оканчивается 0: " << (N % 4 == 0 && N % 10 != 0) << endl;
+
+    return 0;
+}
