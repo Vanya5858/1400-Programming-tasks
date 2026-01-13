@@ -1,0 +1,2667 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int a, b;
+    cout << "Введите a и b (a > b): ";
+    cin >> a >> b;
+
+    // а) Целочисленное деление
+    int quotient = 0;
+    int temp = a;
+    while (temp >= b) {
+        temp -= b;
+        quotient++;
+    }
+    cout << "Целочисленное деление: " << quotient << endl;
+
+    // б) Остаток от деления
+    int remainder = a;
+    while (remainder >= b) {
+        remainder -= b;
+    }
+    cout << "Остаток от деления: " << remainder << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    int i = 1;
+    while (i <= n) {
+        cout << i << " ";
+        i++;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 10;
+    while (i <= 100) {
+        if (i % 2 != 0) {
+            cout << i << " ";
+        }
+        i++;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int num = 191;
+    while (num % 17 != 0) {
+        num++;
+    }
+    cout << "Минимальное число больше 190, делящееся на 17: " << num << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int num = 5000;
+    while (num % 139 != 0) {
+        num--;
+    }
+    cout << "Максимальное число не превышающее 5000, делящееся на 139: " << num << endl;
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    long long factorial;
+    cout << "Введите факториал: ";
+    cin >> factorial;
+
+    int n = 1;
+    long long product = 1;
+
+    while (product < factorial) {
+        n++;
+        product *= n;
+    }
+
+    if (product == factorial) {
+        cout << "Число: " << n << endl;
+    }
+    else {
+        cout << "Такого факториала не существует\n";
+    }
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    int i = 1;
+    while (i * i <= n) {
+        cout << i << " ";
+        i++;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int n;
+    cout << "Введите n: ";
+    cin >> n;
+
+    int i = 1;
+    while (i * i <= n) {
+        i++;
+    }
+    cout << "Первое число, квадрат которого больше " << n << ": " << i << endl;
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    do {
+        cout << "Введите четное число: ";
+        cin >> number;
+
+        if (number % 2 != 0) {
+            cout << "Ошибка! Число нечетное. Попробуйте снова.\n";
+        }
+    } while (number % 2 != 0);
+
+    cout << "Спасибо! Вы ввели четное число: " << number << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    const int CORRECT_PASSWORD = 12345; // Пример правильного пароля
+    int enteredPassword;
+
+    do {
+        cout << "Введите пароль: ";
+        cin >> enteredPassword;
+
+        if (enteredPassword != CORRECT_PASSWORD) {
+            cout << "Неверный пароль! Попробуйте снова.\n";
+        }
+    } while (enteredPassword != CORRECT_PASSWORD);
+
+    cout << "Добро пожаловать! Пароль верный.\n";
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+    int count = 0;
+
+    cout << "Введите 10 чисел (0 для досрочного завершения):\n";
+
+    while (count < 10) {
+        cin >> number;
+        if (number == 0) {
+            break;
+        }
+        count++;
+    }
+
+    cout << "Ввод завершен. Введено чисел: " << count << endl;
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int number;
+
+    cout << "Введите последовательность чисел (0 - конец):\n";
+
+    do {
+        cin >> number;
+        if (number != 0) {
+            cout << "Вы ввели число: " << number << endl;
+        }
+    } while (number != 0);
+
+    cout << "Конец последовательности\n";
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int choice;
+
+    switch (choice) {
+    case 1: {
+        // а) Цикл с предусловием
+        int i = 10;
+        while (i <= 30) {
+            cout << i << " ";
+            i++;
+        }
+        cout << endl;
+        cout << "Выполнено с предусловием (while)\n";
+        break;
+    }
+
+    case 2: {
+        // б) Цикл с постусловием
+        int i = 10;
+        do {
+            cout << i << " ";
+            i++;
+        } while (i <= 30);
+        cout << endl;
+        cout << "Выполнено с постусловием (do-while)\n";
+        break;
+    }
+
+    case 3: {
+        // в) Цикл с параметром
+        for (int i = 10; i <= 30; i++) {
+            cout << i << " ";
+        }
+        cout << endl;
+        cout << "Выполнено с параметром (for)\n";
+        break;
+    }
+
+    default:
+        cout << "Неверный выбор!\n";
+        return 1;
+    }
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    int i = 100;
+
+    cout << "Числа от 100 до 80:\n";
+    while (i >= 80) {
+        cout << i << " ";
+        i--;
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << "2n для n от 21 до 151 с шагом 10:\n";
+
+    for (int n = 21; n <= 151; n += 10) {
+        cout << 2 * n << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    for (double n = 2.0; n <= 12.0; n += 0.5) {
+        cout << n << endl;
+    }
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double num = 1.0;
+    while (num <= 13.5) {
+        cout << num << endl;
+        num += 0.5;
+    }
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a = 10, b = 5;
+    if (a < b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+    int i = a;
+    do {
+        cout << sqrt(i) << endl;
+        i--;
+    } while (i >= b);
+    
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    cin >> number;
+    
+    while (number > 0) {
+        cout << number % 10 << endl;
+        number /= 10;
+    }
+    
+    return 0;
+}
+Задание № 20
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+    cin >> number;
+    
+    int sum = 0, count = 0, product = 1;
+    int sumSquares = 0, sumCubes = 0;
+    int firstDigit = 0, lastDigit = number % 10;
+    int temp = number;
+    
+    while (temp > 0) {
+        firstDigit = temp % 10;
+        temp /= 10;
+    }
+    
+    temp = number;
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += digit;
+        count++;
+        product *= digit;
+        sumSquares += digit * digit;
+        sumCubes += digit * digit * digit;
+        temp /= 10;
+    }
+    
+    double average = static_cast<double>(sum) / count;
+    
+    cout << sum << endl;
+    cout << count << endl;
+    cout << product << endl;
+    cout << average << endl;
+    cout << sumSquares << endl;
+    cout << sumCubes << endl;
+    cout << firstDigit << endl;
+    cout << firstDigit + lastDigit << endl;
+    
+    return 0;
+}
+Задание № 21
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    while (n >= 100) {
+        n /= 10;
+    }
+    
+    cout << n % 10 << endl;
+    return 0;
+}
+Задание № 22
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    while (n >= 1000) {
+        n /= 10;
+    }
+    
+    cout << n % 10 << endl;
+    return 0;
+}
+Задание № 23
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    
+    int sum = 0;
+    for (int i = 0; i < m && n > 0; i++) {
+        sum += n % 10;
+        n /= 10;
+    }
+    
+    cout << sum << endl;
+    return 0;
+}
+Задание № 24
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int sum1 = 0, sum2 = 0;
+    int sign = 1;
+    int position = 0;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        
+        if (position % 2 == 0) {
+            sum1 += digit;
+            sum2 += digit * sign;
+        } else {
+            sum1 -= digit;
+            sum2 -= digit * sign;
+        }
+        
+        sign = -sign;
+        position++;
+        n /= 10;
+    }
+    
+    cout << sum1 << endl;
+    cout << sum2 << endl;
+    return 0;
+}
+Задание № 25
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int divisor = 2;
+    while (n % divisor != 0) {
+        divisor++;
+    }
+    
+    cout << divisor << endl;
+    return 0;
+}
+Задание № 26
+#include <iostream>
+using namespace std;
+
+int main() {
+    // а) без условия
+    for (int i = 13; i < 100; i += 13) {
+        cout << i << endl;
+    }
+    
+    // б) с условием
+    int i = 13;
+    while (i < 100) {
+        cout << i << endl;
+        i += 13;
+    }
+    
+    return 0;
+}
+Задание № 27
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+    int num = 100;
+    
+    while (count < 15) {
+        if (num % 19 == 0) {
+            cout << num << endl;
+            count++;
+        }
+        num++;
+    }
+    
+    return 0;
+}
+Задание № 28
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+    int num = 500;
+    
+    while (count < 20) {
+        if (num % 13 == 0 || num % 17 == 0) {
+            cout << num << endl;
+            count++;
+        }
+        num++;
+    }
+    
+    return 0;
+}
+Задание № 29
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+    int num = 100;
+    
+    while (count < 10) {
+        if (num % 10 == 7 && num % 9 == 0) {
+            cout << num << endl;
+            count++;
+        }
+        num++;
+    }
+    
+    return 0;
+}
+Задание № 30
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    
+    // а) целочисленное деление
+    int quotient = 0;
+    int temp = b;
+    while (temp >= a) {
+        temp -= a;
+        quotient++;
+    }
+    cout << quotient << endl;
+    
+    // б) остаток
+    cout << temp << endl;
+    
+    return 0;
+}
+Задание № 31
+#include <iostream>
+using namespace std;
+
+int main() {
+    double deposit = 1000;
+    int month = 0;
+    bool found1 = false, found2 = false;
+    
+    while (!found1 || !found2) {
+        month++;
+        double increase = deposit * 0.02;
+        deposit += increase;
+        
+        if (!found1 && increase > 30) {
+            cout << "a) Месяц: " << month << endl;
+            found1 = true;
+        }
+        
+        if (!found2 && deposit > 1200) {
+            cout << "б) Месяцев: " << month << endl;
+            found2 = true;
+        }
+    }
+    
+    return 0;
+}
+Задание № 32
+#include <iostream>
+using namespace std;
+
+int main() {
+    double distance = 10;
+    double total = 10;
+    int day = 1;
+    bool found1 = false, found2 = false;
+    
+    while (!found1 || !found2) {
+        day++;
+        distance *= 1.1;
+        total += distance;
+        
+        if (!found1 && distance > 20) {
+            cout << "a) День: " << day << endl;
+            found1 = true;
+        }
+        
+        if (!found2 && total > 100) {
+            cout << "б) День: " << day << endl;
+            found2 = true;
+        }
+    }
+    
+    return 0;
+}
+Задание № 33
+#include <iostream>
+using namespace std;
+
+int main() {
+    double area = 100;
+    double yield = 20;
+    double total = area * yield;
+    int year = 1;
+    bool found1 = false, found2 = false, found3 = false;
+    
+    while (!found1 || !found2 || !found3) {
+        year++;
+        area *= 1.05;
+        yield *= 1.02;
+        total += area * yield;
+        
+        if (!found1 && yield > 22) {
+            cout << "a) Год: " << year << endl;
+            found1 = true;
+        }
+        
+        if (!found2 && area > 120) {
+            cout << "б) Год: " << year << endl;
+            found2 = true;
+        }
+        
+        if (!found3 && total > 800) {
+            cout << "в) Год: " << year << endl;
+            found3 = true;
+        }
+    }
+    
+    return 0;
+}
+Задание № 34
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m, n;
+    cin >> m >> n;
+    
+    int limit = m * n;
+    
+    for (int i = 1; i <= limit; i++) {
+        if (i % m == 0 && i % n == 0) {
+            cout << i << endl;
+        }
+    }
+    
+    return 0;
+}
+Задание № 35
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int count3 = 0;
+    int lastDigit = n % 10;
+    int countLast = 0;
+    int countEven = 0;
+    int sumGreater5 = 0;
+    int productGreater7 = 1;
+    int count05 = 0;
+    
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        
+        if (digit == 3) count3++;
+        if (digit == lastDigit) countLast++;
+        if (digit % 2 == 0) countEven++;
+        if (digit > 5) sumGreater5 += digit;
+        if (digit > 7) productGreater7 *= digit;
+        if (digit == 0 || digit == 5) count05++;
+        
+        temp /= 10;
+    }
+    
+    cout << "a) " << count3 << endl;
+    cout << "б) " << countLast << endl;
+    cout << "в) " << countEven << endl;
+    cout << "г) " << sumGreater5 << endl;
+    cout << "д) " << productGreater7 << endl;
+    cout << "е) " << count05 << endl;
+    
+    return 0;
+}
+Задание № 36
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, x, y;
+    cin >> n >> a >> x >> y;
+    
+    int countA = 0;
+    int sumGreaterA = 0;
+    int sumEven = 0;
+    int countXY = 0;
+    
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        
+        if (digit == a) countA++;
+        if (digit > a) sumGreaterA += digit;
+        if (digit % 2 == 0) sumEven += digit;
+        if (digit == x || digit == y) countXY++;
+        
+        temp /= 10;
+    }
+    
+    cout << "a) " << countA << endl;
+    cout << "б) " << sumGreaterA << endl;
+    cout << "в) " << sumEven << endl;
+    cout << "г) " << countXY << endl;
+    
+    return 0;
+}
+Задание № 37
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int position = 1;
+    int result = 0;
+    
+    while (n > 0) {
+        if (n % 10 == 8) {
+            result = position;
+        }
+        position++;
+        n /= 10;
+    }
+    
+    cout << result << endl;
+    return 0;
+}
+Задание № 38
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int position = 1;
+    int result = 0;
+    
+    while (n > 0) {
+        if (n % 10 == 3) {
+            result = position;
+            break;
+        }
+        position++;
+        n /= 10;
+    }
+    
+    cout << result << endl;
+    return 0;
+}
+Задание № 39
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int digits = 0;
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+    
+    for (int i = digits - 1; i >= 0; i--) {
+        int divisor = pow(10, i);
+        cout << (n / divisor) % 10 << endl;
+    }
+    
+    return 0;
+}
+Задание № 40
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int firstDigit;
+    int temp = n;
+    while (temp >= 10) {
+        temp /= 10;
+    }
+    firstDigit = temp;
+    
+    int count = 0;
+    temp = n;
+    while (temp > 0) {
+        if (temp % 10 == firstDigit) {
+            count++;
+        }
+        temp /= 10;
+    }
+    
+    cout << count << endl;
+    return 0;
+}
+Задание № 41
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0;
+    int minDigit = 9;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        if (digit < minDigit) minDigit = digit;
+        n /= 10;
+    }
+    
+    cout << "а) " << maxDigit << endl;
+    cout << "б) " << minDigit << endl;
+    
+    return 0;
+}
+Задание № 42
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0;
+    int minDigit = 9;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        if (digit < minDigit) minDigit = digit;
+        n /= 10;
+    }
+    
+    cout << "а) " << maxDigit << " " << minDigit << endl;
+    cout << "б) " << maxDigit - minDigit << endl;
+    cout << "в) " << maxDigit + minDigit << endl;
+    
+    return 0;
+}
+Задание № 43
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a;
+    cin >> n >> a;
+    
+    int maxDigit = 0;
+    int minDigit = 9;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        if (digit < minDigit) minDigit = digit;
+        n /= 10;
+    }
+    
+    int sum = maxDigit + minDigit;
+    if (sum % a == 0) {
+        cout << "Да" << endl;
+    } else {
+        cout << "Нет" << endl;
+    }
+    
+    return 0;
+}
+Задание № 44
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0;
+    int minDigit = 9;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        if (digit < minDigit) minDigit = digit;
+        n /= 10;
+    }
+    
+    int diff = maxDigit - minDigit;
+    if (diff % 2 == 0) {
+        cout << "Да" << endl;
+    } else {
+        cout << "Нет" << endl;
+    }
+    
+    return 0;
+}
+Задание № 45
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0, minDigit = 9;
+    int maxPosFromEnd = 0, maxPosFromStart = 0;
+    int minPosFromEnd = 0, minPosFromStart = 0;
+    int position = 1;
+    int temp = n;
+    
+    // Находим максимальную и минимальную цифры
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        if (digit < minDigit) minDigit = digit;
+        temp /= 10;
+    }
+    
+    // Находим позиции
+    temp = n;
+    position = 1;
+    int totalDigits = 0;
+    
+    // Сначала считаем общее количество цифр
+    int temp2 = n;
+    while (temp2 > 0) {
+        totalDigits++;
+        temp2 /= 10;
+    }
+    
+    // Теперь находим позиции
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == maxDigit && maxPosFromEnd == 0) {
+            maxPosFromEnd = position;
+            maxPosFromStart = totalDigits - position + 1;
+        }
+        if (digit == minDigit && minPosFromEnd == 0) {
+            minPosFromEnd = position;
+            minPosFromStart = totalDigits - position + 1;
+        }
+        position++;
+        temp /= 10;
+    }
+    
+    cout << "а) " << maxPosFromEnd << " " << maxPosFromStart << endl;
+    cout << "б) " << minPosFromEnd << " " << minPosFromStart << endl;
+    
+    return 0;
+}
+Задание № 46
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0, minDigit = 9;
+    int maxPosFromEnd = 0, maxPosFromStart = 0;
+    int minPosFromEnd = 0, minPosFromStart = 0;
+    int position = 1;
+    
+    int temp = n;
+    int totalDigits = 0;
+    
+    // Считаем общее количество цифр
+    while (temp > 0) {
+        totalDigits++;
+        temp /= 10;
+    }
+    
+    // Находим позиции
+    temp = n;
+    position = 1;
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit > maxDigit) {
+            maxDigit = digit;
+            maxPosFromEnd = position;
+            maxPosFromStart = totalDigits - position + 1;
+        }
+        if (digit < minDigit) {
+            minDigit = digit;
+            minPosFromEnd = position;
+            minPosFromStart = totalDigits - position + 1;
+        }
+        position++;
+        temp /= 10;
+    }
+    
+    cout << "а) " << maxPosFromEnd << " " << minPosFromEnd << endl;
+    cout << "б) " << maxPosFromStart << " " << minPosFromStart << endl;
+    
+    return 0;
+}
+Задание № 47
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxDigit = 0, minDigit = 9;
+    int maxPosFromStart = 0, minPosFromStart = 0;
+    int position = 1;
+    
+    int temp = n;
+    int totalDigits = 0;
+    
+    // Считаем общее количество цифр
+    while (temp > 0) {
+        totalDigits++;
+        temp /= 10;
+    }
+    
+    // Находим позиции
+    temp = n;
+    position = 1;
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit > maxDigit) {
+            maxDigit = digit;
+            maxPosFromStart = totalDigits - position + 1;
+        }
+        if (digit < minDigit) {
+            minDigit = digit;
+            minPosFromStart = totalDigits - position + 1;
+        }
+        position++;
+        temp /= 10;
+    }
+    
+    if (maxPosFromStart < minPosFromStart) {
+        cout << "Максимальная" << endl;
+    } else {
+        cout << "Минимальная" << endl;
+    }
+    
+    return 0;
+}
+Задание № 48
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int maxOdd = -1;
+    int minDigit = 10;
+    int minPos = 0;
+    int position = 1;
+    
+    while (n > 0) {
+        int digit = n % 10;
+        
+        if (digit % 2 == 1 && digit > maxOdd) {
+            maxOdd = digit;
+        }
+        
+        if (digit < minDigit) {
+            minDigit = digit;
+            minPos = position;
+        }
+        
+        position++;
+        n /= 10;
+    }
+    
+    if (maxOdd == -1) {
+        cout << "а) Нет нечетных цифр" << endl;
+    } else {
+        cout << "а) " << maxOdd << endl;
+    }
+    
+    cout << "б) " << minPos << endl;
+    
+    return 0;
+}
+Задание № 49
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    int sum = 0, product = 1, count = 0;
+    int firstDigit = 0, lastDigit = n % 10;
+    bool allSame = true;
+    int prevDigit = -1;
+    
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        
+        sum += digit;
+        product *= digit;
+        count++;
+        
+        if (temp < 10) {
+            firstDigit = digit;
+        }
+        
+        if (prevDigit != -1 && digit != prevDigit) {
+            allSame = false;
+        }
+        prevDigit = digit;
+        
+        temp /= 10;
+    }
+    
+    // а) сумма цифр больше 10
+    if (sum > 10) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // б) произведение цифр меньше 50
+    if (product < 50) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // в) количество цифр четное
+    if (count % 2 == 0) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // г) число четырехзначное
+    if (n >= 1000 && n <= 9999) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // д) первая цифра не превышает 6
+    if (firstDigit <= 6) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // е) начинается и заканчивается одной цифрой
+    if (firstDigit == lastDigit) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // ж) какая цифра больше: первая или последняя
+    if (firstDigit > lastDigit) cout << "Первая" << endl;
+    else if (firstDigit < lastDigit) cout << "Последняя" << endl;
+    else cout << "Равны" << endl;
+    
+    return 0;
+}
+Задание № 50
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, b, k, m;
+    cin >> n >> a >> b >> k >> m;
+    
+    int sum = 0, product = 1, count = 0;
+    int firstDigit = 0;
+    
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += digit;
+        product *= digit;
+        count++;
+        
+        if (temp < 10) {
+            firstDigit = digit;
+        }
+        
+        temp /= 10;
+    }
+    
+    // а) сумма цифр меньше a
+    if (sum < a) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // б) произведение цифр больше b
+    if (product > b) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // в) число k-значное
+    int lower = 1;
+    for (int i = 1; i < k; i++) {
+        lower *= 10;
+    }
+    int upper = lower * 10 - 1;
+    
+    if (n >= lower && n <= upper) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    // г) первая цифра превышает m
+    if (firstDigit > m) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    return 0;
+}
+Задание № 51
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, k, b, x, y, a, m, n2;
+    
+    cout << "Введите число n: ";
+    cin >> n;
+    cout << "Введите k, b, x, y, a, m, n2: ";
+    cin >> k >> b >> x >> y >> a >> m >> n2;
+    
+    int sum = 0, product = 1, count = 0;
+    int firstDigit = 0, lastDigit = n % 10;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        sum += digit;
+        product *= digit;
+        count++;
+        
+        if (temp < 10) {
+            firstDigit = digit;
+        }
+        
+        temp /= 10;
+    }
+    
+    cout << "a) Сумма цифр > " << k << " и число четное: ";
+    if (sum > k && n % 2 == 0) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    cout << "б) Количество цифр четное и число <= " << b << ": ";
+    if (count % 2 == 0 && n <= b) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    cout << "г) Начинается цифрой " << x << " и заканчивается цифрой " << y << ": ";
+    if (firstDigit == x && lastDigit == y) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    cout << "д) Произведение цифр < " << a << " и число делится на " << b << ": ";
+    if (product < a && n % b == 0) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    cout << "е) Сумма цифр > " << m << " и число делится на " << n2 << ": ";
+    if (sum > m && n % n2 == 0) cout << "Да" << endl;
+    else cout << "Нет" << endl;
+    
+    return 0;
+}
+Задание № 52
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    bool has3 = false, has2 = false, has5 = false;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == 3) has3 = true;
+        if (digit == 2) has2 = true;
+        if (digit == 5) has5 = true;
+        temp /= 10;
+    }
+    
+    cout << "а) Есть ли цифра 3: " << (has3 ? "Да" : "Нет") << endl;
+    cout << "б) Есть ли цифры 2 и 5: " << (has2 && has5 ? "Да" : "Нет") << endl;
+    
+    return 0;
+}
+Задание № 53
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, b, k;
+    
+    cout << "Введите число n: ";
+    cin >> n;
+    cout << "Введите цифры a, b и число k: ";
+    cin >> a >> b >> k;
+    
+    bool hasA = false, hasB = false;
+    int countA = 0;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == a) {
+            hasA = true;
+            countA++;
+        }
+        if (digit == b) hasB = true;
+        temp /= 10;
+    }
+    
+    cout << "а) Есть ли цифра " << a << ": " << (hasA ? "Да" : "Нет") << endl;
+    cout << "б) Нет ли цифры " << b << ": " << (!hasB ? "Да" : "Нет") << endl;
+    cout << "в) Цифра " << a << " встречается более " << k << " раз: " 
+         << (countA > k ? "Да" : "Нет") << endl;
+    cout << "г) Есть ли цифры " << a << " и " << b << ": " 
+         << (hasA && hasB ? "Да" : "Нет") << endl;
+    
+    return 0;
+}
+Задание № 54
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    int count0 = 0, count9 = 0;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == 0) count0++;
+        if (digit == 9) count9++;
+        temp /= 10;
+    }
+    
+    cout << "Цифра 0 встречается " << count0 << " раз" << endl;
+    cout << "Цифра 9 встречается " << count9 << " раз" << endl;
+    
+    if (count0 > count9) {
+        cout << "Цифра 0 встречается чаще" << endl;
+    } else if (count9 > count0) {
+        cout << "Цифра 9 встречается чаще" << endl;
+    } else {
+        cout << "Цифры 0 и 9 встречаются одинаково часто" << endl;
+    }
+    
+    return 0;
+}
+Задание № 55
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, b;
+    
+    cout << "Введите число n: ";
+    cin >> n;
+    cout << "Введите цифры a и b для сравнения: ";
+    cin >> a >> b;
+    
+    int countA = 0, countB = 0;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == a) countA++;
+        if (digit == b) countB++;
+        temp /= 10;
+    }
+    
+    cout << "Цифра " << a << " встречается " << countA << " раз" << endl;
+    cout << "Цифра " << b << " встречается " << countB << " раз" << endl;
+    cout << "Цифра " << a << " встречается реже, чем " << b << ": ";
+    
+    if (countA < countB) {
+        cout << "Да" << endl;
+    } else {
+        cout << "Нет" << endl;
+    }
+    
+    return 0;
+}
+Задание № 56
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    int pos2 = -1, pos5 = -1;
+    int position = 1;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == 2 && pos2 == -1) {
+            pos2 = position;
+        }
+        if (digit == 5 && pos5 == -1) {
+            pos5 = position;
+        }
+        position++;
+        temp /= 10;
+    }
+    
+    if (pos2 == -1 && pos5 == -1) {
+        cout << "В числе нет цифр 2 и 5" << endl;
+    } else if (pos2 == -1) {
+        cout << "В числе нет цифры 2" << endl;
+    } else if (pos5 == -1) {
+        cout << "В числе нет цифры 5" << endl;
+    } else {
+        cout << "Позиция цифры 2 (справа): " << pos2 << endl;
+        cout << "Позиция цифры 5 (справа): " << pos5 << endl;
+        
+        if (pos2 < pos5) {
+            cout << "Цифра 2 расположена левее (ближе к началу числа)" << endl;
+        } else {
+            cout << "Цифра 5 расположена левее (ближе к началу числа)" << endl;
+        }
+    }
+    
+    return 0;
+}
+Задание № 57
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a, b;
+    
+    cout << "Введите число n: ";
+    cin >> n;
+    cout << "Введите цифры a и b: ";
+    cin >> a >> b;
+    
+    int posA = -1, posB = -1;
+    int position = 1;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit == a) {
+            posA = position;
+        }
+        if (digit == b) {
+            posB = position;
+        }
+        position++;
+        temp /= 10;
+    }
+    
+    if (posA == -1 && posB == -1) {
+        cout << "В числе нет цифр " << a << " и " << b << endl;
+    } else if (posA == -1) {
+        cout << "В числе нет цифры " << a << endl;
+    } else if (posB == -1) {
+        cout << "В числе нет цифры " << b << endl;
+    } else {
+        cout << "Позиция цифры " << a << " (справа): " << posA << endl;
+        cout << "Позиция цифры " << b << " (справа): " << posB << endl;
+        
+        if (posA < posB) {
+            cout << "Цифра " << a << " расположена правее (ближе к концу числа)" << endl;
+        } else {
+            cout << "Цифра " << b << " расположена правее (ближе к концу числа)" << endl;
+        }
+    }
+    
+    return 0;
+}
+Задание № 58
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    // Способ 1: с двумя циклами
+    cout << "Способ 1 (два цикла):" << endl;
+    
+    // Первый цикл: находим максимальную цифру
+    int maxDigit = 0;
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit > maxDigit) maxDigit = digit;
+        temp /= 10;
+    }
+    
+    // Второй цикл: считаем сколько раз встречается
+    int count = 0;
+    temp = n;
+    while (temp > 0) {
+        if (temp % 10 == maxDigit) count++;
+        temp /= 10;
+    }
+    
+    cout << "Максимальная цифра: " << maxDigit << endl;
+    cout << "Встречается " << count << " раз" << endl;
+    
+    // Способ 2: с одним циклом
+    cout << "\nСпособ 2 (один цикл):" << endl;
+    
+    maxDigit = 0;
+    count = 0;
+    temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit > maxDigit) {
+            maxDigit = digit;
+            count = 1;
+        } else if (digit == maxDigit) {
+            count++;
+        }
+        temp /= 10;
+    }
+    
+    cout << "Максимальная цифра: " << maxDigit << endl;
+    cout << "Встречается " << count << " раз" << endl;
+    
+    return 0;
+}
+Задание № 59
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    // Способ 1: с двумя циклами
+    cout << "Способ 1 (два цикла):" << endl;
+    
+    // Первый цикл: находим минимальную цифру
+    int minDigit = 9;
+    int temp = n;
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit < minDigit) minDigit = digit;
+        temp /= 10;
+    }
+    
+    // Второй цикл: считаем сколько раз встречается
+    int count = 0;
+    temp = n;
+    while (temp > 0) {
+        if (temp % 10 == minDigit) count++;
+        temp /= 10;
+    }
+    
+    cout << "Минимальная цифра: " << minDigit << endl;
+    cout << "Встречается " << count << " раз" << endl;
+    
+    // Способ 2: с одним циклом
+    cout << "\nСпособ 2 (один цикл):" << endl;
+    
+    minDigit = 9;
+    count = 0;
+    temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit < minDigit) {
+            minDigit = digit;
+            count = 1;
+        } else if (digit == minDigit) {
+            count++;
+        }
+        temp /= 10;
+    }
+    
+    cout << "Минимальная цифра: " << minDigit << endl;
+    cout << "Встречается " << count << " раз" << endl;
+    
+    return 0;
+}
+Задание № 60
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Введите натуральное число (все цифры различны): ";
+    cin >> n;
+    
+    int max1 = -1, max2 = -1;
+    int min1 = 10, min2 = 10;
+    int temp = n;
+    
+    while (temp > 0) {
+        int digit = temp % 10;
+        
+        // Находим две максимальные цифры
+        if (digit > max1) {
+            max2 = max1;
+            max1 = digit;
+        } else if (digit > max2 && digit < max1) {
+            max2 = digit;
+        }
+        
+        // Находим две минимальные цифры
+        if (digit < min1) {
+            min2 = min1;
+            min1 = digit;
+        } else if (digit < min2 && digit > min1) {
+            min2 = digit;
+        }
+        
+        temp /= 10;
+    }
+    
+    cout << "а) Две максимальные цифры: " << max1 << " и " << max2 << endl;
+    cout << "б) Две минимальные цифры: " << min1 << " и " << min2 << endl;
+    
+    return 0;
+}
+Задание № 61
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число (все цифры различны): ";
+    cin >> n;
+
+    int max1 = -1, max2 = -1;
+    int max1PosEnd = -1, max2PosEnd = -1;
+    int max1PosStart = -1, max2PosStart = -1;
+    int min1 = 10, min2 = 10;
+    int min1PosEnd = -1, min2PosEnd = -1;
+    int min1PosStart = -1, min2PosStart = -1;
+
+    int position = 1;
+    int temp = n;
+    int totalDigits = 0;
+
+    while (temp > 0) {
+        totalDigits++;
+        temp /= 10;
+    }
+
+    temp = n;
+    position = 1;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+        int posFromStart = totalDigits - position + 1;
+
+        if (digit > max1) {
+            max2 = max1;
+            max2PosEnd = max1PosEnd;
+            max2PosStart = max1PosStart;
+
+            max1 = digit;
+            max1PosEnd = position;
+            max1PosStart = posFromStart;
+        }
+        else if (digit > max2) {
+            max2 = digit;
+            max2PosEnd = position;
+            max2PosStart = posFromStart;
+        }
+
+        if (digit < min1) {
+            min2 = min1;
+            min2PosEnd = min1PosEnd;
+            min2PosStart = min1PosStart;
+
+            min1 = digit;
+            min1PosEnd = position;
+            min1PosStart = posFromStart;
+        }
+        else if (digit < min2) {
+            min2 = digit;
+            min2PosEnd = position;
+            min2PosStart = posFromStart;
+        }
+
+        position++;
+        temp /= 10;
+    }
+
+    cout << "а) Порядковые номера двух максимальных цифр:" << endl;
+    cout << "   - от конца: " << max1PosEnd << " и " << max2PosEnd << endl;
+    cout << "   - от начала: " << max1PosStart << " и " << max2PosStart << endl;
+
+    cout << "б) Порядковые номера двух минимальных цифр:" << endl;
+    cout << "   - от конца: " << min1PosEnd << " и " << min2PosEnd << endl;
+    cout << "   - от начала: " << min1PosStart << " и " << min2PosStart << endl;
+
+    return 0;
+}
+Задание № 62
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n, a;
+    cout << "Введите натуральное число n: ";
+    cin >> n;
+    cout << "Введите цифру a для удаления: ";
+    cin >> a;
+
+    int reversed = 0;
+    int temp = n;
+    while (temp > 0) {
+        reversed = reversed * 10 + (temp % 10);
+        temp /= 10;
+    }
+    cout << "а) Число наоборот: " << reversed << endl;
+
+    int withTwos = 2;
+    temp = n;
+    while (temp > 0) {
+        withTwos = withTwos * 10 + (temp % 10);
+        temp /= 10;
+    }
+    withTwos = withTwos * 10 + 2;
+
+    int result = 0;
+    temp = withTwos;
+    while (temp > 0) {
+        result = result * 10 + (temp % 10);
+        temp /= 10;
+    }
+    cout << "б) С двойками в начале и конце: " << result << endl;
+
+    int withoutA = 0;
+    int multiplier = 1;
+    temp = n;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (digit != a) {
+            withoutA = withoutA + digit * multiplier;
+            multiplier *= 10;
+        }
+        temp /= 10;
+    }
+    cout << "в) Без цифр " << a << ": " << withoutA << endl;
+
+    if (n < 10) {
+        cout << "г) Число осталось тем же: " << n << endl;
+    }
+    else {
+        int lastDigit = n % 10;
+        int firstDigit = n;
+        int digitsCount = 0;
+
+        while (firstDigit >= 10) {
+            firstDigit /= 10;
+            digitsCount++;
+        }
+
+        int middle = n % (int)pow(10, digitsCount);
+        middle /= 10;
+
+        int swapped = lastDigit * pow(10, digitsCount) + middle * 10 + firstDigit;
+        cout << "г) С переставленными первой и последней цифрами: " << swapped << endl;
+    }
+
+    int doubled = n;
+    temp = n;
+    int digits = 0;
+
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    doubled = n * pow(10, digits) + n;
+    cout << "д) Удвоенное число: " << doubled << endl;
+
+    return 0;
+}
+Задание № 63
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int original = n;
+    int reversed = 0;
+
+    while (n > 0) {
+        reversed = reversed * 10 + (n % 10);
+        n /= 10;
+    }
+
+    cout << "Оригинальное число: " << original << endl;
+    cout << "Перевернутое число: " << reversed << endl;
+
+    if (original == reversed) {
+        cout << "Число является палиндромом" << endl;
+    }
+    else {
+        cout << "Число не является палиндромом" << endl;
+    }
+
+    return 0;
+}
+Задание № 64
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите сумму для выплаты: ";
+    cin >> n;
+
+    int denominations[] = { 64, 32, 16, 8, 4, 2, 1 };
+    string names[] = { "64", "32", "16", "8", "4", "2", "1" };
+
+    cout << "Для выплаты суммы " << n << " руб. потребуется:" << endl;
+
+    int remaining = n;
+    int total = 0;
+
+    for (int i = 0; i < 7; i++) {
+        int count = remaining / denominations[i];
+        if (count > 0) {
+            cout << "Купюр достоинством " << names[i] << " руб.: " << count << endl;
+            remaining %= denominations[i];
+            total += count;
+        }
+    }
+
+    cout << "Всего купюр: " << total << endl;
+
+    return 0;
+}
+Задание № 65
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите два натуральных числа: ";
+    cin >> a >> b;
+
+    int x = a, y = b;
+
+    while (y != 0) {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    cout << "Наибольший общий делитель чисел " << a << " и " << b
+        << " равен: " << x << endl;
+
+    return 0;
+}
+Задание № 66
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b, c;
+    cout << "Введите три натуральных числа: ";
+    cin >> a >> b >> c;
+
+    int result = gcd(gcd(a, b), c);
+
+    cout << "НОД(" << a << ", " << b << ", " << c << ") = " << result << endl;
+
+    return 0;
+}
+Задание № 67
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int lcm(int a, int b) {
+    return a / gcd(a, b) * b;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите два натуральных числа: ";
+    cin >> a >> b;
+
+    int result = lcm(a, b);
+
+    cout << "НОК(" << a << ", " << b << ") = " << result << endl;
+
+    return 0;
+}
+Задание № 68
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите числитель и знаменатель дроби: ";
+    cin >> a >> b;
+
+    int divisor = gcd(a, b);
+    int p = a / divisor;
+    int q = b / divisor;
+
+    cout << "Исходная дробь: " << a << "/" << b << endl;
+    cout << "Сокращенная дробь: " << p << "/" << q << endl;
+
+    return 0;
+}
+Задание № 69
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int length = 425, width = 131;
+    cout << "Размеры прямоугольника: " << length << "×" << width << endl;
+
+    int squareCount = 0;
+
+    cout << "Разрезание на квадраты:" << endl;
+    while (length > 0 && width > 0) {
+        if (length >= width) {
+            int count = length / width;
+            cout << "Квадратов со стороной " << width << ": " << count << endl;
+            length %= width;
+            squareCount += count;
+        }
+        else {
+            int count = width / length;
+            cout << "Квадратов со стороной " << length << ": " << count << endl;
+            width %= length;
+            squareCount += count;
+        }
+    }
+
+    cout << "Всего квадратов: " << squareCount << endl;
+
+    return 0;
+}
+Задание № 70
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите размеры прямоугольника (a b): ";
+    cin >> a >> b;
+
+    cout << "Размеры прямоугольника: " << a << "×" << b << endl;
+    int totalSquares = 0;
+
+    cout << "Разрезание на максимальные квадраты:" << endl;
+    while (a > 0 && b > 0) {
+        if (a >= b) {
+            int count = a / b;
+            cout << "Квадратов со стороной " << b << ": " << count << endl;
+            a %= b;
+            totalSquares += count;
+        }
+        else {
+            int count = b / a;
+            cout << "Квадратов со стороной " << a << ": " << count << endl;
+            b %= a;
+            totalSquares += count;
+        }
+    }
+
+    cout << "Всего квадратов: " << totalSquares << endl;
+
+    return 0;
+}
+Задание № 71
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    if (n == 0 || n == 1) {
+        cout << "Число " << n << " является членом последовательности Фибоначчи" << endl;
+        return 0;
+    }
+
+    int a = 0, b = 1, c = 1;
+    bool isFibonacci = false;
+
+    while (c <= n) {
+        if (c == n) {
+            isFibonacci = true;
+            break;
+        }
+        a = b;
+        b = c;
+        c = a + b;
+    }
+
+    if (isFibonacci) {
+        cout << "Число " << n << " является членом последовательности Фибоначчи" << endl;
+    }
+    else {
+        cout << "Число " << n << " не является членом последовательности Фибоначчи" << endl;
+    }
+
+    return 0;
+}
+Задание № 72
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n, f, s;
+
+    cout << "Введите число n: ";
+    cin >> n;
+    cout << "Введите первый член прогрессии f и шаг s: ";
+    cin >> f >> s;
+
+    if (s == 0) {
+        if (n == f) {
+            cout << "Число " << n << " является членом прогрессии" << endl;
+        }
+        else {
+            cout << "Число " << n << " не является членом прогрессии" << endl;
+        }
+        return 0;
+    }
+
+    if ((n - f) % s == 0 && (n - f) / s >= 0) {
+        cout << "Число " << n << " является членом арифметической прогрессии" << endl;
+    }
+    else {
+        cout << "Число " << n << " не является членом арифметической прогрессии" << endl;
+    }
+
+    return 0;
+}
+Задание № 73
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int m, g, z;
+
+    cout << "Введите число m: ";
+    cin >> m;
+    cout << "Введите первый член прогрессии g и знаменатель z: ";
+    cin >> g >> z;
+
+    if (z == 0 || g == 0) {
+        cout << "Некорректные параметры прогрессии" << endl;
+        return 0;
+    }
+
+    if (m == 0) {
+        cout << "Число 0 не может быть членом геометрической прогрессии" << endl;
+        return 0;
+    }
+
+    if (m % g != 0) {
+        cout << "Число " << m << " не является членом геометрической прогрессии" << endl;
+        return 0;
+    }
+
+    int quotient = m / g;
+    bool isMember = false;
+
+    if (z == 1) {
+        if (m == g) {
+            isMember = true;
+        }
+    }
+    else {
+        int temp = quotient;
+        while (temp % z == 0) {
+            temp /= z;
+        }
+        if (temp == 1) {
+            isMember = true;
+        }
+    }
+
+    if (isMember) {
+        cout << "Число " << m << " является членом геометрической прогрессии" << endl;
+    }
+    else {
+        cout << "Число " << m << " не является членом геометрической прогрессии" << endl;
+    }
+
+    return 0;
+}
+Задание № 74
+#include <iostream>
+using namespace std;
+
+bool isPowerOf(int n, int base) {
+    if (n <= 0) return false;
+    if (n == 1) return true;
+
+    while (n % base == 0) {
+        n /= base;
+    }
+
+    return n == 1;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    cout << "а) Является ли число " << n << " степенью числа 3: ";
+    if (isPowerOf(n, 3)) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    cout << "б) Является ли число " << n << " степенью числа 5: ";
+    if (isPowerOf(n, 5)) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 75
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+double f1(double x) {
+    return pow(x, 4) + 2 * pow(x, 3) - x - 1;
+}
+
+double f2(double x) {
+    return pow(x, 3) - 0.2 * pow(x, 2) - 0.2 * x - 1.2;
+}
+
+double bisection(double (*f)(double), double a, double b, double epsilon) {
+    double fa = f(a);
+    double fb = f(b);
+    
+    if (fa * fb > 0) {
+        cout << "На отрезке нет корня или несколько корней" << endl;
+        return 0;
+    }
+    
+    while (b - a > epsilon) {
+        double c = (a + b) / 2;
+        double fc = f(c);
+        
+        if (fa * fc <= 0) {
+            b = c;
+            fb = fc;
+        } else {
+            a = c;
+            fa = fc;
+        }
+    }
+    
+    return (a + b) / 2;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    cout << fixed << setprecision(4);
+    
+    cout << "а) Уравнение: x^4 + 2x^3 - x - 1 = 0" << endl;
+    cout << "   Отрезок: [0, 1]" << endl;
+    double root1 = bisection(f1, 0, 1, 0.001);
+    cout << "   Приближенный корень: " << root1 << endl;
+    cout << "   Значение функции в корне: " << f1(root1) << endl;
+    
+    cout << "\nб) Уравнение: x^3 - 0.2x^2 - 0.2x - 1.2 = 0" << endl;
+    cout << "   Отрезок: [1, 1.5]" << endl;
+    double root2 = bisection(f2, 1, 1.5, 0.001);
+    cout << "   Приближенный корень: " << root2 << endl;
+    cout << "   Значение функции в корне: " << f2(root2) << endl;
+    
+    return 0;
+}
+Задание № 76
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a, b;
+    cout << "Введите размеры лужайки (ширину и высоту): ";
+    cin >> a >> b;
+
+    cout << "Размер лужайки: " << a << "×" << b << " метров" << endl;
+
+    int totalFence = 0;
+    int x = 0, y = 0; 
+    int dx = 1, dy = 0; 
+    int stepsX = a, stepsY = b; 
+
+    while (stepsX > 0 || stepsY > 0) {
+        // Горизонтальное движение
+        if (dx != 0) {
+            if (stepsX > 0) {
+                totalFence += stepsY; // Добавляем вертикальные секции ограждения
+                x += dx * (stepsX - 1);
+                stepsX--;
+            }
+            dy = (dx > 0) ? 1 : -1; // Поворот вниз или вверх
+            dx = 0;
+        }
+        // Вертикальное движение
+        else if (dy != 0) {
+            if (stepsY > 0) {
+                totalFence += stepsX; // Добавляем горизонтальные секции ограждения
+                y += dy * (stepsY - 1);
+                stepsY--;
+            }
+            dx = (dy > 0) ? -1 : 1; // Поворот влево или вправо
+            dy = 0;
+        }
+    }
+
+    cout << "Длина ограждения для спиральной дорожки: " << totalFence << " метров" << endl;
+
+    return 0;
+}
+Задание № 77
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int lastDigit = n % 10;
+    int temp = n;
+    bool allSame = true;
+    bool hasTwoSame = false;
+
+    while (temp > 0) {
+        int digit = temp % 10;
+
+        if (digit != lastDigit) {
+            allSame = false;
+        }
+
+        if (temp > 9) {
+            int nextDigit = (temp / 10) % 10;
+            if (digit == nextDigit) {
+                hasTwoSame = true;
+            }
+        }
+
+        temp /= 10;
+    }
+
+    cout << "а) Все цифры одинаковые: " << (allSame ? "Да" : "Нет") << endl;
+    cout << "б) Есть две одинаковые цифры подряд: " << (hasTwoSame ? "Да" : "Нет") << endl;
+
+    return 0;
+}
+Задание № 78
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    bool increasing = true;
+    int prevDigit = n % 10;
+    int temp = n / 10;
+
+    while (temp > 0) {
+        int currentDigit = temp % 10;
+        if (currentDigit >= prevDigit) {
+            increasing = false;
+            break;
+        }
+        prevDigit = currentDigit;
+        temp /= 10;
+    }
+
+    cout << "Последовательность цифр справа налево упорядочена по возрастанию: ";
+    if (increasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 79
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    bool nonDecreasing = true;
+    int prevDigit = n % 10;
+    int temp = n / 10;
+
+    while (temp > 0) {
+        int currentDigit = temp % 10;
+        if (currentDigit > prevDigit) {
+            nonDecreasing = false;
+            break;
+        }
+        prevDigit = currentDigit;
+        temp /= 10;
+    }
+
+    cout << "Последовательность цифр справа налево упорядочена по неубыванию: ";
+    if (nonDecreasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 80
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int digits = 0;
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    bool increasing = true;
+    int prevDigit = n / (int)pow(10, digits - 1);
+
+    for (int i = digits - 2; i >= 0; i--) {
+        int divisor = (int)pow(10, i);
+        int currentDigit = (n / divisor) % 10;
+
+        if (currentDigit <= prevDigit) {
+            increasing = false;
+            break;
+        }
+        prevDigit = currentDigit;
+    }
+
+    cout << "Последовательность цифр слева направо упорядочена по возрастанию: ";
+    if (increasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 81
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int digits = 0;
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    bool monotonicIncreasing = true;
+    int prevDigit = n / (int)pow(10, digits - 1);
+
+    for (int i = digits - 2; i >= 0; i--) {
+        int divisor = (int)pow(10, i);
+        int currentDigit = (n / divisor) % 10;
+
+        if (currentDigit <= prevDigit) {
+            monotonicIncreasing = false;
+            break;
+        }
+        prevDigit = currentDigit;
+    }
+
+    cout << "Цифры образуют монотонно возрастающую последовательность: ";
+    if (monotonicIncreasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 82
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int digits = 0;
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    bool nonDecreasing = true;
+    int prevDigit = n / (int)pow(10, digits - 1);
+
+    for (int i = digits - 2; i >= 0; i--) {
+        int divisor = (int)pow(10, i);
+        int currentDigit = (n / divisor) % 10;
+
+        if (currentDigit < prevDigit) {
+            nonDecreasing = false;
+            break;
+        }
+        prevDigit = currentDigit;
+    }
+
+    cout << "Последовательность цифр слева направо упорядочена по неубыванию: ";
+    if (nonDecreasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
+Задание № 83
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+
+    int digits = 0;
+    int temp = n;
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+
+    bool monotonicIncreasing = true;
+    bool monotonicDecreasing = true;
+    int prevDigit = n / (int)pow(10, digits - 1);
+
+    for (int i = digits - 2; i >= 0; i--) {
+        int divisor = (int)pow(10, i);
+        int currentDigit = (n / divisor) % 10;
+
+        if (currentDigit <= prevDigit) {
+            monotonicIncreasing = false;
+        }
+        if (currentDigit >= prevDigit) {
+            monotonicDecreasing = false;
+        }
+        prevDigit = currentDigit;
+    }
+
+    cout << "Цифры образуют монотонную последовательность (возрастающую или убывающую): ";
+    if (monotonicIncreasing || monotonicDecreasing) {
+        cout << "Да" << endl;
+    }
+    else {
+        cout << "Нет" << endl;
+    }
+
+    return 0;
+}
