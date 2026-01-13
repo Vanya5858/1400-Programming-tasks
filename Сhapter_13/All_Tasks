@@ -1,0 +1,3975 @@
+Задание № 1
+#include <iostream>
+#include <string>
+using namespace std;
+
+void printStudents(string surnames[], string names[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << surnames[i] << " " << names[i] << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string surnames[25] = { "Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов", "Васильев", "Попов", "Новиков", "Федоров", "Морозов",
+                           "Волков", "Алексеев", "Лебедев", "Семенов", "Егоров", "Павлов", "Козлов", "Степанов", "Николаев", "Орлов",
+                           "Андреев", "Макаров", "Никитин", "Захаров", "Зайцев" };
+    string names[25] = { "Алексей", "Иван", "Сергей", "Дмитрий", "Андрей", "Максим", "Евгений", "Михаил", "Владимир", "Александр",
+                        "Олег", "Павел", "Константин", "Игорь", "Роман", "Виктор", "Николай", "Юрий", "Георгий", "Станислав",
+                        "Артем", "Даниил", "Кирилл", "Леонид", "Федор" };
+
+    printStudents(surnames, names, 25);
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+#include <string>
+using namespace std;
+
+void printClubs(string clubs[], string cities[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << clubs[i] << " - " << cities[i] << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string clubs[20] = { "Спартак", "ЦСКА", "Зенит", "Динамо", "Локомотив", "Краснодар", "Ростов", "Уфа", "Крылья Советов", "Рубин",
+                        "Ахмат", "Урал", "Арсенал", "Сочи", "Нижний Новгород", "Химки", "Факел", "Балтика", "Енисей", "Томь" };
+    string cities[20] = { "Москва", "Москва", "Санкт-Петербург", "Москва", "Москва", "Краснодар", "Ростов-на-Дону", "Уфа", "Самара", "Казань",
+                         "Грозный", "Екатеринбург", "Тула", "Сочи", "Нижний Новгород", "Химки", "Воронеж", "Калининград", "Красноярск", "Томск" };
+
+    printClubs(clubs, cities, 20);
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+#include <string>
+using namespace std;
+
+void printItalianCities(string cities[], string countries[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (countries[i] == "Италия") {
+            cout << cities[i] << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string cities[26] = { "Рим", "Париж", "Мадрид", "Милан", "Неаполь", "Берлин", "Лондон", "Венеция", "Флоренция", "Амстердам",
+                         "Барселона", "Прага", "Вена", "Будапешт", "Варшава", "Лиссабон", "Стамбул", "Афины", "Дублин", "Осло",
+                         "Стокгольм", "Копенгаген", "Хельсинки", "Рига", "Вильнюс", "Таллин" };
+    string countries[26] = { "Италия", "Франция", "Испания", "Италия", "Италия", "Германия", "Великобритания", "Италия", "Италия", "Нидерланды",
+                            "Испания", "Чехия", "Австрия", "Венгрия", "Польша", "Португалия", "Турция", "Греция", "Ирландия", "Норвегия",
+                            "Швеция", "Дания", "Финляндия", "Латвия", "Литва", "Эстония" };
+
+    printItalianCities(cities, countries, 26);
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Employee {
+    string surname;
+    bool isConscript;
+};
+
+void printConscriptEmployees(Employee employees[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (employees[i].isConscript) {
+            cout << employees[i].surname << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Employee employees[16] = {
+        {"Иванов", true},
+        {"Петров", false},
+        {"Сидоров", true},
+        {"Кузнецов", false},
+        {"Смирнов", true},
+        {"Васильев", false},
+        {"Попов", true},
+        {"Новиков", false},
+        {"Федоров", true},
+        {"Морозов", false},
+        {"Волков", true},
+        {"Алексеев", false},
+        {"Лебедев", true},
+        {"Семенов", false},
+        {"Егоров", true},
+        {"Павлов", false}
+    };
+
+    printConscriptEmployees(employees, 16);
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Mountain {
+    string name;
+    int height;
+};
+
+void printHighPeaks(Mountain mountains[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (mountains[i].height > 3000) {
+            cout << mountains[i].name << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Mountain mountains[15] = {
+        {"Эверест", 8848},
+        {"Аконкагуа", 6961},
+        {"Мак-Кинли", 6194},
+        {"Килиманджаро", 5895},
+        {"Эльбрус", 5642},
+        {"Монблан", 4810},
+        {"Говерла", 2061},
+        {"Роман-Кош", 1545},
+        {"Белуха", 4506},
+        {"Казбек", 5033},
+        {"Денали", 6190},
+        {"Чогори", 8611},
+        {"Лхоцзе", 8516},
+        {"Макалу", 8485},
+        {"Канченджанга", 8586}
+    };
+
+    printHighPeaks(mountains, 15);
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Car {
+    string model;
+    int maxSpeed;
+};
+
+void printFastCars(Car cars[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (cars[i].maxSpeed > 180) {
+            cout << cars[i].model << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Car cars[20] = {
+        {"Ferrari F8 Tributo", 340},
+        {"Lamborghini Aventador", 350},
+        {"Bugatti Chiron", 420},
+        {"McLaren 720S", 341},
+        {"Porsche 911 Turbo S", 330},
+        {"Audi R8", 330},
+        {"Nissan GT-R", 315},
+        {"Chevrolet Corvette", 312},
+        {"Ford Mustang Shelby GT500", 290},
+        {"BMW M5", 305},
+        {"Mercedes-AMG GT", 317},
+        {"Toyota Supra", 250},
+        {"Honda Civic Type R", 272},
+        {"Volkswagen Golf R", 270},
+        {"Subaru WRX STI", 274},
+        {"Mazda RX-7", 250},
+        {"Lexus LFA", 325},
+        {"Aston Martin DB11", 335},
+        {"Jaguar F-Type", 300},
+        {"Tesla Roadster", 400}
+    };
+
+    printFastCars(cars, 20);
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Person {
+    string surname;
+    string address;
+    string phone;
+};
+
+void findPeopleByPhone(Person people[], int n, string prefix) {
+    for (int i = 0; i < n; i++) {
+        if (people[i].phone.substr(0, prefix.length()) == prefix) {
+            cout << people[i].surname << " - " << people[i].address << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Случай 1: телефон как число (строка)
+    Person people1[3] = {
+        {"Иванов", "ул. Ленина, 1", "89051234567"},
+        {"Петров", "ул. Мира, 2", "89161234567"},
+        {"Сидоров", "пр. Победы, 3", "89051230000"}
+    };
+
+    cout << "Случай 1 (телефон как строка из цифр):" << endl;
+    findPeopleByPhone(people1, 3, "8905");
+
+    // Случай 2: телефон с разделителями
+    Person people2[3] = {
+        {"Иванов", "ул. Ленина, 1", "8-905-123-45-67"},
+        {"Петров", "ул. Мира, 2", "8-916-123-45-67"},
+        {"Сидоров", "пр. Победы, 3", "8-905-123-00-00"}
+    };
+
+    cout << "\nСлучай 2 (телефон с разделителями):" << endl;
+    findPeopleByPhone(people2, 3, "8-905");
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Person {
+    string surname;
+    bool married;
+    bool hasChildren;
+};
+
+void printMarriedWithChildren(Person people[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (people[i].married && people[i].hasChildren) {
+            cout << people[i].surname << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Person people[25] = {
+        {"Иванов", true, true},
+        {"Петров", false, false},
+        {"Сидоров", true, false},
+        {"Кузнецов", true, true},
+        {"Смирнов", false, true},
+        {"Васильев", true, true},
+        {"Попов", false, false},
+        {"Новиков", true, true},
+        {"Федоров", true, false},
+        {"Морозов", false, true},
+        {"Волков", true, true},
+        {"Алексеев", false, false},
+        {"Лебедев", true, true},
+        {"Семенов", true, false},
+        {"Егоров", false, true},
+        {"Павлов", true, true},
+        {"Козлов", false, false},
+        {"Степанов", true, true},
+        {"Николаев", true, false},
+        {"Орлов", false, true},
+        {"Андреев", true, true},
+        {"Макаров", true, true},
+        {"Никитин", false, false},
+        {"Захаров", true, true},
+        {"Зайцев", false, false}
+    };
+
+    printMarriedWithChildren(people, 25);
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    int grade;
+    int mark;
+};
+
+void printTopStudentsGrade9(Student students[], int n) {
+    for (int i = 0; i < n; i++) {
+        if (students[i].grade == 9 && students[i].mark == 5) {
+            cout << students[i].surname << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[30] = {
+        {"Иванов", 9, 5},
+        {"Петров", 10, 4},
+        {"Сидоров", 9, 3},
+        {"Кузнецов", 9, 5},
+        {"Смирнов", 11, 5},
+        {"Васильев", 9, 4},
+        {"Попов", 10, 5},
+        {"Новиков", 9, 5},
+        {"Федоров", 9, 2},
+        {"Морозов", 11, 5},
+        {"Волков", 9, 5},
+        {"Алексеев", 10, 3},
+        {"Лебедев", 9, 4},
+        {"Семенов", 9, 5},
+        {"Егоров", 11, 5},
+        {"Павлов", 9, 5},
+        {"Козлов", 10, 4},
+        {"Степанов", 9, 5},
+        {"Николаев", 9, 3},
+        {"Орлов", 11, 5},
+        {"Андреев", 9, 5},
+        {"Макаров", 10, 5},
+        {"Никитин", 9, 4},
+        {"Захаров", 9, 5},
+        {"Зайцев", 11, 5},
+        {"Борисов", 9, 5},
+        {"Кириллов", 10, 4},
+        {"Данилов", 9, 5},
+        {"Тимофеев", 9, 3},
+        {"Филиппов", 11, 5}
+    };
+
+    printTopStudentsGrade9(students, 30);
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+#include <locale>
+#include <string>
+using namespace std;
+
+struct Employee {
+    string surname;
+    string name;
+    string patronymic;
+    string address;
+    int hireMonth;
+    int hireYear;
+};
+
+void printEmployeesWorked3Years(Employee employees[], int n, int currentYear = 2024, int currentMonth = 12) {
+    for (int i = 0; i < n; i++) {
+        int yearsWorked = currentYear - employees[i].hireYear;
+        
+        if (currentMonth < employees[i].hireMonth) {
+            yearsWorked--;
+        }
+        
+        if (yearsWorked >= 3) {
+            cout << employees[i].surname << " " 
+                 << employees[i].name << " " 
+                 << employees[i].patronymic << " - " 
+                 << employees[i].address << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+    
+    Employee employees[20] = {
+        {"Иванов", "Иван", "Иванович", "ул. Ленина, 1", 5, 2018},
+        {"Петров", "Петр", "Петрович", "ул. Мира, 2", 11, 2020},
+        {"Сидоров", "Сидор", "Сидорович", "пр. Победы, 3", 3, 2019},
+        {"Кузнецов", "Алексей", "Алексеевич", "ул. Садовая, 4", 7, 2017},
+        {"Смирнов", "Андрей", "Андреевич", "ул. Лесная, 5", 1, 2021},
+        {"Васильев", "Василий", "Васильевич", "ул. Центральная, 6", 12, 2018},
+        {"Попов", "Павел", "Павлович", "ул. Молодежная, 7", 6, 2019},
+        {"Новиков", "Николай", "Николаевич", "ул. Школьная, 8", 8, 2020},
+        {"Федоров", "Федор", "Федорович", "ул. Заречная, 9", 2, 2018},
+        {"Морозов", "Михаил", "Михайлович", "ул. Полевая, 10", 10, 2021},
+        {"Волков", "Владимир", "Владимирович", "ул. Речная, 11", 4, 2019},
+        {"Алексеев", "Александр", "Александрович", "ул. Солнечная, 12", 9, 2017},
+        {"Лебедев", "Леонид", "Леонидович", "ул. Горная, 13", 7, 2020},
+        {"Семенов", "Семен", "Семенович", "ул. Вишневая, 14", 3, 2018},
+        {"Егоров", "Егор", "Егорович", "ул. Кленовая, 15", 11, 2019},
+        {"Павлов", "Петр", "Петрович", "ул. Березовая, 16", 5, 2020},
+        {"Козлов", "Константин", "Константинович", "ул. Сосновая, 17", 2, 2021},
+        {"Степанов", "Степан", "Степанович", "ул. Липовая, 18", 8, 2018},
+        {"Николаев", "Никита", "Никитич", "ул. Ясеневая, 19", 6, 2019},
+        {"Орлов", "Олег", "Олегович", "ул. Тополиная, 20", 10, 2017}
+    };
+    
+    // Укажите текущий год и месяц вручную
+    printEmployeesWorked3Years(employees, 20, 2024, 12);
+    
+    return 0;
+}
+Задание № 11
+#include <iostream>
+using namespace std;
+
+struct Price {
+    int rubles;
+    int kopecks;
+};
+
+void comparePrices(Price p1, Price p2) {
+    int total1 = p1.rubles * 100 + p1.kopecks;
+    int total2 = p2.rubles * 100 + p2.kopecks;
+
+    if (total1 > total2) {
+        cout << "Первый товар дороже" << endl;
+    }
+    else if (total1 < total2) {
+        cout << "Второй товар дороже" << endl;
+    }
+    else {
+        cout << "Товары стоят одинаково" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Price products[20] = {
+        {100, 50}, {200, 0}, {150, 75}, {80, 30}, {120, 90},
+        {300, 45}, {75, 99}, {180, 20}, {250, 0}, {95, 10},
+        {130, 60}, {210, 15}, {175, 80}, {90, 25}, {140, 70},
+        {220, 40}, {110, 55}, {190, 5}, {160, 85}, {135, 65}
+    };
+
+    // Сравниваем первый и второй товары
+    comparePrices(products[0], products[1]);
+
+    // Можно сравнивать любые два товара
+    cout << "\nСравнение 5-го и 10-го товаров:" << endl;
+    comparePrices(products[4], products[9]);
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+using namespace std;
+
+struct Time {
+    int hours;
+    int minutes;
+};
+
+void compareTimes(Time t1, Time t2) {
+    int total1 = t1.hours * 60 + t1.minutes;
+    int total2 = t2.hours * 60 + t2.minutes;
+
+    if (total1 < total2) {
+        cout << "Первый момент времени был раньше" << endl;
+    }
+    else if (total1 > total2) {
+        cout << "Второй момент времени был раньше" << endl;
+    }
+    else {
+        cout << "Моменты времени одинаковы" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Time moments[25] = {
+        {8, 30}, {9, 15}, {10, 0}, {11, 45}, {12, 30},
+        {13, 20}, {14, 10}, {15, 5}, {16, 50}, {17, 40},
+        {18, 35}, {19, 25}, {20, 15}, {21, 0}, {22, 55},
+        {23, 30}, {0, 45}, {1, 20}, {2, 10}, {3, 5},
+        {4, 40}, {5, 25}, {6, 15}, {7, 0}, {8, 55}
+    };
+
+    // Сравниваем первый и второй моменты
+    cout << "Сравнение 8:30 и 9:15:" << endl;
+    compareTimes(moments[0], moments[1]);
+
+    cout << "\nСравнение 23:30 и 0:45:" << endl;
+    compareTimes(moments[15], moments[16]);
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Date {
+    int year;
+    int month;
+    int day;
+};
+
+void compareDates(Date d1, Date d2) {
+    if (d1.year > d2.year) {
+        cout << "Первое событие произошло позже" << endl;
+    }
+    else if (d1.year < d2.year) {
+        cout << "Второе событие произошло позже" << endl;
+    }
+    else {
+        if (d1.month > d2.month) {
+            cout << "Первое событие произошло позже" << endl;
+        }
+        else if (d1.month < d2.month) {
+            cout << "Второе событие произошло позже" << endl;
+        }
+        else {
+            if (d1.day > d2.day) {
+                cout << "Первое событие произошло позже" << endl;
+            }
+            else if (d1.day < d2.day) {
+                cout << "Второе событие произошло позже" << endl;
+            }
+            else {
+                cout << "События произошли в один день" << endl;
+            }
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Date events[20] = {
+        {1945, 5, 9}, {1961, 4, 12}, {1986, 4, 26}, {1991, 12, 26}, {2000, 1, 1},
+        {2008, 8, 8}, {2014, 2, 7}, {2018, 6, 14}, {2020, 3, 11}, {2022, 2, 24},
+        {1939, 9, 1}, {1941, 6, 22}, {1957, 10, 4}, {1969, 7, 20}, {1975, 4, 30},
+        {1980, 7, 19}, {1999, 12, 31}, {2001, 9, 11}, {2010, 1, 12}, {2016, 8, 5}
+    };
+
+    // Сравниваем разные события
+    cout << "Сравнение 9 мая 1945 и 12 апреля 1961:" << endl;
+    compareDates(events[0], events[1]);
+
+    cout << "\nСравнение 1 января 2000 и 31 декабря 1999:" << endl;
+    compareDates(events[4], events[16]);
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+struct TimeFull {
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+void compareTimesFull(TimeFull t1, TimeFull t2) {
+    int total1 = t1.hours * 3600 + t1.minutes * 60 + t1.seconds;
+    int total2 = t2.hours * 3600 + t2.minutes * 60 + t2.seconds;
+
+    if (total1 < total2) {
+        cout << "Первый момент времени был раньше" << endl;
+    }
+    else if (total1 > total2) {
+        cout << "Второй момент времени был раньше" << endl;
+    }
+    else {
+        cout << "Моменты времени одинаковы" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    TimeFull moments[24] = {
+        {0, 0, 0}, {1, 15, 30}, {2, 30, 45}, {3, 45, 15}, {4, 20, 10},
+        {5, 10, 25}, {6, 35, 50}, {7, 40, 5}, {8, 55, 40}, {9, 25, 55},
+        {10, 5, 20}, {11, 50, 35}, {12, 30, 0}, {13, 15, 45}, {14, 20, 30},
+        {15, 45, 15}, {16, 10, 50}, {17, 35, 25}, {18, 40, 10}, {19, 55, 35},
+        {20, 25, 20}, {21, 5, 55}, {22, 50, 40}, {23, 30, 15}
+    };
+
+    // Сравниваем разные моменты времени
+    cout << "Сравнение 0:00:00 и 1:15:30:" << endl;
+    compareTimesFull(moments[0], moments[1]);
+
+    cout << "\nСравнение 12:30:00 и 13:15:45:" << endl;
+    compareTimesFull(moments[12], moments[13]);
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct EmployeeInfo {
+    string surname;
+    string address;
+};
+
+void findKuzinEmployees(EmployeeInfo employees[], int n) {
+    string targetSurnames[] = { "Кузин", "Куравлев", "Кудин", "Кульков", "Кубиков" };
+    bool found = false;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (employees[i].surname == targetSurnames[j]) {
+                cout << employees[i].surname << ": " << employees[i].address << endl;
+                found = true;
+            }
+        }
+    }
+
+    if (!found) {
+        cout << "Сотрудников с указанными фамилиями не найдено" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    EmployeeInfo employees[30] = {
+        {"Иванов", "ул. Ленина, 1"}, {"Петров", "ул. Мира, 2"}, {"Сидоров", "пр. Победы, 3"},
+        {"Кузин", "ул. Садовая, 4"}, {"Смирнов", "ул. Лесная, 5"}, {"Васильев", "ул. Центральная, 6"},
+        {"Куравлев", "ул. Молодежная, 7"}, {"Новиков", "ул. Школьная, 8"}, {"Федоров", "ул. Заречная, 9"},
+        {"Кудин", "ул. Полевая, 10"}, {"Волков", "ул. Речная, 11"}, {"Алексеев", "ул. Солнечная, 12"},
+        {"Лебедев", "ул. Горная, 13"}, {"Семенов", "ул. Вишневая, 14"}, {"Егоров", "ул. Кленовая, 15"},
+        {"Кульков", "ул. Березовая, 16"}, {"Козлов", "ул. Сосновая, 17"}, {"Степанов", "ул. Липовая, 18"},
+        {"Николаев", "ул. Ясеневая, 19"}, {"Орлов", "ул. Тополиная, 20"}, {"Андреев", "ул. Рябиновая, 21"},
+        {"Макаров", "ул. Кедровая, 22"}, {"Кубиков", "ул. Сливовая, 23"}, {"Захаров", "ул. Ореховая, 24"},
+        {"Зайцев", "ул. Каштановая, 25"}, {"Борисов", "ул. Абрикосовая, 26"}, {"Кириллов", "ул. Вишневая, 27"},
+        {"Данилов", "ул. Грушевая, 28"}, {"Тимофеев", "ул. Смородиновая, 29"}, {"Филиппов", "ул. Малиновая, 30"}
+    };
+
+    cout << "Сотрудники с фамилиями Кузин, Куравлев, Кудин, Кульков, Кубиков:" << endl;
+    cout << "================================================================" << endl;
+    findKuzinEmployees(employees, 30);
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+#include <string>
+#include <ctime>
+using namespace std;
+
+struct StudentBirth {
+    string surname;
+    string name;
+    string patronymic;
+    int birthYear;
+    int birthMonth;
+    int birthDay;
+};
+
+void findBirthdayToday(StudentBirth students[], int n, int todayMonth, int todayDay) {
+    bool found = false;
+
+    for (int i = 0; i < n; i++) {
+        if (students[i].birthMonth == todayMonth && students[i].birthDay == todayDay) {
+            cout << students[i].name << " " << students[i].surname << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Сегодня никто не празднует день рождения" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    StudentBirth students[20] = {
+        {"Иванов", "Иван", "Иванович", 2008, 1, 15},
+        {"Петров", "Петр", "Петрович", 2009, 3, 22},
+        {"Сидоров", "Сергей", "Сергеевич", 2008, 12, 5},
+        {"Кузнецов", "Алексей", "Алексеевич", 2009, 6, 18},
+        {"Смирнов", "Андрей", "Андреевич", 2008, 8, 30},
+        {"Васильев", "Максим", "Максимович", 2009, 2, 14},
+        {"Попов", "Евгений", "Евгеньевич", 2008, 4, 25},
+        {"Новиков", "Михаил", "Михайлович", 2009, 7, 12},
+        {"Федоров", "Владимир", "Владимирович", 2008, 9, 3},
+        {"Морозов", "Александр", "Александрович", 2009, 11, 28},
+        {"Волков", "Олег", "Олегович", 2008, 5, 17},
+        {"Алексеев", "Павел", "Павлович", 2009, 10, 9},
+        {"Лебедев", "Константин", "Константинович", 2008, 12, 31},
+        {"Семенов", "Игорь", "Игоревич", 2009, 1, 7},
+        {"Егоров", "Роман", "Романович", 2008, 3, 19},
+        {"Павлов", "Виктор", "Викторович", 2009, 6, 24},
+        {"Козлов", "Николай", "Николаевич", 2008, 8, 11},
+        {"Степанов", "Юрий", "Юрьевич", 2009, 4, 2},
+        {"Николаев", "Георгий", "Георгиевич", 2008, 7, 29},
+        {"Орлов", "Станислав", "Станиславович", 2009, 2, 8}
+    };
+
+    // Указываем сегодняшнюю дату (пример: 5 декабря)
+    int todayMonth = 12;
+    int todayDay = 5;
+
+    cout << "Ученики, у которых сегодня (" << todayDay << "." << todayMonth << ") день рождения:" << endl;
+    cout << "=====================================================" << endl;
+    findBirthdayToday(students, 20, todayMonth, todayDay);
+
+    return 0;
+}
+Задание № 17
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Contact {
+    string surname;
+    string phone;
+};
+
+void findPhoneBySurname(Contact contacts[], int n, string surname) {
+    bool found = false;
+    for (int i = 0; i < n; i++) {
+        if (contacts[i].surname == surname) {
+            cout << "Телефон " << surname << ": " << contacts[i].phone << endl;
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        cout << "Контакт с фамилией " << surname << " не найден" << endl;
+    }
+}
+
+void findSurnameByPhone(Contact contacts[], int n, string phone) {
+    bool found = false;
+    for (int i = 0; i < n; i++) {
+        if (contacts[i].phone == phone) {
+            cout << "Владелец телефона " << phone << ": " << contacts[i].surname << endl;
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        cout << "Контакт с телефоном " << phone << " не найден" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Contact contacts[30] = {
+        {"Иванов", "89161234567"}, {"Петров", "89051234567"}, {"Сидоров", "89261234567"},
+        {"Кузнецов", "89371234567"}, {"Смирнов", "89481234567"}, {"Васильев", "89591234567"},
+        {"Попов", "89601234567"}, {"Новиков", "89711234567"}, {"Федоров", "89821234567"},
+        {"Морозов", "89931234567"}, {"Волков", "89041234567"}, {"Алексеев", "89151234567"},
+        {"Лебедев", "89261234568"}, {"Семенов", "89371234568"}, {"Егоров", "89481234568"},
+        {"Павлов", "89591234568"}, {"Козлов", "89601234568"}, {"Степанов", "89711234568"},
+        {"Николаев", "89821234568"}, {"Орлов", "89931234568"}, {"Андреев", "89041234568"},
+        {"Макаров", "89151234568"}, {"Никитин", "89261234569"}, {"Захаров", "89371234569"},
+        {"Зайцев", "89481234569"}, {"Борисов", "89591234569"}, {"Кириллов", "89601234569"},
+        {"Данилов", "89711234569"}, {"Тимофеев", "89821234569"}, {"Филиппов", "89931234569"}
+    };
+
+    // а) Поиск телефона по фамилии
+    cout << "а) Поиск телефона по фамилии:" << endl;
+    findPhoneBySurname(contacts, 30, "Иванов");
+    findPhoneBySurname(contacts, 30, "Сидоров");
+    findPhoneBySurname(contacts, 30, "Неизвестный");
+
+    cout << "\nб) Поиск фамилии по телефону:" << endl;
+    // б) Поиск фамилии по телефону
+    findSurnameByPhone(contacts, 30, "89051234567");
+    findSurnameByPhone(contacts, 30, "89591234568");
+    findSurnameByPhone(contacts, 30, "00000000000");
+
+    return 0;
+}
+Задание № 18
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    string name;
+    string address;
+    int school;
+    int grade;
+};
+
+void filterSeniorStudents(Student students[], int n, Student seniors[], int& count) {
+    count = 0;
+    for (int i = 0; i < n; i++) {
+        if (students[i].grade >= 10 && students[i].grade <= 11) {
+            seniors[count] = students[i];
+            count++;
+        }
+    }
+}
+
+void printStudents(Student students[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << students[i].surname << " " << students[i].name
+            << ", адрес: " << students[i].address
+            << ", школа: " << students[i].school
+            << ", класс: " << students[i].grade << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[28] = {
+        {"Иванов", "Иван", "ул. Ленина, 1", 1, 10},
+        {"Петров", "Петр", "ул. Мира, 2", 2, 9},
+        {"Сидоров", "Сергей", "пр. Победы, 3", 1, 11},
+        {"Кузнецов", "Алексей", "ул. Садовая, 4", 3, 8},
+        {"Смирнов", "Андрей", "ул. Лесная, 5", 2, 10},
+        {"Васильев", "Максим", "ул. Центральная, 6", 1, 11},
+        {"Попов", "Евгений", "ул. Молодежная, 7", 3, 9},
+        {"Новиков", "Михаил", "ул. Школьная, 8", 2, 10},
+        {"Федоров", "Владимир", "ул. Заречная, 9", 1, 11},
+        {"Морозов", "Александр", "ул. Полевая, 10", 3, 8},
+        {"Волков", "Олег", "ул. Речная, 11", 2, 10},
+        {"Алексеев", "Павел", "ул. Солнечная, 12", 1, 9},
+        {"Лебедев", "Константин", "ул. Горная, 13", 3, 11},
+        {"Семенов", "Игорь", "ул. Вишневая, 14", 2, 10},
+        {"Егоров", "Роман", "ул. Кленовая, 15", 1, 11},
+        {"Павлов", "Виктор", "ул. Березовая, 16", 3, 9},
+        {"Козлов", "Николай", "ул. Сосновая, 17", 2, 10},
+        {"Степанов", "Юрий", "ул. Липовая, 18", 1, 8},
+        {"Николаев", "Георгий", "ул. Ясеневая, 19", 3, 11},
+        {"Орлов", "Станислав", "ул. Тополиная, 20", 2, 10},
+        {"Андреев", "Артем", "ул. Рябиновая, 21", 1, 11},
+        {"Макаров", "Даниил", "ул. Кедровая, 22", 3, 9},
+        {"Никитин", "Кирилл", "ул. Сливовая, 23", 2, 10},
+        {"Захаров", "Леонид", "ул. Ореховая, 24", 1, 8},
+        {"Зайцев", "Федор", "ул. Каштановая, 25", 3, 11},
+        {"Борисов", "Борис", "ул. Абрикосовая, 26", 2, 10},
+        {"Кириллов", "Кирилл", "ул. Вишневая, 27", 1, 11},
+        {"Данилов", "Даниил", "ул. Грушевая, 28", 3, 9}
+    };
+
+    Student seniors[28];
+    int seniorCount;
+
+    filterSeniorStudents(students, 28, seniors, seniorCount);
+
+    cout << "Ученики 10-11 классов (" << seniorCount << " чел.):" << endl;
+    cout << "===================================" << endl;
+    printStudents(seniors, seniorCount);
+
+    return 0;
+}
+Задание № 19
+#include <iostream>
+using namespace std;
+
+struct Weather {
+    double precipitation; // осадки в мм
+    double temperature;   // температура в °C
+};
+
+void analyzePrecipitation(Weather days[], int n) {
+    double rainTotal = 0.0;
+    double snowTotal = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        if (days[i].temperature > 0) {
+            rainTotal += days[i].precipitation;
+        }
+        else {
+            snowTotal += days[i].precipitation;
+        }
+    }
+
+    cout << "За месяц выпало:" << endl;
+    cout << "Дождь: " << rainTotal << " мм" << endl;
+    cout << "Снег: " << snowTotal << " мм" << endl;
+    cout << "Всего осадков: " << rainTotal + snowTotal << " мм" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Данные за 30 дней месяца
+    Weather month[30] = {
+        {5.2, 3.5}, {0.0, 2.1}, {3.8, -2.5}, {7.1, 5.0}, {1.5, 1.2},
+        {4.3, -1.8}, {2.7, 4.5}, {0.8, -3.2}, {6.4, 6.1}, {3.2, 0.5},
+        {5.6, 2.8}, {1.1, -0.5}, {4.9, 3.7}, {2.3, -2.1}, {3.5, 4.8},
+        {0.4, 1.5}, {7.2, -4.0}, {2.8, 2.3}, {4.1, -1.2}, {5.3, 5.5},
+        {1.7, 0.8}, {3.9, 3.1}, {2.5, -0.8}, {6.1, 4.2}, {0.9, -2.7},
+        {4.7, 2.5}, {3.3, 1.8}, {2.1, -1.5}, {5.8, 3.9}, {1.3, 0.2}
+    };
+
+    analyzePrecipitation(month, 30);
+
+    return 0;
+}
+Задание № 20
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Car {
+    string model;
+    int power;     // мощность в л.с.
+    double price;  // цена в тыс. руб.
+};
+
+double totalPriceHighPowerCars(Car cars[], int n, int minPower) {
+    double total = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        if (cars[i].power > minPower) {
+            total += cars[i].price;
+        }
+    }
+
+    return total;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Car cars[30] = {
+        {"Toyota Camry", 150, 2500.5}, {"BMW X5", 249, 5500.0}, {"Lada Vesta", 106, 850.3},
+        {"Mercedes E-class", 184, 4800.7}, {"Kia Rio", 100, 1200.9}, {"Hyundai Solaris", 123, 1100.2},
+        {"Volkswagen Polo", 110, 1300.8}, {"Skoda Octavia", 150, 1900.4}, {"Audi A6", 245, 5200.6},
+        {"Ford Focus", 125, 1400.1}, {"Nissan Qashqai", 144, 2100.7}, {"Renault Duster", 114, 1500.3},
+        {"Mazda CX-5", 165, 2300.9}, {"Lexus RX", 249, 5800.2}, {"Toyota RAV4", 150, 2700.5},
+        {"BMW 3-series", 184, 3900.8}, {"Mercedes S-class", 367, 10500.0}, {"Kia Sportage", 150, 2200.4},
+        {"Hyundai Tucson", 150, 2100.6}, {"Volkswagen Tiguan", 150, 2400.2}, {"Skoda Kodiaq", 150, 2600.8},
+        {"Audi Q7", 249, 6800.3}, {"Ford Explorer", 250, 4500.7}, {"Nissan X-Trail", 144, 2300.1},
+        {"Renault Kaptur", 114, 1400.9}, {"Mazda 6", 150, 2100.5}, {"Lexus NX", 150, 4200.2},
+        {"Toyota Land Cruiser", 249, 7200.7}, {"BMW 7-series", 326, 8900.4}, {"Mercedes GLE", 249, 6100.8}
+    };
+
+    double total = totalPriceHighPowerCars(cars, 30, 100);
+
+    cout << "Общая стоимость автомобилей мощностью более 100 л.с.: " << total << " тыс. руб." << endl;
+    cout << "Количество автомобилей: 30" << endl;
+
+    // Также можно посчитать только для тех, у кого мощность > 100 л.с.
+    int count = 0;
+    for (int i = 0; i < 30; i++) {
+        if (cars[i].power > 100) count++;
+    }
+
+    cout << "Из них мощностью > 100 л.с.: " << count << " автомобилей" << endl;
+
+    return 0;
+}
+Задание № 21
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Person {
+    string name;
+    int age;
+    char gender; // 'M' - мужчина, 'F' - женщина
+    double weight; // вес в кг
+};
+
+double totalMaleWeight(Person people[], int n) {
+    double total = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        if (people[i].gender == 'M' || people[i].gender == 'м') {
+            total += people[i].weight;
+        }
+    }
+
+    return total;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Person people[20] = {
+        {"Иван", 25, 'M', 78.5},
+        {"Мария", 30, 'F', 62.3},
+        {"Петр", 35, 'M', 85.2},
+        {"Анна", 28, 'F', 58.7},
+        {"Сергей", 40, 'M', 92.1},
+        {"Ольга", 32, 'F', 65.4},
+        {"Алексей", 27, 'M', 76.8},
+        {"Екатерина", 29, 'F', 61.9},
+        {"Дмитрий", 33, 'M', 88.3},
+        {"Наталья", 31, 'F', 59.2},
+        {"Андрей", 26, 'M', 81.7},
+        {"Ирина", 34, 'F', 63.5},
+        {"Михаил", 38, 'M', 90.5},
+        {"Татьяна", 36, 'F', 67.8},
+        {"Владимир", 42, 'M', 86.9},
+        {"Светлана", 39, 'F', 64.1},
+        {"Николай", 45, 'M', 94.2},
+        {"Людмила", 37, 'F', 66.3},
+        {"Юрий", 31, 'M', 79.4},
+        {"Елена", 28, 'F', 60.7}
+    };
+
+    double totalWeight = totalMaleWeight(people, 20);
+
+    cout << "Общая масса мужчин: " << totalWeight << " кг" << endl;
+
+    // Дополнительная информация
+    int maleCount = 0;
+    for (int i = 0; i < 20; i++) {
+        if (people[i].gender == 'M') maleCount++;
+    }
+    cout << "Количество мужчин: " << maleCount << endl;
+    cout << "Средний вес мужчин: " << totalWeight / maleCount << " кг" << endl;
+
+    return 0;
+}
+Задание № 22
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Institution {
+    string name;
+    int students;
+    string type; // "школа", "техникум", "училище"
+};
+
+int totalSchoolStudents(Institution institutions[], int n) {
+    int total = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (institutions[i].type == "школа") {
+            total += institutions[i].students;
+        }
+    }
+
+    return total;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Institution institutions[15] = {
+        {"Школа №1", 850, "школа"},
+        {"Техникум информатики", 620, "техникум"},
+        {"Профессиональное училище №3", 430, "училище"},
+        {"Лицей №5", 720, "школа"},
+        {"Медицинский техникум", 580, "техникум"},
+        {"Гимназия №8", 910, "школа"},
+        {"Строительное училище", 390, "училище"},
+        {"Школа искусств", 240, "школа"},
+        {"Техникум экономики", 670, "техникум"},
+        {"Школа №12", 780, "школа"},
+        {"Автомеханическое училище", 520, "училище"},
+        {"Технический лицей", 690, "школа"},
+        {"Педагогический техникум", 610, "техникум"},
+        {"Школа №15", 830, "школа"},
+        {"Музыкальное училище", 310, "училище"}
+    };
+
+    int total = totalSchoolStudents(institutions, 15);
+
+    cout << "Общее число учащихся школ: " << total << " человек" << endl;
+
+    // Дополнительная статистика
+    int schoolCount = 0;
+    for (int i = 0; i < 15; i++) {
+        if (institutions[i].type == "школа") schoolCount++;
+    }
+    cout << "Количество школ: " << schoolCount << endl;
+    cout << "Среднее количество учащихся в школе: " << total / schoolCount << " человек" << endl;
+
+    return 0;
+}
+Задание № 23
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Magazine {
+    string title;
+    double price; // цена в рублях
+    int circulation; // тираж
+};
+
+double averagePriceLowCirculation(Magazine magazines[], int n, int maxCirculation) {
+    double totalPrice = 0.0;
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (magazines[i].circulation < maxCirculation) {
+            totalPrice += magazines[i].price;
+            count++;
+        }
+    }
+
+    if (count == 0) return 0.0;
+    return totalPrice / count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Magazine magazines[15] = {
+        {"Компьютерра", 120.5, 8500},
+        {"Наука и жизнь", 95.0, 12500},
+        {"За рулем", 150.0, 95000},
+        {"Вокруг света", 110.0, 7800},
+        {"Домашний очаг", 135.5, 22000},
+        {"Мир ПК", 105.0, 6500},
+        {"Космополитен", 140.0, 45000},
+        {"Популярная механика", 125.0, 8900},
+        {"Форбс", 250.0, 55000},
+        {"Техника молодежи", 98.0, 5200},
+        {"GEO", 180.0, 12000},
+        {"National Geographic", 160.0, 35000},
+        {"Тайны звезд", 75.5, 18000},
+        {"Коммерсантъ", 85.0, 9500},
+        {"Игромания", 115.0, 7200}
+    };
+
+    double avgPrice = averagePriceLowCirculation(magazines, 15, 10000);
+
+    cout << "Средняя стоимость журналов с тиражом менее 10000 экземпляров: "
+        << avgPrice << " рублей" << endl;
+
+    // Дополнительная информация
+    int lowCirculationCount = 0;
+    for (int i = 0; i < 15; i++) {
+        if (magazines[i].circulation < 10000) lowCirculationCount++;
+    }
+    cout << "Количество журналов с тиражом < 10000: " << lowCirculationCount << endl;
+
+    return 0;
+}
+Задание № 24
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct CarModel {
+    string model;
+    double price; // цена в тыс. руб.
+    int age; // возраст в годах
+};
+
+double averagePriceOldCars(CarModel cars[], int n, int minAge) {
+    double totalPrice = 0.0;
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (cars[i].age > minAge) {
+            totalPrice += cars[i].price;
+            count++;
+        }
+    }
+
+    if (count == 0) return 0.0;
+    return totalPrice / count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    CarModel cars[20] = {
+        {"Toyota Camry 2015", 1200.5, 8},
+        {"BMW X5 2020", 4500.0, 3},
+        {"Lada Vesta 2018", 650.3, 5},
+        {"Mercedes E-class 2016", 3200.7, 7},
+        {"Kia Rio 2022", 1300.9, 1},
+        {"Hyundai Solaris 2017", 900.2, 6},
+        {"Volkswagen Polo 2019", 1100.8, 4},
+        {"Skoda Octavia 2014", 850.4, 9},
+        {"Audi A6 2021", 4200.6, 2},
+        {"Ford Focus 2013", 600.1, 10},
+        {"Nissan Qashqai 2018", 1600.7, 5},
+        {"Renault Duster 2016", 950.3, 7},
+        {"Mazda CX-5 2020", 2100.9, 3},
+        {"Lexus RX 2017", 3800.2, 6},
+        {"Toyota RAV4 2019", 2200.5, 4},
+        {"BMW 3-series 2015", 1900.8, 8},
+        {"Mercedes S-class 2014", 2800.0, 9},
+        {"Kia Sportage 2021", 1800.4, 2},
+        {"Hyundai Tucson 2018", 1600.6, 5},
+        {"Volkswagen Tiguan 2016", 1400.2, 7}
+    };
+
+    double avgPrice = averagePriceOldCars(cars, 20, 6);
+
+    cout << "Средняя стоимость автомобилей старше 6 лет: "
+        << avgPrice << " тыс. руб." << endl;
+
+    // Дополнительная информация
+    int oldCarsCount = 0;
+    double totalOldPrice = 0.0;
+    for (int i = 0; i < 20; i++) {
+        if (cars[i].age > 6) {
+            oldCarsCount++;
+            totalOldPrice += cars[i].price;
+        }
+    }
+
+    cout << "Количество автомобилей старше 6 лет: " << oldCarsCount << endl;
+    cout << "Общая стоимость автомобилей старше 6 лет: "
+        << totalOldPrice << " тыс. руб." << endl;
+
+    return 0;
+}
+Задание № 25
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct PersonHeight {
+    string name;
+    double height; // рост в см
+    char gender; // 'M' - мужчина, 'F' - женщина
+};
+
+double averageMaleHeight(PersonHeight people[], int n) {
+    double totalHeight = 0.0;
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (people[i].gender == 'M') {
+            totalHeight += people[i].height;
+            count++;
+        }
+    }
+
+    if (count == 0) return 0.0;
+    return totalHeight / count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    PersonHeight people[22] = {
+        {"Иван", 178.5, 'M'}, {"Мария", 165.3, 'F'}, {"Петр", 182.2, 'M'},
+        {"Анна", 168.7, 'F'}, {"Сергей", 175.8, 'M'}, {"Ольга", 172.4, 'F'},
+        {"Алексей", 180.1, 'M'}, {"Екатерина", 167.9, 'F'}, {"Дмитрий", 185.3, 'M'},
+        {"Наталья", 169.2, 'F'}, {"Андрей", 176.7, 'M'}, {"Ирина", 163.5, 'F'},
+        {"Михаил", 179.5, 'M'}, {"Татьяна", 170.8, 'F'}, {"Владимир", 181.9, 'M'},
+        {"Светлана", 164.1, 'F'}, {"Николай", 177.2, 'M'}, {"Людмила", 166.3, 'F'},
+        {"Юрий", 174.4, 'M'}, {"Елена", 168.7, 'F'}, {"Виктор", 183.6, 'M'},
+        {"Оксана", 171.5, 'F'}
+    };
+
+    double avgHeight = averageMaleHeight(people, 22);
+
+    cout << "Средний рост мужчин: " << avgHeight << " см" << endl;
+
+    // Дополнительная информация
+    int maleCount = 0;
+    for (int i = 0; i < 22; i++) {
+        if (people[i].gender == 'M') maleCount++;
+    }
+    cout << "Количество мужчин: " << maleCount << endl;
+
+    // Средний рост женщин
+    double femaleTotal = 0.0;
+    int femaleCount = 0;
+    for (int i = 0; i < 22; i++) {
+        if (people[i].gender == 'F') {
+            femaleTotal += people[i].height;
+            femaleCount++;
+        }
+    }
+    cout << "Средний рост женщин: " << femaleTotal / femaleCount << " см" << endl;
+
+    return 0;
+}
+Задание № 26
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Car {
+    string model;
+    double price; // цена в тыс. руб.
+    string type; // "легковой", "грузовой"
+};
+
+double averagePassengerCarPrice(Car cars[], int n) {
+    double totalPrice = 0.0;
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (cars[i].type == "легковой") {
+            totalPrice += cars[i].price;
+            count++;
+        }
+    }
+
+    if (count == 0) return 0.0;
+    return totalPrice / count;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Car cars[15] = {
+        {"Toyota Camry", 2500.5, "легковой"},
+        {"КАМАЗ 65115", 3200.0, "грузовой"},
+        {"Lada Vesta", 850.3, "легковой"},
+        {"Mercedes Actros", 5500.7, "грузовой"},
+        {"Kia Rio", 1200.9, "легковой"},
+        {"ГАЗель NEXT", 1800.2, "грузовой"},
+        {"Volkswagen Polo", 1300.8, "легковой"},
+        {"MAN TGS", 4800.4, "грузовой"},
+        {"Audi A6", 5200.6, "легковой"},
+        {"Урал-4320", 3500.1, "грузовой"},
+        {"Ford Focus", 1400.7, "легковой"},
+        {"Scania R-series", 6200.3, "грузовой"},
+        {"Mazda CX-5", 2300.9, "легковой"},
+        {"Volvo FH", 5800.2, "грузовой"},
+        {"Hyundai Solaris", 1100.5, "легковой"}
+    };
+
+    double avgPrice = averagePassengerCarPrice(cars, 15);
+
+    cout << "Средняя стоимость легковых автомобилей: "
+        << avgPrice << " тыс. руб." << endl;
+
+    // Дополнительная информация
+    int passengerCount = 0;
+    int truckCount = 0;
+    double passengerTotal = 0.0;
+    double truckTotal = 0.0;
+
+    for (int i = 0; i < 15; i++) {
+        if (cars[i].type == "легковой") {
+            passengerCount++;
+            passengerTotal += cars[i].price;
+        }
+        else {
+            truckCount++;
+            truckTotal += cars[i].price;
+        }
+    }
+
+    cout << "Количество легковых автомобилей: " << passengerCount << endl;
+    cout << "Количество грузовых автомобилей: " << truckCount << endl;
+    cout << "Средняя стоимость грузовых автомобилей: "
+        << (truckCount > 0 ? truckTotal / truckCount : 0) << " тыс. руб." << endl;
+
+    return 0;
+}
+Задание № 27
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+struct Student {
+    string surname;
+    int marks[12]; // оценки по 12 предметам
+};
+
+double studentAverage(Student student) {
+    double sum = 0;
+    for (int i = 0; i < 12; i++) {
+        sum += student.marks[i];
+    }
+    return sum / 12.0;
+}
+
+double classAverage(Student students[], int n) {
+    double totalSum = 0;
+    for (int i = 0; i < n; i++) {
+        totalSum += studentAverage(students[i]);
+    }
+    return totalSum / n;
+}
+
+void printAboveAverageStudents(Student students[], int n) {
+    double classAvg = classAverage(students, n);
+
+    cout << "\nУченики со средней оценкой выше средней по классу ("
+        << fixed << setprecision(2) << classAvg << "):" << endl;
+    cout << "======================================================" << endl;
+
+    for (int i = 0; i < n; i++) {
+        double studentAvg = studentAverage(students[i]);
+        if (studentAvg > classAvg) {
+            cout << students[i].surname << ": "
+                << fixed << setprecision(2) << studentAvg << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[20] = {
+        {"Иванов", {5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4}},
+        {"Петров", {4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4}},
+        {"Сидоров", {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}},
+        {"Кузнецов", {3, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3}},
+        {"Смирнов", {4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5}},
+        {"Васильев", {5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4}},
+        {"Попов", {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}},
+        {"Новиков", {5, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5}},
+        {"Федоров", {3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4}},
+        {"Морозов", {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}},
+        {"Волков", {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}},
+        {"Алексеев", {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}},
+        {"Лебедев", {5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4}},
+        {"Семенов", {4, 3, 4, 3, 4, 3, 4, 3, 4, 3, 4, 3}},
+        {"Егоров", {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}},
+        {"Павлов", {4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}},
+        {"Козлов", {5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4}},
+        {"Степанов", {3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}},
+        {"Николаев", {4, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5}},
+        {"Орлов", {5, 5, 4, 5, 4, 5, 4, 5, 4, 5, 4, 5}}
+    };
+
+    // Вывод средней оценки каждого ученика
+    cout << "Средние оценки учеников:" << endl;
+    cout << "========================" << endl;
+    for (int i = 0; i < 20; i++) {
+        cout << students[i].surname << ": "
+            << fixed << setprecision(2) << studentAverage(students[i]) << endl;
+    }
+
+    // Средняя оценка по классу
+    double classAvg = classAverage(students, 20);
+    cout << "\nСредняя оценка по классу: "
+        << fixed << setprecision(2) << classAvg << endl;
+
+    // Ученики с оценкой выше средней
+    printAboveAverageStudents(students, 20);
+
+    return 0;
+}
+Задание № 28
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+struct Item {
+    string material;
+    double mass; 
+    double volume; 
+};
+
+double calculateDensity(Item item) {
+    return item.mass / item.volume; 
+}
+
+double findMaxDensity(Item items[], int n) {
+    double maxDensity = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double density = calculateDensity(items[i]);
+        if (density > maxDensity) {
+            maxDensity = density;
+        }
+    }
+
+    return maxDensity;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Item items[30] = {
+        {"Сталь", 7.85, 0.001}, {"Алюминий", 2.70, 0.001}, {"Медь", 8.96, 0.001},
+        {"Свинец", 11.34, 0.001}, {"Дерево", 0.70, 0.001}, {"Стекло", 2.50, 0.001},
+        {"Вода", 1.00, 0.001}, {"Лед", 0.92, 0.001}, {"Золото", 19.32, 0.001},
+        {"Серебро", 10.49, 0.001}, {"Чугун", 7.20, 0.001}, {"Бронза", 8.80, 0.001},
+        {"Латунь", 8.50, 0.001}, {"Олово", 7.31, 0.001}, {"Никель", 8.90, 0.001},
+        {"Цинк", 7.13, 0.001}, {"Титан", 4.51, 0.001}, {"Вольфрам", 19.25, 0.001},
+        {"Платина", 21.45, 0.001}, {"Мрамор", 2.70, 0.001}, {"Гранит", 2.60, 0.001},
+        {"Песок", 1.60, 0.001}, {"Бетон", 2.40, 0.001}, {"Кирпич", 1.80, 0.001},
+        {"Полиэтилен", 0.95, 0.001}, {"Полипропилен", 0.90, 0.001}, {"Резина", 1.20, 0.001},
+        {"Бумага", 0.80, 0.001}, {"Хлопок", 1.50, 0.001}, {"Шерсть", 1.30, 0.001}
+    };
+
+    double maxDensity = findMaxDensity(items, 30);
+
+    cout << "Максимальная плотность материала: "
+        << fixed << setprecision(2) << maxDensity << " кг/м^3" << endl;
+
+    // Вывод материалов с максимальной плотностью
+    cout << "\nМатериалы с максимальной плотностью:" << endl;
+    cout << "====================================" << endl;
+    for (int i = 0; i < 30; i++) {
+        if (calculateDensity(items[i]) == maxDensity) {
+            cout << items[i].material << ": "
+                << fixed << setprecision(2) << maxDensity << " кг/м^3" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 29
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+struct Country {
+    string name;
+    double population; // население в млн чел.
+    double area; // площадь в тыс. кв. км
+};
+
+double calculateDensity(Country country) {
+    return country.population / country.area; // млн чел. / тыс. кв. км
+}
+
+double findMaxPopulationDensity(Country countries[], int n) {
+    double maxDensity = 0.0;
+
+    for (int i = 0; i < n; i++) {
+        double density = calculateDensity(countries[i]);
+        if (density > maxDensity) {
+            maxDensity = density;
+        }
+    }
+
+    return maxDensity;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Country countries[28] = {
+        {"Россия", 146.7, 17098.2}, {"Китай", 1402.0, 9596.9}, {"Индия", 1380.0, 3287.3},
+        {"США", 331.0, 9834.6}, {"Индонезия", 273.5, 1910.9}, {"Пакистан", 220.9, 881.9},
+        {"Бразилия", 213.0, 8515.8}, {"Нигерия", 206.1, 923.8}, {"Бангладеш", 164.7, 147.6},
+        {"Россия", 146.7, 17098.2}, {"Мексика", 128.9, 1964.4}, {"Япония", 125.8, 377.9},
+        {"Филиппины", 109.6, 300.0}, {"Египет", 102.3, 1002.5}, {"Вьетнам", 97.3, 331.2},
+        {"Турция", 84.3, 783.6}, {"Иран", 83.9, 1648.2}, {"Германия", 83.2, 357.0},
+        {"Таиланд", 69.8, 513.1}, {"Великобритания", 67.9, 242.5}, {"Франция", 65.3, 551.7},
+        {"Италия", 60.4, 301.3}, {"Южная Африка", 59.3, 1219.1}, {"Кения", 53.8, 580.4},
+        {"Колумбия", 50.9, 1141.7}, {"Испания", 47.4, 505.4}, {"Аргентина", 45.4, 2780.4},
+        {"Украина", 44.1, 603.5}
+    };
+
+    double maxDensity = findMaxPopulationDensity(countries, 28);
+
+    cout << "Максимальная плотность населения: "
+        << fixed << setprecision(2) << maxDensity << " млн чел./тыс. кв. км" << endl;
+
+    // Вывод стран с максимальной плотностью населения
+    cout << "\nСтраны с максимальной плотностью населения:" << endl;
+    cout << "============================================" << endl;
+    for (int i = 0; i < 28; i++) {
+        if (calculateDensity(countries[i]) == maxDensity) {
+            cout << countries[i].name << ": "
+                << fixed << setprecision(2) << maxDensity
+                << " млн чел./тыс. кв. км" << endl;
+        }
+    }
+
+    return 0;
+}
+Задание № 30
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+struct Item {
+    string material;
+    double mass; 
+    double volume; 
+};
+
+double calculateDensity(Item item) {
+    return item.mass / item.volume;
+}
+
+Item findMinDensityMaterial(Item items[], int n) {
+    Item minItem = items[0];
+    double minDensity = calculateDensity(items[0]);
+
+    for (int i = 1; i < n; i++) {
+        double density = calculateDensity(items[i]);
+        if (density < minDensity) {
+            minDensity = density;
+            minItem = items[i];
+        }
+    }
+
+    return minItem;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Item items[30] = {
+        {"Сталь", 7.85, 0.001}, {"Алюминий", 2.70, 0.001}, {"Медь", 8.96, 0.001},
+        {"Свинец", 11.34, 0.001}, {"Дерево", 0.70, 0.001}, {"Стекло", 2.50, 0.001},
+        {"Вода", 1.00, 0.001}, {"Лед", 0.92, 0.001}, {"Золото", 19.32, 0.001},
+        {"Серебро", 10.49, 0.001}, {"Чугун", 7.20, 0.001}, {"Бронза", 8.80, 0.001},
+        {"Латунь", 8.50, 0.001}, {"Олово", 7.31, 0.001}, {"Никель", 8.90, 0.001},
+        {"Цинк", 7.13, 0.001}, {"Титан", 4.51, 0.001}, {"Вольфрам", 19.25, 0.001},
+        {"Платина", 21.45, 0.001}, {"Мрамор", 2.70, 0.001}, {"Гранит", 2.60, 0.001},
+        {"Песок", 1.60, 0.001}, {"Бетон", 2.40, 0.001}, {"Кирпич", 1.80, 0.001},
+        {"Полиэтилен", 0.95, 0.001}, {"Полипропилен", 0.90, 0.001}, {"Резина", 1.20, 0.001},
+        {"Бумага", 0.80, 0.001}, {"Хлопок", 1.50, 0.001}, {"Шерсть", 1.30, 0.001}
+    };
+
+    Item minDensityItem = findMinDensityMaterial(items, 30);
+    double minDensity = calculateDensity(minDensityItem);
+
+    cout << "Материал с минимальной плотностью: " << minDensityItem.material << endl;
+    cout << "Плотность: " << fixed << setprecision(2) << minDensity << " кг/м^3" << endl;
+    cout << "Масса: " << minDensityItem.mass << " кг" << endl;
+    cout << "Объем: " << minDensityItem.volume << " м^3" << endl;
+
+    // Дополнительная информация: топ-3 материалов с наименьшей плотностью
+    cout << "\nТоп-3 материалов с наименьшей плотностью:" << endl;
+    cout << "========================================" << endl;
+
+    // Создаем массив для сортировки плотностей
+    struct DensityInfo {
+        string material;
+        double density;
+    };
+
+    DensityInfo densities[30];
+    for (int i = 0; i < 30; i++) {
+        densities[i].material = items[i].material;
+        densities[i].density = calculateDensity(items[i]);
+    }
+
+    // Простая сортировка пузырьком
+    for (int i = 0; i < 29; i++) {
+        for (int j = 0; j < 29 - i; j++) {
+            if (densities[j].density > densities[j + 1].density) {
+                swap(densities[j], densities[j + 1]);
+            }
+        }
+    }
+
+    // Вывод топ-3
+    for (int i = 0; i < 3; i++) {
+        cout << i + 1 << ". " << densities[i].material << ": "
+            << fixed << setprecision(2) << densities[i].density << " кг/м^3" << endl;
+    }
+
+    return 0;
+}
+Задание № 31
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+struct Country {
+    string name;
+    double population; // население в млн чел.
+    double area; // площадь в тыс. кв. км
+};
+
+Country findMinDensityCountry(Country countries[], int n) {
+    Country minCountry = countries[0];
+    double minDensity = countries[0].population / countries[0].area;
+
+    for (int i = 1; i < n; i++) {
+        double density = countries[i].population / countries[i].area;
+        if (density < minDensity) {
+            minDensity = density;
+            minCountry = countries[i];
+        }
+    }
+
+    return minCountry;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Country countries[28] = {
+        {"Россия", 146.7, 17098.2}, {"Китай", 1402.0, 9596.9}, {"Индия", 1380.0, 3287.3},
+        {"США", 331.0, 9834.6}, {"Индонезия", 273.5, 1910.9}, {"Пакистан", 220.9, 881.9},
+        {"Бразилия", 213.0, 8515.8}, {"Нигерия", 206.1, 923.8}, {"Бангладеш", 164.7, 147.6},
+        {"Мексика", 128.9, 1964.4}, {"Япония", 125.8, 377.9}, {"Филиппины", 109.6, 300.0},
+        {"Египет", 102.3, 1002.5}, {"Вьетнам", 97.3, 331.2}, {"Турция", 84.3, 783.6},
+        {"Иран", 83.9, 1648.2}, {"Германия", 83.2, 357.0}, {"Таиланд", 69.8, 513.1},
+        {"Великобритания", 67.9, 242.5}, {"Франция", 65.3, 551.7}, {"Италия", 60.4, 301.3},
+        {"Южная Африка", 59.3, 1219.1}, {"Кения", 53.8, 580.4}, {"Колумбия", 50.9, 1141.7},
+        {"Испания", 47.4, 505.4}, {"Аргентина", 45.4, 2780.4}, {"Украина", 44.1, 603.5},
+        {"Канада", 38.0, 9984.7}  // Добавим Канаду для примера с низкой плотностью
+    };
+
+    Country minCountry = findMinDensityCountry(countries, 28);
+    double density = minCountry.population / minCountry.area;
+
+    cout << "Государство с минимальной плотностью населения: " << minCountry.name << endl;
+    cout << "Население: " << minCountry.population << " млн чел." << endl;
+    cout << "Площадь: " << minCountry.area << " тыс. кв. км" << endl;
+    cout << "Плотность населения: " << fixed << setprecision(3) << density
+        << " млн чел./тыс. кв. км" << endl;
+
+    return 0;
+}
+Задание № 32
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    int marks[10]; // оценки по 10 предметам
+};
+
+int sumMarks(Student student) {
+    int sum = 0;
+    for (int i = 0; i < 10; i++) {
+        sum += student.marks[i];
+    }
+    return sum;
+}
+
+void findStudents(Student students[], int n) {
+    int maxSum = -1, minSum = 101; // максимально возможная сумма 10*5=50, минимальная 10*1=10
+    string maxStudent, minStudent;
+
+    for (int i = 0; i < n; i++) {
+        int sum = sumMarks(students[i]);
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            maxStudent = students[i].surname;
+        }
+
+        if (sum < minSum) {
+            minSum = sum;
+            minStudent = students[i].surname;
+        }
+    }
+
+    cout << "а) Ученик с наибольшей суммой оценок: " << maxStudent
+        << " (сумма: " << maxSum << ")" << endl;
+    cout << "б) Ученик с наименьшей суммой оценок: " << minStudent
+        << " (сумма: " << minSum << ")" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[25] = {
+        {"Иванов", {5,4,5,4,5,4,5,4,5,4}},
+        {"Петров", {4,4,4,4,4,4,4,4,4,4}},
+        {"Сидоров", {5,5,5,5,5,5,5,5,5,5}},
+        {"Кузнецов", {3,3,4,3,4,3,4,3,4,3}},
+        {"Смирнов", {4,5,4,5,4,5,4,5,4,5}},
+        {"Васильев", {5,4,5,4,5,4,5,4,5,4}},
+        {"Попов", {4,4,4,4,4,4,4,4,4,4}},
+        {"Новиков", {5,5,4,5,4,5,4,5,4,5}},
+        {"Федоров", {3,4,3,4,3,4,3,4,3,4}},
+        {"Морозов", {4,4,4,4,4,4,4,4,4,4}},
+        {"Волков", {5,5,5,5,5,5,5,5,5,5}},
+        {"Алексеев", {4,4,4,4,4,4,4,4,4,4}},
+        {"Лебедев", {5,4,5,4,5,4,5,4,5,4}},
+        {"Семенов", {4,3,4,3,4,3,4,3,4,3}},
+        {"Егоров", {5,5,5,5,5,5,5,5,5,5}},
+        {"Павлов", {4,4,4,4,4,4,4,4,4,4}},
+        {"Козлов", {5,4,5,4,5,4,5,4,5,4}},
+        {"Степанов", {3,3,3,3,3,3,3,3,3,3}},
+        {"Николаев", {4,5,4,5,4,5,4,5,4,5}},
+        {"Орлов", {5,5,4,5,4,5,4,5,4,5}},
+        {"Андреев", {4,4,4,4,4,4,4,4,4,4}},
+        {"Макаров", {5,4,5,4,5,4,5,4,5,4}},
+        {"Никитин", {3,4,3,4,3,4,3,4,3,4}},
+        {"Захаров", {4,4,4,4,4,4,4,4,4,4}},
+        {"Зайцев", {5,5,5,5,5,5,5,5,5,5}}
+    };
+
+    findStudents(students, 25);
+
+    // Дополнительно: вывод всех учеников с их суммами
+    cout << "\nСуммы оценок всех учеников:" << endl;
+    cout << "============================" << endl;
+    for (int i = 0; i < 25; i++) {
+        cout << students[i].surname << ": " << sumMarks(students[i]) << endl;
+    }
+
+    return 0;
+}
+Задание № 33
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    int marks[4]; // оценки по 4 предметам
+};
+
+string findMaxSumStudent(Student students[], int n) {
+    int maxSum = -1;
+    string maxStudent;
+
+    for (int i = 0; i < n; i++) {
+        int sum = 0;
+        for (int j = 0; j < 4; j++) {
+            sum += students[i].marks[j];
+        }
+
+        if (sum > maxSum) {
+            maxSum = sum;
+            maxStudent = students[i].surname;
+        }
+    }
+
+    return maxStudent;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[22] = {
+        {"Иванов", {5,4,5,4}}, {"Петров", {4,4,4,4}}, {"Сидоров", {5,5,5,5}},
+        {"Кузнецов", {3,4,3,4}}, {"Смирнов", {4,5,4,5}}, {"Васильев", {5,4,5,4}},
+        {"Попов", {4,4,4,4}}, {"Новиков", {5,5,4,5}}, {"Федоров", {3,4,3,4}},
+        {"Морозов", {4,4,4,4}}, {"Волков", {5,5,5,5}}, {"Алексеев", {4,4,4,4}},
+        {"Лебедев", {5,4,5,4}}, {"Семенов", {4,3,4,3}}, {"Егоров", {5,5,5,5}},
+        {"Павлов", {4,4,4,4}}, {"Козлов", {5,4,5,4}}, {"Степанов", {3,3,3,3}},
+        {"Николаев", {4,5,4,5}}, {"Орлов", {5,5,4,5}}, {"Андреев", {4,4,4,4}},
+        {"Макаров", {5,4,5,4}}
+    };
+
+    string maxStudent = findMaxSumStudent(students, 22);
+
+    cout << "Ученик с максимальной суммой оценок: " << maxStudent << endl;
+
+    // Дополнительно: вывод всех учеников с их суммами
+    cout << "\nСуммы оценок всех учеников:" << endl;
+    cout << "============================" << endl;
+    for (int i = 0; i < 22; i++) {
+        int sum = 0;
+        for (int j = 0; j < 4; j++) {
+            sum += students[i].marks[j];
+        }
+        cout << students[i].surname << ": " << sum << endl;
+    }
+
+    return 0;
+}
+Задание № 34
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Athlete {
+    string surname;
+    int scores[5]; // баллы по 5 видам спорта
+};
+
+string findChampion(Athlete athletes[], int n) {
+    int maxTotal = -1;
+    string champion;
+
+    for (int i = 0; i < n; i++) {
+        int total = 0;
+        for (int j = 0; j < 5; j++) {
+            total += athletes[i].scores[j];
+        }
+
+        if (total > maxTotal) {
+            maxTotal = total;
+            champion = athletes[i].surname;
+        }
+    }
+
+    return champion;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Athlete athletes[20] = {
+        {"Иванов", {250, 280, 265, 290, 275}},
+        {"Петров", {270, 260, 255, 285, 265}},
+        {"Сидоров", {285, 275, 290, 280, 295}},
+        {"Кузнецов", {240, 250, 235, 245, 230}},
+        {"Смирнов", {260, 270, 255, 265, 250}},
+        {"Васильев", {275, 265, 280, 270, 285}},
+        {"Попов", {255, 245, 260, 250, 240}},
+        {"Новиков", {290, 280, 295, 285, 300}},
+        {"Федоров", {230, 240, 225, 235, 220}},
+        {"Морозов", {265, 255, 270, 260, 275}},
+        {"Волков", {280, 290, 275, 285, 280}},
+        {"Алексеев", {250, 260, 245, 255, 240}},
+        {"Лебедев", {295, 285, 300, 290, 295}},
+        {"Семенов", {235, 245, 230, 240, 225}},
+        {"Егоров", {270, 280, 265, 275, 260}},
+        {"Павлов", {245, 235, 250, 240, 230}},
+        {"Козлов", {285, 275, 290, 280, 295}},
+        {"Степанов", {225, 235, 220, 230, 215}},
+        {"Николаев", {260, 250, 265, 255, 270}},
+        {"Орлов", {300, 290, 295, 285, 300}}
+    };
+
+    string champion = findChampion(athletes, 20);
+
+    cout << "Победитель соревнований: " << champion << endl;
+
+    // Дополнительно: вывод всех спортсменов с их общими баллами
+    cout << "\nОбщие баллы спортсменов:" << endl;
+    cout << "=========================" << endl;
+    for (int i = 0; i < 20; i++) {
+        int total = 0;
+        for (int j = 0; j < 5; j++) {
+            total += athletes[i].scores[j];
+        }
+        cout << athletes[i].surname << ": " << total << " баллов" << endl;
+    }
+
+    return 0;
+}
+Задание № 35
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Team {
+    string name;
+    int points;
+};
+
+void findTopTeams(Team teams[], int n) {
+    // а) Чемпион
+    Team champion = teams[0];
+    for (int i = 1; i < n; i++) {
+        if (teams[i].points > champion.points) {
+            champion = teams[i];
+        }
+    }
+
+    cout << "а) Чемпион: " << champion.name << " (" << champion.points << " очков)" << endl;
+
+    // б) Второе и третье места
+    Team second = { "", -1 };
+    Team third = { "", -1 };
+
+    for (int i = 0; i < n; i++) {
+        if (teams[i].name != champion.name) {
+            if (teams[i].points > second.points) {
+                third = second;
+                second = teams[i];
+            }
+            else if (teams[i].points > third.points) {
+                third = teams[i];
+            }
+        }
+    }
+
+    cout << "б) Второе место: " << second.name << " (" << second.points << " очков)" << endl;
+    cout << "   Третье место: " << third.name << " (" << third.points << " очков)" << endl;
+
+    // в) Первое и второе места без двух проходов
+    Team firstTemp = teams[0];
+    Team secondTemp = { "", -1 };
+
+    for (int i = 1; i < n; i++) {
+        if (teams[i].points > firstTemp.points) {
+            secondTemp = firstTemp;
+            firstTemp = teams[i];
+        }
+        else if (teams[i].points > secondTemp.points) {
+            secondTemp = teams[i];
+        }
+    }
+
+    cout << "в) Первое место: " << firstTemp.name << " (" << firstTemp.points << " очков)" << endl;
+    cout << "   Второе место: " << secondTemp.name << " (" << secondTemp.points << " очков)" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Team teams[20] = {
+        {"Спартак", 65}, {"ЦСКА", 70}, {"Зенит", 68}, {"Динамо", 60}, {"Локомотив", 62},
+        {"Краснодар", 58}, {"Ростов", 55}, {"Уфа", 45}, {"Крылья Советов", 48}, {"Рубин", 50},
+        {"Ахмат", 52}, {"Урал", 40}, {"Арсенал", 42}, {"Сочи", 56}, {"Нижний Новгород", 44},
+        {"Химки", 38}, {"Факел", 36}, {"Балтика", 34}, {"Енисей", 32}, {"Томь", 30}
+    };
+
+    findTopTeams(teams, 20);
+
+    return 0;
+}
+Задание № 36
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    double height; // рост в см
+};
+
+void findHeightInfo(Student students[], int n) {
+    // а) Самый высокий и самый низкий
+    Student tallest = students[0];
+    Student shortest = students[0];
+
+    for (int i = 1; i < n; i++) {
+        if (students[i].height > tallest.height) {
+            tallest = students[i];
+        }
+        if (students[i].height < shortest.height) {
+            shortest = students[i];
+        }
+    }
+
+    cout << "а) Самый высокий: " << tallest.surname << " (" << tallest.height << " см)" << endl;
+    cout << "   Самый низкий: " << shortest.surname << " (" << shortest.height << " см)" << endl;
+
+    // б) Два самых высоких (исключая действительно самого высокого)
+    Student secondTallest = shortest; // начинаем с самого низкого
+    Student thirdTallest = shortest;
+
+    for (int i = 0; i < n; i++) {
+        if (students[i].surname != tallest.surname) {
+            if (students[i].height > secondTallest.height) {
+                thirdTallest = secondTallest;
+                secondTallest = students[i];
+            }
+            else if (students[i].height > thirdTallest.height) {
+                thirdTallest = students[i];
+            }
+        }
+    }
+
+    cout << "б) Два самых высоких (исключая первого):" << endl;
+    cout << "   1. " << secondTallest.surname << " (" << secondTallest.height << " см)" << endl;
+    cout << "   2. " << thirdTallest.surname << " (" << thirdTallest.height << " см)" << endl;
+
+    // в) Два самых высоких без двух проходов
+    Student max1 = students[0];
+    Student max2 = students[1];
+
+    if (max2.height > max1.height) {
+        swap(max1, max2);
+    }
+
+    for (int i = 2; i < n; i++) {
+        if (students[i].height > max1.height) {
+            max2 = max1;
+            max1 = students[i];
+        }
+        else if (students[i].height > max2.height) {
+            max2 = students[i];
+        }
+    }
+
+    cout << "в) Два самых высоких в классе:" << endl;
+    cout << "   1. " << max1.surname << " (" << max1.height << " см)" << endl;
+    cout << "   2. " << max2.surname << " (" << max2.height << " см)" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[25] = {
+        {"Иванов", 178.5}, {"Петров", 182.2}, {"Сидоров", 175.8},
+        {"Кузнецов", 180.1}, {"Смирнов", 185.3}, {"Васильев", 176.7},
+        {"Попов", 179.5}, {"Новиков", 181.9}, {"Федоров", 177.2},
+        {"Морозов", 174.4}, {"Волков", 183.6}, {"Алексеев", 172.3},
+        {"Лебедев", 179.8}, {"Семенов", 176.5}, {"Егоров", 180.9},
+        {"Павлов", 178.2}, {"Козлов", 181.4}, {"Степанов", 175.1},
+        {"Николаев", 182.7}, {"Орлов", 179.3}, {"Андреев", 177.8},
+        {"Макаров", 180.5}, {"Никитин", 176.9}, {"Захаров", 178.7},
+        {"Зайцев", 181.1}
+    };
+
+    findHeightInfo(students, 25);
+
+    return 0;
+}
+Задание № 37
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Employee {
+    string surname;
+    double salary; // зарплата в тыс. руб.
+    char gender; // 'M' - мужчина, 'F' - женщина
+};
+
+void findSalaryExtremes(Employee employees[], int n) {
+    // а) Мужчина с самой большой зарплатой
+    Employee highestPaidMale = { "", 0.0, 'M' };
+    bool foundMale = false;
+
+    // б) Мужчина и женщина с самой маленькой зарплатой
+    Employee lowestPaidMale = { "", 1e9, 'M' };
+    Employee lowestPaidFemale = { "", 1e9, 'F' };
+
+    for (int i = 0; i < n; i++) {
+        if (employees[i].gender == 'M') {
+            // Для самой большой зарплаты мужчины
+            if (employees[i].salary > highestPaidMale.salary) {
+                highestPaidMale = employees[i];
+                foundMale = true;
+            }
+            // Для самой маленькой зарплаты мужчины
+            if (employees[i].salary < lowestPaidMale.salary) {
+                lowestPaidMale = employees[i];
+            }
+        }
+        else if (employees[i].gender == 'F') {
+            // Для самой маленькой зарплаты женщины
+            if (employees[i].salary < lowestPaidFemale.salary) {
+                lowestPaidFemale = employees[i];
+            }
+        }
+    }
+
+    cout << "а) Мужчина с самой большой зарплатой:" << endl;
+    if (foundMale) {
+        cout << "   " << highestPaidMale.surname << ": " << highestPaidMale.salary << " тыс. руб." << endl;
+    }
+    else {
+        cout << "   Мужчин в списке нет" << endl;
+    }
+
+    cout << "\nб) С самой маленькой зарплатой:" << endl;
+    cout << "   Мужчина: " << lowestPaidMale.surname << " (" << lowestPaidMale.salary << " тыс. руб.)" << endl;
+    cout << "   Женщина: " << lowestPaidFemale.surname << " (" << lowestPaidFemale.salary << " тыс. руб.)" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Employee employees[20] = {
+        {"Иванов", 85.5, 'M'}, {"Петрова", 65.3, 'F'}, {"Сидоров", 92.2, 'M'},
+        {"Кузнецова", 58.7, 'F'}, {"Смирнов", 78.8, 'M'}, {"Васильева", 72.4, 'F'},
+        {"Попов", 95.1, 'M'}, {"Новикова", 67.9, 'F'}, {"Федоров", 88.3, 'M'},
+        {"Морозова", 59.2, 'F'}, {"Волков", 76.7, 'M'}, {"Алексеева", 63.5, 'F'},
+        {"Лебедев", 91.5, 'M'}, {"Семенова", 70.8, 'F'}, {"Егоров", 82.9, 'M'},
+        {"Павлова", 64.1, 'F'}, {"Козлов", 79.2, 'M'}, {"Степанова", 66.3, 'F'},
+        {"Николаев", 87.4, 'M'}, {"Орлова", 68.7, 'F'}
+    };
+
+    findSalaryExtremes(employees, 20);
+
+    return 0;
+}
+Задание № 38
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Employee {
+    string surname;
+    int age;
+    bool isConscript; // true - военнообязанный, false - нет
+};
+
+void findAgeExtremes(Employee employees[], int n) {
+    // а) Самый младший среди военнообязанных
+    Employee youngestConscript = { "", 1000, true }; // большой начальный возраст
+    bool foundConscript = false;
+
+    // б) Самые старшие в каждой группе
+    Employee oldestConscript = { "", -1, true };
+    Employee oldestNonConscript = { "", -1, false };
+
+    for (int i = 0; i < n; i++) {
+        if (employees[i].isConscript) {
+            // Самый младший военнообязанный
+            if (employees[i].age < youngestConscript.age) {
+                youngestConscript = employees[i];
+                foundConscript = true;
+            }
+            // Самый старший военнообязанный
+            if (employees[i].age > oldestConscript.age) {
+                oldestConscript = employees[i];
+            }
+        }
+        else {
+            // Самый старший невоеннообязанный
+            if (employees[i].age > oldestNonConscript.age) {
+                oldestNonConscript = employees[i];
+            }
+        }
+    }
+
+    cout << "а) Самый младший среди военнообязанных:" << endl;
+    if (foundConscript) {
+        cout << "   " << youngestConscript.surname << ", возраст: " << youngestConscript.age << endl;
+    }
+    else {
+        cout << "   Военнообязанных в списке нет" << endl;
+    }
+
+    cout << "\nб) Самые старшие в каждой группе:" << endl;
+    cout << "   Среди военнообязанных: " << oldestConscript.surname
+        << ", возраст: " << oldestConscript.age << endl;
+    cout << "   Среди невоеннообязанных: " << oldestNonConscript.surname
+        << ", возраст: " << oldestNonConscript.age << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Employee employees[16] = {
+        {"Иванов", 25, true}, {"Петров", 30, false}, {"Сидоров", 22, true},
+        {"Кузнецов", 35, false}, {"Смирнов", 28, true}, {"Васильев", 32, false},
+        {"Попов", 26, true}, {"Новиков", 40, false}, {"Федоров", 24, true},
+        {"Морозов", 38, false}, {"Волков", 27, true}, {"Алексеев", 33, false},
+        {"Лебедев", 29, true}, {"Семенов", 36, false}, {"Егоров", 31, true},
+        {"Павлов", 34, false}
+    };
+
+    findAgeExtremes(employees, 16);
+
+    // Дополнительная статистика
+    int conscriptCount = 0, nonConscriptCount = 0;
+    int conscriptAgeSum = 0, nonConscriptAgeSum = 0;
+
+    for (int i = 0; i < 16; i++) {
+        if (employees[i].isConscript) {
+            conscriptCount++;
+            conscriptAgeSum += employees[i].age;
+        }
+        else {
+            nonConscriptCount++;
+            nonConscriptAgeSum += employees[i].age;
+        }
+    }
+
+    cout << "\nСтатистика:" << endl;
+    cout << "Военнообязанных: " << conscriptCount << " чел., средний возраст: "
+        << (conscriptCount > 0 ? conscriptAgeSum / conscriptCount : 0) << endl;
+    cout << "Невоеннообязанных: " << nonConscriptCount << " чел., средний возраст: "
+        << (nonConscriptCount > 0 ? nonConscriptAgeSum / nonConscriptCount : 0) << endl;
+
+    return 0;
+}
+Задание № 39
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Train {
+    int number;
+    string destination;
+    int arrivalHour;
+    int arrivalMinute;
+    int departureHour;
+    int departureMinute;
+};
+
+bool isTrainAtStation(Train train, int currentHour, int currentMinute) {
+    // Преобразуем время в минуты от начала суток
+    int currentTime = currentHour * 60 + currentMinute;
+    int arrivalTime = train.arrivalHour * 60 + train.arrivalMinute;
+    int departureTime = train.departureHour * 60 + train.departureMinute;
+
+    // Если поезд прибыл и еще не уехал
+    return (currentTime >= arrivalTime && currentTime < departureTime);
+}
+
+void findTrainsAtStation(Train trains[], int n, int currentHour, int currentMinute) {
+    cout << "Поезда на станции в " << currentHour << ":"
+        << (currentMinute < 10 ? "0" : "") << currentMinute << ":" << endl;
+    cout << "=========================================" << endl;
+
+    bool found = false;
+
+    for (int i = 0; i < n; i++) {
+        if (isTrainAtStation(trains[i], currentHour, currentMinute)) {
+            cout << "Поезд №" << trains[i].number << " "
+                << trains[i].destination << endl;
+            cout << "  Прибытие: " << trains[i].arrivalHour << ":"
+                << (trains[i].arrivalMinute < 10 ? "0" : "") << trains[i].arrivalMinute;
+            cout << ", Отправление: " << trains[i].departureHour << ":"
+                << (trains[i].departureMinute < 10 ? "0" : "") << trains[i].departureMinute << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "На станции нет поездов" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Train trains[25] = {
+        {1, "Москва-Омск", 8, 30, 8, 45},
+        {2, "Санкт-Петербург-Новосибирск", 9, 15, 9, 30},
+        {3, "Екатеринбург-Краснодар", 10, 0, 10, 20},
+        {4, "Казань-Сочи", 11, 45, 12, 0},
+        {5, "Нижний Новгород-Ростов", 12, 30, 12, 50},
+        {6, "Самара-Владивосток", 13, 20, 13, 40},
+        {7, "Челябинск-Минск", 14, 10, 14, 30},
+        {8, "Уфа-Калининград", 15, 5, 15, 25},
+        {9, "Красноярск-Астрахань", 16, 50, 17, 10},
+        {10, "Воронеж-Хабаровск", 17, 40, 18, 0},
+        {11, "Пермь-Ярославль", 18, 35, 18, 55},
+        {12, "Волгоград-Иркутск", 19, 25, 19, 45},
+        {13, "Омск-Москва", 20, 15, 20, 35},
+        {14, "Новосибирск-Санкт-Петербург", 21, 0, 21, 20},
+        {15, "Краснодар-Екатеринбург", 22, 55, 23, 15},
+        {16, "Сочи-Казань", 23, 30, 23, 50},
+        {17, "Ростов-Нижний Новгород", 0, 45, 1, 5},
+        {18, "Владивосток-Самара", 1, 20, 1, 40},
+        {19, "Минск-Челябинск", 2, 10, 2, 30},
+        {20, "Калининград-Уфа", 3, 5, 3, 25},
+        {21, "Астрахань-Красноярск", 4, 40, 5, 0},
+        {22, "Хабаровск-Воронеж", 5, 25, 5, 45},
+        {23, "Ярославль-Пермь", 6, 15, 6, 35},
+        {24, "Иркутск-Волгоград", 7, 0, 7, 20},
+        {25, "Тюмень-Оренбург", 8, 55, 9, 15}
+    };
+
+    // Проверка для разных времен
+    findTrainsAtStation(trains, 25, 8, 40);  // Утро
+    cout << endl;
+    findTrainsAtStation(trains, 25, 14, 15); // День
+    cout << endl;
+    findTrainsAtStation(trains, 25, 1, 30);  // Ночь
+
+    return 0;
+}
+Задание № 40
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+struct Luggage {
+    int itemsCount;
+    double totalWeight; // вес в кг
+};
+
+void analyzeLuggage(Luggage luggage[], int n) {
+    // а) Пассажиры с более чем двумя вещами
+    int countMoreThan2 = 0;
+    // б) Пассажир с одной вещью менее 25 кг
+    bool hasOneItemLight = false;
+    // в) Среднее число вещей
+    double avgItems = 0;
+    // г) Средний вес одной вещи
+    double avgWeightPerItem = 0;
+
+    // Сначала посчитаем общие суммы
+    int totalItems = 0;
+    double totalWeight = 0;
+
+    for (int i = 0; i < n; i++) {
+        totalItems += luggage[i].itemsCount;
+        totalWeight += luggage[i].totalWeight;
+
+        // а) Считаем пассажиров с более чем 2 вещами
+        if (luggage[i].itemsCount > 2) {
+            countMoreThan2++;
+        }
+
+        // б) Проверяем, есть ли пассажир с одной вещью менее 25 кг
+        if (luggage[i].itemsCount == 1 && luggage[i].totalWeight < 25) {
+            hasOneItemLight = true;
+        }
+    }
+
+    avgItems = (double)totalItems / n;
+    avgWeightPerItem = totalWeight / totalItems;
+
+    cout << "а) Пассажиров с более чем 2 вещами: " << countMoreThan2 << endl;
+
+    cout << "б) Пассажир с одной вещью весом менее 25 кг: ";
+    if (hasOneItemLight) {
+        cout << "да, такой есть" << endl;
+    }
+    else {
+        cout << "нет" << endl;
+    }
+
+    // в) Пассажиры, у которых количество вещей больше среднего
+    int countAboveAvg = 0;
+    for (int i = 0; i < n; i++) {
+        if (luggage[i].itemsCount > avgItems) {
+            countAboveAvg++;
+        }
+    }
+    cout << "в) Пассажиров с количеством вещей больше среднего ("
+        << fixed << setprecision(1) << avgItems << "): " << countAboveAvg << endl;
+
+    // г) Багаж, где средний вес одной вещи отличается от общего среднего не более чем на 0.5 кг
+    cout << "г) Багаж со средним весом вещи в пределах ±0.5 кг от общего среднего ("
+        << fixed << setprecision(2) << avgWeightPerItem << " кг):" << endl;
+
+    for (int i = 0; i < n; i++) {
+        double itemAvgWeight = luggage[i].totalWeight / luggage[i].itemsCount;
+        if (abs(itemAvgWeight - avgWeightPerItem) <= 0.5) {
+            cout << "   Багаж №" << i + 1 << ": " << luggage[i].itemsCount
+                << " вещ., общий вес " << luggage[i].totalWeight
+                << " кг, средний вес " << fixed << setprecision(2)
+                << itemAvgWeight << " кг" << endl;
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Luggage luggage[24] = {
+        {2, 30.5}, {1, 22.0}, {3, 45.2}, {1, 18.5}, {4, 60.8},
+        {2, 35.0}, {1, 24.3}, {3, 42.1}, {2, 28.7}, {1, 20.9},
+        {5, 75.3}, {2, 32.4}, {1, 23.8}, {3, 48.6}, {2, 31.2},
+        {1, 19.7}, {4, 55.9}, {2, 29.1}, {1, 21.5}, {3, 47.3},
+        {2, 33.8}, {1, 26.4}, {4, 58.2}, {2, 36.7}
+    };
+
+    analyzeLuggage(luggage, 24);
+
+    return 0;
+}
+Задание № 41
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Match {
+    int goalsScored;    // забитые мячи
+    int goalsConceded;  // пропущенные мячи
+};
+
+void analyzeMatches(Match matches[], int n) {
+    int wins = 0, draws = 0, losses = 0;
+    int totalPoints = 0;
+
+    cout << "а) Результаты матчей:" << endl;
+    cout << "=====================" << endl;
+
+    for (int i = 0; i < n; i++) {
+        cout << "Матч " << i + 1 << ": " << matches[i].goalsScored
+            << ":" << matches[i].goalsConceded << " - ";
+
+        if (matches[i].goalsScored > matches[i].goalsConceded) {
+            cout << "выигрыш";
+            wins++;
+            totalPoints += 3;
+        }
+        else if (matches[i].goalsScored == matches[i].goalsConceded) {
+            cout << "ничья";
+            draws++;
+            totalPoints += 1;
+        }
+        else {
+            cout << "проигрыш";
+            losses++;
+        }
+        cout << endl;
+    }
+
+    cout << "\nб) Количество выигрышей: " << wins << endl;
+    cout << "в) Количество выигрышей и проигрышей: " << wins << " и " << losses << endl;
+    cout << "г) Выигрыши/ничьи/проигрыши: " << wins << "/" << draws << "/" << losses << endl;
+    cout << "д) Общее число очков: " << totalPoints << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Match matches[22] = {
+        {2, 1}, {1, 1}, {0, 2}, {3, 1}, {2, 2},
+        {1, 0}, {0, 1}, {2, 0}, {1, 1}, {3, 2},
+        {0, 0}, {2, 1}, {1, 3}, {2, 2}, {1, 0},
+        {0, 2}, {3, 1}, {1, 1}, {2, 0}, {0, 3},
+        {1, 0}, {2, 1}
+    };
+
+    analyzeMatches(matches, 22);
+
+    return 0;
+}
+Задание № 42
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string surname;
+    double height;
+};
+
+void analyzeNewStudent(Student students[], int n, double newHeight) {
+    // а) Фамилии учеников с ростом меньше нового ученика
+    cout << "а) Ученики с ростом меньше нового (" << newHeight << " см):" << endl;
+    for (int i = 0; i < n; i++) {
+        // Без условного оператора - используем арифметику
+        int condition = (students[i].height < newHeight);
+        cout << string(condition, '\0') << (condition ? students[i].surname + "\n" : "");
+    }
+
+    // б) После какого ученика записать нового (используем бинарный поиск)
+    cout << "\nб) Нового ученика нужно записать после: ";
+    int position = n; // если новенький самый низкий
+    for (int i = 0; i < n; i++) {
+        // Без if: используем логическое умножение
+        bool condition = (students[i].height > newHeight);
+        position -= condition; // уменьшаем позицию, если текущий ученик выше
+    }
+
+    if (position == n) {
+        cout << "последнего в списке" << endl;
+    }
+    else if (position == 0) {
+        cout << "никого (он будет первым)" << endl;
+    }
+    else {
+        cout << students[position - 1].surname << endl;
+    }
+
+    // в) Ученик с наиболее близким ростом
+    cout << "в) Ученик с ростом, наиболее близким к новому:" << endl;
+    int closestIndex = 0;
+    double minDiff = abs(students[0].height - newHeight);
+
+    for (int i = 1; i < n; i++) {
+        double diff = abs(students[i].height - newHeight);
+        if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+        }
+    }
+
+    cout << students[closestIndex].surname << " (" << students[closestIndex].height
+        << " см), разница: " << minDiff << " см" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Ученики, упорядоченные по убыванию роста
+    Student students[15] = {
+        {"Иванов", 185.5}, {"Петров", 183.2}, {"Сидоров", 182.0},
+        {"Кузнецов", 180.7}, {"Смирнов", 179.3}, {"Васильев", 178.1},
+        {"Попов", 176.8}, {"Новиков", 175.5}, {"Федоров", 174.2},
+        {"Морозов", 172.9}, {"Волков", 171.6}, {"Алексеев", 170.3},
+        {"Лебедев", 169.0}, {"Семенов", 167.7}, {"Егоров", 166.4}
+    };
+
+    double newHeight = 177.5; // рост новенького
+
+    cout << "Рост нового ученика: " << newHeight << " см" << endl;
+    cout << "======================================" << endl;
+
+    analyzeNewStudent(students, 15, newHeight);
+
+    return 0;
+}
+Задание № 43
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Team {
+    string name;
+    int points;
+};
+
+void analyzeNewTeam(Team teams[], int n, int newTeamPoints) {
+    // а) Определить место новой команды
+    cout << "а) Команда набрала " << newTeamPoints << " очков и заняла ";
+
+    // Без условного оператора
+    int position = n + 1; // начинаем с последнего места
+
+    for (int i = 0; i < n; i++) {
+        // Увеличиваем позицию на 1 за каждую команду с меньшим количеством очков
+        position -= (teams[i].points > newTeamPoints);
+    }
+
+    cout << position << "-е место" << endl;
+
+    // б) Команды, набравшие меньше очков
+    cout << "б) Команды, набравшие меньше очков:" << endl;
+
+    for (int i = 0; i < n; i++) {
+        // Без if: используем арифметику
+        bool condition = (teams[i].points < newTeamPoints);
+        cout << string(condition, '\0') << (condition ? teams[i].name + "\n" : "");
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Команды упорядочены по убыванию очков
+    Team teams[19] = {
+        {"Спартак", 70}, {"ЦСКА", 68}, {"Зенит", 65}, {"Динамо", 62},
+        {"Локомотив", 60}, {"Краснодар", 58}, {"Ростов", 55},
+        {"Сочи", 52}, {"Нижний Новгород", 50}, {"Рубин", 48},
+        {"Уфа", 46}, {"Арсенал", 44}, {"Урал", 42}, {"Ахмат", 40},
+        {"Крылья Советов", 38}, {"Химки", 36}, {"Факел", 34},
+        {"Балтика", 32}, {"Енисей", 30}
+    };
+
+    int newTeamPoints = 56; // очки новой команды
+
+    cout << "Двадцатая команда набрала " << newTeamPoints << " очков" << endl;
+    cout << "============================================" << endl;
+
+    analyzeNewTeam(teams, 19, newTeamPoints);
+
+    return 0;
+}
+Задание № 44
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+const int SUBJECTS = 10;
+
+struct Student {
+    string surname;
+    int marks[SUBJECTS];
+};
+
+void printTable(Student students[], int n) {
+    cout << left << setw(15) << "Фамилия";
+    for (int j = 0; j < SUBJECTS; j++) {
+        cout << setw(4) << j + 1;
+    }
+    cout << endl;
+    cout << string(15 + SUBJECTS * 4, '-') << endl;
+
+    for (int i = 0; i < n; i++) {
+        cout << left << setw(15) << students[i].surname;
+        for (int j = 0; j < SUBJECTS; j++) {
+            cout << setw(4) << students[i].marks[j];
+        }
+        cout << endl;
+    }
+}
+
+void insertNewStudent(Student students[], int& n, Student newStudent, int position) {
+    // Сдвигаем элементы вправо начиная с позиции position-1
+    for (int i = n; i >= position; i--) {
+        students[i] = students[i - 1];
+    }
+
+    // Вставляем нового ученика
+    students[position - 1] = newStudent;
+    n++;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[26]; // было 25, станет 26
+    int currentCount = 25;
+
+    // Заполняем исходную таблицу (25 учеников)
+    for (int i = 0; i < currentCount; i++) {
+        students[i].surname = "Ученик" + to_string(i + 1);
+        for (int j = 0; j < SUBJECTS; j++) {
+            students[i].marks[j] = 3 + rand() % 3; // оценки от 3 до 5
+        }
+    }
+
+    cout << "Исходная таблица (25 учеников):" << endl;
+    cout << "================================" << endl;
+    printTable(students, currentCount);
+
+    // Новый ученик
+    Student newStudent;
+    newStudent.surname = "Новиков";
+    for (int j = 0; j < SUBJECTS; j++) {
+        newStudent.marks[j] = 4 + rand() % 2; // оценки 4 или 5
+    }
+
+    int position = 10; // новенький будет на 10-м месте
+
+    // Вставляем нового ученика
+    insertNewStudent(students, currentCount, newStudent, position);
+
+    cout << "\n\nТаблица после добавления нового ученика на "
+        << position << "-е место:" << endl;
+    cout << "==============================================" << endl;
+    printTable(students, currentCount);
+
+    return 0;
+}
+Задание № 45
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+const int STUDENTS = 23;
+const int SUBJECTS = 12;
+
+void printTable(string subjects[], int marks[][SUBJECTS + 1]) {
+    cout << left << setw(15) << "Предметы";
+    for (int i = 0; i < STUDENTS; i++) {
+        cout << setw(4) << "Уч" + to_string(i + 1);
+    }
+    cout << endl;
+    cout << string(15 + STUDENTS * 4, '-') << endl;
+
+    for (int i = 0; i < SUBJECTS; i++) {
+        cout << left << setw(15) << subjects[i];
+        for (int j = 0; j < STUDENTS; j++) {
+            cout << setw(4) << marks[j][i];
+        }
+        cout << endl;
+    }
+}
+
+void insertNewSubject(string subjects[], int marks[][SUBJECTS + 1],
+    string newSubject, int position) {
+    // Сдвигаем предметы вправо
+    for (int i = SUBJECTS; i >= position; i--) {
+        subjects[i] = subjects[i - 1];
+    }
+
+    // Вставляем новый предмет
+    subjects[position - 1] = newSubject;
+
+    // Сдвигаем оценки вправо для каждого ученика
+    for (int i = 0; i < STUDENTS; i++) {
+        for (int j = SUBJECTS; j >= position; j--) {
+            marks[i][j] = marks[i][j - 1];
+        }
+        // Заполняем новые оценки (случайные от 3 до 5)
+        marks[i][position - 1] = 3 + rand() % 3;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    string subjects[SUBJECTS + 1]; // +1 для нового предмета
+    int marks[STUDENTS][SUBJECTS + 1] = { 0 };
+
+    // Исходные предметы
+    string originalSubjects[SUBJECTS] = {
+        "Математика", "Физика", "Химия", "Биология",
+        "История", "Литература", "Русский язык", "Иностранный язык",
+        "География", "Информатика", "Физкультура", "Обществознание"
+    };
+
+    // Копируем в массив с запасом
+    for (int i = 0; i < SUBJECTS; i++) {
+        subjects[i] = originalSubjects[i];
+    }
+
+    // Заполняем случайными оценками
+    for (int i = 0; i < STUDENTS; i++) {
+        for (int j = 0; j < SUBJECTS; j++) {
+            marks[i][j] = 3 + rand() % 3; // оценки от 3 до 5
+        }
+    }
+
+    cout << "Исходная таблица (12 предметов):" << endl;
+    cout << "=================================" << endl;
+    printTable(subjects, marks);
+
+    // Новый предмет
+    string newSubject = "Экология";
+    int position = 5; // новый предмет будет на 5-м месте
+
+    // Вставляем новый предмет
+    insertNewSubject(subjects, marks, newSubject, position);
+
+    cout << "\n\nТаблица после добавления предмета \""
+        << newSubject << "\" на " << position << "-е место:" << endl;
+    cout << "===================================================" << endl;
+    printTable(subjects, marks);
+
+    return 0;
+}
+Задание № 46
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+struct Student {
+    string surname;
+    double height;
+};
+
+bool compareByHeight(Student a, Student b) {
+    return a.height > b.height; // по убыванию роста
+}
+
+void printStudents(Student students[], int n) {
+    cout << "Фамилия\t\tРост" << endl;
+    cout << "=====================" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << students[i].surname << "\t\t" << students[i].height << " см" << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Исходный список (15 учеников, упорядочен по убыванию роста)
+    Student students[16]; // 15 + 1 новый
+
+    // Заполняем исходных 15 учеников
+    string surnames[] = {
+        "Иванов", "Петров", "Сидоров", "Кузнецов", "Смирнов",
+        "Васильев", "Попов", "Новиков", "Федоров", "Морозов",
+        "Волков", "Алексеев", "Лебедев", "Семенов", "Егоров"
+    };
+
+    double heights[] = {
+        185.5, 183.2, 182.0, 180.7, 179.3,
+        178.1, 176.8, 175.5, 174.2, 172.9,
+        171.6, 170.3, 169.0, 167.7, 166.4
+    };
+
+    for (int i = 0; i < 15; i++) {
+        students[i].surname = surnames[i];
+        students[i].height = heights[i];
+    }
+
+    // Добавляем нового ученика
+    students[15].surname = "Новенький";
+    students[15].height = 177.5; // рост новенького
+
+    cout << "Исходный список (15 учеников):" << endl;
+    printStudents(students, 15);
+
+    // Сортируем весь список (16 учеников)
+    sort(students, students + 16, compareByHeight);
+
+    cout << "\n\nНовый список (16 учеников с новеньким):" << endl;
+    printStudents(students, 16);
+
+    return 0;
+}
+Задание № 47
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+struct Team {
+    string name;
+    int points;
+};
+
+bool compareByPoints(Team a, Team b) {
+    return a.points > b.points; // по убыванию очков
+}
+
+void printTeams(Team teams[], int n) {
+    cout << "Место\tКоманда\t\tОчки" << endl;
+    cout << "==========================" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << i + 1 << "\t" << teams[i].name << "\t\t" << teams[i].points << endl;
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // Исходный список (19 команд)
+    Team teams[20]; // 19 + 1 новая
+
+    // Заполняем исходные 19 команд
+    string teamNames[] = {
+        "Спартак", "ЦСКА", "Зенит", "Динамо", "Локомотив",
+        "Краснодар", "Ростов", "Сочи", "Нижний Новгород", "Рубин",
+        "Уфа", "Арсенал", "Урал", "Ахмат", "Крылья Советов",
+        "Химки", "Факел", "Балтика", "Енисей"
+    };
+
+    int teamPoints[] = {
+        70, 68, 65, 62, 60,
+        58, 55, 52, 50, 48,
+        46, 44, 42, 40, 38,
+        36, 34, 32, 30
+    };
+
+    for (int i = 0; i < 19; i++) {
+        teams[i].name = teamNames[i];
+        teams[i].points = teamPoints[i];
+    }
+
+    // Добавляем новую команду
+    teams[19].name = "НоваяКоманда";
+    teams[19].points = 56; // очки новой команды
+
+    cout << "Исходный список (19 команд):" << endl;
+    printTeams(teams, 19);
+
+    // Сортируем весь список (20 команд)
+    sort(teams, teams + 20, compareByPoints);
+
+    cout << "\n\nНовый список (20 команд с новой):" << endl;
+    printTeams(teams, 20);
+
+    return 0;
+}
+Задание № 48
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+struct Team {
+    string name;
+    int points;
+};
+
+bool compareByPoints(Team a, Team b) {
+    return a.points > b.points;
+}
+
+void sortTeams(Team teams[], int n) {
+    // Сортируем команды по очкам (пузырьковая сортировка)
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (teams[j].points < teams[j + 1].points) {
+                swap(teams[j], teams[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Team teams[20] = {
+        {"Спартак", 65}, {"ЦСКА", 70}, {"Зенит", 68}, {"Динамо", 60}, {"Локомотив", 62},
+        {"Краснодар", 58}, {"Ростов", 55}, {"Уфа", 45}, {"Крылья Советов", 48}, {"Рубин", 50},
+        {"Ахмат", 52}, {"Урал", 40}, {"Арсенал", 42}, {"Сочи", 56}, {"Нижний Новгород", 44},
+        {"Химки", 38}, {"Факел", 36}, {"Балтика", 34}, {"Енисей", 32}, {"Томь", 30}
+    };
+
+    cout << "Исходный список команд:" << endl;
+    cout << "========================" << endl;
+    for (int i = 0; i < 20; i++) {
+        cout << teams[i].name << ": " << teams[i].points << " очков" << endl;
+    }
+
+    // Сортируем команды
+    sortTeams(teams, 20);
+
+    cout << "\n\nКоманды в соответствии с занятыми местами:" << endl;
+    cout << "==========================================" << endl;
+    for (int i = 0; i < 20; i++) {
+        cout << i + 1 << " место: " << teams[i].name
+            << " (" << teams[i].points << " очков)" << endl;
+    }
+
+    return 0;
+}
+Задание № 49
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+struct Student {
+    string surname;
+    double height;
+};
+
+bool compareByHeight(Student a, Student b) {
+    return a.height < b.height; // по возрастанию роста
+}
+
+void sortStudents(Student students[], int n) {
+    // Сортируем учеников по росту (пузырьковая сортировка)
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (students[j].height > students[j + 1].height) {
+                swap(students[j], students[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Student students[25] = {
+        {"Иванов", 178.5}, {"Петров", 182.2}, {"Сидоров", 175.8},
+        {"Кузнецов", 180.1}, {"Смирнов", 185.3}, {"Васильев", 176.7},
+        {"Попов", 179.5}, {"Новиков", 181.9}, {"Федоров", 177.2},
+        {"Морозов", 174.4}, {"Волков", 183.6}, {"Алексеев", 172.3},
+        {"Лебедев", 179.8}, {"Семенов", 176.5}, {"Егоров", 180.9},
+        {"Павлов", 178.2}, {"Козлов", 181.4}, {"Степанов", 175.1},
+        {"Николаев", 182.7}, {"Орлов", 179.3}, {"Андреев", 177.8},
+        {"Макаров", 180.5}, {"Никитин", 176.9}, {"Захаров", 178.7},
+        {"Зайцев", 181.1}
+    };
+
+    cout << "Исходный список учеников:" << endl;
+    cout << "=========================" << endl;
+    for (int i = 0; i < 25; i++) {
+        cout << students[i].surname << ": " << students[i].height << " см" << endl;
+    }
+
+    // Сортируем учеников по возрастанию роста
+    sortStudents(students, 25);
+
+    cout << "\n\nУченики в порядке возрастания роста:" << endl;
+    cout << "=====================================" << endl;
+    for (int i = 0; i < 25; i++) {
+        cout << i + 1 << ". " << students[i].surname
+            << " (" << students[i].height << " см)" << endl;
+    }
+
+    return 0;
+}
+Задание № 50
+#include <iostream>
+#include <string>
+using namespace std;
+
+const int TEAMS = 20;
+
+struct Championship {
+    string teams[TEAMS];
+    int results[TEAMS][TEAMS];
+    int points[TEAMS];
+
+    void calculatePoints() {
+        // Обнуляем очки
+        for (int i = 0; i < TEAMS; i++) {
+            points[i] = 0;
+        }
+
+        // Рассчитываем очки
+        for (int i = 0; i < TEAMS; i++) {
+            for (int j = 0; j < TEAMS; j++) {
+                if (i != j) {
+                    points[i] += results[i][j];
+                }
+            }
+        }
+    }
+
+    void analyze() {
+        calculatePoints();
+
+        // а) Команды с больше побед, чем поражений
+        cout << "а) Команды с больше побед, чем поражений:" << endl;
+        for (int i = 0; i < TEAMS; i++) {
+            int wins = 0, losses = 0;
+            for (int j = 0; j < TEAMS; j++) {
+                if (i != j) {
+                    if (results[i][j] == 3) wins++;
+                    if (results[i][j] == 0) losses++;
+                }
+            }
+            if (wins > losses) {
+                cout << "   " << teams[i] << " (побед: " << wins << ", поражений: " << losses << ")" << endl;
+            }
+        }
+
+        // б) Команды без поражений
+        cout << "\nб) Команды без поражений:" << endl;
+        for (int i = 0; i < TEAMS; i++) {
+            bool undefeated = true;
+            for (int j = 0; j < TEAMS; j++) {
+                if (i != j && results[i][j] == 0) {
+                    undefeated = false;
+                    break;
+                }
+            }
+            if (undefeated) {
+                cout << "   " << teams[i] << endl;
+            }
+        }
+
+        // в) Чемпион
+        cout << "\nв) Чемпион: ";
+        int championIndex = 0;
+        for (int i = 1; i < TEAMS; i++) {
+            if (points[i] > points[championIndex]) {
+                championIndex = i;
+            }
+        }
+        cout << teams[championIndex] << " (" << points[championIndex] << " очков)" << endl;
+    }
+};
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Championship champ;
+
+    // Названия команд
+    string teamNames[] = {
+        "Спартак", "ЦСКА", "Зенит", "Динамо", "Локомотив",
+        "Краснодар", "Ростов", "Сочи", "Нижний Новгород", "Рубин",
+        "Уфа", "Арсенал", "Урал", "Ахмат", "Крылья Советов",
+        "Химки", "Факел", "Балтика", "Енисей", "Томь"
+    };
+
+    for (int i = 0; i < TEAMS; i++) {
+        champ.teams[i] = teamNames[i];
+    }
+
+    // Заполняем результаты (случайные)
+    for (int i = 0; i < TEAMS; i++) {
+        for (int j = 0; j < TEAMS; j++) {
+            if (i == j) {
+                champ.results[i][j] = 0;
+            }
+            else {
+                // Случайный результат: 3, 1 или 0
+                int r = rand() % 3;
+                if (r == 0) champ.results[i][j] = 3;      // победа
+                else if (r == 1) champ.results[i][j] = 1; // ничья
+                else champ.results[i][j] = 0;             // поражение
+
+                // Для симметрии
+                if (champ.results[i][j] == 3) champ.results[j][i] = 0;
+                else if (champ.results[i][j] == 1) champ.results[j][i] = 1;
+                else champ.results[j][i] = 3;
+            }
+        }
+    }
+
+    champ.analyze();
+
+    return 0;
+}
+Задание № 51
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+const int TEAMS = 16;
+const int MATCHES = 15;
+
+struct MatchResult {
+    int goalsScored;
+    int goalsConceded;
+};
+
+struct Team {
+    string name;
+    MatchResult results[MATCHES];
+    int wins;
+    int draws;
+    int losses;
+    int points;
+    int totalGoalsScored;
+    int totalGoalsConceded;
+};
+
+void analyzeChampionship(Team teams[]) {
+    // Инициализируем статистику
+    for (int i = 0; i < TEAMS; i++) {
+        teams[i].wins = 0;
+        teams[i].draws = 0;
+        teams[i].losses = 0;
+        teams[i].points = 0;
+        teams[i].totalGoalsScored = 0;
+        teams[i].totalGoalsConceded = 0;
+
+        for (int j = 0; j < MATCHES; j++) {
+            // Подсчитываем статистику за матч
+            teams[i].totalGoalsScored += teams[i].results[j].goalsScored;
+            teams[i].totalGoalsConceded += teams[i].results[j].goalsConceded;
+
+            if (teams[i].results[j].goalsScored > teams[i].results[j].goalsConceded) {
+                teams[i].wins++;
+                teams[i].points += 3;
+            }
+            else if (teams[i].results[j].goalsScored == teams[i].results[j].goalsConceded) {
+                teams[i].draws++;
+                teams[i].points += 1;
+            }
+            else {
+                teams[i].losses++;
+            }
+        }
+    }
+
+    // а) Таблица чемпионата (упрощенная версия)
+    cout << "а) Таблица чемпионата:" << endl;
+    cout << "======================" << endl;
+    cout << left << setw(20) << "Команда" << setw(5) << "И"
+        << setw(5) << "В" << setw(5) << "Н" << setw(5) << "П"
+        << setw(5) << "ГЗ" << setw(5) << "ГП" << setw(5) << "О" << endl;
+    cout << string(55, '-') << endl;
+
+    for (int i = 0; i < TEAMS; i++) {
+        cout << left << setw(20) << teams[i].name
+            << setw(5) << MATCHES
+            << setw(5) << teams[i].wins
+            << setw(5) << teams[i].draws
+            << setw(5) << teams[i].losses
+            << setw(5) << teams[i].totalGoalsScored
+            << setw(5) << teams[i].totalGoalsConceded
+            << setw(5) << teams[i].points << endl;
+    }
+
+    // б) Матчи с ничьей (общее количество)
+    int totalDraws = 0;
+    for (int i = 0; i < TEAMS; i++) {
+        totalDraws += teams[i].draws;
+    }
+    // Каждая ничья учитывается дважды (для обеих команд), поэтому делим на 2
+    cout << "\nб) Всего ничьих в чемпионате: " << totalDraws / 2 << endl;
+
+    // в) Матчи с разностью мячей >= 3
+    int bigWins = 0;
+    for (int i = 0; i < TEAMS; i++) {
+        for (int j = 0; j < MATCHES; j++) {
+            if (abs(teams[i].results[j].goalsScored - teams[i].results[j].goalsConceded) >= 3) {
+                bigWins++;
+            }
+        }
+    }
+    // Каждый матч учитывается дважды
+    cout << "в) Матчей с разностью мячей >= 3: " << bigWins / 2 << endl;
+
+    // г) Статистика каждой команды
+    cout << "\nг) Статистика команд:" << endl;
+    cout << "====================" << endl;
+    for (int i = 0; i < TEAMS; i++) {
+        cout << teams[i].name << ": "
+            << teams[i].wins << " выигрышей, "
+            << teams[i].draws << " ничьих, "
+            << teams[i].losses << " поражений" << endl;
+    }
+
+    // д) Очки каждой команды
+    cout << "\nд) Очки команд:" << endl;
+    cout << "==============" << endl;
+    for (int i = 0; i < TEAMS; i++) {
+        cout << teams[i].name << ": " << teams[i].points << " очков" << endl;
+    }
+
+    // е) Чемпион
+    cout << "\nе) Чемпион: ";
+    int championIndex = 0;
+    for (int i = 1; i < TEAMS; i++) {
+        if (teams[i].points > teams[championIndex].points) {
+            championIndex = i;
+        }
+    }
+    cout << teams[championIndex].name << " ("
+        << teams[championIndex].points << " очков)" << endl;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    Team teams[TEAMS];
+
+    // Названия команд
+    string teamNames[TEAMS] = {
+        "Спартак", "ЦСКА", "Зенит", "Динамо", "Локомотив",
+        "Краснодар", "Ростов", "Сочи", "Нижний Новгород", "Рубин",
+        "Уфа", "Арсенал", "Урал", "Ахмат", "Крылья Советов", "Химки"
+    };
+
+    // Инициализируем команды
+    for (int i = 0; i < TEAMS; i++) {
+        teams[i].name = teamNames[i];
+
+        // Заполняем результаты матчей (случайные)
+        for (int j = 0; j < MATCHES; j++) {
+            teams[i].results[j].goalsScored = rand() % 5; // 0-4 гола
+            teams[i].results[j].goalsConceded = rand() % 5; // 0-4 гола
+        }
+    }
+
+    analyzeChampionship(teams);
+
+    return 0;
+}
+Задание № 52
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct DominoPiece {
+    int left;
+    int right;
+};
+
+bool checkDominoSequence(DominoPiece pieces[], int n, bool fixedSides) {
+    if (fixedSides) {
+        // Случай 1: левая половина в первой таблице, правая - во второй
+        for (int i = 0; i < n - 1; i++) {
+            if (pieces[i].right != pieces[i + 1].left) {
+                cout << "Нарушение на кости №" << i + 2 << endl;
+                return false;
+            }
+        }
+    }
+    else {
+        // Случай 2: каждая таблица может содержать левую или правую половину
+        for (int i = 0; i < n - 1; i++) {
+            if (pieces[i].right != pieces[i + 1].left &&
+                pieces[i].right != pieces[i + 1].right) {
+                // Попробуем перевернуть следующую кость
+                swap(pieces[i + 1].left, pieces[i + 1].right);
+                if (pieces[i].right != pieces[i + 1].left) {
+                    cout << "Нарушение на кости №" << i + 2 << endl;
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    const int N = 20;
+    DominoPiece pieces[N];
+
+    // Заполняем кости домино (пример корректной последовательности)
+    int leftValues[N] = { 4, 3, 0, 6, 1, 2, 5, 0, 3, 4, 2, 1, 6, 5, 0, 4, 3, 2, 1, 5 };
+    int rightValues[N] = { 3, 0, 6, 1, 2, 5, 0, 3, 4, 2, 1, 6, 5, 0, 4, 3, 2, 1, 5, 6 };
+
+    for (int i = 0; i < N; i++) {
+        pieces[i].left = leftValues[i];
+        pieces[i].right = rightValues[i];
+    }
+
+    cout << "Проверка последовательности костей домино:" << endl;
+    cout << "==========================================" << endl;
+
+    // Случай 1: фиксированные стороны
+    cout << "\nСлучай 1 (фиксированные стороны):" << endl;
+    if (checkDominoSequence(pieces, N, true)) {
+        cout << "Последовательность корректна" << endl;
+    }
+    else {
+        cout << "Последовательность нарушена" << endl;
+    }
+
+    // Случай 2: стороны могут меняться
+    cout << "\nСлучай 2 (стороны могут меняться):" << endl;
+    if (checkDominoSequence(pieces, N, false)) {
+        cout << "Последовательность корректна" << endl;
+    }
+    else {
+        cout << "Последовательность нарушена" << endl;
+    }
+
+    // Вывод последовательности
+    cout << "\nПоследовательность костей:" << endl;
+    for (int i = 0; i < N; i++) {
+        cout << "[" << pieces[i].left << "|" << pieces[i].right << "] ";
+        if ((i + 1) % 5 == 0) cout << endl;
+    }
+
+    return 0;
+}
+Задание № 53
+def find_element_symbol():
+    """Найти обозначение химического элемента по его названию"""
+    
+    elements = {
+        "водород": "H",
+        "гелий": "He", 
+        "литий": "Li",
+        "бериллий": "Be",
+        "бор": "B",
+        "углерод": "C",
+        "азот": "N",
+        "кислород": "O",
+        "фтор": "F",
+        "неон": "Ne",
+        "натрий": "Na",
+        "магний": "Mg",
+        "алюминий": "Al",
+        "кремний": "Si",
+        "фосфор": "P",
+        "сера": "S",
+        "хлор": "Cl",
+        "аргон": "Ar",
+        "калий": "K",
+        "кальций": "Ca",
+        "медь": "Cu",
+        "цинк": "Zn",
+        "серебро": "Ag",
+        "золото": "Au"
+    }
+    
+    element_name = input("Введите название химического элемента: ").lower()
+    
+    if element_name in elements:
+        print(f"Обозначение элемента {element_name}: {elements[element_name]}")
+    else:
+        print(f"Элемент '{element_name}' не найден в словаре")
+
+# Запуск программы
+if __name__ == "__main__":
+    find_element_symbol()
+Задание № 54
+def find_element_name():
+    """Найти название химического элемента по его обозначению"""
+    
+    elements = {
+        "водород": "H",
+        "гелий": "He", 
+        "литий": "Li",
+        "бериллий": "Be",
+        "бор": "B",
+        "углерод": "C",
+        "азот": "N",
+        "кислород": "O",
+        "фтор": "F",
+        "неон": "Ne",
+        "натрий": "Na",
+        "магний": "Mg",
+        "алюминий": "Al",
+        "кремний": "Si",
+        "фосфор": "P",
+        "сера": "S",
+        "хлор": "Cl",
+        "аргон": "Ar",
+        "калий": "K",
+        "кальций": "Ca",
+        "медь": "Cu",
+        "цинк": "Zn",
+        "серебро": "Ag",
+        "золото": "Au"
+    }
+    
+    symbol = input("Введите обозначение химического элемента: ")
+    
+    # Поиск элемента по значению
+    found = False
+    for name, sym in elements.items():
+        if sym == symbol:
+            print(f"Элемент с обозначением {symbol}: {name}")
+            found = True
+            break
+    
+    if not found:
+        print(f"Элемент с обозначением '{symbol}' не найден")
+
+# Запуск программы
+if __name__ == "__main__":
+    find_element_name()
+Задание № 55
+def check_element_exists():
+    """Проверить наличие химического элемента в словаре"""
+    
+    elements = {
+        "водород": "H",
+        "гелий": "He", 
+        "литий": "Li",
+        "бериллий": "Be",
+        "бор": "B",
+        "углерод": "C",
+        "азот": "N",
+        "кислород": "O",
+        "фтор": "F",
+        "неон": "Ne",
+        "натрий": "Na",
+        "магний": "Mg",
+        "алюминий": "Al",
+        "кремний": "Si",
+        "фосфор": "P",
+        "сера": "S",
+        "хлор": "Cl",
+        "аргон": "Ar",
+        "калий": "K",
+        "кальций": "Ca",
+        "медь": "Cu",
+        "цинк": "Zn",
+        "серебро": "Ag",
+        "золото": "Au"
+    }
+    
+    element_name = input("Введите название химического элемента: ").lower()
+    
+    if element_name in elements:
+        print(f"Элемент '{element_name}' присутствует в словаре")
+    else:
+        print(f"Элемент '{element_name}' отсутствует в словаре")
+
+# Запуск программы
+if __name__ == "__main__":
+    check_element_exists()
+Задание № 56
+def check_symbol_exists():
+    """Проверить наличие обозначения химического элемента в словаре"""
+    
+    elements = {
+        "водород": "H",
+        "гелий": "He", 
+        "литий": "Li",
+        "бериллий": "Be",
+        "бор": "B",
+        "углерод": "C",
+        "азот": "N",
+        "кислород": "O",
+        "фтор": "F",
+        "неон": "Ne",
+        "натрий": "Na",
+        "магний": "Mg",
+        "алюминий": "Al",
+        "кремний": "Si",
+        "фосфор": "P",
+        "сера": "S",
+        "хлор": "Cl",
+        "аргон": "Ar",
+        "калий": "K",
+        "кальций": "Ca",
+        "медь": "Cu",
+        "цинк": "Zn",
+        "серебро": "Ag",
+        "золото": "Au"
+    }
+    
+    symbol = input("Введите обозначение химического элемента: ")
+    
+    # Вариант 1: с использованием метода values()
+    print("Вариант 1 (с использованием values()):")
+    if symbol in elements.values():
+        print(f"Обозначение '{symbol}' присутствует в словаре")
+    else:
+        print(f"Обозначение '{symbol}' отсутствует в словаре")
+    
+    # Вариант 2: без использования values()
+    print("\nВариант 2 (без values()):")
+    found = False
+    for name, sym in elements.items():
+        if sym == symbol:
+            found = True
+            break
+    
+    if found:
+        print(f"Обозначение '{symbol}' присутствует в словаре")
+    else:
+        print(f"Обозначение '{symbol}' отсутствует в словаре")
+
+# Запуск программы
+if __name__ == "__main__":
+    check_symbol_exists()
+Задание № 57
+def country_capital_dictionary():
+    """Работа со словарем стран и столиц"""
+    
+    countries = {
+        "Россия": "Москва",
+        "США": "Вашингтон",
+        "Германия": "Берлин",
+        "Франция": "Париж",
+        "Великобритания": "Лондон",
+        "Италия": "Рим",
+        "Испания": "Мадрид",
+        "Китай": "Пекин",
+        "Япония": "Токио",
+        "Канада": "Оттава",
+        "Бразилия": "Бразилиа",
+        "Австралия": "Канберра",
+        "Индия": "Нью-Дели",
+        "Южная Корея": "Сеул",
+        "Мексика": "Мехико"
+    }
+    
+    print("Выберите действие:")
+    print("1 - Найти столицу по названию страны")
+    print("2 - Найти страну по названию столицы")
+    
+    try:
+        choice = int(input("Ваш выбор: "))
+        
+        if choice == 1:
+            country = input("Введите название страны: ").strip()
+            if country in countries:
+                print(f"Столица {country}: {countries[country]}")
+            else:
+                print(f"Страна '{country}' не найдена в словаре")
+                
+        elif choice == 2:
+            capital = input("Введите название столицы: ").strip()
+            found = False
+            for country, cap in countries.items():
+                if cap.lower() == capital.lower():
+                    print(f"Страна со столицей {capital}: {country}")
+                    found = True
+                    break
+            if not found:
+                print(f"Столица '{capital}' не найдена в словаре")
+                
+        else:
+            print("Неверный выбор")
+            
+    except ValueError:
+        print("Ошибка: введите число 1 или 2")
+
+# Запуск программы
+if __name__ == "__main__":
+    country_capital_dictionary()
+Задание № 58
+def school_classes_dictionary():
+    """Словарь с количеством учащихся в классах"""
+    
+    classes = {
+        "1а": 24,
+        "1б": 26,
+        "2а": 28,
+        "2б": 25,
+        "3а": 30,
+        "3б": 27,
+        "4а": 29,
+        "4б": 26,
+        "5а": 32,
+        "5б": 30,
+        "6а": 31,
+        "6б": 29,
+        "7а": 33,
+        "7б": 30,
+        "8а": 34,
+        "8б": 31,
+        "9а": 35,
+        "9б": 32,
+        "10а": 36,
+        "10б": 33,
+        "11а": 37,
+        "11б": 34
+    }
+    
+    class_name = input("Введите название класса (например, 5а): ").strip()
+    
+    if class_name in classes:
+        print(f"В классе {class_name} учится {classes[class_name]} учеников")
+    else:
+        print(f"Класс '{class_name}' не найден")
+
+# Запуск программы
+if __name__ == "__main__":
+    school_classes_dictionary()
+Задание № 59
+def school_management_system():
+    """Система управления данными школы"""
+    
+    # Исходный словарь классов
+    classes = {
+        "1а": 24,
+        "1б": 26,
+        "2а": 28,
+        "2б": 25,
+        "3а": 30,
+        "3б": 27,
+        "4а": 29,
+        "4б": 26,
+        "5а": 32,
+        "5б": 30,
+        "6а": 31,
+        "6б": 29
+    }
+    
+    print("Исходный состав школы:")
+    print("======================")
+    total_students = 0
+    for class_name, count in classes.items():
+        print(f"{class_name}: {count} чел.")
+        total_students += count
+    print(f"Всего учащихся: {total_students} чел.")
+    
+    # 1. В трех классах изменилось количество учащихся
+    print("\n1. В трех классах изменилось количество учащихся:")
+    classes["2а"] = 30  # было 28
+    classes["4б"] = 28  # было 26
+    classes["6а"] = 33  # было 31
+    print("   - В классе 2а теперь 30 учеников (было 28)")
+    print("   - В классе 4б теперь 28 учеников (было 26)")
+    print("   - В классе 6а теперь 33 ученика (было 31)")
+    
+    # 2. В школе появились два новых класса
+    print("\n2. В школе появились два новых класса:")
+    classes["7а"] = 34
+    classes["7б"] = 32
+    print("   - Добавлен класс 7а с 34 учениками")
+    print("   - Добавлен класс 7б с 32 учениками")
+    
+    # 3. В школе расформировали один из классов
+    print("\n3. В школе расформировали один из классов:")
+    removed_count = classes.pop("3б", 0)
+    print(f"   - Расформирован класс 3б (в нем было {removed_count} учеников)")
+    
+    # После внесения изменений:
+    print("\nПосле внесения изменений:")
+    print("========================")
+    
+    # 1) Определить общее количество учащихся
+    total_students = sum(classes.values())
+    print(f"1) Общее количество учащихся: {total_students} чел.")
+    
+    # 2) Вывести содержимое словаря
+    print("\n2) Содержимое словаря (в произвольном порядке классов):")
+    print("   Класс | Количество")
+    print("   ------------------")
+    for class_name, count in classes.items():
+        print(f"   {class_name} | {count}")
+    
+    # Дополнительно: сортировка по названию класса
+    print("\nДополнительно: отсортированный список:")
+    for class_name in sorted(classes.keys()):
+        print(f"   {class_name}: {classes[class_name]} учеников")
+
+# Запуск программы
+if __name__ == "__main__":
+    school_management_system()
+Задание № 60
+def digit_frequency_analysis():
+    """Анализ частоты цифр в тексте"""
+    
+    text = input("Введите текст: ")
+    
+    # Вариант 1: Частота каждой имеющейся в тексте цифры
+    digit_frequency = {}
+    
+    # Вариант 2: Частота каждой из цифр (0-9), включая отсутствующие
+    all_digits_frequency = {str(i): 0 for i in range(10)}
+    
+    # Анализируем текст
+    for char in text:
+        if char.isdigit():
+            # Вариант 1
+            digit_frequency[char] = digit_frequency.get(char, 0) + 1
+            
+            # Вариант 2
+            all_digits_frequency[char] += 1
+    
+    print("\n1) Частота каждой имеющейся в тексте цифры:")
+    print("==========================================")
+    if digit_frequency:
+        for digit in sorted(digit_frequency.keys()):
+            print(f"   Цифра '{digit}': {digit_frequency[digit]} раз")
+    else:
+        print("   В тексте нет цифр")
+    
+    print("\n2) Частота каждой из цифр (0-9):")
+    print("================================")
+    for digit in sorted(all_digits_frequency.keys()):
+        count = all_digits_frequency[digit]
+        print(f"   Цифра {digit}: {count} раз")
+    
+    # Статистика
+    total_digits = sum(digit_frequency.values())
+    different_digits = len(digit_frequency)
+    
+    print("\nСтатистика:")
+    print(f"   Всего цифр в тексте: {total_digits}")
+    print(f"   Разных цифр: {different_digits}")
+    
+    if digit_frequency:
+        most_frequent = max(digit_frequency.items(), key=lambda x: x[1])
+        least_frequent = min(digit_frequency.items(), key=lambda x: x[1])
+        print(f"   Наиболее частая цифра: '{most_frequent[0]}' ({most_frequent[1]} раз)")
+        print(f"   Наименее частая цифра: '{least_frequent[0]}' ({least_frequent[1]} раз)")
+
+# Запуск программы
+if __name__ == "__main__":
+    digit_frequency_analysis()
+Задание № 61
+def countries_information_system():
+    """Информационная система о государствах Европы и Азии"""
+    
+    countries = [
+        {
+            "name": "Россия",
+            "capital": "Москва",
+            "continent": "Европа/Азия",
+            "population": 146.7,  # млн чел.
+            "area": 17098.2  # тыс. кв. км
+        },
+        {
+            "name": "Германия",
+            "capital": "Берлин",
+            "continent": "Европа",
+            "population": 83.2,
+            "area": 357.0
+        },
+        {
+            "name": "Франция",
+            "capital": "Париж",
+            "continent": "Европа",
+            "population": 65.3,
+            "area": 551.7
+        },
+        {
+            "name": "Великобритания",
+            "capital": "Лондон",
+            "continent": "Европа",
+            "population": 67.9,
+            "area": 242.5
+        },
+        {
+            "name": "Италия",
+            "capital": "Рим",
+            "continent": "Европа",
+            "population": 60.4,
+            "area": 301.3
+        },
+        {
+            "name": "Испания",
+            "capital": "Мадрид",
+            "continent": "Европа",
+            "population": 47.4,
+            "area": 505.4
+        },
+        {
+            "name": "Китай",
+            "capital": "Пекин",
+            "continent": "Азия",
+            "population": 1402.0,
+            "area": 9596.9
+        },
+        {
+            "name": "Индия",
+            "capital": "Нью-Дели",
+            "continent": "Азия",
+            "population": 1380.0,
+            "area": 3287.3
+        },
+        {
+            "name": "Япония",
+            "capital": "Токио",
+            "continent": "Азия",
+            "population": 125.8,
+            "area": 377.9
+        },
+        {
+            "name": "Южная Корея",
+            "capital": "Сеул",
+            "continent": "Азия",
+            "population": 51.7,
+            "area": 100.2
+        },
+        {
+            "name": "Турция",
+            "capital": "Анкара",
+            "continent": "Азия/Европа",
+            "population": 84.3,
+            "area": 783.6
+        },
+        {
+            "name": "Казахстан",
+            "capital": "Нур-Султан",
+            "continent": "Азия",
+            "population": 18.8,
+            "area": 2724.9
+        }
+    ]
+    
+    # Преобразуем в словарь для быстрого поиска по названию
+    countries_dict = {country["name"]: country for country in countries}
+    capitals_dict = {country["capital"]: country["name"] for country in countries}
+    
+    while True:
+        print("\n" + "="*50)
+        print("ИНФОРМАЦИОННАЯ СИСТЕМА О ГОСУДАРСТВАХ")
+        print("="*50)
+        print("1. Определить столицу по названию государства")
+        print("2. Определить государство по столице")
+        print("3. Вывести всю информацию о заданном государстве")
+        print("4. Вывести страны заданной части света")
+        print("5. Рассчитать плотность населения для каждого государства")
+        print("6. Определить количество стран в заданной части света")
+        print("7. Рассчитать общую площадь стран в заданной части света")
+        print("0. Выход")
+        print("="*50)
+        
+        try:
+            choice = int(input("Выберите действие (0-7): "))
+            
+            if choice == 0:
+                print("Выход из программы...")
+                break
+                
+            elif choice == 1:
+                country_name = input("Введите название государства: ").strip()
+                if country_name in countries_dict:
+                    print(f"Столица {country_name}: {countries_dict[country_name]['capital']}")
+                else:
+                    print(f"Государство '{country_name}' не найдено")
+                    
+            elif choice == 2:
+                capital_name = input("Введите название столицы: ").strip()
+                if capital_name in capitals_dict:
+                    print(f"Государство со столицей {capital_name}: {capitals_dict[capital_name]}")
+                else:
+                    print(f"Столица '{capital_name}' не найдена")
+                    
+            elif choice == 3:
+                country_name = input("Введите название государства: ").strip()
+                if country_name in countries_dict:
+                    country = countries_dict[country_name]
+                    print(f"\nИнформация о {country['name']}:")
+                    print(f"  Столица: {country['capital']}")
+                    print(f"  Часть света: {country['continent']}")
+                    print(f"  Население: {country['population']} млн чел.")
+                    print(f"  Площадь: {country['area']} тыс. кв. км")
+                else:
+                    print(f"Государство '{country_name}' не найдено")
+                    
+            elif choice == 4:
+                continent = input("Введите часть света (Европа или Азия): ").strip()
+                found_countries = [c["name"] for c in countries if continent in c["continent"]]
+                
+                if found_countries:
+                    print(f"\nСтраны в части света '{continent}':")
+                    for country in found_countries:
+                        print(f"  - {country}")
+                else:
+                    print(f"Стран в части света '{continent}' не найдено")
+                    
+            elif choice == 5:
+                print("\nПлотность населения (тыс. чел. на 1 кв. км):")
+                print("="*45)
+                for country in countries:
+                    density = country["population"] / country["area"]  # млн/тыс = тыс/кв.км
+                    print(f"{country['name']:15} {density:.2f} тыс. чел./кв. км")
+                    
+            elif choice == 6:
+                continent = input("Введите часть света (Европа или Азия): ").strip()
+                count = sum(1 for c in countries if continent in c["continent"])
+                print(f"Количество стран в части света '{continent}': {count}")
+                
+            elif choice == 7:
+                continent = input("Введите часть света (Европа или Азия): ").strip()
+                total_area = sum(c["area"] for c in countries if continent in c["continent"])
+                print(f"Общая площадь стран в части света '{continent}': {total_area:.1f} тыс. кв. км")
+                
+            else:
+                print("Неверный выбор. Попробуйте снова.")
+                
+        except ValueError:
+            print("Ошибка: введите число от 0 до 7")
+
+# Запуск программы
+if __name__ == "__main__":
+    countries_information_system()
