@@ -1,0 +1,357 @@
+Задание № 1
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // a)
+    int s = 25;
+    s = 55;
+    cout << "a) s = " << s << endl;
+
+    // б)
+    s = 5;
+    s = -2 * s;
+    cout << "б) s = " << s << endl;
+
+    // в)
+    double s_d = -3.5;
+    s_d = 4 * s_d;
+    cout << "в) s = " << s_d << endl;
+
+    // г)
+    s = 20;
+    s = -21;
+    s = 0;
+    s = 5 * s;
+    cout << "г) s = " << s << endl;
+
+    return 0;
+}
+Задание № 2
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // a)
+    int x = 20;
+    x = -20;
+    cout << "a) x = " << x << endl;
+
+    // б)
+    double x_d = 23.5;
+    x_d = x_d * 2;
+    cout << "б) x = " << x_d << endl;
+
+    // в)
+    x = 50;
+    x = x + 5;
+    x = 0;
+    cout << "в) x = " << x << endl;
+
+    // г)
+    x = -30;
+    int k = -40;
+    x = x + k;
+    cout << "г) x = " << x << endl;
+
+    return 0;
+}
+Задание № 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 5;
+    a = a + 6;
+    int b = -a;
+    int c = a - 2 * b;
+
+    cout << "c = " << c << endl;
+
+    return 0;
+}
+Задание № 4
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    double a = 40;
+    double b = 10;
+    b = -a / 2 * b;
+    double v = b + a * 2;
+
+    cout << "v = " << v << endl;
+
+    return 0;
+}
+Задание № 5
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // a)
+    int s = 13;
+    int k = -5;
+    int d = s + 2;
+    s = d;
+    k = 2 * s;
+    cout << "a) s = " << s << ", k = " << k << endl;
+
+    // б)
+    s = 0;
+    k = 15;
+    d = k - 2;
+    k = 3 * d;
+    s = k - 50;
+    cout << "б) s = " << s << ", k = " << k << endl;
+
+    return 0;
+}
+Задание № 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    // a)
+    double a = 3.4;
+    double b = -5.1;
+    b = a;
+    a = b;
+    cout << "a) a = " << a << ", b = " << b << endl;
+
+    // б)
+    a = 9.4;
+    b = 15.1;
+    b = a;
+    a = b;
+    cout << "б) a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
+Задание № 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int s = 14;
+    int k = -3;
+    int d = s + 1;
+    s = d;
+    k = 2 * s;
+
+    cout << "s = " << s << ", k = " << k << endl;
+
+    return 0;
+}
+Задание № 8
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int p = 0;
+    int q = 30;
+    int d = q - 5;
+    q = 2 * d;
+    p = q - 100;
+
+    cout << "p = " << p << ", q = " << q << endl;
+
+    return 0;
+}
+Задание № 9
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 40;
+    int b = 10;
+    b = -a / 2 * b;
+    int c;
+
+    if (a < b) {
+        c = b - a;
+    }
+    else {
+        c = a - 2 * b;
+    }
+
+    cout << "c = " << c << endl;
+
+    return 0;
+}
+Задание № 10
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 100;
+    int b = 30;
+    a = a - b * 3;
+    int c;
+
+    if (a > b) {
+        c = a - b;
+    }
+    else {
+        c = b - a;
+    }
+
+    cout << "c = " << c << endl;
+
+    return 0;
+}
+Задание № 11
+#include <iostream>
+#include <locale>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 32;
+    int b = -1;
+    b = a - b * 4;
+    int c;
+
+    if (a > b) {
+        c = 6 * b - 4 * a;
+    } else {
+        c = a - b;
+    }
+
+    cout << "c = " << c << endl;
+
+    return 0;
+}
+Задание № 12
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 56;
+    int b = 77;
+
+    // Эмуляция цикла из блок-схемы
+    if (a != b) {
+        if (a > b) {
+            b = b - a;
+        }
+        else {
+            a = a - b;
+        }
+    }
+
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+
+    return 0;
+}
+Задание № 13
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int x = 55;
+    int y = 75;
+
+    // Эмуляция цикла из блок-схемы
+    if (x != y) {
+        if (x > y) {
+            x = x - y;
+        }
+        else {
+            y = y - x;
+        }
+    }
+
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+
+    return 0;
+}
+Задание № 14
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int k = 0;
+    int s = 0;
+
+    while (s < 1024) {
+        s = s + 10;
+        k = k + 1;
+    }
+
+    cout << "k = " << k << endl;
+
+    return 0;
+}
+Задание № 15
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 6;
+    int s = 0;
+
+    // Цикл из блок-схемы: пока a != 2
+    while (a != 2) {
+        s = s + a;
+        a = a - 1;
+    }
+
+    cout << "s = " << s << endl;
+    cout << "a = " << a << endl;
+
+    return 0;
+}
+Задание № 16
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    int a = 256;
+    int b = 0;
+
+    // Цикл из блок-схемы: пока a != 1
+    while (a != 1) {
+        a = a / 2;
+        b = b + a + 1;
+    }
+
+    cout << "b = " << b << endl;
+    cout << "a = " << a << endl;
+
+    return 0;
+}
